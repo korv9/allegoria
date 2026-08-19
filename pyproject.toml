@@ -8,8 +8,13 @@ version = "0.1.0"
 description = "An experiment in source-grounded meaning transformation and semantic drift."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "beautifulsoup4>=4.13,<5",
+    "pandas>=2.2,<4",
+]
 
 [tool.setuptools.packages.find]
 include = ["backend*"]
 
+[project.scripts]
+build-las-data = "backend.lakehouse.pipeline:main"

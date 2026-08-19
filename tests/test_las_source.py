@@ -18,8 +18,9 @@ class LoadLasTests(unittest.TestCase):
         self.assertTrue(source.text.startswith("Inledande bestämmelser\n\n1 §"))
         self.assertIn("Övergångsbestämmelser", source.text)
         self.assertEqual(len(source.text), 57_372)
+        self.assertIn('class="paragraf"', source.html)
+
 
 
 if __name__ == "__main__":
     unittest.main()
-

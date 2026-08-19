@@ -98,6 +98,31 @@ SOURCE → BRONZE → SILVER → GOLD → RAG
 
 Exact schemas, columns, chunking, and transformation rules will be based on the actual data. Source provenance is mandatory throughout the pipeline.
 
+The current LAS pipeline is documented in [`docs/data-pipeline.md`](docs/data-pipeline.md). All durable choices about source handling, normalization, schemas, and chunking are recorded in [`DATA_DECISIONS.md`](DATA_DECISIONS.md).
+
+Build the committed data artifacts with:
+
+```powershell
+python -m backend.lakehouse.pipeline
+```
+
+The implementation uses explicit pandas DataFrames at every layer:
+
+```python
+bronze_df = build_bronze_df()
+silver_df = build_silver_df(bronze_df)
+gold_df = build_gold_df(bronze_df, silver_df)
+quality_df = build_quality_df(silver_df, gold_df)
+```
+
+Transformations use explicit SQL-like pandas operations: `merge(..., how="left")`
+for lineage joins, `groupby(..., as_index=False).agg(...)` for profiles, and a
+final column selection for every output contract.
+
+The local implementation stays on pandas. If the project later moves to a data
+platform, the target is Databricks with PySpark; Snowflake is not part of the
+architecture.
+
 ## Meaning Lineage
 
 Meaning Lineage may later track how concepts emerge across generations:

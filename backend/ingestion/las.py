@@ -19,6 +19,7 @@ class LegalSource:
     issued_at: str
     published_at: str
     text: str
+    html: str
     raw_path: Path
     raw_sha256: str
 
@@ -46,6 +47,7 @@ def load_las() -> LegalSource:
         issued_at=_required_text(document, "datum"),
         published_at=_required_text(document, "publicerad"),
         text=_required_text(document, "text"),
+        html=_required_text(document, "html"),
         raw_path=LAS_SOURCE_PATH,
         raw_sha256=source_hash,
     )
@@ -58,4 +60,3 @@ def _required_text(document: ElementTree.Element, field: str) -> str:
         raise ValueError(f"The LAS source is missing the required field: {field}")
 
     return value
-
