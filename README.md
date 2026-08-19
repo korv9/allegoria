@@ -123,6 +123,25 @@ The local implementation stays on pandas. If the project later moves to a data
 platform, the target is Databricks with PySpark; Snowflake is not part of the
 architecture.
 
+## Retrieval baseline
+
+Search the verified Gold chunks locally with SQLite FTS5 and BM25:
+
+```powershell
+python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 5
+```
+
+Evaluate the retriever against the labeled LAS questions:
+
+```powershell
+python -m backend.retrieval.evaluation
+```
+
+The baseline and its known lexical limitation are documented in
+[`docs/retrieval.md`](docs/retrieval.md). Retrieval returns legal content with
+its provision ID, official source URL, and canonical source hash; it does not
+generate an answer yet.
+
 ## Meaning Lineage
 
 Meaning Lineage may later track how concepts emerge across generations:

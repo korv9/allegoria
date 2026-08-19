@@ -1,0 +1,7 @@
+{"query_id":"las-001","query":"sakliga skäl uppsägning","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P7"]}
+{"query_id":"las-002","query":"provanställning avbrytas","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P6"]}
+{"query_id":"las-003","query":"turordning arbetsbrist","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P22"]}
+{"query_id":"las-004","query":"företrädesrätt återanställning arbetsbrist","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P25"]}
+{"query_id":"las-005","query":"avskedande grovt åsidosatt åligganden","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P18"]}
+{"query_id":"las-006","query":"hur länge får jag jobba på prov","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P6"]}
+{"query_id":"las-007","query":"kan min chef sparka mig utan anledning","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P7"]}

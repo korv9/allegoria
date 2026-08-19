@@ -18,3 +18,5 @@ include = ["backend*"]
 
 [project.scripts]
 build-las-data = "backend.lakehouse.pipeline:main"
+evaluate-las-retrieval = "backend.retrieval.evaluation:main"
+search-las = "backend.retrieval.cli:main"

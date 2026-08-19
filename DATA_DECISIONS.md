@@ -171,3 +171,27 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Decision:** Before writing derived artifacts, validate required and unique IDs, non-empty legal text, complete Silver-to-Gold coverage, consistent source hashes, retrieval size limits, and exact reconstruction of Silver content from ordered Gold chunks.
 - **Rationale:** A profile containing counts and ranges describes data but does not validate it. Legal lineage failures must stop the pipeline rather than appear only as metrics.
 - **Consequences:** `validate_las_data()` runs before profile creation and all writes. Left joins also use merge indicators so unmatched lineage rows fail explicitly.
+
+## DD022 — Establish SQLite FTS5/BM25 as the local lexical retrieval baseline
+
+- **Date:** 2026-08-19
+- **Status:** Active
+- **Decision:** Load the committed Gold chunks into an in-memory SQLite FTS5 index and rank full-text matches with BM25. Index only `retrieval_text`; return Gold identity, legal content, source URL, and source hash as unindexed metadata.
+- **Rationale:** SQLite FTS5 is available in the existing Python runtime, requires no service or package, exposes retrieval as inspectable SQL, and provides a deterministic keyword baseline before embeddings are introduced.
+- **Consequences:** The index is rebuilt from Gold and is never a source of truth. Queries use Unicode prefix tokens combined with `OR`. Empty queries fail and unmatched queries return no rows; there is no retrieval fallback. Semantic and hybrid retrieval remain later candidates to be measured against this baseline.
+
+## DD023 — Evaluate retrieval before answer generation
+
+- **Date:** 2026-08-19
+- **Status:** Active
+- **Decision:** Store a small, human-labeled LAS retrieval set under `data/evaluation/retrieval/las.jsonl` and measure Hit@k and mean reciprocal rank before adding an LLM answer layer.
+- **Rationale:** Retrieval failures must remain visible instead of being hidden by plausible generated prose. The initial set deliberately includes both exact legal terminology and everyday Swedish paraphrases.
+- **Consequences:** The first seven-query baseline scores Hit@3 `6/7` and MRR `0.7857`; the missed paraphrase is retained as evidence for later semantic or hybrid retrieval. Evaluation labels are project-authored test data, not legal source content.
+
+## DD024 — Defer embeddings and managed RAG services until Databricks
+
+- **Date:** 2026-08-20
+- **Status:** Active; refines DD019, DD022, and DD023
+- **Decision:** Finish the local data and retrieval foundation with pandas, Gold JSONL, SQLite FTS5/BM25, and labeled retrieval evaluation. Do not add a local embedding model or a separate external embedding API. After the foundation is verified, introduce embeddings, vector and hybrid retrieval, model inference, and RAG evaluation in Databricks.
+- **Rationale:** The local lexical retriever is a deterministic baseline, while Databricks can later provide the managed embedding, search, model-serving, and evaluation capabilities needed by the full RAG experiment. Adding a temporary local or Vertex-based embedding path would create another implementation that the project already intends to replace.
+- **Consequences:** Expand the local relevance set before migration and preserve its query and result contracts for comparison. The later Databricks implementation will translate the data pipeline to PySpark/Delta and compare full-text, vector, and hybrid retrieval against the same labeled queries. Application code does not require a separate Vertex AI or direct GCS retrieval pipeline, although Databricks on Google Cloud still uses cloud storage configured beneath Unity Catalog.
