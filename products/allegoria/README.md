@@ -38,7 +38,8 @@ Bronze, Silver, and Gold install their pinned notebook dependencies before impor
 `bronze_allegoria.sfs_documents` has one row per current law snapshot. It is searchable by
 `document_id` and retains the complete `raw_xml`, decoded `text`, source `html`, response hash,
 payload size, API URLs, source metadata, and ingestion metadata. `document_snapshot_id` combines
-the law ID and raw SHA-256.
+the law ID and raw SHA-256. Bronze recomputes the hash from `raw_xml` with Spark and fails on a
+mismatch. It retains the portable source filename but not a user-specific Workspace path.
 
 Bronze reads every JSON file under `data/bronze/sfs`; no law-specific filename or hash is embedded
 in the notebook. The current checked-in corpus must contain exactly 50 unique document IDs.
@@ -47,12 +48,15 @@ in the notebook. The current checked-in corpus must contain exactly 50 unique do
 
 `silver_allegoria.sfs_provisions` contains every parsed paragraph and transition block. It keeps
 document, chapter, heading, source anchor, exact normalized text, source hash, and parent snapshot
-lineage. Repeated source anchors are retained and distinguished by `source_anchor_occurrence`.
+lineage. It also hashes each normalized provision text separately. Repeated source anchors are
+retained and distinguished by `source_anchor_occurrence`.
 
 ## Gold contract
 
 `gold_allegoria.sfs_provision_summary` is a neutral profile grouped by document, provision kind,
-chapter, and heading. It does not create retrieval chunks.
+chapter, and heading. It carries the source snapshot and layer processing timestamps, but no
+legal text. It is useful for data inspection and chunk-design decisions; it is not a RAG source
+and does not create retrieval chunks.
 
 Environment variables:
 

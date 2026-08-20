@@ -299,3 +299,11 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Decision:** Model a missing SFS subtitle as null and a missing transitional-provisions section as zero transition rows. If a transition section exists but cannot be parsed, fail. Preserve repeated paragraph anchors as separate rows and record their deterministic `source_anchor_occurrence`; never drop them as duplicates.
 - **Rationale:** In the 50-law snapshot, 39 documents lack a subtitle, 27 lack a transition section, and 45 source anchors are reused. Reused anchors include future effective wordings and source collisions, so deduplication would delete legal content.
 - **Consequences:** Derived `provision_id` values add an occurrence suffix after the first repeated anchor. Silver validates unique derived IDs and complete document coverage while retaining the original `source_anchor` for traceability.
+
+## DD038 — Keep operational paths private and use layered lineage
+
+- **Date:** 2026-08-20
+- **Status:** Active
+- **Decision:** Do not persist the Databricks Git-folder URI in Bronze. Retain the portable `source_raw_file`, official source URLs, `document_snapshot_id`, and `source_sha256`; recompute `sha2(raw_xml, 256)` in Bronze and fail on mismatch. Add `provision_text_sha256 = sha2(text, 256)` in Silver to distinguish derived-text identity from raw-document identity. Name processing timestamps by layer and carry snapshot lineage into the Gold profile.
+- **Rationale:** A user-specific Workspace path is neither source provenance nor a stable data contract. Content identity, official URLs, layer timestamps, Delta history, and Unity Catalog lineage each answer a distinct lineage question without exposing the operator's path.
+- **Consequences:** Bronze uses `bronze_ingested_at`; Silver carries it and adds `silver_transformed_at`; Gold carries both and adds `gold_aggregated_at`. Existing tables must be overwritten by rerunning Bronze, Silver, and Gold to remove the old `source_file`, `ingested_at`, and `refreshed_at` columns.

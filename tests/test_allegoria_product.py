@@ -122,6 +122,10 @@ def test_notebooks_are_small_valid_and_explain_their_change() -> None:
     assert '"beautifulsoup4==4.13.5"' in silver_source
     assert "Path(__file__)" not in bronze_source
     assert "Path(__file__)" not in silver_source
+    assert 'F.sha2("raw_xml", 256)' in bronze_source
+    assert 'record["source_file"]' not in bronze_source
+    assert 'alias("bronze_ingested_at")' in bronze_source
+    assert 'F.sha2("text", 256).alias("provision_text_sha256")' in silver_source
 
 
 def test_bundle_orders_setup_bronze_silver_gold() -> None:

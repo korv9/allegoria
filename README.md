@@ -42,7 +42,8 @@ These counts are locally verified against the checked-in corpus. The generalized
 still needs to be run and inspected in Databricks.
 
 Bronze retains the complete raw XML payload, text, source HTML, metadata, source URL, payload
-size, and SHA-256 in each row. Silver never deduplicates legal text: repeated source anchors are
+size, and a Spark-verified SHA-256 in each row. It does not persist local Workspace paths. Silver
+never deduplicates legal text: repeated source anchors are
 preserved with an occurrence number. Gold is descriptive rather than retrieval-specific.
 
 ## Fifty-law selection

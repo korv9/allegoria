@@ -41,7 +41,6 @@ def read_bronze_records(source_dir: Path) -> list[dict[str, object]]:
                 f"Bronze file {source_file.name} contains document_id "
                 f"{record.get('document_id')!r}"
             )
-        record["source_file"] = source_file.as_uri()
         records.append(record)
     return records
 
@@ -50,7 +49,21 @@ if __name__ == "__main__":
     source_records = read_bronze_records(SOURCE_DIR)
     df_source = spark.createDataFrame(source_records)
 
-    df_bronze = df_source.select(
+    df_validated = df_source.withColumn(
+        "calculated_source_sha256",
+        F.sha2("raw_xml", 256),
+    )
+
+    hash_mismatches = df_validated.where(
+        F.col("calculated_source_sha256") != F.col("source_sha256")
+    ).count()
+    if hash_mismatches:
+        raise ValueError(
+            f"Bronze contains {hash_mismatches} payloads whose SHA-256 does not "
+            "match raw_xml"
+        )
+
+    df_bronze = df_validated.select(
         F.col("document_snapshot_id").cast("string").alias("document_snapshot_id"),
         F.col("document_id").cast("string").alias("document_id"),
         F.col("designation").cast("string").alias("designation"),
@@ -70,8 +83,7 @@ if __name__ == "__main__":
         F.col("text").cast("string").alias("text"),
         F.col("html").cast("string").alias("html"),
         F.col("raw_xml").cast("string").alias("raw_xml"),
-        F.col("source_file").cast("string").alias("source_file"),
-        F.current_timestamp().alias("ingested_at"),
+        F.current_timestamp().alias("bronze_ingested_at"),
     )
 
     duplicate_document_ids = (
@@ -138,7 +150,7 @@ if __name__ == "__main__":
 
     print(
         f"BRONZE | rows {df_source.count()} -> {df_bronze.count()} laws | "
-        "added: snapshot ID, source file, ingestion time | output: Delta"
+        "validated: raw XML SHA-256 | added: Bronze ingestion time | output: Delta"
     )
     if PREVIEW:
         df_bronze.select(

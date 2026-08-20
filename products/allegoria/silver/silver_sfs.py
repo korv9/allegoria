@@ -106,7 +106,7 @@ if __name__ == "__main__":
         "version",
         "source_page_url",
         "source_sha256",
-        "ingested_at",
+        "bronze_ingested_at",
     )
 
     df_enriched = df_parsed.join(
@@ -129,6 +129,7 @@ if __name__ == "__main__":
         F.col("heading").cast("string").alias("heading"),
         F.col("order").cast("int").alias("order"),
         F.col("text").cast("string").alias("text"),
+        F.sha2("text", 256).alias("provision_text_sha256"),
         F.col("subsection_anchors").cast("array<string>").alias("subsection_anchors"),
         F.col("amendment_notes").cast("array<string>").alias("amendment_notes"),
         F.col("title").cast("string").alias("document_title"),
@@ -136,7 +137,7 @@ if __name__ == "__main__":
         F.concat_ws("#", "source_page_url", "source_anchor").alias("source_url"),
         F.col("source_page_url").cast("string").alias("source_page_url"),
         F.col("source_sha256").cast("string").alias("source_sha256"),
-        F.col("ingested_at").alias("bronze_ingested_at"),
+        F.col("bronze_ingested_at"),
         F.current_timestamp().alias("silver_transformed_at"),
     )
 

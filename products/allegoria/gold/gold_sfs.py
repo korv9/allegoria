@@ -48,12 +48,16 @@ if __name__ == "__main__":
 
     df_gold = (
         df_enriched.groupBy(
+            "document_snapshot_id",
             "document_id",
+            "document_title",
+            "document_version",
             "kind",
             "chapter",
             "heading",
             "source_page_url",
             "source_sha256",
+            "bronze_ingested_at",
         )
         .agg(
             F.countDistinct("provision_id").cast("long").alias("provision_count"),
@@ -62,8 +66,9 @@ if __name__ == "__main__":
             F.min("text_char_count").cast("int").alias("min_text_chars"),
             F.round(F.avg("text_char_count"), 1).alias("average_text_chars"),
             F.max("text_char_count").cast("int").alias("max_text_chars"),
+            F.max("silver_transformed_at").alias("silver_transformed_at"),
         )
-        .withColumn("refreshed_at", F.current_timestamp())
+        .withColumn("gold_aggregated_at", F.current_timestamp())
         .orderBy("document_id", "first_order", "kind", "chapter", "heading")
     )
 
@@ -92,6 +97,7 @@ if __name__ == "__main__":
                     "store_backend": "file_system",
                     "local_fs_root_dir": f"{DQ_ROOT}/gold",
                     "unexpected_rows_pk": [
+                        "document_snapshot_id",
                         "document_id",
                         "kind",
                         "chapter",

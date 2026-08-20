@@ -39,10 +39,12 @@ Delta table.
 | Source time | `issued_at`, `published_at`, `retrieved_at` | retained as source strings |
 | Provenance | `source_page_url`, `source_data_url`, `source_raw_file`, `source_sha256` | retained; hash checked locally |
 | Full payload | `payload_size_bytes`, `text`, `html`, `raw_xml` | retained without legal rewriting |
-| Ingestion | `source_file`, `ingested_at` | added by Bronze |
+| Ingestion | `bronze_ingested_at` | added by Bronze |
 
 Bronze fails unless exactly 50 JSON files exist, file names match `document_id`, IDs are unique,
-and all snapshot IDs pass declared Data Quality.
+the stored SHA-256 matches `sha2(raw_xml, 256)`, and all snapshot IDs pass declared Data Quality.
+The local Workspace path is deliberately not persisted; `source_raw_file` is only the portable
+source filename from the checked corpus.
 
 ## Silver
 
@@ -56,7 +58,7 @@ Silver parses all 50 HTML payloads and joins each provision back to its Bronze p
 | --- | --- | --- |
 | Identity | `provision_id`, `document_snapshot_id`, `document_id`, `kind`, `order` | deterministic and typed |
 | Source hierarchy | `source_anchor`, `source_anchor_occurrence`, `label`, `chapter`, `heading` | read from HTML structure |
-| Legal payload | `text`, `subsection_anchors`, `amendment_notes` | presentation whitespace normalized only |
+| Legal payload | `text`, `provision_text_sha256`, `subsection_anchors`, `amendment_notes` | presentation whitespace normalized only; normalized provision text hashed separately |
 | Document context | `document_title`, `document_version` | left-joined from Bronze |
 | Provenance | `source_url`, `source_page_url`, `source_sha256` | retained from Bronze |
 | Processing | `bronze_ingested_at`, `silver_transformed_at` | retained/added timestamps |
@@ -65,6 +67,10 @@ The source reuses 45 paragraph anchors across the current corpus. These can repr
 effective wording or source-anchor collisions. Silver retains every occurrence and adds an
 occurrence suffix to the derived provision ID; it never drops duplicate anchors. A missing
 transitional-provisions section is valid, while an existing but unparseable section fails.
+
+`source_sha256` identifies the complete raw source document and is therefore intentionally the
+same on all provisions from one snapshot. `provision_text_sha256` identifies one normalized
+Silver provision and can later be carried into retrieval results.
 
 The checked-in corpus currently produces 1,952 unique provisions, including 76 transition
 blocks. Silver verifies complete document coverage, unique provision IDs, and complete Bronze
@@ -76,9 +82,10 @@ Notebook: `products/allegoria/gold/gold_sfs.py`
 
 Table: `dev_lakehouse.gold_allegoria.sfs_provision_summary`
 
-Gold adds `text_char_count` and groups provisions by document, provision kind, chapter, and
-heading. It calculates provision count, order bounds, text-length bounds, average text length,
-and refresh time. The checked-in corpus produces 1,001 groups.
+Gold adds `text_char_count` and groups provisions by source snapshot, document, provision kind,
+chapter, and heading. It calculates provision count, order bounds, and text-length statistics.
+It also carries document metadata and the Bronze, Silver, and Gold processing timestamps so the
+profile can be traced back to the exact snapshot. The checked-in corpus produces 1,001 groups.
 
 Gold reconciles the sum of group counts to the distinct Silver provision count. It does not
 chunk, summarize, embed, rank, or alter legal text.
