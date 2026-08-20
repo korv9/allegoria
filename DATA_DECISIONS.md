@@ -195,3 +195,19 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Decision:** Finish the local data and retrieval foundation with pandas, Gold JSONL, SQLite FTS5/BM25, and labeled retrieval evaluation. Do not add a local embedding model or a separate external embedding API. After the foundation is verified, introduce embeddings, vector and hybrid retrieval, model inference, and RAG evaluation in Databricks.
 - **Rationale:** The local lexical retriever is a deterministic baseline, while Databricks can later provide the managed embedding, search, model-serving, and evaluation capabilities needed by the full RAG experiment. Adding a temporary local or Vertex-based embedding path would create another implementation that the project already intends to replace.
 - **Consequences:** Expand the local relevance set before migration and preserve its query and result contracts for comparison. The later Databricks implementation will translate the data pipeline to PySpark/Delta and compare full-text, vector, and hybrid retrieval against the same labeled queries. Application code does not require a separate Vertex AI or direct GCS retrieval pipeline, although Databricks on Google Cloud still uses cloud storage configured beneath Unity Catalog.
+
+## DD025 — Use a versioned context packet as the RAG boundary
+
+- **Date:** 2026-08-20
+- **Status:** Active
+- **Decision:** Convert ranked retrieval results into context schema `1.0`. The packet contains the exact query, retriever identity, chunk count, and ordered chunks with citation ID, rank, score, legal content, stable lineage IDs, official URL, and canonical source hash.
+- **Rationale:** Retrieval engines and score scales can change in Databricks, but answer generation and Meaning Quality need one explicit, testable input contract. Keeping Gold `content` separate prevents retrieval-added headings from being mistaken for legal source text.
+- **Consequences:** Context creation fails on empty results, missing lineage, duplicate chunks, or invalid ranks. The prompt-ready representation is derived from the packet without altering legal content. Databricks retrieval must preserve this schema or introduce an explicitly versioned successor.
+
+## DD026 — Expand retrieval evaluation without tuning the lexical baseline
+
+- **Date:** 2026-08-20
+- **Status:** Active; refines DD023 and DD024
+- **Decision:** Use 30 curated, project-authored positive LAS questions split into `legal_terms` and `natural_language`. Validate that every relevance label resolves to a Gold `provision_id`, and report metrics both overall and by query type.
+- **Rationale:** Seven questions cannot characterize retrieval behavior. The expanded set covers major LAS topics and retains natural-language paraphrases that expose BM25's semantic limitations.
+- **Consequences:** At top three, the frozen local baseline scores Hit@3 `0.8667` and MRR `0.7667`; legal terms score `1.0000` Hit@3 and natural language `0.7500`. The four misses remain comparison cases for Databricks vector and hybrid retrieval. Questions without a relevant LAS provision are deferred to later answer/abstention evaluation rather than being mixed into positive retrieval metrics.

@@ -9,6 +9,7 @@ import pandas as pd
 from .gold import RETRIEVAL_COLUMNS, load_gold_df
 
 
+LEXICAL_RETRIEVER_NAME = "sqlite_fts5_bm25"
 RESULT_COLUMNS = ["rank", "score", *RETRIEVAL_COLUMNS]
 RESULT_DTYPES = {
     "rank": "int64",

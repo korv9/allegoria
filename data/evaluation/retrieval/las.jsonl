@@ -5,3 +5,26 @@
 {"query_id":"las-005","query":"avskedande grovt åsidosatt åligganden","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P18"]}
 {"query_id":"las-006","query":"hur länge får jag jobba på prov","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P6"]}
 {"query_id":"las-007","query":"kan min chef sparka mig utan anledning","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P7"]}
+{"query_id":"las-008","query":"anställningsavtal gäller tills vidare","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P4"]}
+{"query_id":"las-009","query":"särskild visstidsanställning vikariat säsongsarbete","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P5"]}
+{"query_id":"las-010","query":"särskild visstidsanställning övergår tillsvidare efter tolv månader","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P5a"]}
+{"query_id":"las-011","query":"anställningsavtal heltid om inget annat avtalats","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P4a"]}
+{"query_id":"las-012","query":"kan jag be min arbetsgivare förklara varför jag arbetar deltid","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P4a"]}
+{"query_id":"las-013","query":"får min arbetsgivare förbjuda mig att ha ett extrajobb","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P6i"]}
+{"query_id":"las-014","query":"vilken skriftlig information ska finnas om mina anställningsvillkor","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P6c"]}
+{"query_id":"las-015","query":"måste visstidsanställda informeras om lediga fasta jobb","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P6f"]}
+{"query_id":"las-016","query":"uppsägningstid efter sex års anställning","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P11"]}
+{"query_id":"las-017","query":"har jag rätt till lön under uppsägningstiden även utan arbetsuppgifter","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P12"]}
+{"query_id":"las-018","query":"får jag vara ledig med lön för att söka nytt jobb under uppsägningstiden","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P14"]}
+{"query_id":"las-019","query":"besked en månad innan tidsbegränsad anställning upphör","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P15"]}
+{"query_id":"las-020","query":"måste arbetsgivarens uppsägning vara skriftlig","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P8"]}
+{"query_id":"las-021","query":"hur ska besked om avskedande lämnas till arbetstagaren","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P20"]}
+{"query_id":"las-022","query":"har jag rätt till lön när jag är permitterad","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P21"]}
+{"query_id":"las-023","query":"undantag högst tre arbetstagare från turordningen","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P22"]}
+{"query_id":"las-024","query":"deltidsanställd företrädesrätt till högre sysselsättningsgrad","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P25a"]}
+{"query_id":"las-025","query":"vad händer om jag tackar nej till ett erbjudande om återanställning","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P27"]}
+{"query_id":"las-026","query":"underrättelse två veckor före uppsägning av personliga skäl","query_type":"legal_terms","relevant_provision_ids":["sfs-1982-80:P30"]}
+{"query_id":"las-027","query":"hur långt i förväg måste arbetsgivaren meddela att provanställningen ska avbrytas","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P31"]}
+{"query_id":"las-028","query":"vilka särskilda regler gäller när en anställd har fyllt 69 år","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P33","sfs-1982-80:P33b","sfs-1982-80:P33c"]}
+{"query_id":"las-029","query":"kan en uppsägning utan sakliga skäl förklaras ogiltig","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P34"]}
+{"query_id":"las-030","query":"kan en felaktigt tidsbegränsad anställning bli tillsvidare","query_type":"natural_language","relevant_provision_ids":["sfs-1982-80:P36"]}

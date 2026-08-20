@@ -131,16 +131,28 @@ Search the verified Gold chunks locally with SQLite FTS5 and BM25:
 python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 5
 ```
 
+Inspect the exact JSON contract that will later be sent to a model:
+
+```powershell
+python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 3 --context-json
+```
+
 Evaluate the retriever against the labeled LAS questions:
 
 ```powershell
 python -m backend.retrieval.evaluation
 ```
 
-The baseline and its known lexical limitation are documented in
+The 30-query baseline and its known lexical limitations are documented in
 [`docs/retrieval.md`](docs/retrieval.md). Retrieval returns legal content with
-its provision ID, official source URL, and canonical source hash; it does not
-generate an answer yet.
+its provision ID, official source URL, and canonical source hash. A versioned
+context-packet contract converts ranked results into prompt-ready, source-
+traceable input without generating an answer.
+
+The local foundation ends at this contract. Embeddings, vector and hybrid
+retrieval, model inference, and RAG evaluation are intentionally deferred to
+Databricks. The migration inputs and acceptance checks are documented in
+[`docs/databricks-handoff.md`](docs/databricks-handoff.md).
 
 ## Meaning Lineage
 

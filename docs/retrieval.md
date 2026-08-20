@@ -16,6 +16,12 @@ It does not generate a legal answer. Retrieval is evaluated separately before an
 python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 5
 ```
 
+Print the versioned context packet instead of the human-readable result view:
+
+```powershell
+python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 3 --context-json
+```
+
 After installing the project, the equivalent script is:
 
 ```powershell
@@ -54,16 +60,33 @@ The curated evaluation set is stored in `data/evaluation/retrieval/las.jsonl`. E
 - query type
 - one or more relevant provision IDs
 
-The first baseline contains seven queries. At `top_k=3` it currently produces:
+The expanded baseline contains 30 curated, project-authored queries. At `top_k=3` it
+currently produces:
 
 | Metric | Result |
 | --- | ---: |
-| Queries | 7 |
-| Hits | 6 |
-| Hit@3 | 0.8571 |
-| Mean reciprocal rank | 0.7857 |
+| Queries | 30 |
+| Hits | 26 |
+| Hit@3 | 0.8667 |
+| Mean reciprocal rank | 0.7667 |
 
-Exact legal terms perform well. The natural-language query `kan min chef sparka mig utan anledning` does not retrieve the relevant `7 §` in the top three because lexical search does not understand that `sparka` can refer to `säga upp` or `avskeda`.
+The query-type split makes the lexical limitation visible:
+
+| Query type | Queries | Hit@3 | Mean reciprocal rank |
+| --- | ---: | ---: | ---: |
+| Legal terms | 14 | 1.0000 | 0.9643 |
+| Natural language | 16 | 0.7500 | 0.5938 |
+
+The four missed natural-language questions deliberately remain in the set:
+
+- `kan min chef sparka mig utan anledning` → `7 §`
+- `kan jag be min arbetsgivare förklara varför jag arbetar deltid` → `4 a §`
+- `vilken skriftlig information ska finnas om mina anställningsvillkor` → `6 c §`
+- `kan en felaktigt tidsbegränsad anställning bli tillsvidare` → `36 §`
+
+These misses use everyday wording or paraphrases that do not align reliably
+with the source vocabulary. They are evidence for comparing vector and hybrid
+retrieval in Databricks, not reasons to tune BM25 against the labels.
 
 This observed miss is the evidence required before adding semantic retrieval. A later Databricks implementation should evaluate full-text, vector, and hybrid AI Search against the same labeled queries instead of assuming that a more advanced retriever is better.
 
@@ -85,12 +108,43 @@ This observed miss is the evidence required before adding semantic retrieval. A 
 | `source_url` | Official Riksdagen source link |
 | `source_sha256` | Canonical source snapshot hash |
 
+## Context packet
+
+`backend.retrieval.context.build_context_packet()` is the stable boundary
+between retrieval and a future model. It accepts a query, retriever identity,
+and ranked result DataFrame, then produces a JSON-serializable packet:
+
+```text
+schema_version
+query
+retriever
+chunk_count
+chunks[]
+    citation_id
+    rank and score
+    chunk, document, and provision IDs
+    label, heading, and part
+    source-derived content
+    official source URL
+    canonical source hash
+```
+
+`format_context_text()` creates prompt-ready source sections from the packet.
+It uses Gold `content`, not the context-prefixed `retrieval_text`, so added
+retrieval context is never mistaken for legal source text.
+
+The builder fails on empty results, missing lineage, duplicate chunks, or
+invalid ranks. It does not invent context when retrieval finds nothing.
+
 ## Next retrieval iteration
 
-Do not tune BM25 against seven examples until it merely memorizes them. First add more representative questions and relevance labels. Then compare:
+The local retrieval implementation is now the fixed lexical baseline. Do not
+add a temporary local embedding model or external embedding API. In
+Databricks, run the same labeled evaluation against:
 
 1. lexical BM25
-2. semantic embeddings
-3. hybrid retrieval
+2. vector retrieval with managed embeddings
+3. hybrid full-text and vector retrieval
 
-The winning strategy must improve the evaluation set without breaking source lineage.
+The winning strategy must improve the full evaluation set, especially natural
+language, without breaking the context-packet or source-lineage contracts.
