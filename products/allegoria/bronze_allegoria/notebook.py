@@ -1,12 +1,8 @@
 # Databricks notebook source
-# MAGIC %pip install "lakehouse-engine[dq]==2.1.1"
-
-# COMMAND ----------
-
-dbutils.library.restartPython()
-
-# COMMAND ----------
-
+# /// script
+# [tool.databricks.environment]
+# environment_version = "5"
+# ///
 """Load the checked-in LAS JSON snapshot into a source-faithful Bronze Delta table."""
 
 import json
