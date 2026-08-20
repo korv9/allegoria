@@ -17,8 +17,10 @@ Canonical XML (byte-pinned, never transformed in place)
         Gold managed Delta table
 ```
 
-Lakehouse Engine performs the read, Data Quality, and write boundaries. The code between those
-boundaries is explicit PySpark and uses named DataFrames.
+Lakehouse Engine performs Delta reads, Data Quality, and write boundaries. The Bronze workspace
+JSON is the one exception: Python reads the single Git-folder file on the driver and immediately
+creates a Spark DataFrame. The code between boundaries is explicit PySpark and uses named
+DataFrames.
 
 ## Bronze
 

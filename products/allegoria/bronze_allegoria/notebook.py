@@ -1,6 +1,15 @@
 # Databricks notebook source
+# MAGIC %pip install "lakehouse-engine[dq]==2.1.1"
+
+# COMMAND ----------
+
+dbutils.library.restartPython()
+
+# COMMAND ----------
+
 """Load the checked-in LAS JSON snapshot into a source-faithful Bronze Delta table."""
 
+import json
 from os import getenv
 from pathlib import Path
 
@@ -10,39 +19,22 @@ from pyspark.sql import functions as F
 CATALOG = getenv("ALLEGORIA_CATALOG", "dev_lakehouse")
 DQ_ROOT = getenv("ALLEGORIA_DQ_ROOT", "/tmp/allegoria/dq")
 PREVIEW = getenv("ALLEGORIA_PREVIEW", "true").lower() == "true"
-SOURCE = getenv(
-    "ALLEGORIA_SOURCE",
-    (
-        Path(__file__).resolve().parents[3]
-        / "data/bronze/las/sfs-1982-80.json"
-    ).as_uri(),
-)
+PROJECT_ROOT = Path.cwd().parents[2]
+SOURCE_FILE = PROJECT_ROOT / "data/bronze/las/sfs-1982-80.json"
 BRONZE_TABLE = f"{CATALOG}.bronze_allegoria.las_documents"
 EXPECTED_SOURCE_SHA256 = (
     "a310dbc84411b7a7cfa7fc29bd0f52306e2b4358407ac84f74363a8aa5db2f9b"
 )
 
-READ_ACON = {
-    "input_specs": [
-        {
-            "spec_id": "las_json",
-            "read_type": "batch",
-            "data_format": "json",
-            "location": SOURCE,
-            "options": {"multiLine": True},
-        }
-    ],
-    "output_specs": [
-        {
-            "spec_id": "source_document",
-            "input_id": "las_json",
-            "data_format": "dataframe",
-        }
-    ],
-}
-
 if __name__ == "__main__":
-    df_source = load_data(acon=READ_ACON)["source_document"]
+    if not SOURCE_FILE.is_file():
+        raise FileNotFoundError(
+            f"LAS snapshot not found at {SOURCE_FILE}. Run this notebook from its "
+            "Databricks Git folder."
+        )
+
+    source_record = json.loads(SOURCE_FILE.read_text(encoding="utf-8"))
+    df_source = spark.createDataFrame([source_record])
 
     df_bronze = df_source.select(
         F.col("document_id").cast("string").alias("document_id"),
@@ -56,7 +48,7 @@ if __name__ == "__main__":
         F.col("source_sha256").cast("string").alias("source_sha256"),
         F.col("text").cast("string").alias("text"),
         F.col("html").cast("string").alias("html"),
-        F.input_file_name().alias("source_file"),
+        F.lit(SOURCE_FILE.as_uri()).alias("source_file"),
         F.current_timestamp().alias("ingested_at"),
     )
 

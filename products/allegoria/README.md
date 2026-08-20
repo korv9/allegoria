@@ -24,15 +24,20 @@ Run the notebooks in this order:
 3. `silver_allegoria/notebook.py`
 4. `gold_allegoria/notebook.py`
 
-Each transformation is written as ordinary PySpark. Lakehouse Engine only reads inputs, runs
-declared data-quality checks, and writes managed Delta tables. Every transformation notebook
-ends with a one-line row and transformation summary; optional previews show only a few columns
-and rows.
+Open each file as a Databricks notebook and select **Run all**. Bronze, Silver, and Gold install
+their own pinned dependencies in their first cell and restart Python before imports. They do not
+depend on libraries configured in `databricks.yml`; only the Delta output from the preceding
+notebook is required. Setup needs no package installation.
+
+Each transformation is written as ordinary PySpark. Lakehouse Engine reads Delta inputs, runs
+declared data-quality checks, and writes managed Delta tables. Bronze reads its single checked-in
+JSON file on the notebook driver and turns that record into a Spark DataFrame. Every
+transformation notebook ends with a one-line row and transformation summary; optional previews
+show only a few columns and rows.
 
 Environment variables:
 
 - `ALLEGORIA_CATALOG`: target catalog, default `dev_lakehouse`
-- `ALLEGORIA_SOURCE`: LAS Bronze JSON URI, default checked-in snapshot
 - `ALLEGORIA_DQ_ROOT`: Lakehouse Engine quality-result directory
 - `ALLEGORIA_PREVIEW`: show small notebook previews, default `true`
 

@@ -251,3 +251,19 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Decision:** After every Bronze, Silver, and Gold write, print input rows, output rows, the main transformation, and the output format in one line. Optional previews show only selected columns and a small row limit.
 - **Rationale:** The owner needs to see how each dataset changed without receiving full legal payloads or overwhelming Spark output.
 - **Consequences:** The short summary always runs. Set `ALLEGORIA_PREVIEW=false` to hide the additional bounded `.show()` output.
+
+## DD032 — Make each Databricks notebook dependency-self-contained
+
+- **Date:** 2026-08-20
+- **Status:** Active
+- **Decision:** Treat manual notebook execution as the primary development workflow. Bronze, Silver, and Gold install their own pinned Python dependencies with `%pip` and restart Python before imports. `databricks.yml` is optional automation, not a requirement for running the data layers.
+- **Rationale:** Job-level libraries are unavailable when a notebook is opened and run directly, which caused `ModuleNotFoundError: No module named 'lakehouse_engine'`. The current workspace also accepts only serverless compute, while the existing bundle declares a classic cluster.
+- **Consequences:** Run each notebook with **Run all** in setup → Bronze → Silver → Gold order. Package installation is repeated per notebook environment, but failures remain local and visible. The optional classic-cluster bundle must be converted before it can be deployed to a serverless-only workspace.
+
+## DD033 — Read the checked-in Bronze JSON from the notebook working directory
+
+- **Date:** 2026-08-20
+- **Status:** Active; refines DD027
+- **Decision:** Resolve repository files from the Databricks notebook current working directory. Read the single checked-in Bronze JSON with Python on the driver, then create the source Spark DataFrame explicitly. Keep Lakehouse Engine for Delta reads, Data Quality, and Delta writes.
+- **Rationale:** On current Databricks runtimes, the notebook working directory is its containing Git-folder directory. `__file__` is not the correct notebook path contract, and Spark executors cannot reliably read Git-folder workspace files through a local `file:` URI.
+- **Consequences:** Preserve the repository directory structure and run the notebooks from their Git folder. A missing JSON snapshot or parser module raises a direct `FileNotFoundError`; there is no alternate source fallback.

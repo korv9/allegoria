@@ -1,4 +1,12 @@
 # Databricks notebook source
+# MAGIC %pip install "lakehouse-engine[dq]==2.1.1" "beautifulsoup4==4.13.5"
+
+# COMMAND ----------
+
+dbutils.library.restartPython()
+
+# COMMAND ----------
+
 """Parse the Bronze LAS document into typed, source-traceable legal provisions."""
 
 import sys
@@ -15,7 +23,13 @@ from pyspark.sql.types import (
     StructType,
 )
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
+PROJECT_ROOT = Path.cwd().parents[2]
+PARSER_FILE = PROJECT_ROOT / "products/allegoria/source_parser.py"
+if not PARSER_FILE.is_file():
+    raise FileNotFoundError(
+        f"Allegoria parser not found at {PARSER_FILE}. Run this notebook from its "
+        "Databricks Git folder."
+    )
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 

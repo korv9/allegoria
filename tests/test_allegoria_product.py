@@ -49,11 +49,22 @@ def test_notebooks_are_small_valid_and_explain_their_change() -> None:
 
     for notebook in NOTEBOOKS[1:]:
         source = notebook.read_text(encoding="utf-8")
+        assert '# MAGIC %pip install "lakehouse-engine[dq]==2.1.1"' in source
+        assert "dbutils.library.restartPython()" in source
         assert "from pyspark.sql" in source
         assert "load_data" in source
         assert "print(" in source
         assert "rows" in source
         assert "output: Delta" in source
+
+    silver_source = NOTEBOOKS[2].read_text(encoding="utf-8")
+    assert '"beautifulsoup4==4.13.5"' in silver_source
+
+    bronze_source = NOTEBOOKS[1].read_text(encoding="utf-8")
+    assert "Path.cwd().parents[2]" in bronze_source
+    assert "json.loads(SOURCE_FILE.read_text" in bronze_source
+    assert "Path(__file__)" not in bronze_source
+    assert "Path(__file__)" not in silver_source
 
 
 def test_bundle_orders_setup_bronze_silver_gold() -> None:

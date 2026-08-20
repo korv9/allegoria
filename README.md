@@ -12,8 +12,10 @@ source-traceable LAS data foundation. There is no retrieval or model layer yet.
 The implementation follows the same pattern as
 [`korv9/portfolio-platform`](https://github.com/korv9/portfolio-platform): ordinary PySpark keeps
 the transformations visible, while
-[`adidas/lakehouse-engine`](https://github.com/adidas/lakehouse-engine) handles reads, declared
-data-quality checks, and Delta writes.
+[`adidas/lakehouse-engine`](https://github.com/adidas/lakehouse-engine) handles Delta reads,
+declared data-quality checks, and Delta writes. Bronze reads the one checked-in workspace JSON
+file on the driver before creating its source DataFrame because it is a Git-folder file rather
+than a distributed storage object.
 
 ```text
 LAS JSON snapshot
@@ -68,19 +70,30 @@ real model-generation events, which do not exist yet.
 
 ## Run in Databricks
 
-Run the notebooks individually in this order:
+The primary development workflow does not use `databricks.yml`. Open each notebook in a
+Databricks Git folder and choose **Run all** in this order:
 
 1. `products/allegoria/setup_allegoria/notebook.py`
 2. `products/allegoria/bronze_allegoria/notebook.py`
 3. `products/allegoria/silver_allegoria/notebook.py`
 4. `products/allegoria/gold_allegoria/notebook.py`
 
-Or deploy and run the Databricks Asset Bundle:
+Bronze, Silver, and Gold each install their own pinned Python dependencies in the first cell and
+restart Python before importing them. This makes every notebook independent of job-level
+libraries. Setup has no external Python dependency. The notebooks still depend on the preceding
+Delta table, so the execution order remains mandatory. Keep the repository layout unchanged:
+Bronze and Silver resolve the checked-in data and parser relative to their notebook directory.
 
-```powershell
-databricks bundle deploy -t dev
-databricks bundle run allegoria_medallion -t dev
-```
+`databricks.yml` is optional automation for a later job deployment; it is not needed for manual
+notebook runs. The current classic-cluster bundle is not compatible with a serverless-only
+workspace, so do not deploy it there yet.
+
+To run manually:
+
+1. Open `setup_allegoria/notebook.py` and select **Run all**.
+2. Wait for `SETUP | catalog: dev_lakehouse ...`.
+3. Repeat with Bronze, Silver, and Gold, waiting for each notebook's final summary before opening
+   the next one.
 
 The default catalog is `dev_lakehouse`. Override it through the bundle variable or the
 `ALLEGORIA_CATALOG` environment variable. Every transformation notebook ends with a short line

@@ -1,4 +1,12 @@
 # Databricks notebook source
+# MAGIC %pip install "lakehouse-engine[dq]==2.1.1"
+
+# COMMAND ----------
+
+dbutils.library.restartPython()
+
+# COMMAND ----------
+
 """Aggregate Silver provisions into a neutral, analytics-ready data profile."""
 
 from os import getenv
