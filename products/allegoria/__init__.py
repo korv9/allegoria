@@ -1,0 +1,1 @@
+"""Allegoria legal-data product."""

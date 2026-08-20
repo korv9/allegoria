@@ -5,18 +5,29 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "allegoria"
 version = "0.1.0"
-description = "An experiment in source-grounded meaning transformation and semantic drift."
+description = "A Databricks legal-data product for meaning transformation experiments."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "beautifulsoup4>=4.13,<5",
-    "pandas>=2.2,<4",
+    "beautifulsoup4==4.13.5",
+    "lakehouse-engine[dq]==2.1.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "lakehouse-engine[os]==2.1.1",
+    "pytest>=8.0",
+    "pyyaml>=6.0",
+    "ruff>=0.4",
 ]
 
 [tool.setuptools.packages.find]
-include = ["backend*"]
+include = ["products*"]
 
-[project.scripts]
-build-las-data = "backend.lakehouse.pipeline:main"
-evaluate-las-retrieval = "backend.retrieval.evaluation:main"
-search-las = "backend.retrieval.cli:main"
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+builtins = ["spark"]

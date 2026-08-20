@@ -1,310 +1,107 @@
 # Allegoria / Simulacria
 
-> **If we validate data as it moves through a pipeline, why don't we validate meaning as it moves through AI?**
+> **If we validate data as it moves through a pipeline, why don't we validate meaning as it
+> moves through AI?**
 
-Allegoria is an experimental legal RAG project exploring how meaning changes as information passes through generative AI. It combines data engineering, lakehouse patterns, retrieval-augmented generation, LLM evaluation, semantic drift, and AI reliability.
+This repository is a Databricks-first portfolio project about legal data, AI representation,
+semantic drift, and Meaning Quality. The current milestone is intentionally limited to a clear,
+source-traceable LAS data foundation. There is no retrieval or model layer yet.
 
-The project is built backend- and data-first. A frontend will be added only after the core experiment works, then integrated into [theazero/anton-portfolio](https://github.com/theazero/anton-portfolio).
+## Current pipeline
 
-## The experiment
-
-Allegoria and Simulacria examine two different forms of representation.
-
-### Allegoria: deliberate transformation
-
-```text
-Legal source
-    ↓
-Lakehouse
-    ↓
-Source-grounded RAG
-    ↓
-Grounded answer
-    ↓
-Allegory, metaphor, and symbols
-    ↓
-Meaning Quality
-```
-
-Allegoria deliberately transforms source-grounded information into another representation. The important result is not the story itself, but the analysis of what the transformation:
-
-- preserved
-- lost
-- amplified
-- introduced
-
-The original source must always remain traceable.
-
-### Simulacria: recursive distortion
+The implementation follows the same pattern as
+[`korv9/portfolio-platform`](https://github.com/korv9/portfolio-platform): ordinary PySpark keeps
+the transformations visible, while
+[`adidas/lakehouse-engine`](https://github.com/adidas/lakehouse-engine) handles reads, declared
+data-quality checks, and Delta writes.
 
 ```text
-SOURCE₀
-    ↓
-representation₁
-    ↓
-reconstruction₁ / SOURCE₁
-    ↓
-representation₂
-    ↓
-reconstruction₂ / SOURCE₂
-    ↓
-...
+LAS JSON snapshot
+      |
+      v
+Bronze: source-shaped legal document
+      |
+      v
+Silver: parsed and typed provisions
+      |
+      v
+Gold: neutral provision profile
 ```
 
-Each reconstruction becomes the source for the next generation. Every generation is also compared with `SOURCE₀` to measure cumulative drift.
+Unity Catalog objects in development:
 
-The transformation should remain neutral and reusable. It must not prompt toward predetermined outcomes such as kings, oppression, or hierarchy. The purpose is to observe which representational paths emerge naturally.
+| Layer | Managed Delta table | Rows after the verified run |
+| --- | --- | ---: |
+| Bronze | `dev_lakehouse.bronze_allegoria.las_documents` | 1 |
+| Silver | `dev_lakehouse.silver_allegoria.las_provisions` | 92 |
+| Gold | `dev_lakehouse.gold_allegoria.provision_summary` | 19 |
 
-## Meaning Quality
-
-Data Quality asks whether data survived a pipeline. Meaning Quality asks:
-
-> **Did the meaning survive the AI transformation?**
-
-Potential signals include:
-
-- semantic similarity and drift
-- factual retention
-- source grounding
-- entity and relation preservation
-- unsupported claims
-- introduced and lost concepts
-- amplification
-- framing drift
-
-Some signals can be measured relatively concretely. Interpretive dimensions such as framing must be presented clearly as model-based judgments rather than objective facts.
-
-Meaning Quality connects the project to hallucination detection, RAG evaluation, groundedness, factual consistency, and LLM evaluation.
-
-## Data and provenance
-
-The first domain is a small Swedish legal dataset, likely focused on employment law.
-
-The lakehouse schema will not be designed before the real source data has been inspected:
-
-```text
-Find source → Download sample → Inspect structure → Design transformations
-```
-
-The intended medallion flow is:
-
-```text
-SOURCE → BRONZE → SILVER → GOLD → RAG
-```
-
-- **Bronze:** raw and source-faithful
-- **Silver:** cleaned and structured
-- **Gold:** prepared for retrieval and AI use
-
-Exact schemas, columns, chunking, and transformation rules will be based on the actual data. Source provenance is mandatory throughout the pipeline.
-
-The current LAS pipeline is documented in [`docs/data-pipeline.md`](docs/data-pipeline.md). All durable choices about source handling, normalization, schemas, and chunking are recorded in [`DATA_DECISIONS.md`](DATA_DECISIONS.md).
-
-Build the committed data artifacts with:
-
-```powershell
-python -m backend.lakehouse.pipeline
-```
-
-The implementation uses explicit pandas DataFrames at every layer:
-
-```python
-bronze_df = build_bronze_df()
-silver_df = build_silver_df(bronze_df)
-gold_df = build_gold_df(bronze_df, silver_df)
-quality_df = build_quality_df(silver_df, gold_df)
-```
-
-Transformations use explicit SQL-like pandas operations: `merge(..., how="left")`
-for lineage joins, `groupby(..., as_index=False).agg(...)` for profiles, and a
-final column selection for every output contract.
-
-The local implementation stays on pandas. If the project later moves to a data
-platform, the target is Databricks with PySpark; Snowflake is not part of the
-architecture.
-
-## Retrieval baseline
-
-Search the verified Gold chunks locally with SQLite FTS5 and BM25:
-
-```powershell
-python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 5
-```
-
-Inspect the exact JSON contract that will later be sent to a model:
-
-```powershell
-python -m backend.retrieval.cli "sakliga skäl uppsägning" --top-k 3 --context-json
-```
-
-Evaluate the retriever against the labeled LAS questions:
-
-```powershell
-python -m backend.retrieval.evaluation
-```
-
-The 30-query baseline and its known lexical limitations are documented in
-[`docs/retrieval.md`](docs/retrieval.md). Retrieval returns legal content with
-its provision ID, official source URL, and canonical source hash. A versioned
-context-packet contract converts ranked results into prompt-ready, source-
-traceable input without generating an answer.
-
-The local foundation ends at this contract. Embeddings, vector and hybrid
-retrieval, model inference, and RAG evaluation are intentionally deferred to
-Databricks. The migration inputs and acceptance checks are documented in
-[`docs/databricks-handoff.md`](docs/databricks-handoff.md).
-
-## Meaning Lineage
-
-Meaning Lineage may later track how concepts emerge across generations:
-
-```text
-employer [SOURCE]
-    ↓
-authority
-    ↓
-hierarchy
-    ↓
-ruler
-    ↓
-king [GENERATED]
-    ↓
-kingdom [EMERGENT]
-```
-
-The first implementation should remain simple, for example:
-
-```text
-concept
-generation
-parent_concept
-source_supported
-```
-
-A graph platform will only be considered if experimental results justify it.
-
-## Development principles
-
-The implementation should be small, explicit, and boring in a good way.
-
-Prefer:
-
-- clear names and direct data flow
-- small functions with explicit inputs and outputs
-- few modules and dependencies
-- standard Python and direct SDK usage
-- lightweight data models where contracts genuinely matter
-- comments that explain why, not what
-
-Avoid:
-
-- premature abstractions and design patterns
-- unnecessary managers, services, factories, and wrappers
-- generic helper modules
-- excessive validation of impossible states
-- large configuration systems
-- microservices
-- orchestration frameworks that add more complexity than they remove
-
-The intended style is straightforward:
-
-```python
-source = load_source(path)
-chunks = chunk_text(source)
-answer = generate_answer(question, chunks)
-allegory = generate_allegory(answer)
-quality = evaluate_meaning(source, allegory)
-```
-
-Classes are appropriate only when state and behavior meaningfully belong together. Pydantic models or dataclasses are useful for structured boundaries, but not every intermediate value needs its own model.
-
-## Simulacria MVP
-
-The first recursive experiment should remain transparent:
-
-```python
-original = source
-current = source
-
-for generation in range(generations):
-    representation = transform(current)
-    reconstruction = reconstruct(representation)
-
-    quality = evaluate_meaning(original, reconstruction)
-    save_generation(
-        generation,
-        representation,
-        reconstruction,
-        quality,
-    )
-
-    current = reconstruction
-```
-
-Each reconstruction is measured against the original source, not only against the previous generation.
-
-## Build order
-
-1. Find a legal source.
-2. Download and inspect a representative sample.
-3. Design the lakehouse from the actual data.
-4. Build ingestion and Bronze → Silver → Gold transformations.
-5. Add basic Data Quality checks.
-6. Build a simple source-grounded RAG pipeline.
-7. Add the Allegoria transformation.
-8. Build a Meaning Quality MVP.
-9. Test the Simulacria loop in a notebook.
-10. Add Meaning Lineage if the results justify it.
-11. Expose a small FastAPI API.
-12. Integrate the frontend into the portfolio last.
-
-The first meaningful milestone is:
-
-```text
-Legal source
-    ↓
-Lakehouse
-    ↓
-RAG answer
-    ↓
-Allegory
-    ↓
-Meaning Quality report
-```
+The exact Riksdagen XML response remains the canonical source and is pinned by SHA-256. The
+checked-in Bronze JSON is an inspectable document representation with the decoded source text,
+HTML, metadata, and provenance. Silver is Delta, and every Silver row retains the source hash and
+official URL. Gold is descriptive rather than RAG-specific so retrieval design remains an
+explicit next decision.
 
 ## Repository structure
 
-The repository will grow with the implementation rather than being filled with placeholders. Its likely shape is:
-
 ```text
-allegoria/
-├── backend/
-│   ├── ingestion/
-│   ├── lakehouse/
-│   ├── rag/
-│   ├── meaning_quality/
-│   ├── simulacria/
-│   └── api/
-├── data/
-├── notebooks/
-├── tests/
-├── docs/
-├── frontend/
-│   └── README.md
-├── .env.example
-├── .gitignore
-├── pyproject.toml
-└── README.md
+products/
+|-- allegoria/
+|   |-- setup_allegoria/notebook.py
+|   |-- bronze_allegoria/notebook.py
+|   |-- silver_allegoria/notebook.py
+|   |-- gold_allegoria/notebook.py
+|   |-- source_parser.py
+|   `-- README.md
+`-- simulacria/
+    `-- README.md
+data/
+|-- source/las/                 exact XML + provenance
+`-- bronze/las/                 checked-in JSON snapshot
+tests/test_allegoria_product.py
+databricks.yml
+DATA_DECISIONS.md
 ```
 
-Directories and modules should be created only when working code or data gives them a real responsibility.
+Simulacria is a named product boundary but has no invented pipeline. Its own Bronze data will be
+real model-generation events, which do not exist yet.
 
-## Positioning
+## Run in Databricks
 
-Allegoria is not simply “AI that turns laws into stories.”
+Run the notebooks individually in this order:
 
-> **It is an experimental legal RAG system for examining how source-grounded meaning changes through generative transformation, with a Meaning Quality layer that tracks factual and semantic distortion.**
+1. `products/allegoria/setup_allegoria/notebook.py`
+2. `products/allegoria/bronze_allegoria/notebook.py`
+3. `products/allegoria/silver_allegoria/notebook.py`
+4. `products/allegoria/gold_allegoria/notebook.py`
 
-Simulacria extends the experiment by recursively turning generated representations into new sources and measuring how meaning drifts across generations.
+Or deploy and run the Databricks Asset Bundle:
 
-> **Data lineage tracks where data came from. Meaning lineage tracks where meaning came from.**
+```powershell
+databricks bundle deploy -t dev
+databricks bundle run allegoria_medallion -t dev
+```
+
+The default catalog is `dev_lakehouse`. Override it through the bundle variable or the
+`ALLEGORIA_CATALOG` environment variable. Every transformation notebook ends with a short line
+showing input rows, output rows, the main change, and the storage format. Small previews can be
+disabled with `ALLEGORIA_PREVIEW=false`.
+
+The Databricks identity needs permission to create/use the catalog and schemas and to create,
+modify, and select the managed tables.
+
+## Local checks
+
+Lakehouse Engine 2.1.1 targets Python 3.12. Full Spark-backed execution belongs in Databricks;
+the local tests verify the source hash, LAS parsing contract, notebook syntax, structure, bundle
+task order, and file-size limits.
+
+```powershell
+python -m pip install -e ".[dev]"
+python -m ruff check .
+python -m pytest -q
+```
+
+All durable source, schema, transformation, and storage choices are logged in
+[`DATA_DECISIONS.md`](DATA_DECISIONS.md). The layer-by-layer columns are documented in
+[`docs/data-pipeline.md`](docs/data-pipeline.md).

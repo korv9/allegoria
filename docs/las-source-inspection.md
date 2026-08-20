@@ -37,6 +37,10 @@ The full response is 146,007 bytes. The extracted `text` field contains 57,372 c
 
 ## Current boundary
 
-The project currently preserves and loads the source only. No Bronze, Silver, Gold, chunk, or retrieval schema has been introduced yet.
+The source inspection now supports the Databricks medallion flow documented in
+[`data-pipeline.md`](data-pipeline.md). The observed HTML anchors and headings produce 70
+paragraph records and 22 transitional-provision records in Silver. Gold contains 19 neutral
+heading/type profile rows.
 
-The next design step is to inspect paragraph boundaries, headings, amendment annotations, and references in the exact source text. Those observations will determine the first Bronze representation.
+No chunk, retrieval, embedding, or model schema is active. Those contracts remain a separate
+decision after the Databricks data layers have been run and reviewed.

@@ -211,3 +211,43 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Decision:** Use 30 curated, project-authored positive LAS questions split into `legal_terms` and `natural_language`. Validate that every relevance label resolves to a Gold `provision_id`, and report metrics both overall and by query type.
 - **Rationale:** Seven questions cannot characterize retrieval behavior. The expanded set covers major LAS topics and retains natural-language paraphrases that expose BM25's semantic limitations.
 - **Consequences:** At top three, the frozen local baseline scores Hit@3 `0.8667` and MRR `0.7667`; legal terms score `1.0000` Hit@3 and natural language `0.7500`. The four misses remain comparison cases for Databricks vector and hybrid retrieval. Questions without a relevant LAS provision are deferred to later answer/abstention evaluation rather than being mixed into positive retrieval metrics.
+
+## DD027 — Make Databricks/PySpark the active data implementation
+
+- **Date:** 2026-08-20
+- **Status:** Active; supersedes DD014, DD016, and DD019 for the active pipeline
+- **Decision:** Structure the repository as Databricks data products. Use ordinary PySpark for visible transformations and adidas Lakehouse Engine 2.1.1 for reads, declared Data Quality checks, and managed Delta writes.
+- **Rationale:** The owner wants the project to match the proven `portfolio-platform` pattern and their normal Databricks working model instead of maintaining a temporary pandas implementation.
+- **Consequences:** The local pandas lakehouse and SQLite retrieval code are removed. Lakehouse Engine is pinned because its ACON contract can change between releases. Spark execution is verified in Databricks; local tests cover source parsing and repository contracts.
+
+## DD028 — Store Allegoria layers in product-specific Unity Catalog schemas
+
+- **Date:** 2026-08-20
+- **Status:** Active; supersedes the derived-file storage in DD003, DD004, and DD008
+- **Decision:** Use catalog `dev_lakehouse` by default with managed Delta tables `bronze_allegoria.las_documents`, `silver_allegoria.las_provisions`, and `gold_allegoria.provision_summary`. Retain the checked-in Bronze JSON as the transparent notebook input and the exact XML as the canonical byte authority.
+- **Rationale:** Product-specific schemas follow the existing portfolio-platform convention and keep layer plus ownership visible in every three-part table name.
+- **Consequences:** Bronze is source-shaped but queryable as Delta after ingestion. Silver and Gold are also Delta. Production uses `prod_lakehouse` through the bundle target rather than changing notebook code.
+
+## DD029 — Keep Gold neutral until retrieval design is approved
+
+- **Date:** 2026-08-20
+- **Status:** Active; supersedes DD011, DD012, and DD022–DD026 for the current implementation
+- **Decision:** Gold groups Silver provisions by document, provision kind, and heading and records provision and text-length statistics. Do not create chunks, embeddings, indexes, retrieval evaluation, or RAG contracts in this phase.
+- **Rationale:** The owner wants to inspect and understand the completed data layers before choosing how RAG should consume the legal data.
+- **Consequences:** The 92 source-traceable Silver provisions remain the likely future retrieval input. Any chunk table requires a new documented decision after Silver and Gold have been run and reviewed.
+
+## DD030 — Do not duplicate LAS into an empty Simulacria pipeline
+
+- **Date:** 2026-08-20
+- **Status:** Active
+- **Decision:** Place both Allegoria and Simulacria under `products`, but create executable medallion notebooks only for Allegoria now. Simulacria remains a documented product boundary until real generation and reconstruction events exist.
+- **Rationale:** Simulacria's source data is future model output, not another copy of LAS. Creating its schemas now would invent contracts before inspecting real source data.
+- **Consequences:** No Simulacria Unity Catalog objects or Databricks tasks exist in this phase.
+
+## DD031 — Print one bounded transformation summary per notebook
+
+- **Date:** 2026-08-20
+- **Status:** Active
+- **Decision:** After every Bronze, Silver, and Gold write, print input rows, output rows, the main transformation, and the output format in one line. Optional previews show only selected columns and a small row limit.
+- **Rationale:** The owner needs to see how each dataset changed without receiving full legal payloads or overwhelming Spark output.
+- **Consequences:** The short summary always runs. Set `ALLEGORIA_PREVIEW=false` to hide the additional bounded `.show()` output.

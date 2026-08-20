@@ -1,0 +1,73 @@
+bundle:
+  name: allegoria
+
+variables:
+  catalog:
+    description: Unity Catalog used by the Allegoria medallion tables.
+    default: dev_lakehouse
+  node_type:
+    description: Worker and driver node type.
+    default: i3.xlarge
+
+resources:
+  jobs:
+    allegoria_medallion:
+      name: "[${bundle.target}] allegoria_medallion"
+      tasks:
+        - task_key: setup
+          notebook_task:
+            notebook_path: ./products/allegoria/setup_allegoria/notebook.py
+          job_cluster_key: shared
+
+        - task_key: bronze
+          depends_on:
+            - task_key: setup
+          notebook_task:
+            notebook_path: ./products/allegoria/bronze_allegoria/notebook.py
+          job_cluster_key: shared
+          libraries:
+            - pypi:
+                package: "lakehouse-engine[dq]==2.1.1"
+
+        - task_key: silver
+          depends_on:
+            - task_key: bronze
+          notebook_task:
+            notebook_path: ./products/allegoria/silver_allegoria/notebook.py
+          job_cluster_key: shared
+          libraries:
+            - pypi:
+                package: "lakehouse-engine[dq]==2.1.1"
+            - pypi:
+                package: "beautifulsoup4==4.13.5"
+
+        - task_key: gold
+          depends_on:
+            - task_key: silver
+          notebook_task:
+            notebook_path: ./products/allegoria/gold_allegoria/notebook.py
+          job_cluster_key: shared
+          libraries:
+            - pypi:
+                package: "lakehouse-engine[dq]==2.1.1"
+
+      job_clusters:
+        - job_cluster_key: shared
+          new_cluster:
+            spark_version: 17.3.x-scala2.13
+            node_type_id: ${var.node_type}
+            driver_node_type_id: ${var.node_type}
+            num_workers: 1
+            data_security_mode: SINGLE_USER
+            spark_env_vars:
+              ALLEGORIA_CATALOG: ${var.catalog}
+              ALLEGORIA_DQ_ROOT: /local_disk0/allegoria/dq
+
+targets:
+  dev:
+    default: true
+    mode: development
+  prod:
+    mode: production
+    variables:
+      catalog: prod_lakehouse

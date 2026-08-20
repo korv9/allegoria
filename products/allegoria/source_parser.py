@@ -2,11 +2,10 @@ from __future__ import annotations
 
 import re
 
-import pandas as pd
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 
-def parse_las_html(html: str, document_id: str) -> pd.DataFrame:
+def parse_las_html(html: str, document_id: str) -> list[dict[str, object]]:
     soup = BeautifulSoup(html, "html.parser")
     anchors = soup.select("a.paragraf[name]")
 
@@ -18,13 +17,10 @@ def parse_las_html(html: str, document_id: str) -> pd.DataFrame:
         for order, anchor in enumerate(anchors, start=1)
     ]
     records.extend(_transitional_records(soup, document_id, len(records) + 1))
+    return records
 
-    return pd.DataFrame(records)
 
-
-def _paragraph_record(
-    anchor: Tag, document_id: str, order: int
-) -> dict[str, object]:
+def _paragraph_record(anchor: Tag, document_id: str, order: int) -> dict[str, object]:
     source_anchor = str(anchor["name"])
     nodes = _provision_nodes(anchor)
     heading = anchor.find_previous("h4")
@@ -55,8 +51,7 @@ def _transitional_records(
         raise ValueError("LAS HTML contains no transitional-provisions heading")
 
     text = _normalize_text(list(heading.next_siblings))
-    marker_pattern = re.compile(r"(?m)^(?P<sfs>\d{4}:\d+)$")
-    markers = list(marker_pattern.finditer(text))
+    markers = list(re.finditer(r"(?m)^(?P<sfs>\d{4}:\d+)$", text))
     if not markers:
         raise ValueError("LAS transitional provisions contain no SFS markers")
 
@@ -78,7 +73,6 @@ def _transitional_records(
                 "amendment_notes": [],
             }
         )
-
     return records
 
 
