@@ -1,6 +1,6 @@
 # LAS source inspection
 
-Inspected on 2026-08-19 from Riksdagen's official open-data endpoint:
+LAS was first inspected on 2026-08-19 from Riksdagen's official open-data endpoint:
 
 ```text
 https://data.riksdagen.se/dokument/sfs-1982-80
@@ -8,19 +8,27 @@ https://data.riksdagen.se/dokument/sfs-1982-80
 
 ## Canonical source
 
-`data/source/las/sfs-1982-80.xml` is the unmodified HTTP response. It is the canonical local copy of LAS and must not be formatted, normalized, or edited manually.
+LAS now lives in the shared SFS corpus:
 
-The exact response is pinned with SHA-256:
+```text
+data/source/sfs/sfs-1982-80.xml
+data/bronze/sfs/sfs-1982-80.json
+```
+
+The XML file is the unmodified HTTP response and is pinned with SHA-256:
 
 ```text
 a310dbc84411b7a7cfa7fc29bd0f52306e2b4358407ac84f74363a8aa5db2f9b
 ```
 
-`data/source/las/provenance.json` records where and when this copy was retrieved.
+`data/source/sfs/manifest.json` records the source URL, retrieval batch, file name, and hash. The
+Bronze JSON retains the same payload losslessly in `raw_xml` together with decoded metadata,
+plain text, and source HTML.
 
 ## Observed structure
 
-The response root is `dokumentstatus`, containing one `dokument` element. The fields currently needed are:
+The response root is `dokumentstatus`, containing one `dokument` element. Fields used by the
+pipeline include:
 
 | Field | Observed value or role |
 | --- | --- |
@@ -28,19 +36,10 @@ The response root is `dokumentstatus`, containing one `dokument` element. The fi
 | `titel` | `Lag (1982:80) om anställningsskydd` |
 | `subtitel` | Source version: `t.o.m. SFS 2022:836` |
 | `datum` | Original issue date |
-| `publicerad` | Publication timestamp for this source representation |
-| `text` | Plain legal text, including source line breaks |
+| `publicerad` | Publication timestamp for this representation |
+| `text` | Plain legal text with source line breaks |
 | `html` | HTML representation supplied by Riksdagen |
-| `avdelningar` | Additional document structure supplied by Riksdagen |
+| `avdelningar` | Additional source structure |
 
-The full response is 146,007 bytes. The extracted `text` field contains 57,372 characters when parsed by Python's standard XML parser.
-
-## Current boundary
-
-The source inspection now supports the Databricks medallion flow documented in
-[`data-pipeline.md`](data-pipeline.md). The observed HTML anchors and headings produce 70
-paragraph records and 22 transitional-provision records in Silver. Gold contains 19 neutral
-heading/type profile rows.
-
-No chunk, retrieval, embedding, or model schema is active. Those contracts remain a separate
-decision after the Databricks data layers have been run and reviewed.
+The current response is 146,007 bytes and parses into 70 paragraph records plus 22 transition
+records. LAS is now one regression case among 50 laws rather than a separate data pipeline.

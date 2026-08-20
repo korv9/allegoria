@@ -1,87 +1,94 @@
-# Allegoria medallion pipeline
+# Allegoria SFS medallion pipeline
 
-## Source and storage flow
+## Source and ingestion
+
+`products/allegoria/sfs_ingestion.py` resolves a 50-law manifest through Riksdagen's document
+list, fetches every full SFS response, and validates the entire batch before writing.
 
 ```text
-Canonical XML (byte-pinned, never transformed in place)
-    |
-    `-- decoded and recorded in checked-in Bronze JSON
-            |
-            v
-        Bronze managed Delta table
-            |
-            v
-        Silver managed Delta table
-            |
-            v
-        Gold managed Delta table
+Riksdagen document list
+        |
+        `-- 6 domain seeds + 44 recent laws
+                |
+                v
+data/source/sfs/*.xml       exact response bytes
+data/source/sfs/manifest.json
+                |
+                v
+data/bronze/sfs/*.json      full source-shaped payload
 ```
 
-Lakehouse Engine performs Delta reads, Data Quality, and write boundaries. The Bronze workspace
-JSON is the one exception: Python reads the single Git-folder file on the driver and immediately
-creates a Spark DataFrame. The code between boundaries is explicit PySpark and uses named
-DataFrames.
+Source XML is the byte authority. Bronze JSON includes the same XML as lossless UTF-8 in
+`raw_xml`, plus decoded source fields. Tests verify that `raw_xml.encode("utf-8")` reconstructs
+the source file and that both match the manifest SHA-256.
 
 ## Bronze
 
-Table: `dev_lakehouse.bronze_allegoria.las_documents`
+Notebook: `products/allegoria/bronze/bronze_sfs.py`
 
-One row represents the complete LAS snapshot. Text values remain source-shaped; the layer adds
-only ingestion metadata.
+Table: `dev_lakehouse.bronze_allegoria.sfs_documents`
+
+One row is one current law snapshot. The notebook reads all `data/bronze/sfs/*.json` files on the
+driver, creates one Spark DataFrame, performs an explicit column select, and writes one managed
+Delta table.
 
 | Column group | Columns | Handling |
 | --- | --- | --- |
-| Identity | `document_id`, `title`, `version` | cast to string |
-| Source time | `issued_at`, `published_at`, `retrieved_at` | retained as strings; timezone semantics differ |
-| Provenance | `source_page_url`, `source_data_url`, `source_sha256` | retained and hash-checked |
-| Legal payload | `text`, `html` | retained without legal rewriting |
+| Identity | `document_snapshot_id`, `document_id`, `designation` | retained as strings |
+| Source metadata | `title`, `version`, `department`, `source_type`, `source_subtype` | `version` may be null when the API has no subtitle |
+| Source time | `issued_at`, `published_at`, `retrieved_at` | retained as source strings |
+| Provenance | `source_page_url`, `source_data_url`, `source_raw_file`, `source_sha256` | retained; hash checked locally |
+| Full payload | `payload_size_bytes`, `text`, `html`, `raw_xml` | retained without legal rewriting |
 | Ingestion | `source_file`, `ingested_at` | added by Bronze |
 
-The notebook fails unless the source contains exactly one document and the hash matches the
-canonical XML snapshot.
+Bronze fails unless exactly 50 JSON files exist, file names match `document_id`, IDs are unique,
+and all snapshot IDs pass declared Data Quality.
 
 ## Silver
 
-Table: `dev_lakehouse.silver_allegoria.las_provisions`
+Notebook: `products/allegoria/silver/silver_sfs.py`
 
-Silver parses the actual Riksdagen HTML structure into 70 paragraph provisions and 22 separately
-identified transitional provisions. It uses an explicit left join from parsed provisions to the
-Bronze document metadata.
+Table: `dev_lakehouse.silver_allegoria.sfs_provisions`
+
+Silver parses all 50 HTML payloads and joins each provision back to its Bronze parent.
 
 | Column group | Columns | Handling |
 | --- | --- | --- |
-| Identity | `provision_id`, `document_id`, `kind`, `order` | deterministic ID; integer order |
-| Source structure | `source_anchor`, `label`, `heading` | derived from HTML anchors/headings |
-| Legal payload | `text`, `subsection_anchors`, `amendment_notes` | normalized presentation whitespace only |
+| Identity | `provision_id`, `document_snapshot_id`, `document_id`, `kind`, `order` | deterministic and typed |
+| Source hierarchy | `source_anchor`, `source_anchor_occurrence`, `label`, `chapter`, `heading` | read from HTML structure |
+| Legal payload | `text`, `subsection_anchors`, `amendment_notes` | presentation whitespace normalized only |
 | Document context | `document_title`, `document_version` | left-joined from Bronze |
-| Provenance | `source_url`, `source_page_url`, `source_sha256` | left-joined from Bronze |
+| Provenance | `source_url`, `source_page_url`, `source_sha256` | retained from Bronze |
 | Processing | `bronze_ingested_at`, `silver_transformed_at` | retained/added timestamps |
 
-The notebook fails on unmatched lineage, duplicate provision IDs, missing IDs, or any row count
-other than the verified 92.
+The source reuses 45 paragraph anchors across the current corpus. These can represent future
+effective wording or source-anchor collisions. Silver retains every occurrence and adds an
+occurrence suffix to the derived provision ID; it never drops duplicate anchors. A missing
+transitional-provisions section is valid, while an existing but unparseable section fails.
+
+The checked-in corpus currently produces 1,952 unique provisions, including 76 transition
+blocks. Silver verifies complete document coverage, unique provision IDs, and complete Bronze
+lineage before writing.
 
 ## Gold
 
-Table: `dev_lakehouse.gold_allegoria.provision_summary`
+Notebook: `products/allegoria/gold/gold_sfs.py`
 
-Gold does not chunk legal text. It adds `text_char_count`, groups Silver by document, provision
-kind, and heading into 19 summary rows, and calculates:
+Table: `dev_lakehouse.gold_allegoria.sfs_provision_summary`
 
-- `provision_count`
-- `first_order` and `last_order`
-- `min_text_chars`, `average_text_chars`, and `max_text_chars`
-- `refreshed_at`
+Gold adds `text_char_count` and groups provisions by document, provision kind, chapter, and
+heading. It calculates provision count, order bounds, text-length bounds, average text length,
+and refresh time. The checked-in corpus produces 1,001 groups.
 
-The source page URL and SHA-256 remain in each group. A reconciliation check verifies that the
-sum of Gold `provision_count` equals the distinct Silver provision count.
+Gold reconciles the sum of group counts to the distinct Silver provision count. It does not
+chunk, summarize, embed, rank, or alter legal text.
 
 ## Notebook output
 
-Each transformation notebook always prints one compact line:
+Every transformation notebook prints one bounded summary, for example:
 
 ```text
-SILVER | rows 1 document -> 92 provisions | changed: ... | output: Delta
+SILVER | rows 50 laws -> 1952 provisions | changed: ... | output: Delta
 ```
 
-When preview is enabled, it also shows a limited selection of columns and at most 3–10 rows.
-This is intended to make the change visible without dumping legal text or full schemas.
+Optional previews show selected identifiers and metadata, never the full raw legal payload.

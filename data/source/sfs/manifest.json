@@ -1,0 +1,419 @@
+{
+  "dataset_id": "swedish-law-50",
+  "retrieved_at": "2026-08-20T16:16:17+00:00",
+  "source": "Sveriges riksdag open data",
+  "selection": {
+    "target_count": 50,
+    "seed_document_ids": [
+      "sfs-1982-80",
+      "sfs-1976-580",
+      "sfs-1977-480",
+      "sfs-1982-673",
+      "sfs-1995-584",
+      "sfs-2008-567"
+    ],
+    "fill": "newest SFS titles containing 'lag (' or 'balk ('; regulations excluded"
+  },
+  "documents": [
+    {
+      "document_id": "sfs-1982-80",
+      "title": "Lag (1982:80) om anställningsskydd",
+      "version": "t.o.m. SFS 2022:836",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-1982-80",
+      "raw_file": "sfs-1982-80.xml",
+      "raw_sha256": "a310dbc84411b7a7cfa7fc29bd0f52306e2b4358407ac84f74363a8aa5db2f9b"
+    },
+    {
+      "document_id": "sfs-1976-580",
+      "title": "Lag (1976:580) om medbestämmande i arbetslivet",
+      "version": "t.o.m. SFS 2026:886",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-1976-580",
+      "raw_file": "sfs-1976-580.xml",
+      "raw_sha256": "4bbf3ba3eb8f659f4685e72d0d9ca1e291fa0e7426764568b91cbe5b023ac006"
+    },
+    {
+      "document_id": "sfs-1977-480",
+      "title": "Semesterlag (1977:480)",
+      "version": "t.o.m. SFS 2014:424",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-1977-480",
+      "raw_file": "sfs-1977-480.xml",
+      "raw_sha256": "31a84f6a1715f4025a9552fecc2101622566a4ba8889608c83a75912e67a52da"
+    },
+    {
+      "document_id": "sfs-1982-673",
+      "title": "Arbetstidslag (1982:673)",
+      "version": "t.o.m. SFS 2022:450",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-1982-673",
+      "raw_file": "sfs-1982-673.xml",
+      "raw_sha256": "38f7d5b05f2d857bdc13e7626f297148e116464c21b00369041b4840239a7536"
+    },
+    {
+      "document_id": "sfs-1995-584",
+      "title": "Föräldraledighetslag (1995:584)",
+      "version": "t.o.m. SFS 2025:733",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-1995-584",
+      "raw_file": "sfs-1995-584.xml",
+      "raw_sha256": "fb5ea57779a038e378877d5831a0887c67604a38a2b946a9f7f30db1254f39a2"
+    },
+    {
+      "document_id": "sfs-2008-567",
+      "title": "Diskrimineringslag (2008:567)",
+      "version": "t.o.m. SFS 2025:736",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2008-567",
+      "raw_file": "sfs-2008-567.xml",
+      "raw_sha256": "a788291656cc790fb08fd321e3a4e2eea137681f872717cb4a9946f3bc4691db"
+    },
+    {
+      "document_id": "sfs-2026-1460",
+      "title": "Lag (2026:1460) med bestämmelser om arbetsmarknadsorganisationers bidrag för partipolitiska ändamål",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1460",
+      "raw_file": "sfs-2026-1460.xml",
+      "raw_sha256": "d5c180c18131424144ba0b94b8498a73c867f63a4d3ae21d9290caeef3f88bc3"
+    },
+    {
+      "document_id": "sfs-2026-1459",
+      "title": "Lag (2026:1459) om insyn i kommunikation med syfte att påverka politiska beslut",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1459",
+      "raw_file": "sfs-2026-1459.xml",
+      "raw_sha256": "01bf0a04e0f2100e4b4b51aafeb834b75e619013ba1cef18bc27e9ed26b30477"
+    },
+    {
+      "document_id": "sfs-2026-1379",
+      "title": "Lag (2026:1379) om interoperabilitetskrav för datadelning inom den offentliga förvaltningen",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1379",
+      "raw_file": "sfs-2026-1379.xml",
+      "raw_sha256": "b7182b3584e7eaf7f9467de290591ae85e30d0ff4d4ddb90bd23d05a0e0138c4"
+    },
+    {
+      "document_id": "sfs-2026-1358",
+      "title": "Lag (2026:1358) om statlig e-legitimation och elektronisk identifiering",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1358",
+      "raw_file": "sfs-2026-1358.xml",
+      "raw_sha256": "d07a8e4b722a19784336ccdcab8bf1a575804de5af7a4a72497c14382e03425d"
+    },
+    {
+      "document_id": "sfs-2026-1326",
+      "title": "Lag (2026:1326) om bosättning för vissa nyanlända invandrare",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1326",
+      "raw_file": "sfs-2026-1326.xml",
+      "raw_sha256": "759a149eca5f99a6b352ce0468fb2bd9628fa2e2eb0dbc0cafb5e90115b1221d"
+    },
+    {
+      "document_id": "sfs-2026-1306",
+      "title": "Lag (2026:1306) om samordnad vård- och stödverksamhet",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1306",
+      "raw_file": "sfs-2026-1306.xml",
+      "raw_sha256": "7ca5b52a216a5dc200ba8cfcddb66b94bd14becd7bdb9290e00951005f7df6d0"
+    },
+    {
+      "document_id": "sfs-2026-1283",
+      "title": "Lag (2026:1283) om elektriska ledningar",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1283",
+      "raw_file": "sfs-2026-1283.xml",
+      "raw_sha256": "320d1cdaf375d244c4fbeb79d61171723d5aa7ab367de3e39550726e5e543447"
+    },
+    {
+      "document_id": "sfs-2026-1282",
+      "title": "Lag (2026:1282) om införande av elmarknadslagen (2026:1281)",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1282",
+      "raw_file": "sfs-2026-1282.xml",
+      "raw_sha256": "ed9ce989a3922dbcaf12609df42fd5b88a1636b61cd50a5d5a9b41af5ee5fa6a"
+    },
+    {
+      "document_id": "sfs-2026-1281",
+      "title": "Elmarknadslag (2026:1281)",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1281",
+      "raw_file": "sfs-2026-1281.xml",
+      "raw_sha256": "b961efcb31d1fdbac18c36ca29b4459a532eb430348a92c7a5c1e1086c0fef63"
+    },
+    {
+      "document_id": "sfs-2026-1274",
+      "title": "Lag (2026:1274) om åtgärder mot manipulation och missbruk av färdskrivare",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1274",
+      "raw_file": "sfs-2026-1274.xml",
+      "raw_sha256": "61721258366aa8ec14f55cee5dc2b300789fef3a7aa7cccca722e3429c27f622"
+    },
+    {
+      "document_id": "sfs-2026-1255",
+      "title": "Lag (2026:1255) om kommunal hamnverksamhet",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1255",
+      "raw_file": "sfs-2026-1255.xml",
+      "raw_sha256": "94456a0d87849f93fb37e7ad5f56f5274c27da5393eb560f76ea1023e6777b8f"
+    },
+    {
+      "document_id": "sfs-2026-1235",
+      "title": "Lag (2026:1235) om avlägsnande av rekryteringsinnehåll online",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1235",
+      "raw_file": "sfs-2026-1235.xml",
+      "raw_sha256": "5cfec21912c2ff325fdd8f7a34c732098eac3c4b564f84bbeb6f9bb33f147aeb"
+    },
+    {
+      "document_id": "sfs-2026-1201",
+      "title": "Lag (2026:1201) om Försvarets radioanstalts behandling av personuppgifter inom det nationella cybersäkerhetscentret",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1201",
+      "raw_file": "sfs-2026-1201.xml",
+      "raw_sha256": "527d8bdba96a933eb7fdc8dac57b71e16085c353b9dd2ed263bbbffa9cb39a3a"
+    },
+    {
+      "document_id": "sfs-2026-1200",
+      "title": "Lag (2026:1200) om uppgiftsskyldighet vid samverkan inom det nationella cybersäkerhetscentret",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1200",
+      "raw_file": "sfs-2026-1200.xml",
+      "raw_sha256": "b9d64e5d66c7c047053b8b753b6eb9d6320431095b71ce2d43b9e25498897ac4"
+    },
+    {
+      "document_id": "sfs-2026-1113",
+      "title": "Lag (2026:1113) om intäktsdelning från vindkraftsanläggningar",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1113",
+      "raw_file": "sfs-2026-1113.xml",
+      "raw_sha256": "08b5032ac327cda7576f29453b6dfb6f4b9e0e4a81f7819904a9ffb1820e5b5d"
+    },
+    {
+      "document_id": "sfs-2026-1054",
+      "title": "Lag (2026:1054) om karens för vissa befattningshavare i Finansinspektionen vid övergång till annan verksamhet",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1054",
+      "raw_file": "sfs-2026-1054.xml",
+      "raw_sha256": "3487e03adbfd220de928c73d4a08371a8b2915b7de4388b29ac9d4983198a2e2"
+    },
+    {
+      "document_id": "sfs-2026-1011",
+      "title": "Konsumentkreditlag (2026:1011)",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-1011",
+      "raw_file": "sfs-2026-1011.xml",
+      "raw_sha256": "fee110a5043ee5bf08b970090ea67909a3ee1e3407172b24ef9b9a1b160852b7"
+    },
+    {
+      "document_id": "sfs-2026-999",
+      "title": "Mottagandelag (2026:999)",
+      "version": "t.o.m. SFS 2026:1329",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-999",
+      "raw_file": "sfs-2026-999.xml",
+      "raw_sha256": "1bb18c9a179367d2c4ce7f60e162c6c057e50d1fc3a5cbeb75051860194556d0"
+    },
+    {
+      "document_id": "sfs-2026-984",
+      "title": "Lag (2026:984) om arbetsmiljölagens tillämplighet för arbetstagare inom Kriminalvården vid tjänstgöring i en kriminalvårdsanstalt utomlands",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-984",
+      "raw_file": "sfs-2026-984.xml",
+      "raw_sha256": "447c29f8843b61f9b4e5510417694603a444ac7605bd1a5a42a037f93735b595"
+    },
+    {
+      "document_id": "sfs-2026-983",
+      "title": "Lag (2026:983) om tillfällig verkställighet av svenska fängelsestraff utomlands",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-983",
+      "raw_file": "sfs-2026-983.xml",
+      "raw_sha256": "ad3b94ec18e7c92600e4d754246ec1996000fd40ea5cc1184435c7b5a4604626"
+    },
+    {
+      "document_id": "sfs-2026-966",
+      "title": "Lag (2026:966) om utsedda verksamhetsställen och rättsliga ombud för inhämtning av elektroniska bevis",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-966",
+      "raw_file": "sfs-2026-966.xml",
+      "raw_sha256": "636578bf34a12b33156f1a0b1afa6055e46a2b1dc12c5fcc602e03ab1af71de4"
+    },
+    {
+      "document_id": "sfs-2026-956",
+      "title": "Lag (2026:956) om signalspaning i försvarsunderrättelseverksamhet i krig eller krigsfara",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-956",
+      "raw_file": "sfs-2026-956.xml",
+      "raw_sha256": "85acbf1e4ad601091ebd99667a6291487b11427c5063b3dbf88c709cc55de20c"
+    },
+    {
+      "document_id": "sfs-2026-955",
+      "title": "Lag (2026:955) om avgift för områdessamverkan",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-955",
+      "raw_file": "sfs-2026-955.xml",
+      "raw_sha256": "3fef8e58dbf1a0e7aec69b4f6eba2b1a0b610e989304cfccdb44a7bad30dd008"
+    },
+    {
+      "document_id": "sfs-2026-871",
+      "title": "Lag (2026:871) om utredningar för att förebygga suicid",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-871",
+      "raw_file": "sfs-2026-871.xml",
+      "raw_sha256": "e0fd0fccd78409d0148bdeafaf23f5455f6b2589516fa78ed857bc271d87b36a"
+    },
+    {
+      "document_id": "sfs-2026-843",
+      "title": "Lag (2026:843) om hyrköp av bostad",
+      "version": "t.o.m. SFS 2026:849",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-843",
+      "raw_file": "sfs-2026-843.xml",
+      "raw_sha256": "fc89ee62f74398664b6f45aa80633232c2b6874a3bfd0dd7344956290152b1bb"
+    },
+    {
+      "document_id": "sfs-2026-837",
+      "title": "Lag (2026:837) om beredskapslager av varor i livsmedelskedjan",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-837",
+      "raw_file": "sfs-2026-837.xml",
+      "raw_sha256": "19baebfa77a7bc9917fbae6012ee4d0aa32135494f4aed1b9a171b0dec48f8ed"
+    },
+    {
+      "document_id": "sfs-2026-806",
+      "title": "Lag (2026:806) om användning av AI-system för ansiktsigenkänning i realtid för brottsbekämpande ändamål",
+      "version": "t.o.m. SFS 2026:807",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-806",
+      "raw_file": "sfs-2026-806.xml",
+      "raw_sha256": "70d3a0f6ad6a70d120c4db660687d4539380dc8e7c22da6a4b9abe1e3ec9d8e1"
+    },
+    {
+      "document_id": "sfs-2026-786",
+      "title": "Lag (2026:786) om nordisk verkställighet i brottmål",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-786",
+      "raw_file": "sfs-2026-786.xml",
+      "raw_sha256": "2e91592a4eb25f16c8bb34b6e71f23d948f98e73af7d35de12a21574888f7a75"
+    },
+    {
+      "document_id": "sfs-2026-772",
+      "title": "Privatuthyrningslag (2026:772)",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-772",
+      "raw_file": "sfs-2026-772.xml",
+      "raw_sha256": "456ca391095e390e2baa0726085b498cadd9c5f7e4ff43843203d5bf2892bef9"
+    },
+    {
+      "document_id": "sfs-2026-769",
+      "title": "Lag (2026:769) om skyldighet för livsmedelsbutiker och apotek att ta emot kontant betalning",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-769",
+      "raw_file": "sfs-2026-769.xml",
+      "raw_sha256": "ebc778b4a2f6afc4555de48872939a1ad6de35c96dbbd66bd851b8f8f56c0903"
+    },
+    {
+      "document_id": "sfs-2026-723",
+      "title": "Lag (2026:723) om talan om administrativ sanktionsavgift i mål om bidragsbrott",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-723",
+      "raw_file": "sfs-2026-723.xml",
+      "raw_sha256": "25d43367c533f412ef43cce78d77aa5c2dc061897c6298a56afdeda2e7d5cf1b"
+    },
+    {
+      "document_id": "sfs-2026-677",
+      "title": "Lag (2026:677) om riksdagens medalj",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-677",
+      "raw_file": "sfs-2026-677.xml",
+      "raw_sha256": "07e8dd16170f92763296f29a16834d0630a348f43d1f80605e22dab9690dd05b"
+    },
+    {
+      "document_id": "sfs-2026-601",
+      "title": "Lag (2026:601) om socialdataregister",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-601",
+      "raw_file": "sfs-2026-601.xml",
+      "raw_sha256": "cc34e8cb8e82437884b63ec73aa80edf537441179065c1e9793209495efc5ea6"
+    },
+    {
+      "document_id": "sfs-2026-585",
+      "title": "Lag (2026:585) om regeringens godkännande av kärntekniska anläggningar",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-585",
+      "raw_file": "sfs-2026-585.xml",
+      "raw_sha256": "6bb6e4c4046c7bc5b4564e0f21c8636414534d52b85e87c3ebcf65903667fc57"
+    },
+    {
+      "document_id": "sfs-2026-578",
+      "title": "Lag (2026:578) om offentlig säljverksamhet",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-578",
+      "raw_file": "sfs-2026-578.xml",
+      "raw_sha256": "c01b67f219939ad99d90a861718d7f3fa275a2cbda2b11b923d4d3cc43f3091d"
+    },
+    {
+      "document_id": "sfs-2026-485",
+      "title": "Lag (2026:485) om införande av lagen (2026:484) om bostadsrättsregister",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-485",
+      "raw_file": "sfs-2026-485.xml",
+      "raw_sha256": "5a6e85803b43e39af3b8a7eed1b3c9f1e52970faead4c87290577e126c241b7a"
+    },
+    {
+      "document_id": "sfs-2026-484",
+      "title": "Lag (2026:484) om bostadsrättsregister",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-484",
+      "raw_file": "sfs-2026-484.xml",
+      "raw_sha256": "6efb87e293ee6998f4b9c3db4da9fd0943f4dfea6082fef8fceed0bd4621f516"
+    },
+    {
+      "document_id": "sfs-2026-456",
+      "title": "Lag (2026:456) om uppehållstillstånd i vissa fall för utlänningar med tillfälligt skydd",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-456",
+      "raw_file": "sfs-2026-456.xml",
+      "raw_sha256": "3ebbdfabac08c9a435bf2293875e94300b7df22384017df70bb7dcb27daf3356"
+    },
+    {
+      "document_id": "sfs-2026-440",
+      "title": "Lag (2026:440) om skyddsrum och skyddade utrymmen",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-440",
+      "raw_file": "sfs-2026-440.xml",
+      "raw_sha256": "c2d4e94994c932ebdf1167e0a407307b162965a0efde61d5264813e50eccda31"
+    },
+    {
+      "document_id": "sfs-2026-408",
+      "title": "Vapenlag (2026:408)",
+      "version": "t.o.m. SFS 2026:1375",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-408",
+      "raw_file": "sfs-2026-408.xml",
+      "raw_sha256": "5acfb8567c2d3d8331ce7d0b98941ea916184f8259f4e9e70e9cad78cca761e3"
+    },
+    {
+      "document_id": "sfs-2026-399",
+      "title": "Lag (2026:399) om verksamheter och åtgärder för förnybar energi",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-399",
+      "raw_file": "sfs-2026-399.xml",
+      "raw_sha256": "9aa807dc6e0708b1b8ebbeac79091aa2ad3c73c32950b093bbf038873b4265fc"
+    },
+    {
+      "document_id": "sfs-2026-380",
+      "title": "Lag (2026:380) om bistånd till vissa utlänningar vid inhibition av verkställigheten",
+      "version": "t.o.m. SFS 2026:1010",
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-380",
+      "raw_file": "sfs-2026-380.xml",
+      "raw_sha256": "a0a6f271b657312d89425f512b3aa626c9c31b51f9bb9197f372268d3c40fc04"
+    },
+    {
+      "document_id": "sfs-2026-333",
+      "title": "Lag (2026:333) om uppgiftsskyldighet för vissa e-legitimationsföretag",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-333",
+      "raw_file": "sfs-2026-333.xml",
+      "raw_sha256": "0661cbc29d24c046517ff9a807b797b87bdb243abac4f3b6d4147134a8fd40c4"
+    },
+    {
+      "document_id": "sfs-2026-310",
+      "title": "Lag (2026:310) om tillhandahållande på marknaden av EU-gödselprodukter",
+      "version": null,
+      "source_data_url": "https://data.riksdagen.se/dokument/sfs-2026-310",
+      "raw_file": "sfs-2026-310.xml",
+      "raw_sha256": "ea028878c20e786eef3a52521949b960223a5a431e8a8463b094dff0f606dcc2"
+    }
+  ]
+}

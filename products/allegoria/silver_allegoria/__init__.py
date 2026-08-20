@@ -1,1 +1,0 @@
-"""Allegoria Silver notebook package."""

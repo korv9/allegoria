@@ -223,7 +223,7 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 ## DD028 — Store Allegoria layers in product-specific Unity Catalog schemas
 
 - **Date:** 2026-08-20
-- **Status:** Active; supersedes the derived-file storage in DD003, DD004, and DD008
+- **Status:** Superseded by DD035
 - **Decision:** Use catalog `dev_lakehouse` by default with managed Delta tables `bronze_allegoria.las_documents`, `silver_allegoria.las_provisions`, and `gold_allegoria.provision_summary`. Retain the checked-in Bronze JSON as the transparent notebook input and the exact XML as the canonical byte authority.
 - **Rationale:** Product-specific schemas follow the existing portfolio-platform convention and keep layer plus ownership visible in every three-part table name.
 - **Consequences:** Bronze is source-shaped but queryable as Delta after ingestion. Silver and Gold are also Delta. Production uses `prod_lakehouse` through the bundle target rather than changing notebook code.
@@ -231,7 +231,7 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 ## DD029 — Keep Gold neutral until retrieval design is approved
 
 - **Date:** 2026-08-20
-- **Status:** Active; supersedes DD011, DD012, and DD022–DD026 for the current implementation
+- **Status:** Active; refined by DD035 for the multi-law implementation
 - **Decision:** Gold groups Silver provisions by document, provision kind, and heading and records provision and text-length statistics. Do not create chunks, embeddings, indexes, retrieval evaluation, or RAG contracts in this phase.
 - **Rationale:** The owner wants to inspect and understand the completed data layers before choosing how RAG should consume the legal data.
 - **Consequences:** The 92 source-traceable Silver provisions remain the likely future retrieval input. Any chunk table requires a new documented decision after Silver and Gold have been run and reviewed.
@@ -258,12 +258,44 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Status:** Active
 - **Decision:** Treat manual notebook execution as the primary development workflow. Bronze, Silver, and Gold install their own pinned Python dependencies with `%pip` and restart Python before imports. `databricks.yml` is optional automation, not a requirement for running the data layers.
 - **Rationale:** Job-level libraries are unavailable when a notebook is opened and run directly, which caused `ModuleNotFoundError: No module named 'lakehouse_engine'`. The current workspace also accepts only serverless compute, while the existing bundle declares a classic cluster.
-- **Consequences:** Run each notebook with **Run all** in setup → Bronze → Silver → Gold order. Package installation is repeated per notebook environment, but failures remain local and visible. The optional classic-cluster bundle must be converted before it can be deployed to a serverless-only workspace.
+- **Consequences:** Run each notebook with **Run all** in setup → Bronze → Silver → Gold order. Package installation is repeated per notebook environment, but failures remain local and visible. The optional bundle points to the same self-contained notebook entrypoints.
 
 ## DD033 — Read the checked-in Bronze JSON from the notebook working directory
 
 - **Date:** 2026-08-20
-- **Status:** Active; refines DD027
+- **Status:** Superseded by DD035
 - **Decision:** Resolve repository files from the Databricks notebook current working directory. Read the single checked-in Bronze JSON with Python on the driver, then create the source Spark DataFrame explicitly. Keep Lakehouse Engine for Delta reads, Data Quality, and Delta writes.
 - **Rationale:** On current Databricks runtimes, the notebook working directory is its containing Git-folder directory. `__file__` is not the correct notebook path contract, and Spark executors cannot reliably read Git-folder workspace files through a local `file:` URI.
 - **Consequences:** Preserve the repository directory structure and run the notebooks from their Git folder. A missing JSON snapshot or parser module raises a direct `FileNotFoundError`; there is no alternate source fallback.
+
+## DD034 — Establish an explicit six-document SFS ingestion pilot
+
+- **Date:** 2026-08-20
+- **Status:** Superseded by DD036
+- **Decision:** Fetch LAS, MBL, Semesterlagen, Arbetstidslagen, Föräldraledighetslagen, and Diskrimineringslagen from their stable Riksdagen document endpoints as one all-or-nothing batch. Preserve exact XML responses under `data/source/sfs`, store source-shaped JSON under `data/bronze/sfs`, and bind each pair with SHA-256 in a manifest.
+- **Rationale:** Six structurally varied, employment-related laws expose parser assumptions without introducing the scope and ambiguity of every SFS document. Separating exact API bytes from Bronze JSON keeps source authority distinct from the first queryable representation.
+- **Consequences:** `products.allegoria.sfs_ingestion` is the explicit refresh entrypoint and uses no new dependency. Existing LAS paths remain the active Databricks fixture until the multi-document Bronze schema is approved. Refreshing the pilot replaces its checked-in snapshots and retrieval timestamp; Git history retains earlier committed versions.
+
+## DD035 — Use one shared SFS table per medallion layer
+
+- **Date:** 2026-08-20
+- **Status:** Active; supersedes DD028 and DD033
+- **Decision:** Store every selected law in `bronze_allegoria.sfs_documents`, every parsed provision in `silver_allegoria.sfs_provisions`, and the neutral profile in `gold_allegoria.sfs_provision_summary`. Use descriptive notebook entrypoints `setup_catalog.py`, `bronze_sfs.py`, `silver_sfs.py`, and `gold_sfs.py` under responsibility-named folders.
+- **Rationale:** A table per law would duplicate schemas, jobs, and transformations and make cross-law retrieval harder. One row per legal entity keeps law identity in `document_id` while schemas represent data responsibility.
+- **Consequences:** The active notebooks and LAS regression test read the same checked-in SFS corpus. The old duplicate `data/source/las` and `data/bronze/las` paths are removed. All three Delta tables are overwritten as one reproducible current-snapshot dataset during development.
+
+## DD036 — Expand the source corpus to 50 full law payloads
+
+- **Date:** 2026-08-20
+- **Status:** Active; supersedes DD034
+- **Decision:** Always include the six employment-related seed laws and fill the corpus to 50 with the newest SFS titles containing `lag (` or `balk (`, excluding titles containing `förordning`. Preserve exact XML separately and also retain lossless `raw_xml`, decoded text, HTML, metadata, payload size, source URLs, and SHA-256 in each Bronze JSON and Delta row.
+- **Rationale:** Fifty structurally varied laws are large enough to expose source-contract assumptions while remaining inspectable. Keeping the complete payload in Bronze makes every snapshot searchable by law ID without sacrificing byte-level provenance.
+- **Consequences:** The manifest freezes the resolved IDs and selection rule. Ingestion is all-or-nothing, prunes generated files outside the resolved manifest, and uses `document_snapshot_id = document_id + source_sha256`. Refreshes can change the recent 44 laws and therefore require test and schema review.
+
+## DD037 — Preserve optional and repeated SFS structures explicitly
+
+- **Date:** 2026-08-20
+- **Status:** Active
+- **Decision:** Model a missing SFS subtitle as null and a missing transitional-provisions section as zero transition rows. If a transition section exists but cannot be parsed, fail. Preserve repeated paragraph anchors as separate rows and record their deterministic `source_anchor_occurrence`; never drop them as duplicates.
+- **Rationale:** In the 50-law snapshot, 39 documents lack a subtitle, 27 lack a transition section, and 45 source anchors are reused. Reused anchors include future effective wordings and source collisions, so deduplication would delete legal content.
+- **Consequences:** Derived `provision_id` values add an occurrence suffix after the first repeated anchor. Silver validates unique derived IDs and complete document coverage while retaining the original `source_anchor` for traceability.
