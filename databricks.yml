@@ -33,6 +33,12 @@ resources:
           notebook_task:
             notebook_path: ./products/allegoria/gold/gold_sfs.py
 
+        - task_key: gold_sfs_retrieval_chunks
+          depends_on:
+            - task_key: silver_sfs
+          notebook_task:
+            notebook_path: ./products/allegoria/gold/gold_sfs_retrieval_chunks.py
+
 targets:
   dev:
     default: true

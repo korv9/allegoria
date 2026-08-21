@@ -5,6 +5,11 @@ from pathlib import Path
 
 import yaml
 
+from products.allegoria.retrieval_chunks import (
+    MAX_RETRIEVAL_CHARS,
+    build_retrieval_context,
+    split_legal_content,
+)
 from products.allegoria.sfs_ingestion import (
     SEED_DOCUMENT_IDS,
     TARGET_DOCUMENT_COUNT,
@@ -22,11 +27,13 @@ EXPECTED_LAS_SHA256 = (
     "a310dbc84411b7a7cfa7fc29bd0f52306e2b4358407ac84f74363a8aa5db2f9b"
 )
 EXPECTED_PROVISION_COUNT = 1952
+EXPECTED_CHUNK_COUNT = 1967
 NOTEBOOKS = (
     PRODUCT / "setup/setup_catalog.py",
     PRODUCT / "bronze/bronze_sfs.py",
     PRODUCT / "silver/silver_sfs.py",
     PRODUCT / "gold/gold_sfs.py",
+    PRODUCT / "gold/gold_sfs_retrieval_chunks.py",
 )
 
 
@@ -98,6 +105,54 @@ def test_all_50_laws_parse_into_provisions() -> None:
     assert provision_count == EXPECTED_PROVISION_COUNT
 
 
+def test_retrieval_chunks_preserve_every_provision() -> None:
+    chunk_count = 0
+    split_provision_count = 0
+    largest_retrieval_text = 0
+
+    for source_file in sorted(SFS_BRONZE.glob("*.json")):
+        bronze = json.loads(source_file.read_text(encoding="utf-8"))
+        provisions = parse_sfs_html(bronze["html"], bronze["document_id"])
+
+        for provision in provisions:
+            context = build_retrieval_context(
+                bronze["title"],
+                provision["chapter"],
+                provision["heading"],
+                provision["label"],
+            )
+            parts = split_legal_content(provision["text"], context)
+
+            assert "\n\n".join(parts) == provision["text"]
+            assert all(
+                len(f"{context}\n\n{part}") <= MAX_RETRIEVAL_CHARS
+                for part in parts
+            )
+
+            chunk_count += len(parts)
+            split_provision_count += len(parts) > 1
+            largest_retrieval_text = max(
+                largest_retrieval_text,
+                *(len(f"{context}\n\n{part}") for part in parts),
+            )
+
+    assert chunk_count == EXPECTED_CHUNK_COUNT
+    assert split_provision_count == 11
+    assert largest_retrieval_text == 1997
+
+
+def test_chunking_fails_for_an_oversized_indivisible_block() -> None:
+    context = "Lag (1982:80) om anställningsskydd"
+    oversized_block = "x" * MAX_RETRIEVAL_CHARS
+
+    try:
+        split_legal_content(oversized_block, context)
+    except ValueError as error:
+        assert "indivisible legal text block" in str(error)
+    else:
+        raise AssertionError("Oversized indivisible content must fail")
+
+
 def test_notebooks_are_small_valid_and_explain_their_change() -> None:
     for notebook in NOTEBOOKS:
         source = notebook.read_text(encoding="utf-8")
@@ -133,10 +188,19 @@ def test_bundle_orders_setup_bronze_silver_gold() -> None:
     job = bundle["resources"]["jobs"]["allegoria_sfs_medallion"]
     tasks = {task["task_key"]: task for task in job["tasks"]}
 
-    assert set(tasks) == {"setup_catalog", "bronze_sfs", "silver_sfs", "gold_sfs"}
+    assert set(tasks) == {
+        "setup_catalog",
+        "bronze_sfs",
+        "silver_sfs",
+        "gold_sfs",
+        "gold_sfs_retrieval_chunks",
+    }
     assert tasks["bronze_sfs"]["depends_on"] == [{"task_key": "setup_catalog"}]
     assert tasks["silver_sfs"]["depends_on"] == [{"task_key": "bronze_sfs"}]
     assert tasks["gold_sfs"]["depends_on"] == [{"task_key": "silver_sfs"}]
+    assert tasks["gold_sfs_retrieval_chunks"]["depends_on"] == [
+        {"task_key": "silver_sfs"}
+    ]
     assert bundle["variables"]["catalog"]["default"] == "dev_lakehouse"
 
 
@@ -149,4 +213,5 @@ def test_product_boundaries_are_explicit() -> None:
     assert "bronze_allegoria.sfs_documents" in allegoria_readme
     assert "silver_allegoria.sfs_provisions" in allegoria_readme
     assert "gold_allegoria.sfs_provision_summary" in allegoria_readme
+    assert "gold_allegoria.sfs_retrieval_chunks" in allegoria_readme
     assert "no executable pipeline yet" in simulacria_readme

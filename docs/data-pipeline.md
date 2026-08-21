@@ -90,6 +90,35 @@ profile can be traced back to the exact snapshot. The checked-in corpus produces
 Gold reconciles the sum of group counts to the distinct Silver provision count. It does not
 chunk, summarize, embed, rank, or alter legal text.
 
+## Gold retrieval chunks
+
+Notebook: `products/allegoria/gold/gold_sfs_retrieval_chunks.py`
+
+Table: `dev_lakehouse.gold_allegoria.sfs_retrieval_chunks`
+
+This independent Gold output converts 1,952 Silver provisions into 1,967 retrieval chunks. It
+keeps a complete provision in one chunk when `retrieval_text` is at most 2,000 characters. The
+11 longer provisions are split greedily only at the blank-line boundaries preserved in Silver.
+An indivisible legal block that cannot fit causes a failure rather than an arbitrary text cut.
+
+| Column group | Columns | Handling |
+| --- | --- | --- |
+| Chunk identity | `chunk_id`, `provision_id`, `part`, `part_count`, `chunking_strategy` | deterministic and typed |
+| Source hierarchy | `document_id`, `kind`, `source_anchor`, `label`, `chapter`, `heading`, `provision_order` | retained from Silver |
+| Legal content | `content`, `content_char_count`, `chunk_text_sha256` | source-derived content only |
+| Retrieval content | `retrieval_text`, `retrieval_char_count`, `retrieval_byte_count` | hierarchy context plus content |
+| Provenance | `document_snapshot_id`, `provision_text_sha256`, `source_url`, `source_sha256` | retained through every chunk |
+| Processing | `bronze_ingested_at`, `silver_transformed_at`, `gold_prepared_at` | retained/added timestamps |
+
+Ordered `content` chunks must reconstruct every Silver `text` with the preserved blank-line
+separator. The notebook fails on incomplete reconstruction, missing lineage, duplicate IDs,
+more than 2,000 retrieval characters, more than 32,764 UTF-8 retrieval bytes, or any row-count
+change from the checked corpus contract. Delta Change Data Feed is enabled for a future AI Search
+Delta Sync index.
+
+No symbols or semantic interpretations are added during chunking. Those belong after measured
+retrieval and source-grounded answer generation.
+
 ## Notebook output
 
 Every transformation notebook prints one bounded summary, for example:

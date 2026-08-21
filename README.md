@@ -5,7 +5,8 @@
 
 This is a Databricks-first portfolio project about legal data, AI representation, semantic drift,
 and Meaning Quality. The current milestone is a clean, source-traceable Swedish-law data
-foundation. Retrieval and model layers are intentionally deferred.
+foundation with retrieval-ready chunks. Search indexing, answer generation, symbols, and Meaning
+Quality remain later stages.
 
 ## Current pipeline
 
@@ -26,8 +27,9 @@ Bronze: 50 searchable law snapshots
       v
 Silver: 1,952 parsed provisions
       |
-      v
-Gold: 1,001 neutral profile groups
+      +---------------------------+
+      v                           v
+Gold profile: 1,001 groups   Gold retrieval: 1,967 chunks
 ```
 
 All laws share one table in each layer:
@@ -36,15 +38,16 @@ All laws share one table in each layer:
 | --- | --- | ---: |
 | Bronze | `dev_lakehouse.bronze_allegoria.sfs_documents` | 50 documents |
 | Silver | `dev_lakehouse.silver_allegoria.sfs_provisions` | 1,952 provisions |
-| Gold | `dev_lakehouse.gold_allegoria.sfs_provision_summary` | 1,001 groups |
+| Gold profile | `dev_lakehouse.gold_allegoria.sfs_provision_summary` | 1,001 groups |
+| Gold retrieval | `dev_lakehouse.gold_allegoria.sfs_retrieval_chunks` | 1,967 chunks |
 
 These counts are locally verified against the checked-in corpus. The generalized Delta pipeline
 still needs to be run and inspected in Databricks.
 
 Bronze retains the complete raw XML payload, text, source HTML, metadata, source URL, payload
 size, and a Spark-verified SHA-256 in each row. It does not persist local Workspace paths. Silver
-never deduplicates legal text: repeated source anchors are
-preserved with an occurrence number. Gold is descriptive rather than retrieval-specific.
+never deduplicates legal text: repeated source anchors are preserved with an occurrence number.
+Gold keeps the descriptive profile separate from source-faithful retrieval chunks.
 
 ## Fifty-law selection
 
@@ -65,6 +68,8 @@ products/allegoria/
 |-- bronze/bronze_sfs.py
 |-- silver/silver_sfs.py
 |-- gold/gold_sfs.py
+|-- gold/gold_sfs_retrieval_chunks.py
+|-- retrieval_chunks.py
 |-- sfs_ingestion.py
 |-- sfs_parser.py
 `-- README.md
@@ -90,8 +95,9 @@ Open each file in a Databricks Git folder and choose **Run all** in order:
 2. `products/allegoria/bronze/bronze_sfs.py`
 3. `products/allegoria/silver/silver_sfs.py`
 4. `products/allegoria/gold/gold_sfs.py`
+5. `products/allegoria/gold/gold_sfs_retrieval_chunks.py`
 
-Bronze, Silver, and Gold install their own pinned dependencies and restart Python before imports.
+Bronze, Silver, and both Gold notebooks install their own pinned dependencies and restart Python before imports.
 They do not require `databricks.yml`. The bundle remains optional automation and uses the same
 descriptive notebook paths.
 

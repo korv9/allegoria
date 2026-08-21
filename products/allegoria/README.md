@@ -1,8 +1,9 @@
 # Allegoria SFS data product
 
 This product prepares 50 source-traceable Swedish laws in three inspectable Databricks layers.
-All laws share one table per layer; tables are separated by data responsibility, not by law.
-There is no retrieval, embedding, model inference, or Meaning Quality evaluation yet.
+All laws share each table; tables are separated by data responsibility, not by law.
+Retrieval chunks are prepared, but no search index, embedding, model inference, symbol mapping,
+or Meaning Quality evaluation exists yet.
 
 ```text
 data/source/sfs/*.xml                              50 exact API payloads
@@ -16,8 +17,10 @@ dev_lakehouse.bronze_allegoria.sfs_documents     50 law snapshots
 dev_lakehouse.silver_allegoria.sfs_provisions    1,952 provisions
         |
         v
-dev_lakehouse.gold_allegoria.sfs_provision_summary
-                                                    1,001 profile groups
+        |-- dev_lakehouse.gold_allegoria.sfs_provision_summary
+        |                                             1,001 profile groups
+        `-- dev_lakehouse.gold_allegoria.sfs_retrieval_chunks
+                                                      1,967 retrieval chunks
 ```
 
 The row counts above are verified against the checked-in corpus locally. The Delta outputs still
@@ -29,6 +32,7 @@ Run these Databricks notebooks individually with **Run all**, in order:
 2. `bronze/bronze_sfs.py`
 3. `silver/silver_sfs.py`
 4. `gold/gold_sfs.py`
+5. `gold/gold_sfs_retrieval_chunks.py`
 
 Bronze, Silver, and Gold install their pinned notebook dependencies before imports. The optional
 `databricks.yml` job points to the same descriptive entrypoints.
@@ -51,12 +55,27 @@ document, chapter, heading, source anchor, exact normalized text, source hash, a
 lineage. It also hashes each normalized provision text separately. Repeated source anchors are
 retained and distinguished by `source_anchor_occurrence`.
 
-## Gold contract
+## Gold profile contract
 
 `gold_allegoria.sfs_provision_summary` is a neutral profile grouped by document, provision kind,
 chapter, and heading. It carries the source snapshot and layer processing timestamps, but no
 legal text. It is useful for data inspection and chunk-design decisions; it is not a RAG source
 and does not create retrieval chunks.
+
+## Gold retrieval contract
+
+`gold_allegoria.sfs_retrieval_chunks` prepares Silver provisions for search without adding
+semantic labels. A provision stays whole when its complete retrieval text is at most 2,000
+characters. Only the 11 longer provisions are split, greedily, at blank lines already preserved
+by Silver. The checked corpus produces 1,967 chunks.
+
+Each row keeps clean legal `content` separate from `retrieval_text`, which prefixes the content
+with document title, chapter, heading, and provision label. Ordered chunk content must reconstruct
+the complete Silver text exactly. The table retains document, provision, chunk, source-hash, and
+processing lineage and enables Delta Change Data Feed for a future AI Search Delta Sync index.
+
+Symbols, claims, metaphor mappings, and semantic meaning labels are intentionally absent. They
+belong to a later, evaluated transformation after retrieval and grounded answers work.
 
 Environment variables:
 
