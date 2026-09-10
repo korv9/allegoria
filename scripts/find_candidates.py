@@ -91,8 +91,23 @@ QUALIFIER_MARKERS = _markers(
 
 # Determinacy ladder (DIRECTION.md): a checkable qualifier is a better corpus
 # passage than an untestable one, because its death is observable.
+#
+# The number words are an enumerated closed class, not a wildcard: "fyrtio år"
+# has to be as checkable as "två år", and the list originally stopped at
+# "trettio", which read sfs-2026-1283:K5P1 as `unmarked` despite its forty-year
+# review period. Compounds are spelled out because Swedish writes them solid
+# ("tjugofyra timmar"), and longer alternatives are listed first so alternation
+# prefers them.
+_NUMBER_WORDS = (
+    r"\d+"
+    r"|tjugofyra|tjugofem|tjugosex|tjugosju|tjugoåtta|tjugonio|tjugoen|tjugoett"
+    r"|tjugotvå|tjugotre|trettiosex|fyrtiofem|fyrtioåtta"
+    r"|tretton|fjorton|femton|sexton|sjutton|arton|nitton"
+    r"|tjugo|trettio|fyrtio|femtio|sextio|sjuttio|åttio|nittio|hundra"
+    r"|elva|tolv|tio|en|ett|två|tre|fyra|fem|sex|sju|åtta|nio"
+)
 SPECIFIC_QUALIFIER = re.compile(
-    r"\b(?:\d+|en|ett|två|tre|fyra|fem|sex|sju|åtta|nio|tio|tolv|fjorton|femton|tjugo|trettio)"
+    rf"\b(?:{_NUMBER_WORDS})"
     r"\s+(?:kalender|arbets|vecko)?(?:dygn|dagar?|veckor?|månader?|år|timmar?)\b"
     r"|\bsenast\s+den\b|\bsenare\s+än\b|\bvid\s+utgången\s+av\b",
     re.IGNORECASE,

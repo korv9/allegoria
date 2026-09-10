@@ -32,3 +32,15 @@ testpaths = ["tests"]
 line-length = 100
 target-version = "py312"
 builtins = ["spark", "dbutils"]
+
+# The Databricks product tree predates line-length = 100 and is wrapped at 88.
+# It is frozen (see CLAUDE.md: "Do not delete it, do not 'improve' it"), so the
+# formatter is not pointed at it -- a permanently red check is worse than no
+# check. Linting still covers these files; only formatting is excluded.
+# tests/test_allegoria_product.py is the test suite for that frozen tree and is
+# wrapped to match it.
+[tool.ruff.format]
+exclude = [
+    "products/allegoria/**",
+    "tests/test_allegoria_product.py",
+]

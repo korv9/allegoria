@@ -1,0 +1,192 @@
+{
+  "scanned": 18836,
+  "changed": 31,
+  "changes": [
+    {
+      "provision_id": "sfs-1982-673:P13",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "tjugofyra timmar"
+    },
+    {
+      "provision_id": "sfs-2014-406:P1",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2014-406:P2",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2014-406:P11",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2014-406:P11a",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2015-96:K3P13",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2015-96:K3P15",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2015-96:K3P18",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "fyrtio dagar"
+    },
+    {
+      "provision_id": "sfs-2015-96:K3P19",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2015-96:K3P24",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "fyrtiofem dagar"
+    },
+    {
+      "provision_id": "sfs-2016-752:P15",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "tretton månader"
+    },
+    {
+      "provision_id": "sfs-2018-1251:P9",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2018-672:K17P11",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "elva månader"
+    },
+    {
+      "provision_id": "sfs-2019-742:K10P6",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "tjugofyra år"
+    },
+    {
+      "provision_id": "sfs-2019-742:K10P31",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "tjugofyra år"
+    },
+    {
+      "provision_id": "sfs-2019-742:K10P54",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "tjugofyra år"
+    },
+    {
+      "provision_id": "sfs-2020-616:P24",
+      "before": "vague",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2024-710:K8P5",
+      "before": "vague",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2025-1053:K4P1",
+      "before": "vague",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2025-400:K16P3",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2025-520:K3P12",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2025-520:K3P14",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2025-520:K3P18",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2026-1281:K7P5",
+      "before": "vague",
+      "after": "specific",
+      "newly_matched": "tjugofyra timmar"
+    },
+    {
+      "provision_id": "sfs-2026-1283:K5P1",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "fyrtio år"
+    },
+    {
+      "provision_id": "sfs-2026-1283:K5P7",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "fyrtio år"
+    },
+    {
+      "provision_id": "sfs-2026-1283:K5P11",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "tjugofem år"
+    },
+    {
+      "provision_id": "sfs-2026-1283:overgang:2026-1283",
+      "before": "vague",
+      "after": "specific",
+      "newly_matched": "fyrtio år, tjugofem år"
+    },
+    {
+      "provision_id": "sfs-2026-1358:K2P1",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2026-1358:K2P9",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    },
+    {
+      "provision_id": "sfs-2026-786:K5P2",
+      "before": "unmarked",
+      "after": "specific",
+      "newly_matched": "arton år"
+    }
+  ]
+}

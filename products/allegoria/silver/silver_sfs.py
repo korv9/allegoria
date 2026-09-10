@@ -1,4 +1,4 @@
- # Databricks notebook source
+# Databricks notebook source
 # MAGIC %pip install "lakehouse-engine[dq]==2.1.1" "beautifulsoup4==4.13.5"
 
 # COMMAND ----------
