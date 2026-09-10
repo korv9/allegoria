@@ -1,0 +1,138 @@
+# Provisions that must always survive candidate selection.
+#
+# This fixture protects the marker sets in scripts/find_candidates.py the way
+# test case 9 in DIRECTION.md protects the metric: it does not claim the
+# heuristic is good, only that a change did not silently lose material. The
+# `\bskal?l\b` bug -- a pattern that matched "skall" but never "ska" -- was
+# caught by accident, because a known provision vanished from the list. This
+# makes that check permanent.
+#
+# Entries are pinned for MARKER COVERAGE, not as endorsements of specimen
+# quality. Two of them are structurally poor passages kept because nothing else
+# in the corpus exercises their pattern; see the notes. A deliberate precision
+# improvement to the markers is expected to update this file -- that is the
+# point at which a human decides the loss was intended.
+#
+# Markers knowingly NOT covered here, because no short provision pairs them
+# with a clean three-part structure:
+#   duty:      är skyldig
+#   exception: annat än, i stället
+# All three determinacy states are covered: specific, vague, unmarked.
+#
+# Each entry lists the markers the provision is expected to hit. The test
+# asserts the expected set is a SUBSET of what fires, so adding a new pattern
+# does not break the fixture; losing an existing one does.
+
+provisions:
+  - provision_id: sfs-2026-1281:K10P10
+    duty: [ska]
+    exception: [dock, ska inte]
+    qualifier: [om, efter det att]
+    determinacy: specific
+    note: >-
+      The DIRECTION.md worked example. Duty, a `dock` exception, and a two-year
+      qualifier attached to the exception; its disappearance is what exposed the
+      original marker bug.
+
+  - provision_id: sfs-1977-480:P11
+    duty: [ska, får]
+    exception: [dock, om inte]
+    qualifier: [om, särskilda skäl]
+    determinacy: specific
+    note: >-
+      The cleanest three-part specimen in the corpus: a duty to notify, an
+      `om inte` carve-out, and a two-month deadline that the text itself
+      degrades to "dock om möjligt minst en månad".
+
+  - provision_id: sfs-1977-480:P8
+    duty: [ska, får inte, får]
+    exception: [utom, behöver inte]
+    qualifier: [om, när/vid, efter det att]
+    determinacy: unmarked
+    note: >-
+      The only short provision pairing `utom` with `behöver inte`; both are rare
+      carve-out forms that nothing else here covers.
+
+  - provision_id: sfs-2026-380:P7
+    duty: [har rätt att]
+    exception: [gäller inte]
+    qualifier: [under förutsättning att, särskilda skäl]
+    determinacy: unmarked
+    note: >-
+      Sole cover for `under förutsättning att`, and the only entry where the
+      qualifier hangs on an entitlement rather than a duty.
+
+  - provision_id: sfs-2026-485:P13
+    duty: [ska]
+    exception: [om inte]
+    qualifier: [endast om, om]
+    determinacy: specific
+    note: >-
+      `endast om` carrying a six-month deadline -- the specific-determinacy path
+      on a transitional rule.
+
+  - provision_id: sfs-2026-1283:K2P3
+    duty: [får inte, får]
+    exception: [dock, undantag]
+    qualifier: [i den mån, om]
+    determinacy: unmarked
+    note: >-
+      `undantag` as a noun carve-out. Note the `i den mån` label actually fires
+      here on "i fråga om", which is a broader phrase than the label suggests.
+
+  - provision_id: sfs-2026-1283:K5P1
+    duty: [ska, får]
+    exception: [dock, trots]
+    qualifier: [i den mån, om, efter det att]
+    determinacy: unmarked
+    note: >-
+      `trots` as an override marker. Determinacy reads `unmarked` despite
+      "fyrtio år" in the text, because the specific-qualifier number words stop
+      at "trettio" -- a known gap, pinned so it stays visible.
+
+  - provision_id: sfs-1982-673:P23
+    duty: [förbjuden]
+    exception: [dock, gäller inte]
+    qualifier: [om]
+    determinacy: specific
+    note: >-
+      Known false positive, kept deliberately. `förbjuden` fires on a penalty
+      provision via "förbud", and the "ett år" it reads as a deadline is a
+      prison term. It is the shortest cover for that pattern pair.
+
+  - provision_id: sfs-2026-772:K1P4:occurrence:2
+    duty: [ska, måste, får]
+    exception: [dock]
+    qualifier: [om, när/vid]
+    determinacy: specific
+    note: >-
+      One of only two `måste` candidates, and the single fixture entry with an
+      occurrence-suffixed ID -- it also pins the parser's duplicate-anchor path.
+
+  - provision_id: sfs-2008-567:K1P4
+    duty: [ska]
+    exception: [såvida inte]
+    qualifier: [om]
+    determinacy: vague
+    note: >-
+      The corpus's only `såvida inte`. A definitions section and a poor
+      specimen, kept solely because no other provision exercises the pattern.
+
+  - provision_id: sfs-1976-580:P62
+    duty: [får]
+    exception: [utan hinder av]
+    qualifier: [när/vid]
+    determinacy: unmarked
+    note: >-
+      `utan hinder av`, an archaic override form appearing twice in the whole
+      corpus and covered nowhere else in this fixture.
+
+  - provision_id: sfs-2026-484:K3P6
+    duty: [ska, bör, får]
+    exception: [om inte]
+    qualifier: [om]
+    determinacy: vague
+    note: >-
+      Covers `bör` and the vague end of the determinacy ladder at once. `bör`
+      here qualifies a suitability test rather than the main duty, which is
+      typical of how the marker actually appears.

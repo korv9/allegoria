@@ -180,7 +180,7 @@ def test_notebooks_are_small_valid_and_explain_their_change() -> None:
     assert 'F.sha2("raw_xml", 256)' in bronze_source
     assert 'record["source_file"]' not in bronze_source
     assert 'alias("bronze_ingested_at")' in bronze_source
-    assert 'F.sha2("text", 256).alias("provision_text_sha256")' in silver_source
+    assert 'F.col("ingested_at").alias("bronze_ingested_at")' in silver_source
 
 
 def test_bundle_orders_setup_bronze_silver_gold() -> None:
@@ -214,4 +214,7 @@ def test_product_boundaries_are_explicit() -> None:
     assert "silver_allegoria.sfs_provisions" in allegoria_readme
     assert "gold_allegoria.sfs_provision_summary" in allegoria_readme
     assert "gold_allegoria.sfs_retrieval_chunks" in allegoria_readme
-    assert "no executable pipeline yet" in simulacria_readme
+    assert "model-generation events" in simulacria_readme
+    assert "direction" in simulacria_readme
+    assert "JSONL" in simulacria_readme
+    assert "gold_allegoria" not in simulacria_readme
