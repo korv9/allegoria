@@ -1,0 +1,324 @@
+SPECIFIC-QUALIFIER pool (<420 chars, max 2/doc): 54 from 42 documents
+
+--- [v1 r15] sfs-2026-485:P13 | 333ch | qspec=['sex månader']
+    Lag (2026:485) om införande av lagen (2026:484) om bostadsrättsregiste | 13 §
+    E=['om inte'] Q=['endast om', 'om']
+    En panträtt som har upplåtits och fått sakrättsligt skydd före ikraftträdandet av lagen (2026:484) om bostadsrättsregister men som inte har noterats enligt 11 § ska behålla sitt sakrättsliga skydd endast om uppgift om panträtten har lämnats till Lantmäteriet senast sex månader efter ikraftträdandet av lagen om bostadsrättsregist
+
+--- [v1 r16] sfs-1982-673:P12 | 355ch | qspec=['två veckor']
+    Arbetstidslag (1982:673) | 12 §
+    E=['dock', 'annat än'] Q=['i den mån', 'om']
+    Alla arbetsgivare som anlitar arbetstagare till arbete annat än tillfälligt skall lämna arbetstagarna besked om ändringar i fråga om den ordinarie arbetstidens och jourtidens förläggning minst två veckor i förväg. Sådant besked får dock lämnas kortare tid i förväg, om verksamhetens art eller händelser som inte har kunnat förutse
+
+--- [v1 r17] sfs-2026-999:K5P1 | 400ch | qspec=['16 år']
+    Mottagandelag (2026:999) | 1 §
+    E=['dock', 'gäller inte'] Q=['om', 'särskilda skäl']
+    En utlänning som omfattas av denna lag ska delta i samhällsintroduktion, om han eller hon har fyllt 16 år. Det gäller dock inte om utlänningen med hänsyn till sina personliga förhållanden har synnerliga skäl att inte delta.
+
+Migrationsverket ska ordna samhällsintroduktionen.
+
+Regeringen eller den myndighet som regeringen bestämm
+
+--- [v2 r30] sfs-2025-400:K20P2 | 407ch | qspec=['fjorton dagar']
+    Socialtjänstlag (2025:400) | 2 §
+    E=['dock', 'om inte'] Q=['om', 'efter det att', 'särskilda skäl']
+    Om en anmälan till socialnämnden gäller barn eller unga, ska socialnämnden fatta beslut om att inleda eller inte inleda utredning inom fjorton dagar efter det att anmälan har kommit in (förhandsbedömning). Ett sådant beslut behöver dock inte fattas om det redan pågår en utredning om det barn eller den unge som anmälan avser. Tid
+
+--- [v1 r43] sfs-2026-1281:K10P10 | 321ch | qspec=['senare än', 'två år']
+    Elmarknadslag (2026:1281) | 10 §
+    E=['dock', 'ska inte'] Q=['om', 'efter det att']
+    Nätmyndigheten ska ta upp en tvist om vilka kostnader som ska debiteras enligt 6, 7 eller 9 §.
+
+En tvist ska dock inte prövas om ansökan om prövning har kommit in till nätmyndigheten senare än två år efter det att den systemansvariga skickat ett skriftligt ställningstagande till den berörda partens senaste kända adress.
+
+--- [v1 r66] sfs-2026-723:P9 | 200ch | qspec=['fem år']
+    Lag (2026:723) om talan om administrativ sanktionsavgift i mål om bidr | 9 §
+    E=['om inte'] Q=['om']
+    En sanktionsavgift får inte dömas ut om den misstänkte inte har fått ta del av åklagarens yrkande om sanktionsavgift inom fem år från den dag då uppgiften lämnades eller anmälningsskyldigheten uppkom.
+
+--- [v1 r68] sfs-2026-1358:K1P10 | 306ch | qspec=['fem år', 'tolv år', 'tre år']
+    Lag (2026:1358) om statlig e-legitimation och elektronisk identifierin | 10 §
+    E=['om inte'] Q=['om']
+    En e-legitimation ska utfärdas med en giltighetstid om fem år. Om sökanden inte har fyllt tolv år ska giltighetstiden vara tre år.
+
+Regeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om att den statliga e-legitimationen i särskilt angivna fall ska ha en kortare giltighetstid.
+
+--- [v1 r72] sfs-2026-408:K8P7 | 396ch | qspec=['fyra månader']
+    Vapenlag (2026:408) | 7 §
+    E=['om inte'] Q=['om']
+    Skjutvapen, ammunition och ljuddämpare som en person vid resa fört med till Sverige för personligt bruk men inte haft rätt att föra in, får föras ut om föremålen anmälts i behörig ordning till Tullverket. Om föremålen inte förs ut inom fyra månader efter en sådan anmälan eller inom den längre tid som Tullverket bestämmer, tillfa
+
+--- [v1 r93] sfs-2026-1281:K16P10 | 208ch | qspec=['två år']
+    Elmarknadslag (2026:1281) | 10 §
+    E=['om inte'] Q=['om']
+    Konsumenten ska underrätta motparten om anspråk på ersättning enligt 6-8 §§ inom två år från det att skadan inträffade. Om konsumenten inte gör det, är rätten till ersättning för den uppkomna skadan förlorad.
+
+--- [v1 r105] sfs-2026-806:P18 | 366ch | qspec=['ett år', 'sex månader']
+    Lag (2026:806) om användning av AI-system för ansiktsigenkänning i rea | 18 §
+    E=['om inte'] Q=['om']
+    Om det på grund av sekretess eller risk för men för syftet som åtgärden vidtogs för inte har kunnat lämnas någon underrättelse inom ett år och sex månader från det att åtgärden avslutades, ska frågan om underrättelse prövas slutligt. En underrättelse ska då bara lämnas om sekretess inte längre gäller och om det kan ske utan men 
+
+--- [v1 r112] sfs-2026-772:K7P1 | 402ch | qspec=['två år']
+    Privatuthyrningslag (2026:772) | 1 §
+    E=['om inte'] Q=['om']
+    En hyresvärd eller en hyresgäst som vill framställa fordringsanspråk på grund av ett hyresförhållande, ska väcka talan om detta inom två år från det att hyresgästen lämnade lägenheten. Görs det senare är rätten till talan förlorad, om inte annat har avtalats.
+
+Om den ena parten har väckt talan i rätt tid, har den andra parten rä
+
+--- [v2 r127] sfs-2022-700:K3P9 | 214ch | qspec=['72 timmar']
+    Lag (2022:700) om särskild kontroll av vissa utlänningar | 9 §
+    E=['dock'] Q=['om', 'särskilda skäl']
+    /Upphör att gälla U:2027-03-01/
+En utlänning som inte har fyllt 18 år får inte hållas i förvar längre tid än 72 timmar. Om det finns synnerliga skäl får utlänningen dock hållas i förvar under ytterligare 72 timmar.
+
+--- [v2 r129] sfs-2022-725:P47 | 226ch | qspec=['två år']
+    Växtskyddslag (2022:725) | 47 §
+    E=['om inte'] Q=['om', 'efter det att']
+    Innan kontrollmyndigheten beslutar om sanktionsavgift ska den som avgiften ska tas ut av få tillfälle att yttra sig. Om så inte har skett inom två år från det att överträdelsen ägde rum får någon sanktionsavgift inte beslutas.
+
+--- [v2 r130] sfs-2022-700:K3P9:occurrence:2 | 233ch | qspec=['nio månader']
+    Lag (2022:700) om särskild kontroll av vissa utlänningar | 9 §
+    E=['dock'] Q=['om', 'särskilda skäl']
+    /Träder i kraft I:2027-03-01/
+En utlänning som inte har fyllt 18 år får inte hållas i förvar längre tid än tre månader. Om det finns synnerliga skäl får utlänningen dock hållas i förvar under ytterligare nio månader. Lag (2026:1432).
+
+--- [v2 r134] sfs-2018-1138:K4P8 | 318ch | qspec=['fyra månader']
+    Spellag (2018:1138) | 8 §
+    E=['om inte', 'annat än'] Q=['om', 'efter det att']
+    En licens ska avse en viss tid och får, om inte annat anges i denna lag, ges för högst fem år.
+
+Om en ansökan om förnyelse av licensen har getts in senast fyra månader innan giltighetstiden för den gällande licensen går ut, ska licensen gälla till dess att spelmyndigheten beslutat om den nya ansökan. Lag (2022:1674).
+
+--- [v2 r136] sfs-2024-7:P8 | 333ch | qspec=['tre månader']
+    Lag (2024:7) om preventiva vistelseförbud | 8 §
+    E=['dock', 'om inte'] Q=['om'] | CEILING?='dock förlängas med högst tre månader i taget.'
+    Ett vistelseförbud ska gälla för en viss tid, högst sex månader.
+
+Vistelseförbudet gäller omedelbart, om inte annat beslutas.
+
+Ett vistelseförbud får förlängas med högst sex månader i taget om förutsättningarna i 3-5 §§ är uppfyllda. Ett förbud med villkor om elektronisk övervakning får dock förlängas med högst tre månader i tag
+
+--- [v2 r137] sfs-2024-506:K5P8 | 342ch | qspec=['åtta veckor']
+    Lag (2024:506) om arbetslöshetsförsäkring | 8 §
+    E=['dock', 'om inte', 'gäller inte'] Q=['om', 'när/vid']
+    När tiden med medlemskap eller anslutning beräknas enligt
+4 eller 5 § ska det bortses från avbrott i medlemskapet eller anslutningen som understiger en månad, om den sammanlagda avbrottstiden inte överstiger åtta veckor. Det gäller dock inte avbrott till följd av ett beslut om uteslutning enligt
+37 § lagen (1997:239) om arbetslö
+
+--- [v2 r140] sfs-2024-945:K15P12 | 375ch | qspec=['ett år', 'fem år']
+    Patentlag (2024:945) | 12 §
+    E=['dock', 'om inte', 'gäller inte'] Q=['om', 'efter det att'] | CEILING?='dock inte om talan om ersättning enligt 11 § väcks'
+    Rätten till ersättning för skada preskriberas om talan inte väcks inom fem år från det att skadan uppkom.
+
+Första stycket gäller dock inte om talan om ersättning enligt
+11 § väcks senast ett år efter det att tiden för invändning har gått ut eller, om invändning har gjorts, senast ett år efter det att Patent- och registreringsver
+
+--- [v2 r144] sfs-2025-400:K9P13 | 418ch | qspec=['två år']
+    Socialtjänstlag (2025:400) | 13 §
+    E=['om inte'] Q=['om', 'när/vid', 'särskilda skäl']
+    En vårdplan ska revideras vid behov. Om en vårdplan revideras, och det finns en genomförandeplan, ska även genomförandeplanen ses över.
+
+Den första revideringen av en vårdplan som gäller ett barn ska ske senast när barnet har varit placerat i två år. Om det inte finns särskilda skäl mot det, ska vårdplanen vid den tidpunkten sär
+
+--- [v2 r259] sfs-2026-1601:K9P4 | 196ch | qspec=['15 år']
+    Lag (2026:1601) om särskilda befogenheter för den statliga barn- och u | 4 §
+    E=['om inte'] Q=['om', 'när/vid']
+    När ett barn som är under 15 år uttrycker en vilja att överklaga ett beslut enligt 10 kap. 1 § ska ett offentligt biträde förordnas för barnet, om det inte måste antas att behov av biträde saknas.
+
+--- [v2 r262] sfs-2024-506:K10P3 | 214ch | qspec=['tre månader']
+    Lag (2024:506) om arbetslöshetsförsäkring | 3 §
+    E=['om inte'] Q=['om', 'särskilda skäl']
+    En ansökan om arbetslöshetsersättning ska avse en månad och göras senast tre månader efter utgången av den månad som ansökan avser. En ansökan som görs efter den tiden ska avvisas, om det inte finns särskilda skäl.
+
+--- [v2 r266] sfs-2017-725:K5P10 | 289ch | qspec=['sex månader']
+    Kommunallag (2017:725) | 10 §
+    E=['dock'] Q=['om']
+    Fullmäktige får besluta om extra val till fullmäktige mellan ordinarie val. Extra val ska hållas om minst två tredjedelar av de närvarande ledamöterna röstar för det. Ett beslut om extra val får dock inte fattas förrän sex månader har gått från det nyvalda fullmäktiges första sammanträde.
+
+--- [v2 r269] sfs-2026-1601:K9P5 | 306ch | qspec=['15 år']
+    Lag (2026:1601) om särskilda befogenheter för den statliga barn- och u | 5 §
+    E=['om inte'] Q=['om', 'när/vid']
+    När ett barn som har fyllt 15 år eller en ung person uttrycker en vilja att överklaga ett beslut om vård i enskildhet, vård vid låsbar enhet eller avskildhet enligt
+10 kap. 1 § första stycket 6 ska ett offentligt biträde förordnas för honom eller henne, om det inte måste antas att behov av biträde saknas.
+
+--- [v2 r277] sfs-2018-1219:K4P17 | 363ch | qspec=['tio år']
+    Lag (2018:1219) om försäkringsdistribution | 17 §
+    E=['om inte'] Q=['om', 'efter det att']
+    Den som vill göra anspråk på skadestånd enligt 16 § ska underrätta försäkringsdistributören inom skälig tid efter det att han eller hon märkt eller borde ha märkt att skada har uppkommit.
+
+Om underrättelse inte görs inom skälig tid, faller rätten till skadestånd enligt denna lag bort. Detsamma gäller om talan inte väcks inom tio
+
+--- [v2 r278] sfs-2014-836:P8a | 372ch | qspec=['sex månader']
+    Lag (2014:836) om näringsförbud | 8 a §
+    E=['om inte'] Q=['om', 'särskilda skäl']
+    Om den som avses med en talan eller en ansökan om näringsförbud har gjort sig skyldig till brott av det slag som avses i 4 § andra stycket och det för brottet inte är föreskrivet lindrigare straff än fängelse i sex månader, ska vid tillämpningen av 4 § andra stycket näringsförbud anses påkallat från allmän synpunkt, om inte särs
+
+--- [v2 r279] sfs-2018-1693:K4P5a | 375ch | qspec=['fem år']
+    Lag (2018:1693) om polisens behandling av personuppgifter inom brottsd | 5 a §
+    E=['dock', 'om inte'] Q=['om']
+    Personuppgifter i ett ärende om uppbörd får inte behandlas för ändamål inom denna lags tillämpningsområde längre än fem år efter utgången av det kalenderår då domstolens avgörande fick laga kraft eller strafföreläggandet eller föreläggandet av en ordningsbot godkändes. Personuppgifter som avser värdeförverkande eller företagsbot
+
+--- [v2 r292] sfs-2017-725:K5P35 | 408ch | qspec=['ett år']
+    Kommunallag (2017:725) | 35 §
+    E=['om inte'] Q=['om']
+    En motion eller ett medborgarförslag ska om möjligt beredas på sådant sätt att fullmäktige kan fatta beslut inom ett år från det att motionen eller medborgarförslaget väcktes.
+
+Om beredningen inte kan avslutas inom denna tid, ska detta och vad som har kommit fram vid beredningen anmälas till fullmäktige inom samma tid. Fullmäkti
+
+--- [v2 r440] sfs-2017-30:K7P3b | 190ch | qspec=['ett år']
+    Hälso- och sjukvårdslag (2017:30) | 3 b §
+    E=['dock'] Q=['om', 'särskilda skäl']
+    Byte av sådana utförare som avses i 3 a § första stycket får göras högst två gånger under en period om ett år. Om det finns särskilda skäl får regionen dock medge fler byten.
+Lag (2022:273).
+
+--- [v2 r449] sfs-2018-672:K11P8 | 257ch | qspec=['ett år']
+    Lag (2018:672) om ekonomiska föreningar | 8 §
+    E=['dock', 'gäller inte'] Q=['om']
+    Om föreningen försätts i konkurs på grund av en ansökan som görs inom ett år efter inlösen av en förlagsinsats, ska 10 kap. 15 § tillämpas på det utbetalda beloppet. Detta gäller dock inte förlagsinsatser som hade kunnat lösas in utan föregående uppsägning.
+
+--- [v2 r450] sfs-2021-516:K4P13 | 258ch | qspec=['två år']
+    Fastighetsmäklarlag (2021:516) | 13 §
+    E=['om inte'] Q=['om']
+    Ett beslut om sanktionsföreläggande enligt 10 § förfaller, om det inte har delgetts den som sanktionen riktas mot inom två år från den tidpunkt då överträdelsen inträffade. I ett sådant fall får inte heller någon sanktion enligt 12 § första stycket beslutas.
+
+--- [v2 r451] sfs-2018-1219:K9P20 | 260ch | qspec=['två år']
+    Lag (2018:1219) om försäkringsdistribution | 20 §
+    E=['om inte'] Q=['om']
+    Ett sanktionsföreläggande enligt 17 § är utan verkan, om det inte har delgetts den som det riktas mot inom två år från den tidpunkt då överträdelsen ägde rum. I ett sådant fall får inte heller någon sanktion enligt 19 § första stycket beslutas. Lag (2023:832).
+
+--- [v2 r453] sfs-2023-714:K7P18 | 261ch | qspec=['två år']
+    Lag (2023:714) om förvärv och förvaltning av nödlidande kreditavtal | 18 §
+    E=['om inte'] Q=['om']
+    Ett sanktionsföreläggande enligt 15 § är utan verkan, om föreläggandet inte har delgetts den som det riktas mot inom två år från den tidpunkt då överträdelsen ägde rum. I ett sådant fall får inte heller någon sanktionsavgift enligt 17 § första stycket beslutas.
+
+--- [v2 r455] sfs-2017-630:K7P20 | 270ch | qspec=['två år']
+    Lag (2017:630) om åtgärder mot penningtvätt och finansiering av terror | 20 §
+    E=['om inte'] Q=['om']
+    Ett sanktionsföreläggande enligt 17 § är utan verkan, om föreläggandet inte har delgetts den som det riktas mot inom två år från den tidpunkt då överträdelsen ägde rum. I ett sådant fall får inte heller någon sanktion enligt 19 § första stycket beslutas. Lag (2023:831).
+
+--- [v2 r460] sfs-2018-1694:K4P6a | 285ch | qspec=['fem år']
+    Lag (2018:1694) om Tullverkets behandling av personuppgifter inom brot | 6 a §
+    E=['om inte'] Q=['om']
+    Personuppgifter i ett ärende om uppbörd får inte behandlas för ändamål inom denna lags tillämpningsområde längre än fem år efter utgången av det kalenderår då domstolens avgörande fick laga kraft eller strafföreläggandet eller föreläggandet av en ordningsbot godkändes. Lag (2019:436).
+
+--- [v2 r463] sfs-2018-673:P25 | 295ch | qspec=['senare än']
+    Lag (2018:673) om införande av lagen (2018:672) om ekonomiska förening | 25 §
+    E=['dock'] Q=['om']
+    Om en årsstämma enligt lagen (2018:672) om ekonomiska föreningar enligt stadgarna får hållas senare än det som är tillåtet enligt 6 kap. 9 § i den lagen, får föreningen fortsätta att tillämpa bestämmelsen. Stämman ska dock alltid hållas inom nio månader från utgången av föregående räkenskapsår.
+
+--- [v2 r467] sfs-2017-527:P12 | 311ch | qspec=['tre veckor']
+    Lag (2017:527) om studiestartsstöd | 12 §
+    E=['dock'] Q=['om'] | CEILING?='dock pågå under en sammanhängande tid om minst tre'
+    Studiestartsstöd får lämnas för varje vecka som den studerande bedriver studier på minst halvtid. Studierna måste dock pågå under en sammanhängande tid om minst tre veckor.
+
+Studiestartsstöd får lämnas bara för sådan del av studietiden som omfattas av den kursplan eller motsvarande som gäller för utbildningen.
+
+--- [v2 r479] sfs-2016-752:P12 | 366ch | qspec=['två år']
+    Lag (2016:752) om tillfälliga begränsningar av möjligheten att få uppe | 12 §
+    E=['om inte', 'annat än'] Q=['om']
+    Ett uppehållstillstånd som beviljas enligt 5 kap. 6 § utlänningslagen (2005:716) ska vara tidsbegränsat och gälla i tretton månader, om inte något annat följer av 16 a, 18 eller
+18 a §. Om ett nytt uppehållstillstånd beviljas ska även det nya tillståndet vara tidsbegränsat och gälla i två år, om inte något annat följer av 16 a, 
+
+--- [v2 r489] sfs-2023-875:K1P8 | 397ch | qspec=['fem år']
+    Lag (2023:875) om tilläggsskatt | 8 §
+    E=['om inte', 'undantag'] Q=['om']
+    En rapporterande enhet kan välja att en enhet som avses i
+6 eller 7 § inte ska behandlas som en undantagen enhet.
+
+Ett sådant val gäller i fem år från och med det räkenskapsår som valet avser. Därefter fortsätter valet att gälla, om den rapporterande enheten inte återkallar valet. Om valet återkallas kan ett nytt val enligt förs
+
+--- [v2 r493] sfs-2016-752:P15 | 405ch | qspec=['tretton månader']
+    Lag (2016:752) om tillfälliga begränsningar av möjligheten att få uppe | 15 §
+    E=['om inte', 'annat än'] Q=['om']
+    Ett uppehållstillstånd som beviljas en utlänning enligt
+12 kap. 18 § första stycket utlänningslagen (2005:716) ska vara tidsbegränsat och gälla i tretton månader, om inte något annat följer av 16 a, 18 eller 18 a §. Om ett nytt uppehållstillstånd beviljas ska även det nya tillståndet vara tidsbegränsat och gälla i tretton månade
+
+--- [v2 r499] sfs-2022-365:K9P3 | 414ch | qspec=['två år']
+    Järnvägsmarknadslag (2022:365) | 3 §
+    E=['dock', 'gäller inte'] Q=['om']
+    Om en anläggning för tjänster som avses i 1 § andra stycket inte har varit i bruk under minst två år i följd och ett järnvägsföretag eller någon annan sökande av tjänst har uttryckt intresse för tillträde till anläggningen, ska ägaren till anläggningen offentliggöra att den helt eller delvis kan hyras eller leasas. Detta krav gä
+
+--- [v2 r691] sfs-2025-95:P8 | 192ch | qspec=['senast den']
+    Lag (2025:95) om användning av förnybara och koldioxidsnåla bränslen f | 8 §
+    E=['om inte'] Q=['om']
+    Om straffavgiften inte har betalats senast den 30 juni under kontrollperioden, ska den obetalda avgiften lämnas för indrivning enligt lagen (1993:891) om indrivning av statliga fordringar m.m.
+
+--- [v2 r692] sfs-2017-496:K2P3 | 202ch | qspec=['fem timmar']
+    Lag (2017:496) om internationellt polisiärt samarbete | 3 §
+    E=['om inte'] Q=['om']
+    Övervakning enligt 1 eller 2 § ska genast upphöra om en behörig svensk myndighet begär det. Övervakning enligt 2 § ska även upphöra om samtycke inte har lämnats inom fem timmar från gränsöverskridandet.
+
+--- [v2 r693] sfs-2016-1108:K1P3 | 207ch | qspec=['270 dagar']
+    Lag (2016:1108) om ersättning till riksdagens ledamöter | 3 §
+    E=['om inte'] Q=['om']
+    Med ett helt år avses i lagen 365 dagar. Om viss tid inte kan tillgodoräknas som ett helt år vid beräkningen av antalet hela år ska den tiden ändå anses som ett helt år, om tiden uppgår till minst 270 dagar.
+
+--- [v2 r702] sfs-2022-1697:K3P2 | 263ch | qspec=['vid utgången av']
+    Lag (2022:1697) om samordningsnummer | 2 §
+    E=['om inte'] Q=['om']
+    Ett samordningsnummer ska förklaras vilande
+
+1. om inte någon ansökan om förnyelse enligt 1 § första stycket har kommit in vid utgången av det femte kalenderåret efter det år då numret tilldelades eller senast förnyades, eller
+
+2. om det finns andra skäl för det.
+
+--- [v2 r707] sfs-2023-714:K5P4 | 300ch | qspec=['två månader']
+    Lag (2023:714) om förvärv och förvaltning av nödlidande kreditavtal | 4 §
+    E=['om inte'] Q=['om', 'när/vid']
+    Kreditförvaltaren får påbörja eller ändra sin verksamhet i värdlandet när den behöriga myndigheten där har bekräftat att den mottagit anmälan enligt 2 §.
+
+Om myndigheten inte har bekräftat mottagandet inom två månader från den dag då anmälan överlämnades, får verksamheten ändå påbörjas eller ändras.
+
+--- [v2 r714] sfs-2023-200:K5P17 | 316ch | qspec=['12 månader']
+    Mervärdesskattelag (2023:200) | 17 §
+    E=['om inte'] Q=['om']
+    Om varan inte har levererats till en sådan beskattningsbar person som avses i 16 § inom 12 månader från det att varan ankom till det EU-land som den sändes eller transporterades till, ska en överföring av varan anses ha skett enligt 12 §. Tidpunkten för överföringen ska vara dagen efter 12-månadersperiodens utgång.
+
+--- [v2 r737] sfs-2022-900:P8 | 354ch | qspec=['fem år']
+    Lag (2022:900) om registrering av idéburna organisationer | 8 §
+    E=['annat än'] Q=['om']
+    En registrerad idéburen organisation får inte göra några värdeöverföringar annat än till andra registrerade idéburna organisationer eller till forskning.
+
+Begränsningen i första stycket fortsätter att gälla under en tidsperiod om fem år efter att ett beslut om avregistrering meddelats för en organisation som tidigare varit regis
+
+--- [v2 r741] sfs-2019-601:K4P10 | 368ch | qspec=['två veckor']
+    Lag (2019:601) om tvistlösningsförfarande i ärenden som rör skatteavta | 10 §
+    E=['om inte'] Q=['om']
+    Om en sökande inte har fått del av den rådgivande kommitténs arbetsordning inom två veckor från inrättandet av kommittén, ska Skatteverket på begäran av sökanden skicka över den standardiserade arbetsordning som fastställts av Europeiska kommissionen enligt artikel 11.3 i skattetvistlös-
+ningsdirektivet, i den ursprungliga lydel
+
+--- [v2 r769] sfs-2018-672:K4P10 | 419ch | qspec=['sex månader', 'vid utgången av']
+    Lag (2018:672) om ekonomiska föreningar | 10 §
+    E=['dock'] Q=['när/vid'] | CEILING?='dock senast då någon som har övertagit andelen enl'
+    När en medlem avlider ska vid tillämpningen av denna lag medlemskapet anses upphöra vid utgången av det räkenskapsår som slutar närmast efter sex månader från dödsfallet, dock senast då någon som har övertagit andelen enligt 4 § beviljas medlemskap.
+
+När en medlem som är en juridisk person upplöses ska medlemskapet anses upphöra
+
+--- [v2 r956] sfs-2024-79:K2P3 | 198ch | qspec=['15 år']
+    Lag (2024:79) om placering av barn i skyddat boende | 3 §
+    E=['om inte'] Q=['om']
+    Om barnet fyllt 15 år, har han eller hon rätt att själv föra sin talan i ärenden och mål enligt denna lag. Ett barn som är yngre får höras i domstol, om han eller hon inte kan antas ta skada av det.
+
+--- [v2 r976] sfs-2024-79:K5P7 | 285ch | qspec=['sex månader']
+    Lag (2024:79) om placering av barn i skyddat boende | 7 §
+    E=['om inte'] Q=['om']
+    En framställning från den vårdnadshavare som barnet inte är placerat tillsammans med om att inte hålla vistelseorten hemlig eller om umgängets utövande, får avvisas om framställningen kommer in till socialnämnden inom sex månader från det att ett beslut enligt 4 § har fått laga kraft.
+
+--- [v2 r979] sfs-2026-1600:K5P10 | 302ch | qspec=['två månader']
+    Lag (2026:1600) om omhändertagande för vård av barn och unga | 10 §
+    E=['om inte'] Q=['om']
+    Ett beslut om fortsatt omhändertagande för tillfällig vård enligt 8 § får avse högst två månader åt gången, räknat från den dag då beslutet fattades. Ett fortsatt omhändertagande för tillfällig vård får pågå under högst en sammanhängande period av ett år, om inte fortsatt tillfällig vård är nödvändig.
+
+--- [v2 r1008] sfs-2022-856:P8 | 357ch | qspec=['62 år']
+    Lag (2022:856) om omställningsstudiestöd | 8 §
+    E=['dock'] Q=['om']
+    Omställningsstudiebidrag får lämnas längst till och med det kalenderår då den studerande fyller 63 år. I 21 § finns dock bestämmelser om att omställningsstudiebidraget är begränsat från och med det kalenderår då den studerande fyller
+62 år.
+
+Omställningsstudielån får lämnas längst till och med det kalenderår då den studerande fy
+
+--- [v2 r2633] sfs-2018-1138:K16P5 | 127ch | qspec=['fem år']
+    Spellag (2018:1138) | 5 §
+    E=['om inte'] Q=['om']
+    En licenshavare ska, om inte spelmyndigheten beslutar om annat, spara alla uppgifter om driften av spelsystemet i minst fem år.
+

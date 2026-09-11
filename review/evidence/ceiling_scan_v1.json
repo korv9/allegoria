@@ -1,0 +1,125 @@
+{
+  "candidates": 461,
+  "with_dock": 155,
+  "flagged": [
+    {
+      "provision_id": "sfs-1977-480:P11",
+      "char_count": 548,
+      "windows": [
+        "dock om möjligt minst en månad före ledighetens början. Lag (200"
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-673:P3",
+      "char_count": 1787,
+      "windows": [
+        "dock under högst en månad, räknat från den dag då avtalet ingick"
+      ]
+    },
+    {
+      "provision_id": "sfs-1977-480:P13",
+      "char_count": 1073,
+      "windows": [
+        "dock endast om arbetstagaren underrättar arbetsgivaren senast tv"
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-772:K1P4:occurrence:2",
+      "char_count": 476,
+      "windows": [
+        "dock ha gällt i minst ett år."
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-1283:K2P6",
+      "char_count": 327,
+      "windows": [
+        "dock under högst tre år."
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-786:K4P3",
+      "char_count": 549,
+      "windows": [
+        "dock längst under 96 timmar."
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-1011:K8P28",
+      "char_count": 1409,
+      "windows": [
+        "dock minst tre månader, har kreditgivaren trots vad som anges i "
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P6c",
+      "char_count": 3274,
+      "windows": [
+        "dock senast den sjunde kalenderdagen efter det att arbetstagaren"
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-786:K10P20",
+      "char_count": 308,
+      "windows": [
+        "dock längst under 48 timmar."
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-786:K4P4",
+      "char_count": 431,
+      "windows": [
+        "dock längst under 96 timmar."
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P7b",
+      "char_count": 500,
+      "windows": [
+        "dock längst tre månader. Lag (2022:835)."
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P6e",
+      "char_count": 411,
+      "windows": [
+        "dock senast den dag då ändringen ska börja tillämpas. Lag (2022:"
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-673:P8",
+      "char_count": 252,
+      "windows": [
+        "dock med högst 200 timmar under ett kalenderår (allmän övertid)."
+      ]
+    },
+    {
+      "provision_id": "sfs-2026-1281:K11P22",
+      "char_count": 528,
+      "windows": [
+        "dock högst femton kalenderdagar. Tidsfristen börjar löpa dagen e"
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P30",
+      "char_count": 921,
+      "windows": [
+        "dock att överläggning begärs senast en vecka efter det att under"
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P28",
+      "char_count": 398,
+      "windows": [
+        "dock inte lämnas, om anställningstiden är högst en månad."
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P25a",
+      "char_count": 723,
+      "windows": [
+        "dock högst heltid, har trots 25 § företrädesrätt till sådan anst"
+      ]
+    }
+  ]
+}

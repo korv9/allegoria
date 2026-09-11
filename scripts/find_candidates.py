@@ -127,6 +127,43 @@ VAGUE_QUALIFIER = re.compile(
     re.IGNORECASE,
 )
 
+# The ladder in DIRECTION.md grades THE QUALIFIER, not the provision. Measuring
+# it over the whole text reports a deadline sitting in the duty or the exception
+# as though the condition were checkable: sfs-2023-560:P15 read `specific` on
+# "tre månader" and "sex månader" while its actual qualifier is "Om det finns
+# särskilda skäl", which is not checkable at all. A qualifier span runs from its
+# marker to the end of that clause.
+QUALIFIER_CLAUSE_END = re.compile(r"[.,;:]")
+
+
+def qualifier_spans(text: str) -> list[str]:
+    """The clause each qualifier marker opens, for per-slot determinacy."""
+    spans: list[str] = []
+    for _label, pattern, _weight in QUALIFIER_MARKERS:
+        for match in pattern.finditer(text):
+            end = QUALIFIER_CLAUSE_END.search(text, match.end())
+            spans.append(text[match.start() : end.start() if end else len(text)])
+    return spans
+
+
+def qualifier_determinacy(text: str) -> tuple[str, list[str], list[str]]:
+    """Grade the qualifiers themselves on the determinacy ladder.
+
+    A provision is `specific` only if some qualifier clause carries a checkable
+    bound of its own. This is what decides whether a passage can show the
+    two-step fall the founding observation turned on -- a vague qualifier has
+    only one rung left to drop.
+    """
+    specific: set[str] = set()
+    vague: set[str] = set()
+    for span in qualifier_spans(text):
+        specific |= {match.group(0).lower() for match in SPECIFIC_QUALIFIER.finditer(span)}
+        vague |= {match.group(0).lower() for match in VAGUE_QUALIFIER.finditer(span)}
+
+    state = "specific" if specific else ("vague" if vague else "unmarked")
+    return state, sorted(specific), sorted(vague)
+
+
 # Passages get hand-twinned into a fictional counterpart with identical
 # structure. Very short ones carry no structure; very long ones are unworkable.
 IDEAL_MIN_CHARS = 150
@@ -152,6 +189,11 @@ def score_provision(text: str) -> dict[str, object] | None:
     if IDEAL_MIN_CHARS <= len(text) <= IDEAL_MAX_CHARS:
         score += 4
 
+    # Two figures, deliberately kept apart. `determinacy` grades the provision
+    # and still drives the score, so the ranking is unchanged. The ladder in
+    # DIRECTION.md is about the qualifier, and that is the one to select on.
+    qualifier_state, qualifier_specific, qualifier_vague = qualifier_determinacy(text)
+
     return {
         "duty_markers": [label for label, _ in duty],
         "exception_markers": [label for label, _ in exception],
@@ -159,6 +201,9 @@ def score_provision(text: str) -> dict[str, object] | None:
         "specific_qualifiers": specific,
         "vague_qualifiers": vague,
         "determinacy": "specific" if specific else ("vague" if vague else "unmarked"),
+        "qualifier_determinacy": qualifier_state,
+        "qualifier_specific": qualifier_specific,
+        "qualifier_vague": qualifier_vague,
         "score": score,
     }
 

@@ -64,6 +64,27 @@ CLAUSE_BOUNDARY = re.compile(
 WILDCARD_SHAPE = re.compile(r"\\w[+*]|\{\d+,\d*\}")
 
 
+# A `dock` that introduces an upper bound on a granted power, rather than a
+# carve-out from an obligation. The bound words are a closed class; the window
+# is small because the bound follows its `dock` closely in practice.
+BOUND_WORDS = re.compile(
+    r"\b(?:högst|längst|minst|tidigast|senast|mest|inte\s+överstiga|"
+    r"inte\s+(?:\w+\s+){0,2}?längre\s+än)\b",
+    re.IGNORECASE,
+)
+DOCK = re.compile(r"\bdock\b", re.IGNORECASE)
+CEILING_WINDOW = 60
+
+
+def ceiling_hits(text: str) -> list[tuple[str, bool]]:
+    """Every `dock` with the span that follows it, and whether it carries a bound."""
+    hits: list[tuple[str, bool]] = []
+    for match in DOCK.finditer(text):
+        window = text[match.start() : match.end() + CEILING_WINDOW]
+        hits.append((window.replace("\n", " "), bool(BOUND_WORDS.search(window))))
+    return hits
+
+
 def determinacy(text: str, specific: re.Pattern[str]) -> str:
     if specific.search(text):
         return "specific"
@@ -135,7 +156,7 @@ def wildcard_inventory(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=("determinacy-delta", "wildcard-inventory"))
+    parser.add_argument("mode", choices=("determinacy-delta", "wildcard-inventory", "ceiling-scan"))
     parser.add_argument("--pool", choices=sorted(POOLS), default="v1")
     parser.add_argument("--sample", type=int, default=20)
     parser.add_argument("--seed", type=int, default=20260911)
@@ -158,6 +179,31 @@ def main() -> None:
         if result["changed"] > 15:
             print(f"  ... {result['changed'] - 15} more")
         payload: object = result
+    elif args.mode == "ceiling-scan":
+        from scripts.find_candidates import shortlist
+
+        candidates = shortlist(provisions)
+        flagged = []
+        for candidate in candidates:
+            hits = ceiling_hits(str(candidate["text"]))
+            bounded = [window for window, has_bound in hits if has_bound]
+            if bounded:
+                flagged.append(
+                    {
+                        "provision_id": str(candidate["provision_id"]),
+                        "char_count": candidate["char_count"],
+                        "windows": bounded,
+                    }
+                )
+        with_dock = sum(1 for c in candidates if DOCK.search(str(c["text"])))
+        print(
+            f"CEILING SCAN {args.pool} | {len(candidates)} candidates | "
+            f"{with_dock} carry `dock` | {len(flagged)} carry `dock` + a bound "
+            f"({len(flagged) / with_dock:.1%} of dock candidates)"
+        )
+        for entry in flagged[:10]:
+            print(f"  {entry['provision_id']:<34} {entry['windows'][0][:72]!r}")
+        payload = {"candidates": len(candidates), "with_dock": with_dock, "flagged": flagged}
     else:
         payload = wildcard_inventory(provisions, args.sample, args.seed)
         print(f"WILDCARD MARKERS {args.pool} | seed {args.seed}")

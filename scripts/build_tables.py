@@ -76,6 +76,10 @@ CANDIDATE_COLUMNS = (
     ("has_exception", "BOOLEAN"),
     ("has_qualifier", "BOOLEAN"),
     ("determinacy", "VARCHAR"),
+    # Provision-level `determinacy` above grades the whole text and still drives
+    # the score. This grades the qualifier clause itself, which is what the
+    # DIRECTION.md ladder is actually about and what specimens are selected on.
+    ("qualifier_determinacy", "VARCHAR"),
     ("duty_marker", "VARCHAR"),
     ("exception_marker", "VARCHAR"),
     ("qualifier_marker", "VARCHAR"),
@@ -135,6 +139,7 @@ def candidate_rows(candidates: list[dict[str, object]]) -> list[tuple[object, ..
                 True,
                 True,
                 str(candidate["determinacy"]),
+                str(candidate["qualifier_determinacy"]),
                 _top_marker(text, DUTY_MARKERS),
                 _top_marker(text, EXCEPTION_MARKERS),
                 _top_marker(text, QUALIFIER_MARKERS),
