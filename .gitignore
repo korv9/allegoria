@@ -9,6 +9,3 @@ AGENTS.md
 CONTINUITY.md
 data/local/
 *.egg-info/
-
-# Notebook exports are build artifacts; notebooks/*.py is the source of truth.
-*.ipynb
