@@ -23,7 +23,7 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["products*"]
+include = ["products*", "simulacria*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

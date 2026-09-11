@@ -23,18 +23,12 @@ from __future__ import annotations
 
 import argparse
 import re
-import sys
 from dataclasses import dataclass
-from pathlib import Path
 
 import yaml
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from scripts.build_silver import POOLS
-from scripts.find_candidates import EXCEPTION_MARKERS, load_provisions
+from simulacria.selection.markers import EXCEPTION_MARKERS
+from simulacria.selection.pools import POOLS, PROJECT_ROOT, load_provisions
 
 GOLD = PROJECT_ROOT / "tests" / "fixtures" / "om_inte_gold.yaml"
 

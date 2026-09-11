@@ -206,15 +206,37 @@ def test_bundle_orders_setup_bronze_silver_gold() -> None:
 
 def test_product_boundaries_are_explicit() -> None:
     allegoria_readme = (PRODUCT / "README.md").read_text(encoding="utf-8")
-    simulacria_readme = (ROOT / "products/simulacria/README.md").read_text(
-        encoding="utf-8"
-    )
 
     assert "bronze_allegoria.sfs_documents" in allegoria_readme
     assert "silver_allegoria.sfs_provisions" in allegoria_readme
     assert "gold_allegoria.sfs_provision_summary" in allegoria_readme
     assert "gold_allegoria.sfs_retrieval_chunks" in allegoria_readme
-    assert "model-generation events" in simulacria_readme
-    assert "direction" in simulacria_readme
-    assert "JSONL" in simulacria_readme
-    assert "gold_allegoria" not in simulacria_readme
+
+
+def test_measurement_does_not_import_selection() -> None:
+    """The boundary that matters, checked structurally rather than in prose.
+
+    `DIRECTION.md` assigns slot annotation to human hands because it decides the
+    sign. A selection heuristic reaching into the metric would arrive as an
+    ordinary-looking import, so the rule is enforced here rather than trusted to
+    a docstring. This previously asserted phrases in a README, which could not
+    fail for the right reason.
+    """
+    offenders: list[str] = []
+    for path in sorted((ROOT / "simulacria/measurement").rglob("*.py")):
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ImportFrom) and (node.module or "").startswith(
+                "simulacria.selection"
+            ):
+                offenders.append(f"{path.relative_to(ROOT)}:{node.lineno}: from {node.module}")
+            elif isinstance(node, ast.Import):
+                offenders += [
+                    f"{path.relative_to(ROOT)}:{node.lineno}: import {alias.name}"
+                    for alias in node.names
+                    if alias.name.startswith("simulacria.selection")
+                ]
+
+    assert not offenders, "simulacria.measurement must not import from simulacria.selection: " + (
+        "; ".join(offenders)
+    )

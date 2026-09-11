@@ -31,15 +31,10 @@ import argparse
 import hashlib
 import json
 import os
-import sys
 import time
 from datetime import UTC, datetime
 from pathlib import Path
 from urllib.parse import urlencode
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
 
 from products.allegoria.sfs_ingestion import (
     DATA_URL_TEMPLATE,
@@ -50,6 +45,7 @@ from products.allegoria.sfs_ingestion import (
     _required_list_value,
     parse_sfs_xml,
 )
+from simulacria.selection.pools import PROJECT_ROOT
 
 POOL_DIR = PROJECT_ROOT / "data" / "local" / "pool_v2"
 MANIFEST_PATH = PROJECT_ROOT / "data" / "source" / "sfs" / "manifest_v2.json"

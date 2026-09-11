@@ -5,7 +5,7 @@ any fix was written. This script only joins them to the sampled spans so the
 gold file cannot drift from the sample through transcription.
 
     python scripts/write_om_inte_gold.py \
-        --sample review/evidence/om_inte_sample.json \
+        --sample review/2026-09-11/evidence/om_inte_sample.json \
         --out tests/fixtures/om_inte_gold.yaml
 
 Re-running regenerates the file. Correcting a label means editing LABELS here

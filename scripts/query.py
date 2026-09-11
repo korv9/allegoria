@@ -18,25 +18,8 @@ import io
 import sys
 from pathlib import Path
 
-import duckdb
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-TABLES_DIR = PROJECT_ROOT / "data" / "local" / "tables"
-TABLES = ("provisions", "candidates", "marker_hits", "markers")
-
-
-def connect(tables_dir: Path) -> duckdb.DuckDBPyConnection:
-    missing = [name for name in TABLES if not (tables_dir / f"{name}.parquet").is_file()]
-    if missing:
-        raise SystemExit(
-            f"missing table(s) {missing} in {tables_dir}. Run scripts/build_tables.py first."
-        )
-
-    connection = duckdb.connect()
-    for name in TABLES:
-        source = (tables_dir / f"{name}.parquet").as_posix()
-        connection.execute(f"CREATE VIEW \"{name}\" AS SELECT * FROM read_parquet('{source}')")
-    return connection
+from simulacria.selection.pools import POOLS
+from simulacria.selection.tables import connect
 
 
 def format_table(columns: list[str], rows: list[tuple[object, ...]], max_width: int) -> str:
@@ -69,9 +52,7 @@ def main() -> None:
     parser.add_argument("--max-width", type=int, default=60, help="truncate wide cells")
     args = parser.parse_args()
 
-    tables_dir = args.tables_dir or (
-        TABLES_DIR if args.pool == "v1" else TABLES_DIR.with_name("tables_v2")
-    )
+    tables_dir = args.tables_dir or POOLS[args.pool].tables_dir
 
     sql = args.command if args.command is not None else sys.stdin.read()
     if not sql.strip():

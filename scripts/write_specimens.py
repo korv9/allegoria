@@ -1,10 +1,10 @@
-"""Render review/SPECIMENS.md from the candidate tables plus hand-written notes.
+"""Render review/2026-09-11/SPECIMENS.md from the candidate tables plus hand-written notes.
 
 Provision text, character counts and source URLs come from the data. The quoted
 parts and the one-line verdicts are hand-written below, from reading each
 provision.
 
-    python scripts/write_specimens.py --out review/SPECIMENS.md
+    python scripts/write_specimens.py --out review/2026-09-11/SPECIMENS.md
 
 Qualifier attachment is deliberately left blank. DIRECTION.md puts that
 annotation in human hands, because which part a qualifier hangs on decides the
@@ -15,16 +15,11 @@ metric belongs.
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-import scripts.find_candidates as fc
-from scripts.audit_markers import ceiling_hits
-from scripts.build_silver import POOLS
+from simulacria.selection.markers import ceiling_hits
+from simulacria.selection.pools import POOLS, load_provisions
+from simulacria.selection.shortlist import shortlist
 
 # (provision_id, duty, part_kind, part_text, qualifier, hand_determinacy, verdict)
 #
@@ -265,7 +260,7 @@ and `DIRECTION.md` puts that call in human hands.
 **`ceiling?` is a flag, not a verdict.** Four specimens carry a `dock` clause
 that bounds a granted power rather than carving cases out of a duty. Removing a
 ceiling *loosens*; removing an exception *tightens*. Nothing here resolves which
-it is — see `review/DIRECTION-ceiling-proposal.md`, pending ratification.
+it is — see `review/2026-09-11/DIRECTION-ceiling-proposal.md`, pending ratification.
 
 One passage from the previous sheet, `sfs-2024-237:P2`, was dropped outright and
 not replaced within its domain: a model hedging or refusing on that subject
@@ -281,8 +276,8 @@ def main() -> None:
 
     rows: dict[str, dict] = {}
     for pool in ("v2", "v1"):  # v1 last so the frozen corpus wins on duplicates
-        provisions = fc.load_provisions(POOLS[pool].output_path)
-        for rank, candidate in enumerate(fc.shortlist(provisions), start=1):
+        provisions = load_provisions(POOLS[pool].output_path)
+        for rank, candidate in enumerate(shortlist(provisions), start=1):
             rows[str(candidate["provision_id"])] = {"pool": pool, "rank": rank, **candidate}
 
     lines = [HEADER]

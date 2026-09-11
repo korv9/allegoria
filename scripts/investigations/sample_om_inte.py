@@ -4,7 +4,7 @@ Extraction only -- this script assigns no labels. It emits the sample with
 context so a human (or, here, a careful read) can label each hit, and it is run
 BEFORE any fix so the evaluation cannot be tuned to the fix.
 
-    python scripts/sample_om_inte.py --out review/evidence/om_inte_sample.json
+    python scripts/sample_om_inte.py --out review/2026-09-11/evidence/om_inte_sample.json
 
 Selection, in priority order:
 
@@ -22,18 +22,11 @@ from __future__ import annotations
 import argparse
 import json
 import random
-import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from scripts.audit_markers import CLAUSE_BOUNDARY
-from scripts.build_silver import POOLS
-from scripts.build_tables import TABLE_DIRS
-from scripts.find_candidates import EXCEPTION_MARKERS, load_provisions
-from scripts.query import connect
+from simulacria.selection.markers import CLAUSE_BOUNDARY, EXCEPTION_MARKERS
+from simulacria.selection.pools import POOLS, load_provisions
+from simulacria.selection.tables import connect
 
 CONTEXT_CHARS = 120
 TARGET_SAMPLE = 80
@@ -43,7 +36,7 @@ OM_INTE = next(pattern for label, pattern, _w in EXCEPTION_MARKERS if label == "
 
 
 def _ranks(pool: str) -> dict[str, int]:
-    connection = connect(TABLE_DIRS[pool])
+    connection = connect(POOLS[pool].tables_dir)
     try:
         rows = connection.execute("select provision_id, rank from candidates").fetchall()
     finally:

@@ -11,18 +11,15 @@ The provisions are parsed from the committed Bronze JSON, not from
 
 from __future__ import annotations
 
-import sys
 from functools import lru_cache
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
 
-from scripts.build_silver import BRONZE_DIR, build_provisions
-from scripts.find_candidates import shortlist
+from simulacria.selection.pools import BRONZE_DIR, build_provisions
+from simulacria.selection.shortlist import shortlist
 
 FIXTURE = Path(__file__).parent / "fixtures/must_surface.yaml"
 CATEGORIES = ("duty", "exception", "qualifier")

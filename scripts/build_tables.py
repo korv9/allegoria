@@ -19,38 +19,24 @@ extractor; it is cheap to enforce here and keeps the habit in one place.
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 
 import duckdb
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from scripts.build_silver import POOLS
-from scripts.find_candidates import (
+from simulacria.selection.markers import (
     DUTY_MARKERS,
     EXCEPTION_MARKERS,
+    MARKER_SETS,
     QUALIFIER_MARKERS,
-    _hits,
-    load_provisions,
-    shortlist,
+    iter_matches,
+    top_marker,
 )
-
-TABLES_DIR = PROJECT_ROOT / "data" / "local" / "tables"
+from simulacria.selection.pools import POOLS, load_provisions
+from simulacria.selection.shortlist import shortlist
 
 # One table directory per pool, so a v2 rebuild never overwrites the v1 tables.
-TABLE_DIRS = {
-    "v1": TABLES_DIR,
-    "v2": PROJECT_ROOT / "data" / "local" / "tables_v2",
-}
-
-MARKER_SETS = (
-    ("duty", DUTY_MARKERS),
-    ("exception", EXCEPTION_MARKERS),
-    ("qualifier", QUALIFIER_MARKERS),
-)
+# The mapping lives on the Pool itself.
+TABLE_DIRS = {name: pool.tables_dir for name, pool in POOLS.items()}
 
 PROVISION_COLUMNS = (
     ("provision_id", "VARCHAR"),
@@ -140,24 +126,13 @@ def candidate_rows(candidates: list[dict[str, object]]) -> list[tuple[object, ..
                 True,
                 str(candidate["determinacy"]),
                 str(candidate["qualifier_determinacy"]),
-                _top_marker(text, DUTY_MARKERS),
-                _top_marker(text, EXCEPTION_MARKERS),
-                _top_marker(text, QUALIFIER_MARKERS),
+                top_marker(text, DUTY_MARKERS),
+                top_marker(text, EXCEPTION_MARKERS),
+                top_marker(text, QUALIFIER_MARKERS),
                 int(candidate["char_count"]),
             )
         )
     return rows
-
-
-def _top_marker(text: str, markers: list[tuple[str, object, int]]) -> str | None:
-    """The marker that carried the category score.
-
-    `_strength` in find_candidates scores a category by its heaviest hit, and
-    `max` keeps the first maximal element, so this resolves ties the same way
-    the ranking does: by order in the marker list.
-    """
-    hits = _hits(text, markers)
-    return max(hits, key=lambda hit: hit[1])[0] if hits else None
 
 
 def marker_rows() -> list[tuple[object, ...]]:
@@ -176,17 +151,16 @@ def marker_hit_rows(provisions: list[dict[str, object]]) -> list[tuple[object, .
         provision_id = str(provision["provision_id"])
         text = str(provision["text"])
         for category, markers in MARKER_SETS:
-            for label, pattern, _weight in markers:
-                for match in pattern.finditer(text):
-                    span, offset = match.group(0), match.start()
-                    # PROTOCOL.md: a span that is not a verbatim substring of
-                    # its input is a failed extraction, never silently accepted.
-                    if text[offset : offset + len(span)] != span:
-                        raise SystemExit(
-                            f"{provision_id}: marker {label!r} produced span {span!r} "
-                            f"that is not the text at offset {offset}"
-                        )
-                    rows.append((provision_id, category, label, span, offset))
+            for label, match in iter_matches(text, markers):
+                span, offset = match.group(0), match.start()
+                # PROTOCOL.md: a span that is not a verbatim substring of its
+                # input is a failed extraction, never silently accepted.
+                if text[offset : offset + len(span)] != span:
+                    raise SystemExit(
+                        f"{provision_id}: marker {label!r} produced span {span!r} "
+                        f"that is not the text at offset {offset}"
+                    )
+                rows.append((provision_id, category, label, span, offset))
     return rows
 
 

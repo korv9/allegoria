@@ -21,22 +21,17 @@ import argparse
 import json
 import random
 import re
-import sys
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from scripts.build_silver import POOLS
-from scripts.find_candidates import (
-    DUTY_MARKERS,
-    EXCEPTION_MARKERS,
-    QUALIFIER_MARKERS,
-    SPECIFIC_QUALIFIER,
-    VAGUE_QUALIFIER,
-    load_provisions,
+from simulacria.selection.determinacy import SPECIFIC_QUALIFIER, VAGUE_QUALIFIER
+from simulacria.selection.markers import (
+    CLAUSE_BOUNDARY,
+    DOCK,
+    MARKER_SETS,
+    ceiling_hits,
 )
+from simulacria.selection.pools import POOLS, load_provisions
+from simulacria.selection.shortlist import shortlist
 
 # The pattern as it stood before 2026-09-11. Kept verbatim as a baseline so the
 # delta is measurable; it is never used for scoring.
@@ -47,42 +42,9 @@ LEGACY_SPECIFIC_QUALIFIER = re.compile(
     re.IGNORECASE,
 )
 
-MARKER_SETS = (
-    ("duty", DUTY_MARKERS),
-    ("exception", EXCEPTION_MARKERS),
-    ("qualifier", QUALIFIER_MARKERS),
-)
-
-# Tokens that end the clause an `om ... inte` gap started in. A span containing
-# one of these has left the conditional it claims to mark.
-CLAUSE_BOUNDARY = re.compile(
-    r"[,;:]|\b(?:att|men|som|och|eller|vilket|där|när|då)\b", re.IGNORECASE
-)
-
 # `\w+` and `\w*` are unbounded wildcards; `{n,m}` is the bounded repetition that
-# stands in for "same clause". All three are the shape Part C is inventorying.
+# stands in for "same clause". All three are the shape this audit inventories.
 WILDCARD_SHAPE = re.compile(r"\\w[+*]|\{\d+,\d*\}")
-
-
-# A `dock` that introduces an upper bound on a granted power, rather than a
-# carve-out from an obligation. The bound words are a closed class; the window
-# is small because the bound follows its `dock` closely in practice.
-BOUND_WORDS = re.compile(
-    r"\b(?:högst|längst|minst|tidigast|senast|mest|inte\s+överstiga|"
-    r"inte\s+(?:\w+\s+){0,2}?längre\s+än)\b",
-    re.IGNORECASE,
-)
-DOCK = re.compile(r"\bdock\b", re.IGNORECASE)
-CEILING_WINDOW = 60
-
-
-def ceiling_hits(text: str) -> list[tuple[str, bool]]:
-    """Every `dock` with the span that follows it, and whether it carries a bound."""
-    hits: list[tuple[str, bool]] = []
-    for match in DOCK.finditer(text):
-        window = text[match.start() : match.end() + CEILING_WINDOW]
-        hits.append((window.replace("\n", " "), bool(BOUND_WORDS.search(window))))
-    return hits
 
 
 def determinacy(text: str, specific: re.Pattern[str]) -> str:
@@ -180,8 +142,6 @@ def main() -> None:
             print(f"  ... {result['changed'] - 15} more")
         payload: object = result
     elif args.mode == "ceiling-scan":
-        from scripts.find_candidates import shortlist
-
         candidates = shortlist(provisions)
         flagged = []
         for candidate in candidates:

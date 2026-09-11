@@ -1,0 +1,12 @@
+=== pytest ===
+=========================== short test summary info ===========================
+FAILED tests/test_candidate_markers.py::test_fixture_provisions_hit_their_markers
+1 failed, 10 passed, 3 warnings in 4.13s
+=== silver v1 ===
+SILVER v1 | 50 documents -> 1952 provisions (paragraph 1876, transitional_provision 76) | output: C:\Users\46762\VSCODE\allegoria\data\local\provisions.jsonl
+=== silver v2 ===
+SILVER v2 | 466 documents, 30 unparsable skipped -> 18836 provisions (paragraph 18289, transitional_provision 547) | output: C:\Users\46762\VSCODE\allegoria\data\local\provisions_v2.jsonl
+=== tables v1 ===
+TABLES v1 | provisions 1952, candidates 461, marker_hits 8983, markers 28 | output: C:\Users\46762\VSCODE\allegoria\data\local\tables
+=== tables v2 ===
+TABLES v2 | provisions 18836, candidates 4071, marker_hits 91679, markers 28 | output: C:\Users\46762\VSCODE\allegoria\data\local\tables_v2
