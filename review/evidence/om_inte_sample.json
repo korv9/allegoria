@@ -1,0 +1,1178 @@
+{
+  "total_hits": 2843,
+  "seed": 20260911,
+  "counts": {
+    "known_defective_v1": 18,
+    "top_50_ranked": 57,
+    "top_50_provisions_covered": 57,
+    "random_filler": 5,
+    "selected": 80
+  },
+  "stratified": "Deliberately enriched with hard cases: every known-defective v1 hit is included. Precision measured on this set is a lower bound on corpus-wide precision, not an estimate of it.",
+  "hits": [
+    {
+      "provision_id": "sfs-1977-480:P13",
+      "document_title": "Semesterlag (1977:480)",
+      "span": "om permittering som arbetstagaren inte",
+      "char_offset": 25,
+      "context": "Beslutar en arbetsgivare om permittering som arbetstagaren inte hade anledning att räkna med när besked lämnades enligt 8 §, har arbetstagaren rätt att avstå från utlagd semesterledig",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 24,
+      "rank_v2": 120,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-1982-80:P38",
+      "document_title": "Lag (1982:80) om anställningsskydd",
+      "span": "om han eller hon inte",
+      "char_offset": 218,
+      "context": " som arbetstagaren kan ha rätt till utan även ersättning för skada som uppkommer. En arbetstagare är skadeståndsskyldig om han eller hon inte iakttar den uppsägningstid som anges i 11 § första stycket.  Skadestånd enligt första stycket kan avse både ersättning ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 230,
+      "rank_v2": 1642,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2008-567:K2P15",
+      "document_title": "Diskrimineringslag (2008:567)",
+      "span": "om att en totalförsvarspliktig inte",
+      "char_offset": 468,
+      "context": "et gäller dock inte diskriminering som har samband med ålder.  Förbudet hindrar inte heller tillämpning av bestämmelser om att en totalförsvarspliktig inte ska kallas till mönstring eller inkallas till värnplikt eller civilplikt om han eller hon hänvisar till sin anslutning ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 174,
+      "rank_v2": 1159,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-1011:K3P1",
+      "document_title": "Konsumentkreditlag (2026:1011)",
+      "span": "om att en kredit inte",
+      "char_offset": 1694,
+      "context": "t,  19. begärda säkerheter,  20. hur ränteskillnadsersättningen ska beräknas,  21. konsumentens rätt att få information om att en kredit inte beviljats,  22. konsumentens rätt att få ett utkast till kreditavtalet enligt 9 §,  23. personanpassning av priset på g",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 432,
+      "rank_v2": 3775,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-1054:P8",
+      "document_title": "Lag (2026:1054) om karens för vissa befattningshavare i Finansinspektionen vid övergång till annan verksamhet",
+      "span": "om att karens inte",
+      "char_offset": 497,
+      "context": "nställningen eller det nya uppdraget får inte påbörjas innan de tre veckorna har löpt ut eller ett beslut har meddelats om att karens inte ska gälla för övergången.",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 2,
+      "rank_v2": 35,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-1281:K18P6",
+      "document_title": "Elmarknadslag (2026:1281)",
+      "span": "om att en systemansvarig inte",
+      "char_offset": 213,
+      "context": "till myndigheten, om anmälan  1. har lämnats in av någon som har ett intresse i saken, och  2. innehåller ett påstående om att en systemansvarig inte följer bestämmelser som omfattas av nätmyndighetens tillsyn enligt 1 §.  Om nätmyndigheten behöver ytterligare tid för ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 20,
+      "rank_v2": 106,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-1281:K19P3",
+      "document_title": "Elmarknadslag (2026:1281)",
+      "span": "Om redovisningshandlingarna eller revisorsintyget inte",
+      "char_offset": 0,
+      "context": "Om redovisningshandlingarna eller revisorsintyget inte har kommit in inom två månader från det att nätmyndigheten skickade ett meddelande till den systemansvariga med informa",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 127,
+      "rank_v2": 828,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-1459:P15",
+      "document_title": "Lag (2026:1459) om insyn i kommunikation med syfte att påverka politiska beslut",
+      "span": "om att den registrerade inte",
+      "char_offset": 402,
+      "context": " i föreskriven tid,  2. uppgifter i en anmälan om registrering, i en anmälan om ändring av uppgifter eller i en anmälan om att den registrerade inte längre uppfyller kraven för anmälningsskyldighet är bristfälliga eller felaktiga, eller  3. uppgifter i en redovisning ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 301,
+      "rank_v2": 2360,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-1460:P3",
+      "document_title": "Lag (2026:1460) med bestämmelser om arbetsmarknadsorganisationers bidrag för partipolitiska ändamål",
+      "span": "om att dennes medlemsavgift inte",
+      "char_offset": 146,
+      "context": "anisation på arbetsmarknaden som lämnar bidrag för partipolitiska ändamål har rätt att när som helst avge en förklaring om att dennes medlemsavgift inte får användas för sådana bidrag. En sådan förklaring gäller tills vidare och kan när som helst återkallas av medlemmen. ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 151,
+      "rank_v2": 1026,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-310:P12",
+      "document_title": "Lag (2026:310) om tillhandahållande på marknaden av EU-gödselprodukter",
+      "span": "om överensstämmelse eller inte",
+      "char_offset": 560,
+      "context": "et sätt som anges i artiklarna 16.1-16.3, 18.1 och 18.3,  4. inte spara den tekniska dokumentationen eller EU-försäkran om överensstämmelse eller inte tillhandahålla en kopia av EU- försäkran enligt det som krävs i artikel 6.3,  5. inte på EU-gödselproduktens förpacknin",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 369,
+      "rank_v2": 3080,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-380:P10",
+      "document_title": "Lag (2026:380) om bistånd till vissa utlänningar vid inhibition av verkställigheten",
+      "span": "om avvisning eller utvisning inte",
+      "char_offset": 52,
+      "context": "En utlänning som håller sig undan så att ett beslut om avvisning eller utvisning inte kan verkställas när verkställighetshindret upphör har inte rätt till dagersättning eller särskilt bidrag.",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": null,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-408:K11P1",
+      "document_title": "Vapenlag (2026:408)",
+      "span": "om delar som inte",
+      "char_offset": 372,
+      "context": "eller vapenhandlartillstånd och även det ändrade vapnet omfattas av tillståndet, eller  2. vapnet ändras endast i fråga om delar som inte omfattas av tillståndsplikt och vapnet fortfarande är lämpligt för ändamålet. Lag (2026:1250).",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": null,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-408:K16P8",
+      "document_title": "Vapenlag (2026:408)",
+      "span": "om vapnet eller vapendelen inte",
+      "char_offset": 316,
+      "context": " eller vapendelen har överförts till en mottagare i utlandet ska uppgifterna i stället bevaras i 30 år efter utförseln, om vapnet eller vapendelen inte dessförinnan har återförts.  Uppgifter om namn, adress och organisations- eller personnummer för den som har getts till",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 33,
+      "rank_v2": 191,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-408:K20P2",
+      "document_title": "Vapenlag (2026:408)",
+      "span": "om att denna lag inte",
+      "char_offset": 36,
+      "context": "Regeringen får meddela föreskrifter om att denna lag inte ska gälla i fråga om skjutvapen, ammunition, ljuddämpare och vapenmagasin som en företrädare för en annan stats myndigh",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 147,
+      "rank_v2": 977,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-408:K20P3",
+      "document_title": "Vapenlag (2026:408)",
+      "span": "om att denna lag inte",
+      "char_offset": 36,
+      "context": "Regeringen får meddela föreskrifter om att denna lag inte ska gälla skjutvapen, ammunition, ljuddämpare och vapenmagasin som innehas av en utländsk militär styrka som befinner s",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 293,
+      "rank_v2": 2283,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-485:P13",
+      "document_title": "Lag (2026:485) om införande av lagen (2026:484) om bostadsrättsregister",
+      "span": "om bostadsrättsregister men som inte",
+      "char_offset": 99,
+      "context": "En panträtt som har upplåtits och fått sakrättsligt skydd före ikraftträdandet av lagen (2026:484) om bostadsrättsregister men som inte har noterats enligt 11 § ska behålla sitt sakrättsliga skydd endast om uppgift om panträtten har lämnats till Lantmäter",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 14,
+      "rank_v2": 67,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-677:P7",
+      "document_title": "Lag (2026:677) om riksdagens medalj",
+      "span": "om han eller hon inte",
+      "char_offset": 124,
+      "context": "annen får, om det föreligger särskilda skäl, även tilldela en riksdagsledamot eller en ersättare riksdagens medalj även om han eller hon inte fullt ut uppfyller förutsättningarna enligt 5 eller 6 § att tilldelas en medalj av viss storlek när han eller hon lämna",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 193,
+      "rank_v2": 1346,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2026-843:P11",
+      "document_title": "Lag (2026:843) om hyrköp av bostad",
+      "span": "om att hyrsäljaren inte",
+      "char_offset": 228,
+      "context": " avtala om att hyrköpsobjektet ska vara i sämre skick än vad som framgår av 9 § första stycket.  2. Parterna får avtala om att hyrsäljaren inte ska ombesörja sedvanliga reparationer enligt 15 § andra stycket.  3. En make eller sambo får träda i hyrköparens eller ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 23,
+      "rank_v2": 118,
+      "selection_reason": "known-defective-v1"
+    },
+    {
+      "provision_id": "sfs-2016-1091:K6P4",
+      "document_title": "Lag (2016:1091) om budget och ekonomiadministration för riksdagens myndigheter",
+      "span": "om inte",
+      "char_offset": 14,
+      "context": "Avgifter ska, om inte riksdagen beslutar annat, beräknas så att de högst täcker myndighetens kostnader för verksamheten. Avgifter som avses i",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 1925,
+      "selection_reason": "random-seed-20260911"
+    },
+    {
+      "provision_id": "sfs-2016-977:K7P6",
+      "document_title": "Lag (2016:977) om kollektiv förvaltning av upphovsrätt",
+      "span": "Om åtgärderna inte",
+      "char_offset": 669,
+      "context": "och  3. de kollektiva förvaltningsorganisationer med vilka organisationen har ingått ett avtal som avses i 8 kap. 1 §.  Om åtgärderna inte leder till något resultat, ska organisationen senast ett år efter utgången av den tid som anges i andra stycket göra de",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 901,
+      "selection_reason": "random-seed-20260911"
+    },
+    {
+      "provision_id": "sfs-2019-370:P10",
+      "document_title": "Lag (2019:370) om fordons registrering och användning",
+      "span": "om ett fordon som inte",
+      "char_offset": 135,
+      "context": "rdon får användas endast  1. i den omfattning som enligt 5 § 2 och 5 och 6 § första och tredje styckena får ske i fråga om ett fordon som inte är registrerat,  2. under tid då fordonet är taget i anspråk med nyttjanderätt enligt förfogandelagen (1978:262) eller ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 1796,
+      "selection_reason": "random-seed-20260911"
+    },
+    {
+      "provision_id": "sfs-2022-368:K7P5",
+      "document_title": "Lag (2022:368) om nationella järnvägssystem",
+      "span": "om det inte",
+      "char_offset": 200,
+      "context": "skäligt att ta ut en sanktionsavgift, ska avgiftsskyldigheten helt eller delvis sättas ner.  Första stycket gäller även om det inte har framställts något yrkande om nedsättning av sanktionsavgiften.",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 2701,
+      "selection_reason": "random-seed-20260911"
+    },
+    {
+      "provision_id": "sfs-2026-1281:K14P5",
+      "document_title": "Elmarknadslag (2026:1281)",
+      "span": "om inte",
+      "char_offset": 152,
+      "context": "saktörer får inte erbjuda den som deltar i energidelning sämre villkor än de villkor som de erbjuder andra elanvändare, om inte skillnaden i villkor är objektivt och sakligt motiverad.",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 249,
+      "rank_v2": 1887,
+      "selection_reason": "random-seed-20260911"
+    },
+    {
+      "provision_id": "sfs-1977-480:P11",
+      "document_title": "Semesterlag (1977:480)",
+      "span": "om inte",
+      "char_offset": 115,
+      "context": "Om det inte går att komma överens om hur semesterledighet ska förläggas, bestämmer arbetsgivaren om förläggningen, om inte något annat har avtalats.  Har beslut om förläggning av semesterledigheten träffats på något annat sätt än genom överen",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 3,
+      "rank_v2": 36,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1977-480:P12",
+      "document_title": "Semesterlag (1977:480)",
+      "span": "Om inte",
+      "char_offset": 0,
+      "context": "Om inte annat har avtalats, ska semesterledigheten förläggas så, att arbetstagaren får en ledighetsperiod av minst fyra veckor ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 13,
+      "rank_v2": 65,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1977-480:P18",
+      "document_title": "Semesterlag (1977:480)",
+      "span": "om inte",
+      "char_offset": 270,
+      "context": "tt senare semesterår.  En sparad semesterdag ska läggas ut inom fem år från utgången av det semesterår då den sparades, om inte annat följer av 20 § andra stycket.  Semesterdagar får inte sparas under ett semesterår då arbetstagaren får ut semeste",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 27,
+      "rank_v2": 145,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1977-480:P19",
+      "document_title": "Semesterlag (1977:480)",
+      "span": "om inte",
+      "char_offset": 569,
+      "context": "semesterledigheten i övrigt, ska meddela arbetsgivaren detta senast två månader i förväg.  Första stycket gäller endast om inte annat har avtalats. Lag (2009:1439).",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 7,
+      "rank_v2": 41,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1977-480:P5",
+      "document_title": "Semesterlag (1977:480)",
+      "span": "om inte",
+      "char_offset": 477,
+      "context": "ställning har rätt till semesterersättning för den semesterlön som tjänats in men inte tagits ut. Sådan ersättning ska, om inte annat avtalats eller följer av 28 § första och andra styckena eller 30 §, betalas ut senast en månad efter vårterminens",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 30,
+      "rank_v2": 187,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-673:P13a",
+      "document_title": "Arbetstidslag (1982:673)",
+      "span": "om tjugofyra timmar inte",
+      "char_offset": 53,
+      "context": "Arbetstiden för nattarbetande får under varje period om tjugofyra timmar inte överstiga åtta timmar i genomsnitt under en beräkningsperiod om högst fyra månader. Vid genomsnittsberäkningen skall rä",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 39,
+      "rank_v2": 238,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-673:P27",
+      "document_title": "Arbetstidslag (1982:673)",
+      "span": "Om avgiften inte",
+      "char_offset": 1108,
+      "context": "ll länsstyrelsen inom två månader från det att beslutet vann laga kraft. En upplysning om detta ska tas in i beslutet.  Om avgiften inte betalas inom den tid som anges i andra stycket, ska dröjsmålsavgift tas ut enligt lagen (1997:484) om dröjsmålsavgift. ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 41,
+      "rank_v2": 245,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-673:P3",
+      "document_title": "Arbetstidslag (1982:673)",
+      "span": "om detta inte",
+      "char_offset": 1447,
+      "context": "14 § och 15 § andra och tredje styckena samt byten av raster mot måltidsuppehåll enligt denna paragraf får göras endast om detta inte innebär att mindre förmånliga villkor ska tillämpas för arbetstagarna än som följer av Europaparlamentets och rådets di",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 26,
+      "rank_v2": 123,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-80:P10",
+      "document_title": "Lag (1982:80) om anställningsskydd",
+      "span": "Om arbetstagaren inte",
+      "char_offset": 259,
+      "context": "menderat brev till arbetstagarens senast kända adress.  Uppsägning anses ske när arbetstagaren får del av uppsägningen. Om arbetstagaren inte kan anträffas och ett uppsägningsbesked har sänts i brev enligt första stycket, anses uppsägning ha skett tio dagar eft",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 5,
+      "rank_v2": 38,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-80:P18",
+      "document_title": "Lag (1982:80) om anställningsskydd",
+      "span": "om någon sådan underrättelse inte",
+      "char_offset": 255,
+      "context": "tändigheter som arbetsgivaren har känt till antingen mer än två månader innan underrättelse lämnades enligt 30 § eller, om någon sådan underrättelse inte lämnats, två månader före tidpunkten för avskedandet. Arbetsgivaren får dock grunda avskedandet enbart på omständighete",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 8,
+      "rank_v2": 47,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-80:P20",
+      "document_title": "Lag (1982:80) om anställningsskydd",
+      "span": "Om arbetstagaren inte",
+      "char_offset": 262,
+      "context": "mmenderat brev till arbetstagarens senast kända adress.  Avskedande anses ske när arbetstagaren får del av avskedandet. Om arbetstagaren inte kan anträffas och ett besked om avskedande har sänts i brev enligt första stycket, anses avskedande ha skett tio dagar ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 6,
+      "rank_v2": 39,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-80:P6",
+      "document_title": "Lag (1982:80) om anställningsskydd",
+      "span": "Om inte",
+      "char_offset": 358,
+      "context": " till motparten senast vid prövotidens utgång. Görs inte detta, övergår provanställningen i en tillsvidareanställning.  Om inte annat har avtalats, får en provanställning avbrytas även före prövotidens utgång. Lag (1994:1685).",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 49,
+      "rank_v2": 304,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1982-80:P7",
+      "document_title": "Lag (1982:80) om anställningsskydd",
+      "span": "om någon sådan underrättelse inte",
+      "char_offset": 1112,
+      "context": "tändigheter som arbetsgivaren har känt till antingen mer än två månader innan underrättelse lämnades enligt 30 § eller, om någon sådan underrättelse inte lämnats, två månader före tidpunkten för uppsägningen. Arbetsgivaren får dock grunda uppsägningen enbart på omständighe",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 25,
+      "rank_v2": 122,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1995-584:P13",
+      "document_title": "Föräldraledighetslag (1995:584)",
+      "span": "Om det inte",
+      "char_offset": 458,
+      "context": "ttja sin rätt till ledighet enligt 8 § ska anmäla ledigheten till arbetsgivaren minst en vecka före ledighetens början. Om det inte kan ske och rätten till ledigheten grundar sig i att arbetstagaren får tillfällig föräldrapenning eller skulle ha haft ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 35,
+      "rank_v2": 223,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1995-584:P25",
+      "document_title": "Föräldraledighetslag (1995:584)",
+      "span": "om organisationen inte",
+      "char_offset": 339,
+      "context": "r den enskilde enligt 4 kap. 5 § lagen (1974:371) om rättegången i arbetstvister, får dock ombudsmannen föra talan bara om organisationen inte gör det.  Talan som förs av Diskrimineringsombudsmannen behandlas som om talan hade förts på egna vägnar av arbetstagar",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 18,
+      "rank_v2": 100,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-1995-584:P4",
+      "document_title": "Föräldraledighetslag (1995:584)",
+      "span": "Om hon inte",
+      "char_offset": 217,
+      "context": "manhängande tid av minst sju veckor före den beräknade tidpunkten för förlossningen och sju veckor efter förlossningen. Om hon inte är ledig på annan grund skall två veckor av denna mammaledighet vara obligatoriska under tiden före eller efter förloss",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 29,
+      "rank_v2": 175,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2008-567:K6P2",
+      "document_title": "Diskrimineringslag (2008:567)",
+      "span": "om arbetstagarorganisationen inte",
+      "char_offset": 1022,
+      "context": "de enligt 4 kap. 5 § lagen (1974:371) om rättegången i arbetstvister, får ombudsmannen eller föreningen föra talan bara om arbetstagarorganisationen inte gör det.",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 38,
+      "rank_v2": 237,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2014-836:P15",
+      "document_title": "Lag (2014:836) om näringsförbud",
+      "span": "Om inte",
+      "char_offset": 127,
+      "context": " om näringsförbud enligt 4 § får framställas av allmän åklagare med tillämpning av bestämmelserna om talan i brottmål.  Om inte annat föreskrivs i denna lag, ska i fråga om utredningen och förfarandet gälla vad som i allmänhet är föreskrivet om må",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 9,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2014-836:P48",
+      "document_title": "Lag (2014:836) om näringsförbud",
+      "span": "om det inte",
+      "char_offset": 91,
+      "context": "Döms en person för överträdelse av näringsförbud, ska näringsförbudet samtidigt förlängas, om det inte finns särskilda skäl att avstå från förlängning.  Förlängning får ske med högst fem år. Om det sker flera förlängningar",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 31,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2015-1016:K27P17",
+      "document_title": "Lag (2015:1016) om resolution",
+      "span": "om inte",
+      "char_offset": 20,
+      "context": "Tilläggsavgift ska, om inte annat följer av tredje stycket, beslutas i samband med att den årliga resolutionsavgiften beslutas.  En avgiftsskyldigs",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 14,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2015-338:overgang:2016-1375",
+      "document_title": "Lag (2015:338) om internationell järnvägstrafik",
+      "span": "om förvaltaren trots detta inte",
+      "char_offset": 435594,
+      "context": "undgå eller förebygga följderna av.  § 3 Om den händelse som givit upphov till skadan beror på tredje mans beteende och om förvaltaren trots detta inte är helt befriad från sitt ansvar enligt § 2 a, ska han vara helt ansvarig inom de gränser som anges i dessa enhetliga r",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 27,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2015-62:K8P3",
+      "document_title": "Lag (2015:62) om identifiering av rapporteringspliktiga konton med anledning av FATCA-avtalet",
+      "span": "Om inte",
+      "char_offset": 0,
+      "context": "Om inte något annat anges, ska ett kontos saldo eller värde vid tillämpningen av 4-8 kap. fastställas per den sista dagen av et",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 40,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2015-666:overgang:2021-1074",
+      "document_title": "Lag (2015:666) om skatteavtal mellan Sverige samt Storbritannien och Nordirland",
+      "span": "om sådana förbindelser inte",
+      "char_offset": 79948,
+      "context": "en royaltyn betalas, överstiger det belopp som skulle ha avtalats mellan utbetalaren och den som har rätt till royaltyn om sådana förbindelser inte förelegat, tillämpas bestämmelserna i denna artikel endast på sistnämnda belopp. I sådant fall beskattas överskjutande ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 23,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2015-860:overgang:2018-475",
+      "document_title": "Lag (2015:860) om internationella säkerhetsrätter i lösa saker",
+      "span": "Om en person inte",
+      "char_offset": 114494,
+      "context": "ghet att på begäran av gäldenären eller den framtida gäldenären, förelägga registratorn att upphäva registreringen.  3. Om en person inte följer ett beslut av en domstol med behörighet enligt den här Konventionen eller, om det rör sig om en nationell säkerh",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 26,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2015-953:P17",
+      "document_title": "Lag (2015:953) om kollektivtrafikresenärers rättigheter",
+      "span": "om transporten inte",
+      "char_offset": 203,
+      "context": " § eller prisavdrag vid försening enligt 15 § endast om resenären inom skälig tid efter det att resan avslutades eller, om transporten inte genomförs, skulle ha avslutats lämnat transportören ett meddelande om att han eller hon vill åberopa förseningen (rekla",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 3,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2016-408:overgang:2016-408",
+      "document_title": "Lag (2016:408) om skatteavtal mellan Sverige och Saudiarabien",
+      "span": "Om inte",
+      "char_offset": 2529,
+      "context": "a meddela varandra de väsentliga ändringar som gjorts i deras skattelagstiftning.  Artikel 3  Allmänna definitioner  1. Om inte sammanhanget föranleder annat, har vid tillämpningen av detta avtal följande uttryck nedan angiven betydelse:  a) \"Konu",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 21,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2016-417:overgang:2016-417",
+      "document_title": "Lag (2016:417) om statlig ersättning till personer som insjuknat i narkolepsi efter pandemivaccinering",
+      "span": "om inte",
+      "char_offset": 9464,
+      "context": "llan försäkringsgivaren och den som begär ersättning avgörs av allmän domstol.  § 16  Talan enligt § 15 får inte väckas om inte läkemedelsskadenämnden dessförinnan har avgett utlåtande i ersättningsärendet enligt § 13.  Den som begär ersättning få",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 18,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2016-429:P14",
+      "document_title": "Lag (2016:429) om tillsyn över företag av allmänt intresse i fråga om revision",
+      "span": "Om ett sanktionsföreläggande inte",
+      "char_offset": 0,
+      "context": "Om ett sanktionsföreläggande inte har godkänts inom angiven tid, får Finansinspektionen ansöka hos domstol om att sanktionen ska beslutas. En sådan ansök",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 34,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2016-927:overgang:2016-927",
+      "document_title": "Lag (2016:927) om skatteavtal mellan Sverige och Armenien",
+      "span": "om förmögenheten inte",
+      "char_offset": 32920,
+      "context": "n avtalsslutande stat, tillfaller endast denna stat, får denna förmögenhet beskattas i den andra avtalsslutande staten, om förmögenheten inte är föremål för en allmän förmögenhetsskatt enligt lagstiftningen i den förstnämnda staten.  Artikel 22  Undanröjande av",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 22,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2016-977:K3P3",
+      "document_title": "Lag (2016:977) om kollektiv förvaltning av upphovsrätt",
+      "span": "om inte",
+      "char_offset": 171,
+      "context": "uppdrag till en kollektiv förvaltningsorganisation får när som helst begränsa uppdraget i de avseenden som anges i 1 §, om inte organisationen har godtagbara skäl att vägra det. Rättighetshavaren får också när som helst säga upp uppdragsavtalet.  ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 46,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2018-181:overgang:2018-182",
+      "document_title": "Järnvägstrafiklag (2018:181)",
+      "span": "Om det inte",
+      "char_offset": 390827,
+      "context": " bruksvärdet på vagnen eller tillbehören vid tiden och platsen för förlusten; inget ytterligare skadestånd ska betalas. Om det inte går att fastställa tid och plats för förlusten, ska ersättningen begränsas till bruksvärdet vid den tidpunkt och på den",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 28,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2018-1854:overgang:2018-1854",
+      "document_title": "Lag (2018:1854) om den internationella fonden för farliga och skadliga ämnen",
+      "span": "om att denna konvention inte",
+      "char_offset": 49046,
+      "context": "orm, och  (c) medan de utför resor mellan hamnar eller anläggningar i den staten.  2. Om två grannstater kommer överens om att denna konvention inte ska gälla också för fartyg som anges i punkt 1 a och b medan de utför resor mellan hamnar eller anläggningar i dessa st",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 20,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2018-672:K17P14",
+      "document_title": "Lag (2018:672) om ekonomiska föreningar",
+      "span": "om bristen inte",
+      "char_offset": 536,
+      "context": "som föreläggandet avser. Påminnelsen ska innehålla en upplysning om att föreningen kan bli skyldig att betala en avgift om bristen inte avhjälps.  Regeringen eller den myndighet som regeringen bestämmer kan med stöd av 8 kap. 7 § regeringsformen meddela n",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 13,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2019-742:K1P11",
+      "document_title": "Lag (2019:742) om tjänstepensionsföretag",
+      "span": "om värdepappersmarknaden ska inte",
+      "char_offset": 177,
+      "context": "tt kreditinstitut som driver finansieringsrörelse innehar till följd av verksamhet enligt 2 kap. 1 § 6 lagen (2007:528) om värdepappersmarknaden ska inte beaktas vid bedömningen av om ett innehav är kvalificerat enligt 9 §, under förutsättning att  1. rösträtten inte utnyt",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 48,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2020-44:overgang:2020-44",
+      "document_title": "Lag (2020:44) om skatteavtal mellan Sverige och Brasilien",
+      "span": "om denna andra stat inte",
+      "char_offset": 79602,
+      "context": "dra avtalsslutande staten använda de medel som denna stat förfogar över för att inhämta de begärda upplysningarna, även om denna andra stat inte har behov av upplysningarna för sina egna beskattningsändamål. Förpliktelsen i föregående mening begränsas av bestämmel",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 24,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2020-548:P19",
+      "document_title": "Lag (2020:548) om omställningsstöd",
+      "span": "om det inte",
+      "char_offset": 563,
+      "context": " kommer att betalas i rätt tid, får anstånd enligt första stycket beviljas bara om säkerhet ställs för återbetalningen, om det inte finns särskilda skäl som talar mot detta. Bestämmelserna i 63 kap. 9 och 10 §§ skatteförfarandelagen (2011:1244) gäller",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 6,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-155:K6P2",
+      "document_title": "Lag (2022:155) om tobaksskatt",
+      "span": "om påförd skatt inte",
+      "char_offset": 472,
+      "context": " ställts för den skatt som kan påföras i Sverige eller ett annat EU-land för varorna. Ställd säkerhet får tas i anspråk om påförd skatt inte betalas i rätt tid. Har en tillfälligt registrerad distansförsäljare påförts skatt i ett annat EU-land, får säkerheten ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 16,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-156:K6P2",
+      "document_title": "Lag (2022:156) om alkoholskatt",
+      "span": "om påförd skatt inte",
+      "char_offset": 472,
+      "context": " ställts för den skatt som kan påföras i Sverige eller ett annat EU-land för varorna. Ställd säkerhet får tas i anspråk om påförd skatt inte betalas i rätt tid. Har en tillfälligt registrerad distansförsäljare påförts skatt i ett annat EU-land, får säkerheten ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 17,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-260:K5P2",
+      "document_title": "Konsumentköplag (2022:260)",
+      "span": "om det inte",
+      "char_offset": 535,
+      "context": " det att konsumenten märkt felet ska alltid anses ha gjorts i rätt tid.  Ett krav med anledning av ett fel preskriberas om det inte framställs inom två månader från utgången av tidsperioden för näringsidkarens felansvar enligt 4 kap. 14 § eller inom d",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 1,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-366:overgang:2022-366",
+      "document_title": "Järnvägstekniklag (2022:366)",
+      "span": "om inte",
+      "char_offset": 166201,
+      "context": "lvarliga skadan.  § 1a Åtgärderna enligt § 1 måste samordnas. Det är infrastrukturförvaltarens skyldighet att samordna, om inte annat förordnats i gällande föreskrifter i den aktuella staten.  Utöver skyldigheten att utreda som parterna har, får d",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 25,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-367:overgang:2022-367",
+      "document_title": "Järnvägssäkerhetslag (2022:367)",
+      "span": "om inte",
+      "char_offset": 1621,
+      "context": " ägt rum efter ikraftträdandet.  8. Äldre föreskrifter gäller för mål och ärenden som har inletts före ikraftträdandet, om inte något annat framgår av direkt tillämpliga EU-rättsakter som har utfärdats med stöd av direktiv (EU) 2016/798.  /Träder ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 19,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-482:K5P36",
+      "document_title": "Lag (2022:482) om elektronisk kommunikation",
+      "span": "om det inte",
+      "char_offset": 285,
+      "context": "upprätta ett förslag och ge berörda parter skälig tid att yttra sig över förslaget. Tiden ska uppgå till minst 30 dagar om det inte finns särskilda skäl mot det. Detsamma ska gälla inför beslut om att fastställa en marknad enligt 5 § första stycket so",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 44,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-964:K2P8",
+      "document_title": "Lag (2022:964) om företagsrekonstruktion",
+      "span": "Om en borgenärs ansökan inte",
+      "char_offset": 0,
+      "context": "Om en borgenärs ansökan inte avvisas, ska rätten inom två veckor från det att ansökan gjordes hålla ett sammanträde för prövning av ansökan. Om det ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 42,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-964:K4P16",
+      "document_title": "Lag (2022:964) om företagsrekonstruktion",
+      "span": "Om ändringen inte",
+      "char_offset": 306,
+      "context": "n ändring av rekonstruktionsplanen, får prövningen av planen skjutas upp till ett fortsatt sammanträde inom tre veckor. Om ändringen inte medför att rekonstruktionsplanen blir sämre för de berörda parterna, får prövningen dock skjutas upp endast om det finn",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 2,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2022-964:K5P5",
+      "document_title": "Lag (2022:964) om företagsrekonstruktion",
+      "span": "om förvärvet inte",
+      "char_offset": 251,
+      "context": "ruktion, får den inte användas till kvittning mot en fordran som gäldenären hade när borgenären förvärvade sin fordran, om förvärvet inte med hänsyn till omständigheterna kan anses som ordinärt.  Första stycket gäller också om fordran mot gäldenären har för",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 5,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2025-1053:K4P1",
+      "document_title": "Lag (2025:1053) om verkställighet av fängelsestraff med elektronisk övervakning",
+      "span": "om det inte",
+      "char_offset": 345,
+      "context": "lämpligt.  Den som är under arton år får inte placeras så att han eller hon vistas tillsammans med dömda över arton år, om det inte kan anses vara till hans eller hennes bästa.  Den dömde får tillåtas att ha sitt spädbarn hos sig, om det kan anses var",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 33,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2025-400:K20P2",
+      "document_title": "Socialtjänstlag (2025:400)",
+      "span": "om att inleda eller inte",
+      "char_offset": 88,
+      "context": "Om en anmälan till socialnämnden gäller barn eller unga, ska socialnämnden fatta beslut om att inleda eller inte inleda utredning inom fjorton dagar efter det att anmälan har kommit in (förhandsbedömning). Ett sådant beslut behöver ",
+      "crosses_clause_boundary": true,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 30,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2025-400:K22P4",
+      "document_title": "Socialtjänstlag (2025:400)",
+      "span": "om inte",
+      "char_offset": 161,
+      "context": " ett sådant enskilt hem som vid upprepade tillfällen tar emot barn för tillfällig vård, omsorg och uppfostran (jourhem) om inte förhållandena i jourhemmet och förutsättningarna för vård i det har utretts av en socialnämnd.  Ett barn får vårdas i e",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 43,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-1011:K6P8",
+      "document_title": "Konsumentkreditlag (2026:1011)",
+      "span": "Om någon uppsägningstid inte",
+      "char_offset": 76,
+      "context": "Konsumenten får när som helst säga upp ett kreditavtal med obestämd löptid. Om någon uppsägningstid inte har avtalats, upphör avtalet att gälla omedelbart. Om en uppsägningstid har avtalats, upphör avtalet att gälla den dag ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 11,
+      "rank_v2": 58,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-1113:P7",
+      "document_title": "Lag (2026:1113) om intäktsdelning från vindkraftsanläggningar",
+      "span": "Om bostadsbyggnaden inte",
+      "char_offset": 456,
+      "context": "ansökan om tillstånd enligt 9 eller 11 kap. miljöbalken till vindkraftsanläggningen eller har ersatt en sådan byggnad.  Om bostadsbyggnaden inte fanns eller inte var under uppförande vid tidpunkten för ansökan om tillstånd enligt miljöbalken, ska byggnadsägaren ha",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 34,
+      "rank_v2": 194,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-1281:K9P1",
+      "document_title": "Elmarknadslag (2026:1281)",
+      "span": "om det inte",
+      "char_offset": 152,
+      "context": " ska för en tillsynsperiod ha en intäktsram som beslutas av nätmyndigheten.  Tillsynsperioden ska vara fyra kalenderår, om det inte finns särskilda skäl för en annan tidsperiod.",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 42,
+      "rank_v2": 251,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-1358:K2P9",
+      "document_title": "Lag (2026:1358) om statlig e-legitimation och elektronisk identifiering",
+      "span": "om det inte",
+      "char_offset": 571,
+      "context": "s och spärras på begäran av innehavaren. Om begäran avser ett barn under arton år krävs det vårdnadshavares medgivande, om det inte finns synnerliga skäl för återkallelsen och spärren.",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 32,
+      "rank_v2": 189,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-1637:K5aP2",
+      "document_title": "Lag (2026:1637) om insatser inom socialtjänsten när samtycke saknas",
+      "span": "om elektronisk övervakning får inte",
+      "char_offset": 198,
+      "context": "kningen väger tyngre än det intrång eller men i övrigt som övervakningen innebär för barnet eller den unge.  Ett beslut om elektronisk övervakning får inte meddelas  1. för barn som är under 13 år, eller  2. om sådan övervakning av barnet eller den unge verkställs enligt bes",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v2"
+      ],
+      "rank_v1": null,
+      "rank_v2": 29,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-408:K12P4",
+      "document_title": "Vapenlag (2026:408)",
+      "span": "om inte",
+      "char_offset": 286,
+      "context": "len,  2. det framstår som mer lämpligt, eller  3. det annars finns särskilda skäl.  För sådan förvaring krävs tillstånd om inte utlåning i motsvarande fall är tillåten enligt 9 kap. Tillstånd får beviljas endast om förvararen med hänsyn till lagly",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 31,
+      "rank_v2": 188,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-408:K19P3",
+      "document_title": "Vapenlag (2026:408)",
+      "span": "om inte",
+      "char_offset": 82,
+      "context": "Polismyndighetens eller en domstols beslut enligt denna lag ska gälla omedelbart, om inte annat beslutas.  Polismyndighetens beslut om återkallelse av vapentillverkningstillstånd, återkallelse av vapenhandlart",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 19,
+      "rank_v2": 104,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-440:K3P6",
+      "document_title": "Lag (2026:440) om skyddsrum och skyddade utrymmen",
+      "span": "om inte",
+      "char_offset": 73,
+      "context": "En kommun får, i den omfattning staten ställer medel till förfogande och om inte annat följer av andra stycket, i enskilda fall besluta om att ett skyddat utrymme ska inrättas.  Om det finns skäl att ",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 21,
+      "rank_v2": 113,
+      "selection_reason": "top-50-ranked"
+    },
+    {
+      "provision_id": "sfs-2026-999:K5P5:occurrence:2",
+      "document_title": "Mottagandelag (2026:999)",
+      "span": "om överföring har inte",
+      "char_offset": 995,
+      "context": " artikel 17.4 i Europaparlamentets och rådets förordning (EU) 2024/1351, och som skriftligen underrättats om ett beslut om överföring har inte rätt till tillträde till arbetsmarknaden. Lag (2026:1168).",
+      "crosses_clause_boundary": false,
+      "pools": [
+        "v1",
+        "v2"
+      ],
+      "rank_v1": 40,
+      "rank_v2": 240,
+      "selection_reason": "top-50-ranked"
+    }
+  ]
+}
