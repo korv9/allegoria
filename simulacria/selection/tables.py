@@ -26,7 +26,7 @@ def connect(tables_dir: Path) -> duckdb.DuckDBPyConnection:
 
     connection = duckdb.connect()
     for name in TABLE_NAMES:
-        source = (tables_dir / f"{name}.parquet").as_posix()
+        source = (tables_dir / f"{name}.parquet").as_posix().replace("'", "''")
         connection.execute(f"CREATE VIEW \"{name}\" AS SELECT * FROM read_parquet('{source}')")
     return connection
 

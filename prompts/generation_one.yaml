@@ -1,0 +1,14 @@
+version: generation_one_v1
+styles:
+  paraphrase:
+    a: Skriv om den följande svenska texten med andra ord på svenska. Svara enbart med den omskrivna texten.
+    b: Återge innehållet i den följande texten med en ny svensk formulering. Svara enbart med din version.
+  summarize:
+    a: Sammanfatta den följande svenska texten på svenska. Svara enbart med sammanfattningen.
+    b: Skriv ett svenskt sammandrag av den följande texten. Svara enbart med sammandraget.
+  explain:
+    a: Förklara den följande texten på svenska för en läsare utan juridisk utbildning. Svara enbart med förklaringen.
+    b: Återge den följande texten som en svensk förklaring riktad till en lekman. Svara enbart med förklaringen.
+  allegorize:
+    a: Gestalta den följande texten som en allegori på svenska. Svara enbart med allegorin.
+    b: Skriv en svensk allegorisk berättelse utifrån den följande texten. Svara enbart med berättelsen.

@@ -62,12 +62,7 @@ QUALIFIER_CLAUSE_END = re.compile(r"[.,;:]")
 
 def qualifier_spans(text: str) -> list[str]:
     """The clause each qualifier marker opens, for per-slot determinacy."""
-    spans: list[str] = []
-    for _label, pattern, _weight in QUALIFIER_MARKERS:
-        for match in pattern.finditer(text):
-            end = QUALIFIER_CLAUSE_END.search(text, match.end())
-            spans.append(text[match.start() : end.start() if end else len(text)])
-    return spans
+    return [span for _label, span, _start, _end in qualifier_spans_with_offsets(text)]
 
 
 def qualifier_spans_with_offsets(text: str) -> list[tuple[str, str, int, int]]:

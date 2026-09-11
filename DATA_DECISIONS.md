@@ -4,6 +4,14 @@ This file is the canonical log for decisions that affect how Allegoria acquires,
 
 Each decision is append-only in meaning. If a decision changes, add a new entry that explicitly supersedes the old one.
 
+## DD044 — Normative-axis source audit before direction
+
+- **Date:** 2026-09-11
+- **Status:** Active; additive to DD043, not a replacement for future slot contracts.
+- **Decision:** Add thirty constructed Swedish philosophical passages, with ten topic-matched categorical/conditional pairs, and a derivative snapshot of the twenty existing statutory specimens. Both YAML files use the same small passage-envelope loader. Preserve text hashes, specimen-sheet provenance and original review caveats. Match ten statutory specimens by length without filtering marker outcomes.
+- **Rationale:** The source-only notebook tests the existing selection instrument now, without implementing the later transformation loop. No statutory experiment YAML schema was present in this checkout; the common envelope is deliberately limited to real passage data.
+- **Consequences:** Keep false positives visible: negated `undantag` and nonconditional `om` defeat the proposed clean lexical separation. No heuristic feeds measurement, and no slots or generation outputs are fabricated. Predictions are a pre-run draft until git-timestamped with complete run parameters. See `NORMATIVE_AXIS.md` and the executed `notebooks/02_normative_axis.ipynb`. Databricks, ceiling, existing extraction and the specimen sheet remain unchanged.
+
 ## DD001 — Riksdagen XML is the canonical source snapshot
 
 - **Date:** 2026-08-19
@@ -351,3 +359,33 @@ Each decision is append-only in meaning. If a decision changes, add a new entry 
 - **Rationale:** Seven of ten scripts carried an identical `sys.path` insert so they could import each other, and the project's core heuristic — the marker sets, `score_provision`, the ladder — lived in a CLI file that five other CLI files reached into, one of them through a private `_hits`. A cross-module private import is a design problem, not a style problem: it means the module boundary is fictional. Installing the package removes every path hack and makes the dependency direction one-way. The subpackage split is not cosmetic. `PROTOCOL.md` and `DIRECTION.md` both turn on keeping a heuristic out of the instrument, and in a flat package a future `direction.py` could import `score_provision` on one unremarkable line; between two named subpackages it is a visible dependency edge, and `tests/test_allegoria_product.py::test_measurement_does_not_import_selection` parses the import graph and fails on it.
 - **Consequences:** `pyproject.toml` installs `products*` and `simulacria*`; the repository must be installed with `pip install -e .` for the scripts and the notebook to run, which was already documented. Behaviour is unchanged and was verified against a captured baseline: v1 still 50 documents and 1,952 provisions, the marker fixture still surfaces all 12 pinned provisions with unchanged marker coverage, and both pools rebuild to identical row counts. `products/simulacria/` is deleted — it held a README duplicating the root documents and was becoming a second source of truth for the research framing. `scripts/investigations/` holds scaffolding for closed investigations, whose durable outputs live in `tests/fixtures/` and `review/`. Review output is now filed under `review/<date>/` so a session cannot overwrite its predecessor.
 - **Why `products/` is not renamed:** the name is wrong-ish — it now sits beside a research package rather than containing everything — but `products/allegoria/` is the frozen Databricks tree. Renaming it would rewrite every notebook import, the `databricks.yml` task paths, and the `sfs_parser` import that `simulacria.selection.pools` depends on, all to fix a word. The cost lands on files that must not be touched casually; the benefit is cosmetic. Revisit only if the Databricks pipeline is retired.
+
+
+## DD045 ? Local SQL projection and repository cleanup (2026-09-11, Active)
+
+User requested removal of obsolete folders and SQL exploration of generation lineage.
+Removed cache-only backend ingestion/lakehouse/retrieval and empty legacy LAS data folders;
+preserved original source XML, Bronze envelopes and the shared products parser/pipeline.
+README is the authoritative repository map; CLAUDE no longer duplicates the roadmap.
+Supersedes the earlier CLAUDE no-database rule: JSONL/raw responses remain evidence,
+DuckDB is a rebuildable transactional projection with selection and research schemas.
+No dbt, service or new dependency is introduced. Gen 1 importer validates raw responses,
+retains failed runs and exposes missing readings as NULL. No direction metric is inferred.
+Current observed database: 1,952 provisions and zero model runs. Test-only API fixtures
+are confined to temporary test directories. Ignored run evidence requires separate backup.
+
+## DD046 — Anthropic is the only model provider
+
+- **Date:** 2026-09-11
+- **Status:** Active
+- **Decision:** All model I/O goes through `simulacria/anthropic_io.py`, using the Anthropic SDK against the Messages API. `claude-sonnet-5` transforms and `claude-opus-5` reads; the key is `LLM_API_KEY`. The OpenAI I/O module is removed and no OpenAI request path remains.
+- **Rationale:** The user switched provider on 2026-09-11. OpenAI allowed 50 requests per day per model, which would have stretched the planned 1,713-call recursive run over roughly a month of daily resumes. The model assignment comes from a selection probe on the project's real prompts and sources (`scripts/investigations/model_probe.py`): both models read every source slot correctly, but on allegorical texts they disagreed on 2 of 30 slots and `claude-opus-5` was right both times on reading the texts — so the stronger model is the instrument. `claude-sonnet-5` followed the transformer instructions more cleanly at about a third of the cost.
+- **Consequences:** Receipts are unchanged in kind. `post_response` returns the exact response bytes from the SDK's raw-response path, with `max_retries=0` so no paid attempt happens outside the receipted retry loop. Temperature cannot be set on these models and is recorded as not settable; reasoning is adaptive thinking with effort `low` to transform and `medium` to read; output caps rise to 8,000 tokens because thinking counts against them. Refusal fallbacks are deliberately not used — a fallback silently re-runs a refused request on another model, while a refusal is data and the model must stay pinned. The prediction drafts keep their original text and are amended by `predictions/2026-09-11-amendment-anthropic-models.md`, which new recursive runs freeze alongside the original. The one partial OpenAI run is preserved byte-identical on disk but can no longer be replay-verified: `load_run` refuses it by name, the database build skips it and says so, and it cannot be resumed. `anthropic` is declared as a runtime dependency.
+
+## DD047 — Cheapest model pair: Haiku 4.5 reads
+
+- **Date:** 2026-09-11
+- **Status:** Active
+- **Decision:** `claude-haiku-4-5-20251001` replaces `claude-opus-5` as reader; `claude-sonnet-5` still transforms. The reader is pinned by its dated ID because the API answers the alias with it. `effort` is sent only to models that accept it; `SAMPLING` is recorded per model.
+- **Rationale:** The user asked for the cheapest models. Two different models are required, and reading is the larger cost, so the cheaper model reads: an estimated USD 4–5 for the full recursive design instead of USD 16–17.
+- **Consequences:** A live check of nine readings (`data/local/probes/haiku-reader-check-53105a2979d7/`) found 3 invalid quotes, one on a source text, and no slot ever marked other than `present` — including the allegory where Opus 5 had caught a duty rewritten as a possibility. The reader is therefore weaker at exactly the judgement the study depends on; see `predictions/2026-09-11-amendment-cheapest-models.md`. DD046 stands except for the reader.

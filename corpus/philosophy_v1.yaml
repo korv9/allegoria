@@ -1,0 +1,322 @@
+schema_version: 1
+passages:
+- passage_id: virtue-01
+  group: virtue
+  pair_id: null
+  topic: mod
+  text: Den modiges hållning ligger mellan den feges undvikande och den dumdristiges likgiltighet inför
+    fara. Rädslan har en plats i denna karaktär utan att fylla hela synfältet. Fastheten består i uppmärksamhet
+    på faran och handlingens betydelse.
+  text_sha256: 8155ee6e91bfbf06c03220bb285ef4c8d252f70bbb24a574f1f97fc69dd583d4
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-02
+  group: virtue
+  pair_id: null
+  topic: måttfullhet
+  text: Den måttfulles karaktär ligger mellan den utsvävandes upptagenhet av njutning och den känslolöses
+    avstånd till all glädje. Begären ingår i ett sammanhang av vänskap, arbete och vila. Njutningen har
+    ett värde utan att ensam bestämma personens sätt att leva.
+  text_sha256: e3ff84aa629263b47d4e4eebd635c63fcf83c160baccc1073668d403dfcd34db
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-03
+  group: virtue
+  pair_id: null
+  topic: generositet
+  text: Den generöses hållning ligger mellan den giriges slutna hand och den slösaktiges likgiltighet
+    inför tillgångarnas värde. Gåvan uttrycker uppmärksamhet på mottagaren och på det gemensamma livet.
+    Egendomen är varken ett självändamål eller något helt betydelselöst.
+  text_sha256: 1db920dd9d5c7d976594850d8ed347834169e8cf8c8c17df8a9c00ca722c2856
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-04
+  group: virtue
+  pair_id: null
+  topic: sannfärdighet
+  text: Den sannfärdiges karaktär ligger mellan skrytarens förstoring av den egna betydelsen och den självförringandes
+    förnekelse av sina förmågor. Berättelsen har proportioner som svarar mot erfarenheten. Personen framträder
+    med både sina förtjänster och sina begränsningar. Talet präglas av saklighet snarare än beräkning.
+  text_sha256: c108e12971f629538fae29470517803fc92c46ac80761bb92c9cecab1e32a538
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-05
+  group: virtue
+  pair_id: null
+  topic: vänlighet
+  text: Den vänliges hållning ligger mellan den inställsammes ständiga bekräftelse och den grälsjukes
+    sökande efter motsättningar. Samvaron rymmer värme och en tydlig egen röst. Intresset för andra vilar
+    i en stadig karaktär och saknar beroende av deras omedelbara uppskattning. Oenighet ryms inom denna
+    vänlighet.
+  text_sha256: 7417e587fac65ec2cfef5d81e0b9325af23bb79eeeb6361107ae916f9eae52de
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-06
+  group: virtue
+  pair_id: null
+  topic: mildhet
+  text: Den mildes karaktär ligger mellan den hetsiges vrede och den likgiltiges frånvaro av gensvar.
+    Upprördheten står i proportion till händelsens betydelse och dess sammanhang. Lugn och känslighet
+    hör samman i denna hållning, med utrymme för både allvar och försoning. Ilskan är varken härskare
+    eller främling i personens liv.
+  text_sha256: 34171f7c08f448977dd9134a70f3d5a3891cf962f5e143615e7cb6047c4babb4
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-07
+  group: virtue
+  pair_id: null
+  topic: självaktning
+  text: Den självaktandes hållning ligger mellan den fåfänges uppblåsta självbild och den försagdes förminskning
+    av sitt värde. Förhållandet till erkännande präglas av stadga. Andras uppskattning är betydelsefull
+    utan att ensam bära personens uppfattning av sin egen förmåga. Självkännedomen förenar tillförsikt
+    med ett klart sinne för begränsningar.
+  text_sha256: 2a2262c40b0600c6cbda2c0c0d15e274e23bd6768fb1c32f42874cdbfdca38d1
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-08
+  group: virtue
+  pair_id: null
+  topic: kvickhet
+  text: Den kvickes karaktär ligger mellan gycklarens gränslösa skämtande och den sträves avstånd till
+    lekfullhet. Humorn hör till en uppmärksam samvaro. Dess lätthet rymmer känsla för samtalets ton och
+    för människorna i rummet, med en rörelse mellan allvar och avspänning. Skrattet uttrycker gemenskap
+    och en blick för tillvarons motsägelser.
+  text_sha256: 2ce9e865708d4ea3f7130d56b80a05eb476b13d8680a74805a06feeca2a0b87f
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-09
+  group: virtue
+  pair_id: null
+  topic: ambition
+  text: Den balanserat ambitiöses hållning ligger mellan den ärelystnes jakt på erkännande och den håglöses
+    ointresse för förtjänst. Arbetets värde och den egna insatsen framträder i samma blick. Framgång har
+    betydelse utan att fylla hela föreställningen om ett gott liv. Uthålligheten har sin grund i intresset
+    för uppgiften och i känslan för dess plats i ett större sammanhang.
+  text_sha256: c511cdff1056a7b3b8652510c0dd31458e7a5e5fe15250a8e37172f63f9eeef5
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: virtue-10
+  group: virtue
+  pair_id: null
+  topic: storslagenhet
+  text: Den storslagnes karaktär ligger mellan den pråliges uppvisning av rikedom och den småaktiges upptagenhet
+    av varje utgift. Ett gemensamt företags betydelse ger form åt insatsen. Omsorgen gäller helhetens
+    kvalitet och människornas deltagande, med sinne för proportioner. Storleken är förbunden med sammanhanget
+    och dess värdighet. Det synliga resultatet uttrycker denna samlade blick.
+  text_sha256: d50dc29dbfd439cc679ce8bbc01f9194281d13e0fd25baecf825df43cdac8a2a
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-01
+  group: categorical
+  pair_id: pair-01
+  topic: löfte
+  text: En löftesgivare ska hålla sitt löfte till mottagaren. Plikten avser fullgörandet av den handling
+    som löftet uttrycker och inte enbart en försäkran om god vilja. Detta gäller utan undantag, oberoende
+    av egen fördel och av andras önskemål.
+  text_sha256: c3273759fe7d8067bbf89d003eb939e7a54c4b66f76b5f98b3ab3ddbe6aeb634
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-01
+  group: conditional
+  pair_id: pair-01
+  topic: löfte
+  text: En löftesgivare ska hålla sitt löfte till mottagaren. Plikten avser fullgörandet av den handling
+    som löftet uttrycker och inte enbart en försäkran om god vilja. Detta gäller dock inte om löftets
+    fullgörande medför allvarlig skada för mottagaren.
+  text_sha256: 596921e82cab8adeb09c475bb22fbac92047619d4ba0d94e6d523bb8e57c5898
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-02
+  group: categorical
+  pair_id: pair-02
+  topic: sann uppgift
+  text: En uppgiftslämnare ska lämna sanningsenliga uppgifter till mottagaren. Plikten avser överensstämmelsen
+    mellan uppgiften och det uppgiftslämnaren känner till, med samma krav på tal och skrift. Detta gäller
+    utan undantag, oberoende av egen fördel och av andras önskemål.
+  text_sha256: 49b2a39799dc5397d730a547ab63c15320f3d6ed284fffa6fb8ba16dd3305b23
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-02
+  group: conditional
+  pair_id: pair-02
+  topic: sann uppgift
+  text: En uppgiftslämnare ska lämna sanningsenliga uppgifter till mottagaren. Plikten avser överensstämmelsen
+    mellan uppgiften och det uppgiftslämnaren känner till, med samma krav på tal och skrift. Detta gäller
+    dock inte om uppgiftens innehåll utsätter mottagaren för allvarlig skada.
+  text_sha256: e5e16556c69da98c15dc80e22d12e50a428df3179d1082db3105d12ee3bddaa6
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-03
+  group: categorical
+  pair_id: pair-03
+  topic: återlämnande
+  text: En förvarare ska återlämna den anförtrodda egendomen till ägaren. Plikten avser samma föremål
+    som förvararen tog emot och innebär ett faktiskt överlämnande till den person som äger föremålet.
+    Detta gäller utan undantag, oberoende av egen fördel och av andras önskemål.
+  text_sha256: 29fdd01afd86a4d9c51c8a591c8b02bbbe95464a9ade9a3344c2ad18e2171059
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-03
+  group: conditional
+  pair_id: pair-03
+  topic: återlämnande
+  text: En förvarare ska återlämna den anförtrodda egendomen till ägaren. Plikten avser samma föremål
+    som förvararen tog emot och innebär ett faktiskt överlämnande till den person som äger föremålet.
+    Detta gäller dock inte om överlämnandet utsätter ägaren för en omedelbar fara.
+  text_sha256: 813adef5a2741812fa70f03bab1f6b8e0d9b9b78bdced85a5aa1294e63ba9cb3
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-04
+  group: categorical
+  pair_id: pair-04
+  topic: redovisning
+  text: En förvaltare ska redovisa de anförtrodda medlen sanningsenligt för huvudmannen. Plikten avser
+    en redovisning som återger användningen av medlen och ger huvudmannen en riktig bild av förvaltningen.
+    Redovisningen omfattar varje utgift. Detta gäller utan undantag, oberoende av egen fördel och av andras
+    önskemål.
+  text_sha256: 84868678e794d2b955160cce63a072ad865b08012da4548e4cb62985842d3b6e
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-04
+  group: conditional
+  pair_id: pair-04
+  topic: redovisning
+  text: En förvaltare ska redovisa de anförtrodda medlen sanningsenligt för huvudmannen. Plikten avser
+    en redovisning som återger användningen av medlen och ger huvudmannen en riktig bild av förvaltningen.
+    Redovisningen omfattar varje utgift. Detta gäller dock inte om redovisningen röjer en skyddad persons
+    vistelseort.
+  text_sha256: 5bba124d122a3b1882f0ce1098ff7f5f56ea289468ae422eb4b671b3f6f38f23
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-05
+  group: categorical
+  pair_id: pair-05
+  topic: erkännande
+  text: En uppdragstagare ska tillskriva medarbetaren dennes eget arbete. Plikten avser erkännandet av
+    den faktiska arbetsinsatsen i presentationen av det gemensamma resultatet inför uppdragsgivaren. Erkännandet
+    ingår i själva presentationen. Detta gäller utan undantag, oberoende av egen fördel och av andras
+    önskemål.
+  text_sha256: 4eec58f3d45a1e1d97ebb764632c5c2388833f930129f6dd5ad1df09ab3ecea1
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-05
+  group: conditional
+  pair_id: pair-05
+  topic: erkännande
+  text: En uppdragstagare ska tillskriva medarbetaren dennes eget arbete. Plikten avser erkännandet av
+    den faktiska arbetsinsatsen i presentationen av det gemensamma resultatet inför uppdragsgivaren. Erkännandet
+    ingår i själva presentationen. Detta gäller dock inte om namngivningen utsätter medarbetaren för allvarlig
+    skada.
+  text_sha256: 0f0e0a5cc65511536f6db94155ade2c109cd56ff12cac21ad4697c1bcc1944a3
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-06
+  group: categorical
+  pair_id: pair-06
+  topic: samtycke
+  text: En undersökningsledare ska inhämta deltagarens fria samtycke till medverkan. Plikten avser deltagarens
+    eget ställningstagande till den beskrivna undersökningen och dess användning av deltagarens uppgifter.
+    Samtycket är deltagarens eget beslut. Detta gäller utan undantag, oberoende av egen fördel och av
+    andras önskemål.
+  text_sha256: 97e29598be2076f7fb22d5ec2fe83480ece71ee45ee43af4227062f8055d8035
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-06
+  group: conditional
+  pair_id: pair-06
+  topic: samtycke
+  text: En undersökningsledare ska inhämta deltagarens fria samtycke till medverkan. Plikten avser deltagarens
+    eget ställningstagande till den beskrivna undersökningen och dess användning av deltagarens uppgifter.
+    Samtycket är deltagarens eget beslut. Detta gäller dock inte om deltagaren behöver en omedelbar livräddande
+    insats.
+  text_sha256: 03299577322f8034d01406fea20e3c6cdf99ed8e853c9067da040062786e0aa2
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-07
+  group: categorical
+  pair_id: pair-07
+  topic: avtal
+  text: En avtalspart ska fullgöra sitt frivilligt ingångna åtagande gentemot motparten. Plikten avser
+    den överenskomna prestationen i dess helhet och inte enbart ett uttryck för fortsatt samarbetsvilja.
+    Det frivilliga åtagandet binder den part som ingick avtalet. Detta gäller utan undantag, oberoende
+    av egen fördel och av andras önskemål.
+  text_sha256: 6f0c07d4cd9038476f85fb2fb4af896e6416913ab5c7b94b9bd87a2bee9e594c
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-07
+  group: conditional
+  pair_id: pair-07
+  topic: avtal
+  text: En avtalspart ska fullgöra sitt frivilligt ingångna åtagande gentemot motparten. Plikten avser
+    den överenskomna prestationen i dess helhet och inte enbart ett uttryck för fortsatt samarbetsvilja.
+    Det frivilliga åtagandet binder den part som ingick avtalet. Detta gäller dock inte om prestationen
+    orsakar motparten en allvarlig skada.
+  text_sha256: c6f7e58a57ce02a60f545f9116fa15aefd53b7cc5b1523f2ed8eaef6653d5ce9
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-08
+  group: categorical
+  pair_id: pair-08
+  topic: rättelse
+  text: En intygsgivare ska rätta sin egen felaktiga uppgift till mottagaren. Plikten avser en rättelse
+    som tydligt anger vilken uppgift som var oriktig och återger det förhållande som intyget beskriver.
+    Rättelsen ingår i intygsgivarens ansvar för sitt eget uttalande. Detta gäller utan undantag, oberoende
+    av egen fördel och av andras önskemål.
+  text_sha256: a82bafbc5ecfd3efb98aa0b34c7b4c259b5472dcaad122c3bbdc09333d4adb38
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-08
+  group: conditional
+  pair_id: pair-08
+  topic: rättelse
+  text: En intygsgivare ska rätta sin egen felaktiga uppgift till mottagaren. Plikten avser en rättelse
+    som tydligt anger vilken uppgift som var oriktig och återger det förhållande som intyget beskriver.
+    Rättelsen ingår i intygsgivarens ansvar för sitt eget uttalande. Detta gäller dock inte om rättelsen
+    röjer en skyddad persons identitet.
+  text_sha256: 4510dea198cb1aae43648bc2d28f595c9e140e18cc32a710e7099d81a50267a3
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-09
+  group: categorical
+  pair_id: pair-09
+  topic: respekt
+  text: En samtalsledare ska bemöta varje deltagare som en självständig person. Plikten avser ett bemötande
+    som erkänner deltagarens egen vilja och ställning i samtalet, med samma respekt för varje deltagare.
+    Deltagarens ställning grundas i dennes person och inte i nyttan för samtalsledaren. Detta gäller utan
+    undantag, oberoende av egen fördel och av andras önskemål.
+  text_sha256: b96194fcd0dec07c4e9eb6599b82c652dff302f461a16a554e87e001c2b5d4c3
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-09
+  group: conditional
+  pair_id: pair-09
+  topic: respekt
+  text: En samtalsledare ska bemöta varje deltagare som en självständig person. Plikten avser ett bemötande
+    som erkänner deltagarens egen vilja och ställning i samtalet, med samma respekt för varje deltagare.
+    Deltagarens ställning grundas i dennes person och inte i nyttan för samtalsledaren. Detta gäller dock
+    inte om bemötandet hindrar avvärjandet av en omedelbar fara.
+  text_sha256: 6e37745c6691c6fdda5aeb7149a8ae595a1a8ee844a023cead49a355f0cf95fa
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: categorical-10
+  group: categorical
+  pair_id: pair-10
+  topic: förtroende
+  text: En förtroendeperson ska bevara den anförtrodda hemligheten. Plikten avser hemlighetens innehåll
+    och omfattar dess återgivning i både tal och skrift inför andra personer än den som lämnade förtroendet.
+    Förtroendet binder mottagaren genom dennes eget åtagande att bevara innehållet. Detta gäller utan
+    undantag, oberoende av egen fördel och av andras önskemål.
+  text_sha256: 2c9c9f1e5609e8f508b800480480803160e8100ca1dadd473611465b5cbecdfc
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.
+- passage_id: conditional-10
+  group: conditional
+  pair_id: pair-10
+  topic: förtroende
+  text: En förtroendeperson ska bevara den anförtrodda hemligheten. Plikten avser hemlighetens innehåll
+    och omfattar dess återgivning i både tal och skrift inför andra personer än den som lämnade förtroendet.
+    Förtroendet binder mottagaren genom dennes eget åtagande att bevara innehållet. Detta gäller dock
+    inte om tystnaden utsätter en annan person för allvarlig skada.
+  text_sha256: 3abf39ea457863cff4c179a4123176dc0179f36bfa1c91092a5f8fbf7f63b7bf
+  source: constructed:2026-09-11; philosophical form, not quotation
+  review_note: Human philosophical and slot review pending.

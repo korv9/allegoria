@@ -6,6 +6,10 @@ This document explains the idea behind the project — not how it is built, but
 why it exists and what it claims. Implementation decisions live in
 `DATA_DECISIONS.md`.
 
+The [normative-structure axis](NORMATIVE_AXIS.md) adds descriptive virtue passages,
+constructed unconditional duties and paired conditional controls. Its source-only
+notebook already exposes lexical false positives; it does not establish model drift.
+
 ---
 
 ## How it started

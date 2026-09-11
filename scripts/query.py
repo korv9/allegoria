@@ -18,6 +18,8 @@ import io
 import sys
 from pathlib import Path
 
+import duckdb
+
 from simulacria.selection.pools import POOLS
 from simulacria.selection.tables import connect
 
@@ -47,6 +49,7 @@ def main() -> None:
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("-c", "--command", help="SQL to run; omit to read stdin")
+    parser.add_argument("--database", type=Path, help="query a persisted DuckDB read-only")
     parser.add_argument("--pool", choices=("v1", "v2"), default="v1")
     parser.add_argument("--tables-dir", type=Path, help="override the pool's table directory")
     parser.add_argument("--max-width", type=int, default=60, help="truncate wide cells")
@@ -58,7 +61,9 @@ def main() -> None:
     if not sql.strip():
         raise SystemExit('no SQL given: pass -c "..." or pipe a query on stdin')
 
-    connection = connect(tables_dir)
+    connection = (
+        duckdb.connect(str(args.database), read_only=True) if args.database else connect(tables_dir)
+    )
     try:
         result = connection.execute(sql)
         columns = [description[0] for description in result.description or []]

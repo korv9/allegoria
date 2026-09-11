@@ -9,6 +9,7 @@ description = "A Databricks legal-data product for meaning transformation experi
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "anthropic>=0.96",
     "beautifulsoup4==4.13.5",
     "lakehouse-engine[dq]==2.1.1",
 ]

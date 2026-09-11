@@ -9,3 +9,5 @@ AGENTS.md
 CONTINUITY.md
 data/local/
 *.egg-info/
+
+.ruff_cache/

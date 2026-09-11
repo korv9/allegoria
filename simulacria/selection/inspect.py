@@ -33,7 +33,8 @@ def provenance(document_id: str, pool: Pool = POOLS["v1"]) -> dict[str, object]:
     recorded beside it -- a hash that is only ever read proves nothing.
     """
     bronze = bronze_document(document_id, pool)
-    raw_path = SOURCE_DIR / f"{document_id}.xml"
+    source_dir = SOURCE_DIR if pool.name == "v1" else pool.bronze_dir.parent / "source"
+    raw_path = source_dir / f"{document_id}.xml"
     recorded = str(bronze["source_sha256"])
 
     computed: str | None = None
@@ -79,10 +80,12 @@ def inspect_provision(
     provision_id: str,
     pool: Pool = POOLS["v1"],
     provisions: list[dict[str, object]] | None = None,
+    *,
+    candidate_index: dict[str, dict[str, object]] | None = None,
 ) -> dict[str, object]:
     """Text, markers, determinacy, score, rank and table membership.
 
-    Pass `provisions` to avoid re-reading the pool when inspecting several.
+    Pass `provisions` and `candidate_index` to reuse a build and ranking.
     """
     rows = provisions if provisions is not None else load_pool(pool)
     match = next((row for row in rows if str(row["provision_id"]) == provision_id), None)
@@ -90,7 +93,7 @@ def inspect_provision(
         raise SystemExit(f"{provision_id} not found in pool {pool.name}")
 
     text = str(match["text"])
-    candidates = ranked(rows)
+    candidates = ranked(rows) if candidate_index is None else candidate_index
     candidate = candidates.get(provision_id)
 
     state, specific, vague = provision_determinacy(text)

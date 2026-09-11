@@ -29,6 +29,7 @@ import yaml
 
 from simulacria.selection.markers import EXCEPTION_MARKERS
 from simulacria.selection.pools import POOLS, PROJECT_ROOT, load_provisions
+from simulacria.selection.shortlist import shortlist
 
 GOLD = PROJECT_ROOT / "tests" / "fixtures" / "om_inte_gold.yaml"
 
@@ -146,26 +147,21 @@ def score(name: str, pattern: re.Pattern[str], gold: list[dict], texts: dict[str
 def project(pattern_name: str) -> None:
     """Report what swapping in a pattern would do, without shipping it.
 
-    Nothing is written and find_candidates is not edited: the marker list is
-    swapped in memory for the length of this call so the effect on the candidate
-    set can be quoted in a review packet.
+    Nothing is written. A marker proposal is passed explicitly to the library;
+    production marker state remains unchanged even when the comparison fails.
     """
-    import scripts.find_candidates as fc
-
-    original = fc.EXCEPTION_MARKERS
     replacement = [
         (label, PATTERNS[pattern_name] if label == "om inte" else pattern, weight)
-        for label, pattern, weight in original
+        for label, pattern, weight in EXCEPTION_MARKERS
     ]
 
     print(f"\nProjected effect of '{pattern_name}' on the candidate set (not shipped):")
     for pool in ("v1", "v2"):
         provisions = load_provisions(POOLS[pool].output_path)
-        fc.EXCEPTION_MARKERS = original
-        before = {str(c["provision_id"]): c for c in fc.shortlist(provisions)}
-        fc.EXCEPTION_MARKERS = replacement
-        after = {str(c["provision_id"]): c for c in fc.shortlist(provisions)}
-        fc.EXCEPTION_MARKERS = original
+        before = {str(c["provision_id"]): c for c in shortlist(provisions)}
+        after = {
+            str(c["provision_id"]): c for c in shortlist(provisions, exception_markers=replacement)
+        }
 
         leaving = sorted(set(before) - set(after))
         specific_before = sum(1 for c in before.values() if c["determinacy"] == "specific")
