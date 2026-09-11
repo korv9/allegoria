@@ -1,0 +1,345 @@
+ELIGIBLE (specific, <400 chars, max 2/doc, both pools): 113 from 85 documents
+
+--- [v2 rank 8] sfs-2024-237:P2 | 370ch | score 20
+    Lag (2024:237) om vissa kirurgiska ingrepp i könsorganen | 2 §
+    D=['måste', 'får'] E=['dock'] Q=['endast om', 'om', 'efter det att', 'särskilda skäl']
+    specific=['18 år', '23 år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2024-237.html#P2
+    TEXT: Ett kirurgiskt ingrepp får göras på den som har fyllt
+18 år, om personen
+
+1. är folkbokförd i Sverige,
+
+2. sedan en lång tid upplever att kroppen inte stämmer överens med könsidentiteten, och
+
+3. måste antas komma att leva i denna könsidentitet under överskådlig tid.
+
+På en person som är under 23 år får dock könskörtlarna avlägsnas endast om det finns synnerliga skäl.
+
+--- [v1 rank 14] sfs-1977-480:P12 | 276ch | score 18
+    Semesterlag (1977:480) | 12 §
+    D=['ska', 'får'] E=['om inte'] Q=['om', 'när/vid', 'särskilda skäl']
+    specific=['fyra veckor'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-1977-480.html#P12
+    TEXT: Om inte annat har avtalats, ska semesterledigheten förläggas så, att arbetstagaren får en ledighetsperiod av minst fyra veckor under juni-augusti. Även utan stöd av avtal får en sådan semesterperiod förläggas till annan tid, när särskilda skäl föranleder det. Lag (2009:1439).
+
+--- [v1 rank 15] sfs-2026-485:P13 | 333ch | score 18
+    Lag (2026:485) om införande av lagen (2026:484) om bostadsrättsregister | 13 §
+    D=['ska'] E=['om inte'] Q=['endast om', 'om']
+    specific=['sex månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-485.html#P13
+    TEXT: En panträtt som har upplåtits och fått sakrättsligt skydd före ikraftträdandet av lagen (2026:484) om bostadsrättsregister men som inte har noterats enligt 11 § ska behålla sitt sakrättsliga skydd endast om uppgift om panträtten har lämnats till Lantmäteriet senast sex månader efter ikraftträdandet av lagen om bostadsrättsregister.
+
+--- [v1 rank 16] sfs-1982-673:P12 | 355ch | score 18
+    Arbetstidslag (1982:673) | 12 §
+    D=['ska', 'får'] E=['dock', 'annat än'] Q=['i den mån', 'om']
+    specific=['två veckor'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-1982-673.html#P12
+    TEXT: Alla arbetsgivare som anlitar arbetstagare till arbete annat än tillfälligt skall lämna arbetstagarna besked om ändringar i fråga om den ordinarie arbetstidens och jourtidens förläggning minst två veckor i förväg. Sådant besked får dock lämnas kortare tid i förväg, om verksamhetens art eller händelser som inte har kunnat förutses ger anledning till det.
+
+--- [v2 rank 29] sfs-2026-1637:K5aP2 | 392ch | score 19
+    Lag (2026:1637) om insatser inom socialtjänsten när samtycke saknas | 2 §
+    D=['får inte', 'får'] E=['om inte'] Q=['endast om', 'om']
+    specific=['13 år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1637.html#K5aP2
+    TEXT: Ett beslut om elektronisk övervakning får meddelas endast om skälen för övervakningen väger tyngre än det intrång eller men i övrigt som övervakningen innebär för barnet eller den unge.
+
+Ett beslut om elektronisk övervakning får inte meddelas
+
+1. för barn som är under 13 år, eller
+
+2. om sådan övervakning av barnet eller den unge verkställs enligt bestämmelser i annan lag. Lag (2026:1638).
+
+--- [v1 rank 42] sfs-2026-1281:K9P1 | 209ch | score 16
+    Elmarknadslag (2026:1281) | 1 §
+    D=['ska'] E=['om inte'] Q=['om', 'särskilda skäl']
+    specific=['fyra kalenderår'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1281.html#K9P1
+    TEXT: En systemansvarigs nätverksamhet ska för en tillsynsperiod ha en intäktsram som beslutas av nätmyndigheten.
+
+Tillsynsperioden ska vara fyra kalenderår, om det inte finns särskilda skäl för en annan tidsperiod.
+
+--- [v1 rank 43] sfs-2026-1281:K10P10 | 321ch | score 16
+    Elmarknadslag (2026:1281) | 10 §
+    D=['ska'] E=['dock', 'ska inte'] Q=['om', 'efter det att']
+    specific=['senare än', 'två år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1281.html#K10P10
+    TEXT: Nätmyndigheten ska ta upp en tvist om vilka kostnader som ska debiteras enligt 6, 7 eller 9 §.
+
+En tvist ska dock inte prövas om ansökan om prövning har kommit in till nätmyndigheten senare än två år efter det att den systemansvariga skickat ett skriftligt ställningstagande till den berörda partens senaste kända adress.
+
+--- [v1 rank 44] sfs-2026-1283:K2P6 | 327ch | score 16
+    Lag (2026:1283) om elektriska ledningar | 6 §
+    D=['får'] E=['dock'] Q=['om', 'när/vid', 'efter det att', 'särskilda skäl']
+    specific=['tre år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1283.html#K2P6
+    TEXT: Prövningsmyndigheten får, om det finns särskilda skäl, medge att
+
+1. en starkströmsledning eller en transformator- eller kopplingsstation byggs innan det finns en nätkoncession, och
+
+2. starkströmsledningen, när den är färdig att tas i bruk, används i avvaktan på att koncessionsfrågan slutligt avgörs, dock under högst tre år.
+
+--- [v1 rank 45] sfs-2026-1283:K4P9 | 387ch | score 16
+    Lag (2026:1283) om elektriska ledningar | 9 §
+    D=['ska', 'får'] E=['ska inte'] Q=['om', 'särskilda skäl']
+    specific=['fem år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1283.html#K4P9
+    TEXT: En tidsbegränsad nätkoncession för linje får förlängas på oförändrade villkor i sammanlagt högst fem år (tillfällig förlängning), om det finns särskilda skäl och nätkoncessionshavaren ansöker om det.
+
+Ett ärende om tillfällig förlängning får avgöras utan att någon annan än sökanden har fått tillfälle att yttra sig. I ett sådant ärende ska inte 3 kap. 1-4 och 6-9 §§ samt 2 § tillämpas.
+
+--- [v1 rank 66] sfs-2026-723:P9 | 200ch | score 15
+    Lag (2026:723) om talan om administrativ sanktionsavgift i mål om bidrag | 9 §
+    D=['får inte', 'får'] E=['om inte'] Q=['om']
+    specific=['fem år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-723.html#P9
+    TEXT: En sanktionsavgift får inte dömas ut om den misstänkte inte har fått ta del av åklagarens yrkande om sanktionsavgift inom fem år från den dag då uppgiften lämnades eller anmälningsskyldigheten uppkom.
+
+--- [v1 rank 67] sfs-1982-673:P23 | 252ch | score 15
+    Arbetstidslag (1982:673) | 23 §
+    D=['förbjuden'] E=['dock', 'gäller inte'] Q=['om']
+    specific=['ett år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-1982-673.html#P23
+    TEXT: Till böter eller fängelse i högst ett år döms en arbetsgivare som uppsåtligen eller av oaktsamhet bryter mot ett föreläggande eller förbud som har meddelats med stöd av 22 §. Detta gäller dock inte om föreläggandet eller förbudet har förenats med vite.
+
+--- [v2 rank 67] sfs-2026-1601:K6P8 | 261ch | score 18
+    Lag (2026:1601) om särskilda befogenheter för den statliga barn- och ung | 8 §
+    D=['ska', 'får'] E=['dock'] Q=['i den utsträckning', 'efter det att']
+    specific=['fyra veckor'] vague=['lämpligt']
+    url=https://data.riksdagen.se/dokument/sfs-2026-1601.html#K6P8
+    TEXT: Ett barn eller en ung person som omfattas av bestämmelserna i 1 § får, i den utsträckning det är lämpligt, vistas utanför det särskilda ungdomshemmet under en på förhand bestämd tid, dock högst fyra veckor.
+
+Innan beslut fattas ska samråd ske med socialnämnden.
+
+--- [v1 rank 68] sfs-2026-1358:K1P10 | 306ch | score 15
+    Lag (2026:1358) om statlig e-legitimation och elektronisk identifiering | 10 §
+    D=['ska', 'får'] E=['om inte'] Q=['om']
+    specific=['fem år', 'tolv år', 'tre år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1358.html#K1P10
+    TEXT: En e-legitimation ska utfärdas med en giltighetstid om fem år. Om sökanden inte har fyllt tolv år ska giltighetstiden vara tre år.
+
+Regeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om att den statliga e-legitimationen i särskilt angivna fall ska ha en kortare giltighetstid.
+
+--- [v2 rank 69] sfs-2022-482:K5P37 | 320ch | score 18
+    Lag (2022:482) om elektronisk kommunikation | 37 §
+    D=['ska'] E=['dock', 'om inte'] Q=['om', 'särskilda skäl']
+    specific=['30 dagar'] vague=['skälig']
+    url=https://data.riksdagen.se/dokument/sfs-2022-482.html#K5P37
+    TEXT: Regleringsmyndigheten ska i ett ärende enligt 22 § ge berörda parter skälig tid att yttra sig över det erbjudna åtagandet. Tiden ska uppgå till minst 30 dagar om det inte finns särskilda skäl mot det. Parterna behöver dock inte ges tillfälle att yttra sig om det är uppenbart att åtagandet inte uppfyller relevanta krav.
+
+--- [v1 rank 69] sfs-2026-786:K10P20 | 308ch | score 15
+    Lag (2026:786) om nordisk verkställighet i brottmål | 20 §
+    D=['ska', 'får'] E=['dock'] Q=['om']
+    specific=['48 timmar'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-786.html#K10P20
+    TEXT: Den som i en nordisk stat dömts till ett fängelsestraff får utan tillstånd transporteras genom Sverige till en annan nordisk stat för verkställighet av straffet.
+
+Om det är nödvändigt för att transporten ska kunna genomföras, får Polismyndigheten hålla den som överförs i förvar, dock längst under 48 timmar.
+
+--- [v1 rank 72] sfs-2026-408:K8P7 | 396ch | score 15
+    Vapenlag (2026:408) | 7 §
+    D=['ska', 'får'] E=['om inte'] Q=['om']
+    specific=['fyra månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-408.html#K8P7
+    TEXT: Skjutvapen, ammunition och ljuddämpare som en person vid resa fört med till Sverige för personligt bruk men inte haft rätt att föra in, får föras ut om föremålen anmälts i behörig ordning till Tullverket. Om föremålen inte förs ut inom fyra månader efter en sådan anmälan eller inom den längre tid som Tullverket bestämmer, tillfaller föremålen staten och ska behandlas som om de hade förverkats.
+
+--- [v1 rank 92] sfs-1982-80:P32a | 167ch | score 14
+    Lag (1982:80) om anställningsskydd | 32 a §
+    D=['har rätt att'] E=['om inte', 'annat än'] Q=['om']
+    specific=['69 år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-1982-80.html#P32a
+    TEXT: En arbetstagare har rätt att kvarstå i anställningen till utgången av den månad då han eller hon fyller 69 år, om inte något annat följer av denna lag. Lag (2019:529).
+
+--- [v1 rank 94] sfs-1982-80:P33a | 248ch | score 14
+    Lag (1982:80) om anställningsskydd | 33 a §
+    D=['ska'] E=['om inte'] Q=['om']
+    specific=['69 år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-1982-80.html#P33a
+    TEXT: Vid uppsägning av en arbetstagare som har fyllt 69 år ska 30 § om underrättelse, varsel och rätt till överläggning tillämpas, om inte förhandling enligt 11-14 §§ lagen
+(1976:580) om medbestämmande i arbetslivet har hållits i frågan. Lag (2019:529).
+
+--- [v1 rank 96] sfs-2026-772:K1P2:occurrence:2 | 286ch | score 14
+    Privatuthyrningslag (2026:772) | 2 §
+    D=['ska'] E=['om inte'] Q=['om']
+    specific=['senast den'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-772.html#K1P2
+    TEXT: Hyran ska betalas i förskott före varje kalendermånads början. Om inte annat har avtalats, ska hyran betalas senast den sista vardagen i varje kalendermånad eller, om hyran beräknas för kortare tid än en månad, senast den sista vardagen före början av den tid för vilken hyran beräknas.
+
+--- [v1 rank 103] sfs-2026-578:P19 | 337ch | score 14
+    Lag (2026:578) om offentlig säljverksamhet | 19 §
+    D=['ska'] E=['om inte'] Q=['om']
+    specific=['30 dagar'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-578.html#P19
+    TEXT: Marknadsstörningsavgift ska betalas till Konkurrensverket inom 30 dagar från det att beslutet fick laga kraft eller inom den längre tid som anges i beslutet.
+
+Om marknadsstörningsavgiften inte betalas i tid, ska Konkurrensverket lämna den obetalda avgiften för indrivning enligt lagen (1993:891) om indrivning av statliga fordringar m.m.
+
+--- [v1 rank 105] sfs-2026-806:P18 | 366ch | score 14
+    Lag (2026:806) om användning av AI-system för ansiktsigenkänning i realt | 18 §
+    D=['ska'] E=['om inte'] Q=['om']
+    specific=['ett år', 'sex månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-806.html#P18
+    TEXT: Om det på grund av sekretess eller risk för men för syftet som åtgärden vidtogs för inte har kunnat lämnas någon underrättelse inom ett år och sex månader från det att åtgärden avslutades, ska frågan om underrättelse prövas slutligt. En underrättelse ska då bara lämnas om sekretess inte längre gäller och om det kan ske utan men för syftet som åtgärden vidtogs för.
+
+--- [v1 rank 109] sfs-2026-966:K3P13 | 392ch | score 14
+    Lag (2026:966) om utsedda verksamhetsställen och rättsliga ombud för inh | 13 §
+    D=['ska'] E=['om inte'] Q=['om']
+    specific=['30 dagar'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-966.html#K3P13
+    TEXT: En sanktionsavgift ska betalas till centralmyndigheten inom 30 dagar från det att beslutet om att ta ut avgiften har fått laga kraft eller inom den längre tid som anges i beslutet.
+
+Om sanktionsavgiften inte betalas i tid, ska centralmyndigheten lämna den obetalda avgiften för indrivning enligt lagen (1993:891) om indrivning av statliga fordringar m.m.
+
+Sanktionsavgiften tillfaller staten.
+
+--- [v2 rank 127] sfs-2022-700:K3P9 | 214ch | score 17
+    Lag (2022:700) om särskild kontroll av vissa utlänningar | 9 §
+    D=['får inte', 'får'] E=['dock'] Q=['om', 'särskilda skäl']
+    specific=['18 år', '72 timmar'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2022-700.html#K3P9
+    TEXT: /Upphör att gälla U:2027-03-01/
+En utlänning som inte har fyllt 18 år får inte hållas i förvar längre tid än 72 timmar. Om det finns synnerliga skäl får utlänningen dock hållas i förvar under ytterligare 72 timmar.
+
+--- [v2 rank 128] sfs-2019-504:P8 | 217ch | score 17
+    Lag (2019:504) om ansvar för god forskningssed och prövning av oredlighe | 8 §
+    D=['får inte', 'får'] E=['gäller inte'] Q=['om', 'när/vid', 'särskilda skäl']
+    specific=['tio år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2019-504.html#P8
+    TEXT: Prövning av oredlighet i forskning enligt denna lag får inte grundas på omständigheter som är äldre än tio år när ärendet inleds.
+
+Bestämmelsen i första stycket gäller inte om det finns särskilda skäl för en prövning.
+
+--- [v2 rank 129] sfs-2022-725:P47 | 226ch | score 17
+    Växtskyddslag (2022:725) | 47 §
+    D=['ska', 'får inte', 'får'] E=['om inte'] Q=['om', 'efter det att']
+    specific=['två år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2022-725.html#P47
+    TEXT: Innan kontrollmyndigheten beslutar om sanktionsavgift ska den som avgiften ska tas ut av få tillfälle att yttra sig. Om så inte har skett inom två år från det att överträdelsen ägde rum får någon sanktionsavgift inte beslutas.
+
+--- [v2 rank 130] sfs-2022-700:K3P9:occurrence:2 | 233ch | score 17
+    Lag (2022:700) om särskild kontroll av vissa utlänningar | 9 §
+    D=['får inte', 'får'] E=['dock'] Q=['om', 'särskilda skäl']
+    specific=['18 år', 'nio månader', 'tre månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2022-700.html#K3P9
+    TEXT: /Träder i kraft I:2027-03-01/
+En utlänning som inte har fyllt 18 år får inte hållas i förvar längre tid än tre månader. Om det finns synnerliga skäl får utlänningen dock hållas i förvar under ytterligare nio månader. Lag (2026:1432).
+
+--- [v2 rank 131] sfs-2016-1117:P14 | 252ch | score 17
+    Lag (2016:1117) om registrering och hantering av gåvor mottagna av riksd | 14 §
+    D=['ska', 'får'] E=['dock'] Q=['om', 'särskilda skäl']
+    specific=['tre år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2016-1117.html#P14
+    TEXT: Alla gåvor som är antecknade i gåvoregistret ska regelbundet inventeras. Gåvor får gallras ut tidigast tre år efter att de togs emot. Om det finns särskilda skäl kan en gåva dock gallras ut tidigare.
+
+Riksdagsförvaltningen får fatta beslut om gallring.
+
+--- [v2 rank 132] sfs-2023-560:P15 | 262ch | score 17
+    Lag (2023:560) om granskning av utländska direktinvesteringar | 15 §
+    D=['ska', 'får'] E=['dock'] Q=['om', 'särskilda skäl']
+    specific=['sex månader', 'tre månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2023-560.html#P15
+    TEXT: Granskningsmyndigheten ska inom tre månader från sitt beslut att inleda en granskning enligt 13 eller 14 § besluta att antingen förbjuda eller godkänna investeringen. Om det finns särskilda skäl, får granskningsmyndigheten dock meddela beslutet inom sex månader.
+
+--- [v2 rank 133] sfs-2019-742:K10P6 | 316ch | score 17
+    Lag (2019:742) om tjänstepensionsföretag | 6 §
+    D=['ska'] E=['dock', 'gäller inte'] Q=['i den mån', 'om']
+    specific=['tjugofyra år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2019-742.html#K10P6
+    TEXT: I fråga om uppdragstid för revisorn ska ett tjänstepensionsaktiebolag anses som ett sådant aktiebolag som avses i 9 kap. 21 a § aktiebolagslagen (2005:551). Möjligheten enligt den paragrafen att förlänga revisionsuppdraget till högst tjugo eller tjugofyra år gäller dock inte uppdrag i ett tjänstepensionsaktiebolag.
+
+--- [v2 rank 134] sfs-2018-1138:K4P8 | 318ch | score 17
+    Spellag (2018:1138) | 8 §
+    D=['ska', 'får'] E=['om inte', 'annat än'] Q=['om', 'efter det att']
+    specific=['fem år', 'fyra månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2018-1138.html#K4P8
+    TEXT: En licens ska avse en viss tid och får, om inte annat anges i denna lag, ges för högst fem år.
+
+Om en ansökan om förnyelse av licensen har getts in senast fyra månader innan giltighetstiden för den gällande licensen går ut, ska licensen gälla till dess att spelmyndigheten beslutat om den nya ansökan. Lag (2022:1674).
+
+--- [v2 rank 135] sfs-2019-742:K10P54 | 328ch | score 17
+    Lag (2019:742) om tjänstepensionsföretag | 54 §
+    D=['ska'] E=['dock', 'gäller inte'] Q=['i den mån', 'om']
+    specific=['tjugofyra år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2019-742.html#K10P54
+    TEXT: I fråga om uppdragstid för revisorn ska en tjänstepensionsförening anses som en sådan ekonomisk förening som avses i 8 kap. 54 § lagen (2018:672) om ekonomiska föreningar. Möjligheten enligt den paragrafen att förlänga revisionsuppdraget till högst tjugo eller tjugofyra år gäller dock inte uppdrag i en tjänstepensionsförening.
+
+--- [v2 rank 136] sfs-2024-7:P8 | 333ch | score 17
+    Lag (2024:7) om preventiva vistelseförbud | 8 §
+    D=['ska', 'förbjuden', 'får'] E=['dock', 'om inte'] Q=['om']
+    specific=['sex månader', 'tre månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2024-7.html#P8
+    TEXT: Ett vistelseförbud ska gälla för en viss tid, högst sex månader.
+
+Vistelseförbudet gäller omedelbart, om inte annat beslutas.
+
+Ett vistelseförbud får förlängas med högst sex månader i taget om förutsättningarna i 3-5 §§ är uppfyllda. Ett förbud med villkor om elektronisk övervakning får dock förlängas med högst tre månader i taget.
+
+--- [v2 rank 137] sfs-2024-506:K5P8 | 342ch | score 17
+    Lag (2024:506) om arbetslöshetsförsäkring | 8 §
+    D=['ska'] E=['dock', 'om inte', 'gäller inte'] Q=['om', 'när/vid']
+    specific=['åtta veckor'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2024-506.html#K5P8
+    TEXT: När tiden med medlemskap eller anslutning beräknas enligt
+4 eller 5 § ska det bortses från avbrott i medlemskapet eller anslutningen som understiger en månad, om den sammanlagda avbrottstiden inte överstiger åtta veckor. Det gäller dock inte avbrott till följd av ett beslut om uteslutning enligt
+37 § lagen (1997:239) om arbetslöshetskassor.
+
+--- [v2 rank 139] sfs-2022-482:K7P8 | 353ch | score 17
+    Lag (2022:482) om elektronisk kommunikation | 8 §
+    D=['får inte', 'får'] E=['dock', 'gäller inte'] Q=['om', 'när/vid']
+    specific=['24 månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2022-482.html#K7P8
+    TEXT: Ett avtal mellan en konsument och den som tillhandahåller en allmänt tillgänglig elektronisk kommunikationstjänst får inte ha en längre bindningstid än 24 månader. Detta gäller dock inte när det är fråga om nummeroberoende interpersonella kommunikationstjänster eller överföringstjänster som används för tillhandahållande av maskin-till-maskin-tjänster.
+
+--- [v2 rank 140] sfs-2024-945:K15P12 | 375ch | score 17
+    Patentlag (2024:945) | 12 §
+    D=['ska'] E=['dock', 'om inte', 'gäller inte'] Q=['om', 'efter det att']
+    specific=['ett år', 'fem år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2024-945.html#K15P12
+    TEXT: Rätten till ersättning för skada preskriberas om talan inte väcks inom fem år från det att skadan uppkom.
+
+Första stycket gäller dock inte om talan om ersättning enligt
+11 § väcks senast ett år efter det att tiden för invändning har gått ut eller, om invändning har gjorts, senast ett år efter det att Patent- och registreringsverket beslutade att patentet ska upprätthållas.
+
+--- [v2 rank 141] sfs-2025-400:K18P8 | 399ch | score 17
+    Socialtjänstlag (2025:400) | 8 §
+    D=['ska'] E=['om inte'] Q=['om', 'efter det att', 'särskilda skäl']
+    specific=['två månader'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2025-400.html#K18P8
+    TEXT: Socialnämnden ansvarar för att påföljden ungdomstjänst kan verkställas så snart som möjligt. Verkställigheten ska påbörjas senast två månader efter det att domen har fått laga kraft, om inte särskilda skäl talar mot det.
+
+Socialnämnden ska i en arbetsplan bestämma vad en beslutad ungdomstjänst ska innehålla och utse en handledare för den unge. Socialnämnden ska kontrollera att arbetsplanen följs.
+
+--- [v1 rank 151] sfs-2026-1274:P12 | 356ch | score 13
+    Lag (2026:1274) om åtgärder mot manipulation och missbruk av färdskrivar | 12 §
+    D=['ska'] E=['ska inte'] Q=['om']
+    specific=['ett år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1274.html#P12
+    TEXT: Den som tillverkar, utvecklar, innehar, distribuerar eller överlåter produkter som är konstruerade eller avsedda för att utföra det som anges i 11 § 1, 2 eller 3 eller bjuder ut sådana produkter till försäljning döms till böter eller fängelse i högst ett år.
+
+Ansvar enligt första stycket ska inte dömas ut om ansvar för gärningen kan dömas ut enligt 11 §.
+
+--- [v1 rank 200] sfs-2026-1459:overgang:2026-1459 | 326ch | score 12
+    Lag (2026:1459) om insyn i kommunikation med syfte att påverka politiska | SFS 2026:1459
+    D=['får'] E=['behöver inte'] Q=['när/vid']
+    specific=['60 dagar'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1459.html#overgang
+    TEXT: 2026:1459
+
+1. Denna lag träder i kraft den 1 juli 2027.
+
+2. Den som före ikraftträdandet bedriver påverkanskommunikation får, trots 6 §, ge in en anmälan för registrering till Kammarkollegiet senast 60 dagar efter dagen för ikraftträdandet och behöver inte i anmälan ange datum för när påverkanskommunikation började bedrivas.
+
+--- [v2 rank 258] sfs-2026-1600:K20P5 | 170ch | score 16
+    Lag (2026:1600) om omhändertagande för vård av barn och unga | 5 §
+    D=['ska', 'får inte', 'får'] E=['dock'] Q=['om']
+    specific=['15 år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1600.html#K20P5
+    TEXT: Barnet eller den unge får tas i förvar, om det är nödvändigt för att en transport enligt 1 § ska kunna genomföras. Ett barn som är under 15 år får dock inte tas i förvar.
+
+--- [v2 rank 259] sfs-2026-1601:K9P4 | 196ch | score 16
+    Lag (2026:1601) om särskilda befogenheter för den statliga barn- och ung | 4 §
+    D=['ska', 'måste'] E=['om inte'] Q=['om', 'när/vid']
+    specific=['15 år'] vague=[]
+    url=https://data.riksdagen.se/dokument/sfs-2026-1601.html#K9P4
+    TEXT: När ett barn som är under 15 år uttrycker en vilja att överklaga ett beslut enligt 10 kap. 1 § ska ett offentligt biträde förordnas för barnet, om det inte måste antas att behov av biträde saknas.
+

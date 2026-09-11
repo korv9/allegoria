@@ -1,0 +1,3002 @@
+[
+ {
+  "pool": "v2",
+  "rank": 8,
+  "provision_id": "sfs-2024-237:P2",
+  "document_id": "sfs-2024-237",
+  "document_title": "Lag (2024:237) om vissa kirurgiska ingrepp i könsorganen",
+  "label": "2 §",
+  "char_count": 370,
+  "score": 20,
+  "duty_markers": [
+   "måste",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "endast om",
+   "om",
+   "efter det att",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "18 år",
+   "23 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-237.html#P2",
+  "text": "Ett kirurgiskt ingrepp får göras på den som har fyllt\n18 år, om personen\n\n1. är folkbokförd i Sverige,\n\n2. sedan en lång tid upplever att kroppen inte stämmer överens med könsidentiteten, och\n\n3. måste antas komma att leva i denna könsidentitet under överskådlig tid.\n\nPå en person som är under 23 år får dock könskörtlarna avlägsnas endast om det finns synnerliga skäl."
+ },
+ {
+  "pool": "v1",
+  "rank": 14,
+  "provision_id": "sfs-1977-480:P12",
+  "document_id": "sfs-1977-480",
+  "document_title": "Semesterlag (1977:480)",
+  "label": "12 §",
+  "char_count": 276,
+  "score": 18,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "fyra veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-1977-480.html#P12",
+  "text": "Om inte annat har avtalats, ska semesterledigheten förläggas så, att arbetstagaren får en ledighetsperiod av minst fyra veckor under juni-augusti. Även utan stöd av avtal får en sådan semesterperiod förläggas till annan tid, när särskilda skäl föranleder det. Lag (2009:1439)."
+ },
+ {
+  "pool": "v1",
+  "rank": 15,
+  "provision_id": "sfs-2026-485:P13",
+  "document_id": "sfs-2026-485",
+  "document_title": "Lag (2026:485) om införande av lagen (2026:484) om bostadsrättsregister",
+  "label": "13 §",
+  "char_count": 333,
+  "score": 18,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "endast om",
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-485.html#P13",
+  "text": "En panträtt som har upplåtits och fått sakrättsligt skydd före ikraftträdandet av lagen (2026:484) om bostadsrättsregister men som inte har noterats enligt 11 § ska behålla sitt sakrättsliga skydd endast om uppgift om panträtten har lämnats till Lantmäteriet senast sex månader efter ikraftträdandet av lagen om bostadsrättsregister."
+ },
+ {
+  "pool": "v1",
+  "rank": 16,
+  "provision_id": "sfs-1982-673:P12",
+  "document_id": "sfs-1982-673",
+  "document_title": "Arbetstidslag (1982:673)",
+  "label": "12 §",
+  "char_count": 355,
+  "score": 18,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "i den mån",
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-1982-673.html#P12",
+  "text": "Alla arbetsgivare som anlitar arbetstagare till arbete annat än tillfälligt skall lämna arbetstagarna besked om ändringar i fråga om den ordinarie arbetstidens och jourtidens förläggning minst två veckor i förväg. Sådant besked får dock lämnas kortare tid i förväg, om verksamhetens art eller händelser som inte har kunnat förutses ger anledning till det."
+ },
+ {
+  "pool": "v2",
+  "rank": 29,
+  "provision_id": "sfs-2026-1637:K5aP2",
+  "document_id": "sfs-2026-1637",
+  "document_title": "Lag (2026:1637) om insatser inom socialtjänsten när samtycke saknas",
+  "label": "2 §",
+  "char_count": 392,
+  "score": 19,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "endast om",
+   "om"
+  ],
+  "specific_qualifiers": [
+   "13 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1637.html#K5aP2",
+  "text": "Ett beslut om elektronisk övervakning får meddelas endast om skälen för övervakningen väger tyngre än det intrång eller men i övrigt som övervakningen innebär för barnet eller den unge.\n\nEtt beslut om elektronisk övervakning får inte meddelas\n\n1. för barn som är under 13 år, eller\n\n2. om sådan övervakning av barnet eller den unge verkställs enligt bestämmelser i annan lag. Lag (2026:1638)."
+ },
+ {
+  "pool": "v1",
+  "rank": 42,
+  "provision_id": "sfs-2026-1281:K9P1",
+  "document_id": "sfs-2026-1281",
+  "document_title": "Elmarknadslag (2026:1281)",
+  "label": "1 §",
+  "char_count": 209,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "fyra kalenderår"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1281.html#K9P1",
+  "text": "En systemansvarigs nätverksamhet ska för en tillsynsperiod ha en intäktsram som beslutas av nätmyndigheten.\n\nTillsynsperioden ska vara fyra kalenderår, om det inte finns särskilda skäl för en annan tidsperiod."
+ },
+ {
+  "pool": "v1",
+  "rank": 43,
+  "provision_id": "sfs-2026-1281:K10P10",
+  "document_id": "sfs-2026-1281",
+  "document_title": "Elmarknadslag (2026:1281)",
+  "label": "10 §",
+  "char_count": 321,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "ska inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "senare än",
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1281.html#K10P10",
+  "text": "Nätmyndigheten ska ta upp en tvist om vilka kostnader som ska debiteras enligt 6, 7 eller 9 §.\n\nEn tvist ska dock inte prövas om ansökan om prövning har kommit in till nätmyndigheten senare än två år efter det att den systemansvariga skickat ett skriftligt ställningstagande till den berörda partens senaste kända adress."
+ },
+ {
+  "pool": "v1",
+  "rank": 44,
+  "provision_id": "sfs-2026-1283:K2P6",
+  "document_id": "sfs-2026-1283",
+  "document_title": "Lag (2026:1283) om elektriska ledningar",
+  "label": "6 §",
+  "char_count": 327,
+  "score": 16,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid",
+   "efter det att",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "tre år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1283.html#K2P6",
+  "text": "Prövningsmyndigheten får, om det finns särskilda skäl, medge att\n\n1. en starkströmsledning eller en transformator- eller kopplingsstation byggs innan det finns en nätkoncession, och\n\n2. starkströmsledningen, när den är färdig att tas i bruk, används i avvaktan på att koncessionsfrågan slutligt avgörs, dock under högst tre år."
+ },
+ {
+  "pool": "v1",
+  "rank": 45,
+  "provision_id": "sfs-2026-1283:K4P9",
+  "document_id": "sfs-2026-1283",
+  "document_title": "Lag (2026:1283) om elektriska ledningar",
+  "label": "9 §",
+  "char_count": 387,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "ska inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1283.html#K4P9",
+  "text": "En tidsbegränsad nätkoncession för linje får förlängas på oförändrade villkor i sammanlagt högst fem år (tillfällig förlängning), om det finns särskilda skäl och nätkoncessionshavaren ansöker om det.\n\nEtt ärende om tillfällig förlängning får avgöras utan att någon annan än sökanden har fått tillfälle att yttra sig. I ett sådant ärende ska inte 3 kap. 1-4 och 6-9 §§ samt 2 § tillämpas."
+ },
+ {
+  "pool": "v1",
+  "rank": 66,
+  "provision_id": "sfs-2026-723:P9",
+  "document_id": "sfs-2026-723",
+  "document_title": "Lag (2026:723) om talan om administrativ sanktionsavgift i mål om bidragsbrott",
+  "label": "9 §",
+  "char_count": 200,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-723.html#P9",
+  "text": "En sanktionsavgift får inte dömas ut om den misstänkte inte har fått ta del av åklagarens yrkande om sanktionsavgift inom fem år från den dag då uppgiften lämnades eller anmälningsskyldigheten uppkom."
+ },
+ {
+  "pool": "v1",
+  "rank": 67,
+  "provision_id": "sfs-1982-673:P23",
+  "document_id": "sfs-1982-673",
+  "document_title": "Arbetstidslag (1982:673)",
+  "label": "23 §",
+  "char_count": 252,
+  "score": 15,
+  "duty_markers": [
+   "förbjuden"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-1982-673.html#P23",
+  "text": "Till böter eller fängelse i högst ett år döms en arbetsgivare som uppsåtligen eller av oaktsamhet bryter mot ett föreläggande eller förbud som har meddelats med stöd av 22 §. Detta gäller dock inte om föreläggandet eller förbudet har förenats med vite."
+ },
+ {
+  "pool": "v2",
+  "rank": 67,
+  "provision_id": "sfs-2026-1601:K6P8",
+  "document_id": "sfs-2026-1601",
+  "document_title": "Lag (2026:1601) om särskilda befogenheter för den statliga barn- och ungdomsvården",
+  "label": "8 §",
+  "char_count": 261,
+  "score": 18,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "i den utsträckning",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "fyra veckor"
+  ],
+  "vague_qualifiers": [
+   "lämpligt"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1601.html#K6P8",
+  "text": "Ett barn eller en ung person som omfattas av bestämmelserna i 1 § får, i den utsträckning det är lämpligt, vistas utanför det särskilda ungdomshemmet under en på förhand bestämd tid, dock högst fyra veckor.\n\nInnan beslut fattas ska samråd ske med socialnämnden."
+ },
+ {
+  "pool": "v1",
+  "rank": 68,
+  "provision_id": "sfs-2026-1358:K1P10",
+  "document_id": "sfs-2026-1358",
+  "document_title": "Lag (2026:1358) om statlig e-legitimation och elektronisk identifiering",
+  "label": "10 §",
+  "char_count": 306,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år",
+   "tolv år",
+   "tre år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1358.html#K1P10",
+  "text": "En e-legitimation ska utfärdas med en giltighetstid om fem år. Om sökanden inte har fyllt tolv år ska giltighetstiden vara tre år.\n\nRegeringen eller den myndighet som regeringen bestämmer får meddela föreskrifter om att den statliga e-legitimationen i särskilt angivna fall ska ha en kortare giltighetstid."
+ },
+ {
+  "pool": "v2",
+  "rank": 69,
+  "provision_id": "sfs-2022-482:K5P37",
+  "document_id": "sfs-2022-482",
+  "document_title": "Lag (2022:482) om elektronisk kommunikation",
+  "label": "37 §",
+  "char_count": 320,
+  "score": 18,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [
+   "skälig"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-482.html#K5P37",
+  "text": "Regleringsmyndigheten ska i ett ärende enligt 22 § ge berörda parter skälig tid att yttra sig över det erbjudna åtagandet. Tiden ska uppgå till minst 30 dagar om det inte finns särskilda skäl mot det. Parterna behöver dock inte ges tillfälle att yttra sig om det är uppenbart att åtagandet inte uppfyller relevanta krav."
+ },
+ {
+  "pool": "v1",
+  "rank": 69,
+  "provision_id": "sfs-2026-786:K10P20",
+  "document_id": "sfs-2026-786",
+  "document_title": "Lag (2026:786) om nordisk verkställighet i brottmål",
+  "label": "20 §",
+  "char_count": 308,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "48 timmar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-786.html#K10P20",
+  "text": "Den som i en nordisk stat dömts till ett fängelsestraff får utan tillstånd transporteras genom Sverige till en annan nordisk stat för verkställighet av straffet.\n\nOm det är nödvändigt för att transporten ska kunna genomföras, får Polismyndigheten hålla den som överförs i förvar, dock längst under 48 timmar."
+ },
+ {
+  "pool": "v1",
+  "rank": 72,
+  "provision_id": "sfs-2026-408:K8P7",
+  "document_id": "sfs-2026-408",
+  "document_title": "Vapenlag (2026:408)",
+  "label": "7 §",
+  "char_count": 396,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fyra månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-408.html#K8P7",
+  "text": "Skjutvapen, ammunition och ljuddämpare som en person vid resa fört med till Sverige för personligt bruk men inte haft rätt att föra in, får föras ut om föremålen anmälts i behörig ordning till Tullverket. Om föremålen inte förs ut inom fyra månader efter en sådan anmälan eller inom den längre tid som Tullverket bestämmer, tillfaller föremålen staten och ska behandlas som om de hade förverkats."
+ },
+ {
+  "pool": "v1",
+  "rank": 92,
+  "provision_id": "sfs-1982-80:P32a",
+  "document_id": "sfs-1982-80",
+  "document_title": "Lag (1982:80) om anställningsskydd",
+  "label": "32 a §",
+  "char_count": 167,
+  "score": 14,
+  "duty_markers": [
+   "har rätt att"
+  ],
+  "exception_markers": [
+   "om inte",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "69 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-1982-80.html#P32a",
+  "text": "En arbetstagare har rätt att kvarstå i anställningen till utgången av den månad då han eller hon fyller 69 år, om inte något annat följer av denna lag. Lag (2019:529)."
+ },
+ {
+  "pool": "v1",
+  "rank": 94,
+  "provision_id": "sfs-1982-80:P33a",
+  "document_id": "sfs-1982-80",
+  "document_title": "Lag (1982:80) om anställningsskydd",
+  "label": "33 a §",
+  "char_count": 248,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "69 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-1982-80.html#P33a",
+  "text": "Vid uppsägning av en arbetstagare som har fyllt 69 år ska 30 § om underrättelse, varsel och rätt till överläggning tillämpas, om inte förhandling enligt 11-14 §§ lagen\n(1976:580) om medbestämmande i arbetslivet har hållits i frågan. Lag (2019:529)."
+ },
+ {
+  "pool": "v1",
+  "rank": 96,
+  "provision_id": "sfs-2026-772:K1P2:occurrence:2",
+  "document_id": "sfs-2026-772",
+  "document_title": "Privatuthyrningslag (2026:772)",
+  "label": "2 §",
+  "char_count": 286,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "senast den"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-772.html#K1P2",
+  "text": "Hyran ska betalas i förskott före varje kalendermånads början. Om inte annat har avtalats, ska hyran betalas senast den sista vardagen i varje kalendermånad eller, om hyran beräknas för kortare tid än en månad, senast den sista vardagen före början av den tid för vilken hyran beräknas."
+ },
+ {
+  "pool": "v1",
+  "rank": 103,
+  "provision_id": "sfs-2026-578:P19",
+  "document_id": "sfs-2026-578",
+  "document_title": "Lag (2026:578) om offentlig säljverksamhet",
+  "label": "19 §",
+  "char_count": 337,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-578.html#P19",
+  "text": "Marknadsstörningsavgift ska betalas till Konkurrensverket inom 30 dagar från det att beslutet fick laga kraft eller inom den längre tid som anges i beslutet.\n\nOm marknadsstörningsavgiften inte betalas i tid, ska Konkurrensverket lämna den obetalda avgiften för indrivning enligt lagen (1993:891) om indrivning av statliga fordringar m.m."
+ },
+ {
+  "pool": "v1",
+  "rank": 105,
+  "provision_id": "sfs-2026-806:P18",
+  "document_id": "sfs-2026-806",
+  "document_title": "Lag (2026:806) om användning av AI-system för ansiktsigenkänning i realtid för brottsbekämpande ändamål",
+  "label": "18 §",
+  "char_count": 366,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år",
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-806.html#P18",
+  "text": "Om det på grund av sekretess eller risk för men för syftet som åtgärden vidtogs för inte har kunnat lämnas någon underrättelse inom ett år och sex månader från det att åtgärden avslutades, ska frågan om underrättelse prövas slutligt. En underrättelse ska då bara lämnas om sekretess inte längre gäller och om det kan ske utan men för syftet som åtgärden vidtogs för."
+ },
+ {
+  "pool": "v1",
+  "rank": 109,
+  "provision_id": "sfs-2026-966:K3P13",
+  "document_id": "sfs-2026-966",
+  "document_title": "Lag (2026:966) om utsedda verksamhetsställen och rättsliga ombud för inhämtning av elektroniska bevis",
+  "label": "13 §",
+  "char_count": 392,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-966.html#K3P13",
+  "text": "En sanktionsavgift ska betalas till centralmyndigheten inom 30 dagar från det att beslutet om att ta ut avgiften har fått laga kraft eller inom den längre tid som anges i beslutet.\n\nOm sanktionsavgiften inte betalas i tid, ska centralmyndigheten lämna den obetalda avgiften för indrivning enligt lagen (1993:891) om indrivning av statliga fordringar m.m.\n\nSanktionsavgiften tillfaller staten."
+ },
+ {
+  "pool": "v2",
+  "rank": 127,
+  "provision_id": "sfs-2022-700:K3P9",
+  "document_id": "sfs-2022-700",
+  "document_title": "Lag (2022:700) om särskild kontroll av vissa utlänningar",
+  "label": "9 §",
+  "char_count": 214,
+  "score": 17,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "18 år",
+   "72 timmar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-700.html#K3P9",
+  "text": "/Upphör att gälla U:2027-03-01/\nEn utlänning som inte har fyllt 18 år får inte hållas i förvar längre tid än 72 timmar. Om det finns synnerliga skäl får utlänningen dock hållas i förvar under ytterligare 72 timmar."
+ },
+ {
+  "pool": "v2",
+  "rank": 128,
+  "provision_id": "sfs-2019-504:P8",
+  "document_id": "sfs-2019-504",
+  "document_title": "Lag (2019:504) om ansvar för god forskningssed och prövning av oredlighet i forskning",
+  "label": "8 §",
+  "char_count": 217,
+  "score": 17,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "tio år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2019-504.html#P8",
+  "text": "Prövning av oredlighet i forskning enligt denna lag får inte grundas på omständigheter som är äldre än tio år när ärendet inleds.\n\nBestämmelsen i första stycket gäller inte om det finns särskilda skäl för en prövning."
+ },
+ {
+  "pool": "v2",
+  "rank": 129,
+  "provision_id": "sfs-2022-725:P47",
+  "document_id": "sfs-2022-725",
+  "document_title": "Växtskyddslag (2022:725)",
+  "label": "47 §",
+  "char_count": 226,
+  "score": 17,
+  "duty_markers": [
+   "ska",
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-725.html#P47",
+  "text": "Innan kontrollmyndigheten beslutar om sanktionsavgift ska den som avgiften ska tas ut av få tillfälle att yttra sig. Om så inte har skett inom två år från det att överträdelsen ägde rum får någon sanktionsavgift inte beslutas."
+ },
+ {
+  "pool": "v2",
+  "rank": 130,
+  "provision_id": "sfs-2022-700:K3P9:occurrence:2",
+  "document_id": "sfs-2022-700",
+  "document_title": "Lag (2022:700) om särskild kontroll av vissa utlänningar",
+  "label": "9 §",
+  "char_count": 233,
+  "score": 17,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "18 år",
+   "nio månader",
+   "tre månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-700.html#K3P9",
+  "text": "/Träder i kraft I:2027-03-01/\nEn utlänning som inte har fyllt 18 år får inte hållas i förvar längre tid än tre månader. Om det finns synnerliga skäl får utlänningen dock hållas i förvar under ytterligare nio månader. Lag (2026:1432)."
+ },
+ {
+  "pool": "v2",
+  "rank": 131,
+  "provision_id": "sfs-2016-1117:P14",
+  "document_id": "sfs-2016-1117",
+  "document_title": "Lag (2016:1117) om registrering och hantering av gåvor mottagna av riksdagsledamöter",
+  "label": "14 §",
+  "char_count": 252,
+  "score": 17,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "tre år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1117.html#P14",
+  "text": "Alla gåvor som är antecknade i gåvoregistret ska regelbundet inventeras. Gåvor får gallras ut tidigast tre år efter att de togs emot. Om det finns särskilda skäl kan en gåva dock gallras ut tidigare.\n\nRiksdagsförvaltningen får fatta beslut om gallring."
+ },
+ {
+  "pool": "v2",
+  "rank": 132,
+  "provision_id": "sfs-2023-560:P15",
+  "document_id": "sfs-2023-560",
+  "document_title": "Lag (2023:560) om granskning av utländska direktinvesteringar",
+  "label": "15 §",
+  "char_count": 262,
+  "score": 17,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "sex månader",
+   "tre månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-560.html#P15",
+  "text": "Granskningsmyndigheten ska inom tre månader från sitt beslut att inleda en granskning enligt 13 eller 14 § besluta att antingen förbjuda eller godkänna investeringen. Om det finns särskilda skäl, får granskningsmyndigheten dock meddela beslutet inom sex månader."
+ },
+ {
+  "pool": "v2",
+  "rank": 133,
+  "provision_id": "sfs-2019-742:K10P6",
+  "document_id": "sfs-2019-742",
+  "document_title": "Lag (2019:742) om tjänstepensionsföretag",
+  "label": "6 §",
+  "char_count": 316,
+  "score": 17,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "i den mån",
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tjugofyra år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2019-742.html#K10P6",
+  "text": "I fråga om uppdragstid för revisorn ska ett tjänstepensionsaktiebolag anses som ett sådant aktiebolag som avses i 9 kap. 21 a § aktiebolagslagen (2005:551). Möjligheten enligt den paragrafen att förlänga revisionsuppdraget till högst tjugo eller tjugofyra år gäller dock inte uppdrag i ett tjänstepensionsaktiebolag."
+ },
+ {
+  "pool": "v2",
+  "rank": 134,
+  "provision_id": "sfs-2018-1138:K4P8",
+  "document_id": "sfs-2018-1138",
+  "document_title": "Spellag (2018:1138)",
+  "label": "8 §",
+  "char_count": 318,
+  "score": 17,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "fem år",
+   "fyra månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1138.html#K4P8",
+  "text": "En licens ska avse en viss tid och får, om inte annat anges i denna lag, ges för högst fem år.\n\nOm en ansökan om förnyelse av licensen har getts in senast fyra månader innan giltighetstiden för den gällande licensen går ut, ska licensen gälla till dess att spelmyndigheten beslutat om den nya ansökan. Lag (2022:1674)."
+ },
+ {
+  "pool": "v2",
+  "rank": 135,
+  "provision_id": "sfs-2019-742:K10P54",
+  "document_id": "sfs-2019-742",
+  "document_title": "Lag (2019:742) om tjänstepensionsföretag",
+  "label": "54 §",
+  "char_count": 328,
+  "score": 17,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "i den mån",
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tjugofyra år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2019-742.html#K10P54",
+  "text": "I fråga om uppdragstid för revisorn ska en tjänstepensionsförening anses som en sådan ekonomisk förening som avses i 8 kap. 54 § lagen (2018:672) om ekonomiska föreningar. Möjligheten enligt den paragrafen att förlänga revisionsuppdraget till högst tjugo eller tjugofyra år gäller dock inte uppdrag i en tjänstepensionsförening."
+ },
+ {
+  "pool": "v2",
+  "rank": 136,
+  "provision_id": "sfs-2024-7:P8",
+  "document_id": "sfs-2024-7",
+  "document_title": "Lag (2024:7) om preventiva vistelseförbud",
+  "label": "8 §",
+  "char_count": 333,
+  "score": 17,
+  "duty_markers": [
+   "ska",
+   "förbjuden",
+   "får"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader",
+   "tre månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-7.html#P8",
+  "text": "Ett vistelseförbud ska gälla för en viss tid, högst sex månader.\n\nVistelseförbudet gäller omedelbart, om inte annat beslutas.\n\nEtt vistelseförbud får förlängas med högst sex månader i taget om förutsättningarna i 3-5 §§ är uppfyllda. Ett förbud med villkor om elektronisk övervakning får dock förlängas med högst tre månader i taget."
+ },
+ {
+  "pool": "v2",
+  "rank": 137,
+  "provision_id": "sfs-2024-506:K5P8",
+  "document_id": "sfs-2024-506",
+  "document_title": "Lag (2024:506) om arbetslöshetsförsäkring",
+  "label": "8 §",
+  "char_count": 342,
+  "score": 17,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "åtta veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-506.html#K5P8",
+  "text": "När tiden med medlemskap eller anslutning beräknas enligt\n4 eller 5 § ska det bortses från avbrott i medlemskapet eller anslutningen som understiger en månad, om den sammanlagda avbrottstiden inte överstiger åtta veckor. Det gäller dock inte avbrott till följd av ett beslut om uteslutning enligt\n37 § lagen (1997:239) om arbetslöshetskassor."
+ },
+ {
+  "pool": "v2",
+  "rank": 139,
+  "provision_id": "sfs-2022-482:K7P8",
+  "document_id": "sfs-2022-482",
+  "document_title": "Lag (2022:482) om elektronisk kommunikation",
+  "label": "8 §",
+  "char_count": 353,
+  "score": 17,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "24 månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-482.html#K7P8",
+  "text": "Ett avtal mellan en konsument och den som tillhandahåller en allmänt tillgänglig elektronisk kommunikationstjänst får inte ha en längre bindningstid än 24 månader. Detta gäller dock inte när det är fråga om nummeroberoende interpersonella kommunikationstjänster eller överföringstjänster som används för tillhandahållande av maskin-till-maskin-tjänster."
+ },
+ {
+  "pool": "v2",
+  "rank": 140,
+  "provision_id": "sfs-2024-945:K15P12",
+  "document_id": "sfs-2024-945",
+  "document_title": "Patentlag (2024:945)",
+  "label": "12 §",
+  "char_count": 375,
+  "score": 17,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "ett år",
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-945.html#K15P12",
+  "text": "Rätten till ersättning för skada preskriberas om talan inte väcks inom fem år från det att skadan uppkom.\n\nFörsta stycket gäller dock inte om talan om ersättning enligt\n11 § väcks senast ett år efter det att tiden för invändning har gått ut eller, om invändning har gjorts, senast ett år efter det att Patent- och registreringsverket beslutade att patentet ska upprätthållas."
+ },
+ {
+  "pool": "v2",
+  "rank": 141,
+  "provision_id": "sfs-2025-400:K18P8",
+  "document_id": "sfs-2025-400",
+  "document_title": "Socialtjänstlag (2025:400)",
+  "label": "8 §",
+  "char_count": 399,
+  "score": 17,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "två månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2025-400.html#K18P8",
+  "text": "Socialnämnden ansvarar för att påföljden ungdomstjänst kan verkställas så snart som möjligt. Verkställigheten ska påbörjas senast två månader efter det att domen har fått laga kraft, om inte särskilda skäl talar mot det.\n\nSocialnämnden ska i en arbetsplan bestämma vad en beslutad ungdomstjänst ska innehålla och utse en handledare för den unge. Socialnämnden ska kontrollera att arbetsplanen följs."
+ },
+ {
+  "pool": "v1",
+  "rank": 151,
+  "provision_id": "sfs-2026-1274:P12",
+  "document_id": "sfs-2026-1274",
+  "document_title": "Lag (2026:1274) om åtgärder mot manipulation och missbruk av färdskrivare",
+  "label": "12 §",
+  "char_count": 356,
+  "score": 13,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "ska inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1274.html#P12",
+  "text": "Den som tillverkar, utvecklar, innehar, distribuerar eller överlåter produkter som är konstruerade eller avsedda för att utföra det som anges i 11 § 1, 2 eller 3 eller bjuder ut sådana produkter till försäljning döms till böter eller fängelse i högst ett år.\n\nAnsvar enligt första stycket ska inte dömas ut om ansvar för gärningen kan dömas ut enligt 11 §."
+ },
+ {
+  "pool": "v1",
+  "rank": 200,
+  "provision_id": "sfs-2026-1459:overgang:2026-1459",
+  "document_id": "sfs-2026-1459",
+  "document_title": "Lag (2026:1459) om insyn i kommunikation med syfte att påverka politiska beslut",
+  "label": "SFS 2026:1459",
+  "char_count": 326,
+  "score": 12,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "behöver inte"
+  ],
+  "qualifier_markers": [
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "60 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1459.html#overgang",
+  "text": "2026:1459\n\n1. Denna lag träder i kraft den 1 juli 2027.\n\n2. Den som före ikraftträdandet bedriver påverkanskommunikation får, trots 6 §, ge in en anmälan för registrering till Kammarkollegiet senast 60 dagar efter dagen för ikraftträdandet och behöver inte i anmälan ange datum för när påverkanskommunikation började bedrivas."
+ },
+ {
+  "pool": "v2",
+  "rank": 258,
+  "provision_id": "sfs-2026-1600:K20P5",
+  "document_id": "sfs-2026-1600",
+  "document_title": "Lag (2026:1600) om omhändertagande för vård av barn och unga",
+  "label": "5 §",
+  "char_count": 170,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "15 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1600.html#K20P5",
+  "text": "Barnet eller den unge får tas i förvar, om det är nödvändigt för att en transport enligt 1 § ska kunna genomföras. Ett barn som är under 15 år får dock inte tas i förvar."
+ },
+ {
+  "pool": "v2",
+  "rank": 259,
+  "provision_id": "sfs-2026-1601:K9P4",
+  "document_id": "sfs-2026-1601",
+  "document_title": "Lag (2026:1601) om särskilda befogenheter för den statliga barn- och ungdomsvården",
+  "label": "4 §",
+  "char_count": 196,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "måste"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "15 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1601.html#K9P4",
+  "text": "När ett barn som är under 15 år uttrycker en vilja att överklaga ett beslut enligt 10 kap. 1 § ska ett offentligt biträde förordnas för barnet, om det inte måste antas att behov av biträde saknas."
+ },
+ {
+  "pool": "v2",
+  "rank": 260,
+  "provision_id": "sfs-2016-1108:K5P5",
+  "document_id": "sfs-2016-1108",
+  "document_title": "Lag (2016:1108) om ersättning till riksdagens ledamöter",
+  "label": "5 §",
+  "char_count": 201,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [
+   "snarast"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1108.html#K5P5",
+  "text": "En begäran om traktamente ska ges in skriftligen till Riksdagsförvaltningen snarast efter det att resan avslutats, dock senast inom sex månader. Därefter upphör rätten till traktamente. Lag (2022:346)."
+ },
+ {
+  "pool": "v2",
+  "rank": 262,
+  "provision_id": "sfs-2024-506:K10P3",
+  "document_id": "sfs-2024-506",
+  "document_title": "Lag (2024:506) om arbetslöshetsförsäkring",
+  "label": "3 §",
+  "char_count": 214,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "tre månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-506.html#K10P3",
+  "text": "En ansökan om arbetslöshetsersättning ska avse en månad och göras senast tre månader efter utgången av den månad som ansökan avser. En ansökan som görs efter den tiden ska avvisas, om det inte finns särskilda skäl."
+ },
+ {
+  "pool": "v2",
+  "rank": 263,
+  "provision_id": "sfs-2016-1108:K4P9",
+  "document_id": "sfs-2016-1108",
+  "document_title": "Lag (2016:1108) om ersättning till riksdagens ledamöter",
+  "label": "9 §",
+  "char_count": 217,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [
+   "snarast"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1108.html#K4P9",
+  "text": "En begäran om ersättning för resekostnader ska ges in skriftligen till Riksdagsförvaltningen snarast efter det att resan avslutats, dock senast inom sex månader. Därefter upphör rätten till ersättning. Lag (2022:346)."
+ },
+ {
+  "pool": "v2",
+  "rank": 264,
+  "provision_id": "sfs-2022-260:K2P2",
+  "document_id": "sfs-2022-260",
+  "document_title": "Konsumentköplag (2022:260)",
+  "label": "2 §",
+  "char_count": 274,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "utom"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-260.html#K2P2",
+  "text": "Om tiden för avlämnande av varan inte följer av avtalet, ska avlämnandet ske utan onödigt dröjsmål och senast 30 dagar efter det att avtalet ingicks.\n\nNäringsidkaren är inte skyldig att lämna ut varan förrän konsumenten betalar för den, utom när konsumenten har fått kredit."
+ },
+ {
+  "pool": "v2",
+  "rank": 265,
+  "provision_id": "sfs-2025-400:K21P2",
+  "document_id": "sfs-2025-400",
+  "document_title": "Socialtjänstlag (2025:400)",
+  "label": "2 §",
+  "char_count": 277,
+  "score": 16,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "15 år"
+  ],
+  "vague_qualifiers": [
+   "lämpligt"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2025-400.html#K21P2",
+  "text": "Socialnämnden får inte utan vårdnadshavarens samtycke tillhandahålla ett barn insatser som lämnas utan individuell behovsprövning. Nämnden får dock tillhandahålla ett barn sådana insatser, om barnet har fyllt 15 år och det är lämpligt att insatsen tillhandahålls på det sättet."
+ },
+ {
+  "pool": "v2",
+  "rank": 266,
+  "provision_id": "sfs-2017-725:K5P10",
+  "document_id": "sfs-2017-725",
+  "document_title": "Kommunallag (2017:725)",
+  "label": "10 §",
+  "char_count": 289,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-725.html#K5P10",
+  "text": "Fullmäktige får besluta om extra val till fullmäktige mellan ordinarie val. Extra val ska hållas om minst två tredjedelar av de närvarande ledamöterna röstar för det. Ett beslut om extra val får dock inte fattas förrän sex månader har gått från det nyvalda fullmäktiges första sammanträde."
+ },
+ {
+  "pool": "v2",
+  "rank": 267,
+  "provision_id": "sfs-2016-977:K5P9",
+  "document_id": "sfs-2016-977",
+  "document_title": "Lag (2016:977) om kollektiv förvaltning av upphovsrätt",
+  "label": "9 §",
+  "char_count": 300,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fyra år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-977.html#K5P9",
+  "text": "Medlemmarnas beslutanderätt får utövas av fullmäktige, om det inte strider mot annan lag.\n\nFullmäktige väljs av medlemmarna. Det som gäller för stämma enligt 2-6 §§ ska gälla för fullmäktigemötet.\n\nEn fullmäktig får inte väljas för längre tid än fyra år eller den kortare tid som följer av annan lag."
+ },
+ {
+  "pool": "v2",
+  "rank": 268,
+  "provision_id": "sfs-2018-1699:K5P3",
+  "document_id": "sfs-2018-1699",
+  "document_title": "Lag (2018:1699) om kriminalvårdens behandling av personuppgifter inom brottsdatalagens område",
+  "label": "3 §",
+  "char_count": 305,
+  "score": 16,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1699.html#K5P3",
+  "text": "Personuppgifter som inte har gjorts gemensamt tillgängliga får inte behandlas längre än\n\n1. ett år efter det att ärendet avslutades, om uppgifterna behandlades i ett ärende, eller\n\n2. ett år efter det att de behandlades automatiserat första gången, om de inte kan hänföras till ett ärende.\nLag (2026:102)."
+ },
+ {
+  "pool": "v2",
+  "rank": 270,
+  "provision_id": "sfs-2023-200:K15P19",
+  "document_id": "sfs-2023-200",
+  "document_title": "Mervärdesskattelag (2023:200)",
+  "label": "19 §",
+  "char_count": 308,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "i stället"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "vid utgången av"
+  ],
+  "vague_qualifiers": [
+   "skäligt"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-200.html#K15P19",
+  "text": "Om avdrag för ingående skatt ska justeras till följd av ändrad användning, ska andelen avdragsgill ingående skatt under justeringsåret bestämmas med ledning av förhållandena vid utgången av året. Om det finns särskilda skäl får andelen avdragsgill ingående skatt i stället bestämmas efter vad som är skäligt."
+ },
+ {
+  "pool": "v2",
+  "rank": 271,
+  "provision_id": "sfs-2017-1000:K4P8",
+  "document_id": "sfs-2017-1000",
+  "document_title": "Lag (2017:1000) om en europeisk utredningsorder",
+  "label": "8 §",
+  "char_count": 321,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "48 timmar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-1000.html#K4P8",
+  "text": "En frihetsberövad person som med stöd av denna lag tillfälligt förs över till Sverige ska hållas i förvar av Polismyndigheten.\n\nVid en transitering genom Sverige enligt 7 § får Polismyndigheten hålla den som överförs i förvar, dock längst under 48 timmar, om det är nödvändigt för att transiteringen ska kunna genomföras."
+ },
+ {
+  "pool": "v2",
+  "rank": 275,
+  "provision_id": "sfs-2018-1699:K5P9",
+  "document_id": "sfs-2018-1699",
+  "document_title": "Lag (2018:1699) om kriminalvårdens behandling av personuppgifter inom brottsdatalagens område",
+  "label": "9 §",
+  "char_count": 337,
+  "score": 16,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "tre månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1699.html#K5P9",
+  "text": "Personuppgifter som har tagits fram genom elektronisk övervakning vid verkställighet av en påföljd får inte behandlas längre än tre månader efter det att de behandlades automatiserat första gången. Om uppgifterna behövs vid prövning av fråga om verkställighet får de dock behandlas till dess beslutet har fått laga kraft. Lag (2026:102)."
+ },
+ {
+  "pool": "v2",
+  "rank": 276,
+  "provision_id": "sfs-2018-672:K2P2",
+  "document_id": "sfs-2018-672",
+  "document_title": "Lag (2018:672) om ekonomiska föreningar",
+  "label": "2 §",
+  "char_count": 338,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-672.html#K2P2",
+  "text": "Föreningen ska anmälas för registrering i föreningsregistret inom sex månader från bildandet.\n\nOm föreningen enligt stadgarna inte ska börja sin verksamhet förrän ett visst villkor har uppfyllts, ska den tid som anges i första stycket räknas från den tidpunkt då villkoret är uppfyllt. Föreningen får inte registreras före denna tidpunkt."
+ },
+ {
+  "pool": "v2",
+  "rank": 277,
+  "provision_id": "sfs-2018-1219:K4P17",
+  "document_id": "sfs-2018-1219",
+  "document_title": "Lag (2018:1219) om försäkringsdistribution",
+  "label": "17 §",
+  "char_count": 363,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "tio år"
+  ],
+  "vague_qualifiers": [
+   "skälig"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1219.html#K4P17",
+  "text": "Den som vill göra anspråk på skadestånd enligt 16 § ska underrätta försäkringsdistributören inom skälig tid efter det att han eller hon märkt eller borde ha märkt att skada har uppkommit.\n\nOm underrättelse inte görs inom skälig tid, faller rätten till skadestånd enligt denna lag bort. Detsamma gäller om talan inte väcks inom tio år från distributionstillfället."
+ },
+ {
+  "pool": "v2",
+  "rank": 278,
+  "provision_id": "sfs-2014-836:P8a",
+  "document_id": "sfs-2014-836",
+  "document_title": "Lag (2014:836) om näringsförbud",
+  "label": "8 a §",
+  "char_count": 372,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2014-836.html#P8a",
+  "text": "Om den som avses med en talan eller en ansökan om näringsförbud har gjort sig skyldig till brott av det slag som avses i 4 § andra stycket och det för brottet inte är föreskrivet lindrigare straff än fängelse i sex månader, ska vid tillämpningen av 4 § andra stycket näringsförbud anses påkallat från allmän synpunkt, om inte särskilda skäl talar mot det. Lag (2025:1344)."
+ },
+ {
+  "pool": "v2",
+  "rank": 279,
+  "provision_id": "sfs-2018-1693:K4P5a",
+  "document_id": "sfs-2018-1693",
+  "document_title": "Lag (2018:1693) om polisens behandling av personuppgifter inom brottsdatalagens område",
+  "label": "5 a §",
+  "char_count": 375,
+  "score": 16,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år",
+   "tio år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1693.html#K4P5a",
+  "text": "Personuppgifter i ett ärende om uppbörd får inte behandlas för ändamål inom denna lags tillämpningsområde längre än fem år efter utgången av det kalenderår då domstolens avgörande fick laga kraft eller strafföreläggandet eller föreläggandet av en ordningsbot godkändes. Personuppgifter som avser värdeförverkande eller företagsbot får dock behandlas i tio år. Lag (2019:435)."
+ },
+ {
+  "pool": "v2",
+  "rank": 280,
+  "provision_id": "sfs-2015-1073:P5",
+  "document_id": "sfs-2015-1073",
+  "document_title": "Lag (2015:1073) om särskilda åtgärder vid allvarlig fara för den allmänna ordningen eller den inre säkerheten i landet",
+  "label": "5 §",
+  "char_count": 378,
+  "score": 16,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2015-1073.html#P5",
+  "text": "Föreskrifter enligt 3 § får gälla högst sex månader.\n\nFöreskrifter enligt 4 § ska ha samma giltighetstid som de föreskrifter enligt 3 § som de förstnämnda föreskrifterna avser. Ett ärende eller mål om tillsyn, kontroll eller sanktionsavgifter får dock prövas enligt föreskrifterna efter det att giltighetstiden för dessa har gått ut, om ärendet eller målet inletts dessförinnan."
+ },
+ {
+  "pool": "v2",
+  "rank": 281,
+  "provision_id": "sfs-2022-1257:P29",
+  "document_id": "sfs-2022-1257",
+  "document_title": "Lag (2022:1257) om tobaksfria nikotinprodukter",
+  "label": "29 §",
+  "char_count": 380,
+  "score": 16,
+  "duty_markers": [
+   "förbjuden",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-1257.html#P29",
+  "text": "Vid allvarliga eller upprepade överträdelser av denna lag får kommunen förbjuda den som bedriver detaljhandel med tobaksfria nikotinprodukter att fortsätta försäljningen eller, om förbud får anses vara en alltför ingripande åtgärd, meddela varning. Kommunens beslut gäller omedelbart, om inte något annat anges i beslutet.\n\nEtt förbud får meddelas för en tid av högst sex månader."
+ },
+ {
+  "pool": "v2",
+  "rank": 285,
+  "provision_id": "sfs-2017-452:K4P3",
+  "document_id": "sfs-2017-452",
+  "document_title": "Skattebrottsdatalag (2017:452)",
+  "label": "3 §",
+  "char_count": 395,
+  "score": 16,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-452.html#K4P3",
+  "text": "Personuppgifter som behandlas automatiserat och som inte har gjorts gemensamt tillgängliga ska, om de behandlas i ett ärende, gallras senast ett år efter det att ärendet avslutades. Om de inte kan hänföras till ett ärende, ska uppgifterna gallras senast ett år efter det att de behandlades automatiserat första gången.\n\nFörsta stycket gäller inte personuppgifter i ärenden om utredning av brott."
+ },
+ {
+  "pool": "v2",
+  "rank": 440,
+  "provision_id": "sfs-2017-30:K7P3b",
+  "document_id": "sfs-2017-30",
+  "document_title": "Hälso- och sjukvårdslag (2017:30)",
+  "label": "3 b §",
+  "char_count": 190,
+  "score": 15,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-30.html#K7P3b",
+  "text": "Byte av sådana utförare som avses i 3 a § första stycket får göras högst två gånger under en period om ett år. Om det finns särskilda skäl får regionen dock medge fler byten.\nLag (2022:273)."
+ },
+ {
+  "pool": "v2",
+  "rank": 442,
+  "provision_id": "sfs-2016-1145:K11P2",
+  "document_id": "sfs-2016-1145",
+  "document_title": "Lag (2016:1145) om offentlig upphandling",
+  "label": "2 §",
+  "char_count": 212,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "35 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1145.html#K11P2",
+  "text": "Vid öppet förfarande ska tidsfristen för att komma in med anbud vara minst 35 dagar från den dag då annonsen om upphandling skickades för publicering.\n\nFörsta stycket gäller om inte något annat följer av\n5-10 §§."
+ },
+ {
+  "pool": "v2",
+  "rank": 444,
+  "provision_id": "sfs-2014-968:K1aP13",
+  "document_id": "sfs-2014-968",
+  "document_title": "Lag (2014:968) om särskild tillsyn över kreditinstitut och värdepappersbolag",
+  "label": "13 §",
+  "char_count": 221,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "tio arbetsdagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2014-968.html#K1aP13",
+  "text": "Finansinspektionen ska så snart som möjligt, dock senast inom tio arbetsdagar efter det att ansökan om tillstånd för ett väsentligt förvärv har kommit in, skriftligen bekräfta att ansökan har tagits emot. Lag (2026:1072)."
+ },
+ {
+  "pool": "v2",
+  "rank": 445,
+  "provision_id": "sfs-2021-34:P3",
+  "document_id": "sfs-2021-34",
+  "document_title": "Lag (2021:34) om tillträdesförbud till butiker, badanläggningar \noch bibliotek",
+  "label": "3 §",
+  "char_count": 229,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2021-34.html#P3",
+  "text": "Tillträdesförbud ska gälla för en viss tid, högst ett år.\n\nTillträdesförbudet gäller omedelbart, om inte något annat beslutas.\n\nEtt tillträdesförbud får förlängas med högst ett år i taget, om förutsättningarna i 2 § är uppfyllda."
+ },
+ {
+  "pool": "v2",
+  "rank": 446,
+  "provision_id": "sfs-2016-1146:K11P2",
+  "document_id": "sfs-2016-1146",
+  "document_title": "Lag (2016:1146) om upphandling inom försörjningssektorerna",
+  "label": "2 §",
+  "char_count": 245,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "35 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1146.html#K11P2",
+  "text": "Vid öppet förfarande ska tidsfristen för att komma in med anbud vara minst 35 dagar från den dag då annonsen om upphandling skickades för publicering.\n\nFörsta stycket gäller om inte något annat följer av 5-10\n§§.\n\nTidsfrist för anbudsansökningar"
+ },
+ {
+  "pool": "v2",
+  "rank": 449,
+  "provision_id": "sfs-2018-672:K11P8",
+  "document_id": "sfs-2018-672",
+  "document_title": "Lag (2018:672) om ekonomiska föreningar",
+  "label": "8 §",
+  "char_count": 257,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-672.html#K11P8",
+  "text": "Om föreningen försätts i konkurs på grund av en ansökan som görs inom ett år efter inlösen av en förlagsinsats, ska 10 kap. 15 § tillämpas på det utbetalda beloppet. Detta gäller dock inte förlagsinsatser som hade kunnat lösas in utan föregående uppsägning."
+ },
+ {
+  "pool": "v2",
+  "rank": 450,
+  "provision_id": "sfs-2021-516:K4P13",
+  "document_id": "sfs-2021-516",
+  "document_title": "Fastighetsmäklarlag (2021:516)",
+  "label": "13 §",
+  "char_count": 258,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2021-516.html#K4P13",
+  "text": "Ett beslut om sanktionsföreläggande enligt 10 § förfaller, om det inte har delgetts den som sanktionen riktas mot inom två år från den tidpunkt då överträdelsen inträffade. I ett sådant fall får inte heller någon sanktion enligt 12 § första stycket beslutas."
+ },
+ {
+  "pool": "v2",
+  "rank": 451,
+  "provision_id": "sfs-2018-1219:K9P20",
+  "document_id": "sfs-2018-1219",
+  "document_title": "Lag (2018:1219) om försäkringsdistribution",
+  "label": "20 §",
+  "char_count": 260,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1219.html#K9P20",
+  "text": "Ett sanktionsföreläggande enligt 17 § är utan verkan, om det inte har delgetts den som det riktas mot inom två år från den tidpunkt då överträdelsen ägde rum. I ett sådant fall får inte heller någon sanktion enligt 19 § första stycket beslutas. Lag (2023:832)."
+ },
+ {
+  "pool": "v2",
+  "rank": 453,
+  "provision_id": "sfs-2023-714:K7P18",
+  "document_id": "sfs-2023-714",
+  "document_title": "Lag (2023:714) om förvärv och förvaltning av nödlidande kreditavtal",
+  "label": "18 §",
+  "char_count": 261,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-714.html#K7P18",
+  "text": "Ett sanktionsföreläggande enligt 15 § är utan verkan, om föreläggandet inte har delgetts den som det riktas mot inom två år från den tidpunkt då överträdelsen ägde rum. I ett sådant fall får inte heller någon sanktionsavgift enligt 17 § första stycket beslutas."
+ },
+ {
+  "pool": "v2",
+  "rank": 455,
+  "provision_id": "sfs-2017-630:K7P20",
+  "document_id": "sfs-2017-630",
+  "document_title": "Lag (2017:630) om åtgärder mot penningtvätt och finansiering av terrorism",
+  "label": "20 §",
+  "char_count": 270,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-630.html#K7P20",
+  "text": "Ett sanktionsföreläggande enligt 17 § är utan verkan, om föreläggandet inte har delgetts den som det riktas mot inom två år från den tidpunkt då överträdelsen ägde rum. I ett sådant fall får inte heller någon sanktion enligt 19 § första stycket beslutas. Lag (2023:831)."
+ },
+ {
+  "pool": "v2",
+  "rank": 459,
+  "provision_id": "sfs-2023-38:K1P4",
+  "document_id": "sfs-2023-38",
+  "document_title": "Biobankslag (2023:38)",
+  "label": "4 §",
+  "char_count": 284,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "nio månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-38.html#K1P4",
+  "text": "Lagen ska endast tillämpas på ett prov som bevaras i mer än nio månader efter provtagningstillfället. Lagen ska dock tillämpas på provet även innan dess om\n\n1. avsikten är att bevara provet i mer än nio månader, eller\n\n2. provet inte förstörs omedelbart efter att det har analyserats."
+ },
+ {
+  "pool": "v2",
+  "rank": 460,
+  "provision_id": "sfs-2018-1694:K4P6a",
+  "document_id": "sfs-2018-1694",
+  "document_title": "Lag (2018:1694) om Tullverkets behandling av personuppgifter inom brottsdatalagens område",
+  "label": "6 a §",
+  "char_count": 285,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1694.html#K4P6a",
+  "text": "Personuppgifter i ett ärende om uppbörd får inte behandlas för ändamål inom denna lags tillämpningsområde längre än fem år efter utgången av det kalenderår då domstolens avgörande fick laga kraft eller strafföreläggandet eller föreläggandet av en ordningsbot godkändes. Lag (2019:436)."
+ },
+ {
+  "pool": "v2",
+  "rank": 461,
+  "provision_id": "sfs-2025-1506:K2P2",
+  "document_id": "sfs-2025-1506",
+  "document_title": "Cybersäkerhetslag (2025:1506)",
+  "label": "2 §",
+  "char_count": 286,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "14 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2025-1506.html#K2P2",
+  "text": "Verksamhetsutövare ska så snart det kan ske anmäla sig till den myndighet som regeringen bestämmer.\n\nOm de förhållanden som har redovisats i en anmälan har ändrats ska verksamhetsutövare anmäla förändringen så snart det kan ske, dock senast 14 dagar efter det att förändringen ägde rum."
+ },
+ {
+  "pool": "v2",
+  "rank": 462,
+  "provision_id": "sfs-2022-260:K4P17",
+  "document_id": "sfs-2022-260",
+  "document_title": "Konsumentköplag (2022:260)",
+  "label": "17 §",
+  "char_count": 287,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-260.html#K4P17",
+  "text": "Ett fel som visar sig inom två år efter det att varan avlämnades, eller i fall som avses i 14 § andra stycket inom den tid som anges där, ska anses vara ett fel som näringsidkaren svarar för, om inte näringsidkaren visar något annat eller detta är oförenligt med varans eller felets art."
+ },
+ {
+  "pool": "v2",
+  "rank": 463,
+  "provision_id": "sfs-2018-673:P25",
+  "document_id": "sfs-2018-673",
+  "document_title": "Lag (2018:673) om införande av lagen (2018:672) om ekonomiska föreningar",
+  "label": "25 §",
+  "char_count": 295,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "nio månader",
+   "senare än"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-673.html#P25",
+  "text": "Om en årsstämma enligt lagen (2018:672) om ekonomiska föreningar enligt stadgarna får hållas senare än det som är tillåtet enligt 6 kap. 9 § i den lagen, får föreningen fortsätta att tillämpa bestämmelsen. Stämman ska dock alltid hållas inom nio månader från utgången av föregående räkenskapsår."
+ },
+ {
+  "pool": "v2",
+  "rank": 464,
+  "provision_id": "sfs-2018-1693:K5P12",
+  "document_id": "sfs-2018-1693",
+  "document_title": "Lag (2018:1693) om polisens behandling av personuppgifter inom brottsdatalagens område",
+  "label": "12 §",
+  "char_count": 296,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sjuttio år",
+   "trettio år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1693.html#K5P12",
+  "text": "Uppgifter i biometriregistret över spår får inte behandlas längre än trettio år efter registreringen. Uppgifter i registret får dock behandlas sjuttio år efter registreringen om uppgifterna hänför sig till utredningar om brott som anges i 35 kap. 10 § första stycket brottsbalken. Lag (2025:165)."
+ },
+ {
+  "pool": "v2",
+  "rank": 467,
+  "provision_id": "sfs-2017-527:P12",
+  "document_id": "sfs-2017-527",
+  "document_title": "Lag (2017:527) om studiestartsstöd",
+  "label": "12 §",
+  "char_count": 311,
+  "score": 15,
+  "duty_markers": [
+   "måste",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tre veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-527.html#P12",
+  "text": "Studiestartsstöd får lämnas för varje vecka som den studerande bedriver studier på minst halvtid. Studierna måste dock pågå under en sammanhängande tid om minst tre veckor.\n\nStudiestartsstöd får lämnas bara för sådan del av studietiden som omfattas av den kursplan eller motsvarande som gäller för utbildningen."
+ },
+ {
+  "pool": "v2",
+  "rank": 469,
+  "provision_id": "sfs-2024-710:K5P15",
+  "document_id": "sfs-2024-710",
+  "document_title": "Tullbefogenhetslag (2024:710)",
+  "label": "15 §",
+  "char_count": 313,
+  "score": 15,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fyra timmar",
+   "sex timmar",
+   "tolv timmar",
+   "åtta timmar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-710.html#K5P15",
+  "text": "En transportkontroll får inte pågå längre än sex timmar eller, i fall som avses i 7 § första stycket, längre än fyra timmar.\n\nOm den som har skyldigheter enligt 10-14 §§ inte fullgör dem, får kontrollen pågå under längre tid, dock högst tolv timmar eller, i fall som avses i 7 § första stycket, högst åtta timmar."
+ },
+ {
+  "pool": "v2",
+  "rank": 471,
+  "provision_id": "sfs-2016-1117:P8",
+  "document_id": "sfs-2016-1117",
+  "document_title": "Lag (2016:1117) om registrering och hantering av gåvor mottagna av riksdagsledamöter",
+  "label": "8 §",
+  "char_count": 320,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1117.html#P8",
+  "text": "En ledamot som tar emot en gåva huvudsakligen på grund av sitt ledamotsuppdrag ska anmäla detta för registrering i gåvoregistret. Detta gäller dock inte om gåvan saknar eller har ett obetydligt ekonomiskt värde.\n\nAnmälan ska göras skriftligen till Riksdagsförvaltningen senast två veckor efter att gåvan har tagits emot."
+ },
+ {
+  "pool": "v2",
+  "rank": 473,
+  "provision_id": "sfs-2017-612:K5P4",
+  "document_id": "sfs-2017-612",
+  "document_title": "Lag (2017:612) om samverkan vid utskrivning från sluten hälso- och sjukvård",
+  "label": "4 §",
+  "char_count": 343,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "fyra dagar",
+   "tre dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-612.html#K5P4",
+  "text": "Om det inte finns någon överenskommelse om tidpunkten enligt 4 kap. 5 §, ska kommunens betalningsansvar inträda tre dagar efter det att en underrättelse enligt 3 kap. 1 § har skickats. Om en sådan underrättelse skickas efter klockan\n12.00, ska kommunens betalningsansvar emellertid inträda fyra dagar efter det att underrättelsen har skickats."
+ },
+ {
+  "pool": "v2",
+  "rank": 474,
+  "provision_id": "sfs-2023-200:K18P30",
+  "document_id": "sfs-2023-200",
+  "document_title": "Mervärdesskattelag (2023:200)",
+  "label": "30 §",
+  "char_count": 345,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "35 arbetsdagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-200.html#K18P30",
+  "text": "Ett identifieringsbeslut ska fattas inom 35 arbetsdagar från att förhandsanmälan eller uppdateringen av förhandsanmälan togs emot.\n\nBeslutet får dock fattas senare om den behöriga myndigheten i ett annat EU-land begär ytterligare tid för att utföra nödvändiga kontroller i syfte att undvika skatteundandragande eller skatteflykt. Lag (2024:942)."
+ },
+ {
+  "pool": "v2",
+  "rank": 476,
+  "provision_id": "sfs-2016-676:P36",
+  "document_id": "sfs-2016-676",
+  "document_title": "Lag (2016:676) om skuldsanering för företagare",
+  "label": "36 §",
+  "char_count": 356,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "tre år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-676.html#P36",
+  "text": "Betalningsplanens längd ska vara tre år.\n\nBetalningsplanen börjar löpa från beslutet om F-skuldsanering.\n\nVid bestämmandet av tidpunkten för när betalningsplanen löper ut ska den tid som inledandebeslutet gällt räknas av från betalningsplanens längd, om det inte med hänsyn till gäldenärens agerande efter beslutet är motiverat att räkna av en kortare tid."
+ },
+ {
+  "pool": "v2",
+  "rank": 477,
+  "provision_id": "sfs-2016-38:P4",
+  "document_id": "sfs-2016-38",
+  "document_title": "Lag (2016:38) om mottagande av vissa nyanlända invandrare för bosättning",
+  "label": "4 §",
+  "char_count": 358,
+  "score": 15,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "18 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-38.html#P4",
+  "text": "Lagen gäller dock inte barn under 18 år som vid ankomsten till Sverige var skilda från båda sina föräldrar eller från någon annan vuxen person som får anses ha trätt i föräldrarnas ställe, eller som efter ankomsten står utan sådan ställföreträdare (ensamkommande barn), om inte barnet har beviljats uppehållstillstånd efter vidarebosättning.\nLag (2026:1161)."
+ },
+ {
+  "pool": "v2",
+  "rank": 479,
+  "provision_id": "sfs-2016-752:P12",
+  "document_id": "sfs-2016-752",
+  "document_title": "Lag (2016:752) om tillfälliga begränsningar av möjligheten att få uppehållstillstånd i Sverige",
+  "label": "12 §",
+  "char_count": 366,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte",
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tretton månader",
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-752.html#P12",
+  "text": "Ett uppehållstillstånd som beviljas enligt 5 kap. 6 § utlänningslagen (2005:716) ska vara tidsbegränsat och gälla i tretton månader, om inte något annat följer av 16 a, 18 eller\n18 a §. Om ett nytt uppehållstillstånd beviljas ska även det nya tillståndet vara tidsbegränsat och gälla i två år, om inte något annat följer av 16 a, 17, 18 eller 18 a §.\nLag (2019:481)."
+ },
+ {
+  "pool": "v2",
+  "rank": 481,
+  "provision_id": "sfs-2022-155:K3P12",
+  "document_id": "sfs-2022-155",
+  "document_title": "Lag (2022:155) om tobaksskatt",
+  "label": "12 §",
+  "char_count": 373,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-155.html#K3P12",
+  "text": "En registrerad varumottagare ska hos Skatteverket ställa säkerhet för betalning av skatten på de varor som tas emot. Ställd säkerhet får tas i anspråk om skatten inte betalas i rätt tid.\n\nSäkerheten ska kunna tas i anspråk av Skatteverket under minst sex månader från den dag beslutet om återkallelse blir gällande, om godkännandet som registrerad varumottagare återkallas."
+ },
+ {
+  "pool": "v2",
+  "rank": 482,
+  "provision_id": "sfs-2022-156:K3P13",
+  "document_id": "sfs-2022-156",
+  "document_title": "Lag (2022:156) om alkoholskatt",
+  "label": "13 §",
+  "char_count": 373,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-156.html#K3P13",
+  "text": "En registrerad varumottagare ska hos Skatteverket ställa säkerhet för betalning av skatten på de varor som tas emot. Ställd säkerhet får tas i anspråk om skatten inte betalas i rätt tid.\n\nSäkerheten ska kunna tas i anspråk av Skatteverket under minst sex månader från den dag beslutet om återkallelse blir gällande, om godkännandet som registrerad varumottagare återkallas."
+ },
+ {
+  "pool": "v2",
+  "rank": 483,
+  "provision_id": "sfs-2016-1146:K11P7",
+  "document_id": "sfs-2016-1146",
+  "document_title": "Lag (2016:1146) om upphandling inom försörjningssektorerna",
+  "label": "7 §",
+  "char_count": 378,
+  "score": 15,
+  "duty_markers": [
+   "ska",
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "10 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1146.html#K11P7",
+  "text": "Vid selektivt förfarande och förhandlat förfarande med föregående annonsering får den upphandlande enheten bestämma tidsfristen för att komma in med anbud till en gemensam tid som har överenskommits med de utvalda anbudssökandena.\n\nOm en sådan överenskommelse inte nås, ska tidsfristen vara minst 10 dagar från den dag då inbjudan att lämna anbud skickades till anbudssökandena."
+ },
+ {
+  "pool": "v2",
+  "rank": 484,
+  "provision_id": "sfs-2017-725:K6P34",
+  "document_id": "sfs-2017-725",
+  "document_title": "Kommunallag (2017:725)",
+  "label": "34 §",
+  "char_count": 378,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [
+   "om möjligt"
+  ],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-725.html#K6P34",
+  "text": "Ett ärende som väckts genom medborgarförslag ska om möjligt handläggas så att ärendet kan avgöras inom ett år från det att det väcktes i fullmäktige.\n\nEn nämnd som handlägger sådana ärenden ska minst en gång om året informera fullmäktige om de beslut som fattats i ärendena. Nämnden ska även informera om de ärenden som inte har avgjorts inom den tid som anges i första stycket."
+ },
+ {
+  "pool": "v2",
+  "rank": 488,
+  "provision_id": "sfs-2019-601:K4P5",
+  "document_id": "sfs-2019-601",
+  "document_title": "Lag (2019:601) om tvistlösningsförfarande i ärenden som rör skatteavtal inom Europeiska unionen",
+  "label": "5 §",
+  "char_count": 397,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock",
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "120 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2019-601.html#K4P5",
+  "text": "Skatteverket ska, i samråd med utländsk behörig myndighet, inrätta en rådgivande kommitté inom 120 dagar från den dag då begäran om inrättande togs emot. Detta gäller dock inte om\n\n1. begäran om inrättande har avslagits enligt 4 §, eller\n\n2. utländsk behörig myndighet har avslagit en sådan begäran.\n\nVid inrättandet ska Skatteverket utnämna en eller flera oberoende personer för Sveriges räkning."
+ },
+ {
+  "pool": "v2",
+  "rank": 489,
+  "provision_id": "sfs-2023-875:K1P8",
+  "document_id": "sfs-2023-875",
+  "document_title": "Lag (2023:875) om tilläggsskatt",
+  "label": "8 §",
+  "char_count": 397,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte",
+   "undantag"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-875.html#K1P8",
+  "text": "En rapporterande enhet kan välja att en enhet som avses i\n6 eller 7 § inte ska behandlas som en undantagen enhet.\n\nEtt sådant val gäller i fem år från och med det räkenskapsår som valet avser. Därefter fortsätter valet att gälla, om den rapporterande enheten inte återkallar valet. Om valet återkallas kan ett nytt val enligt första stycket göras först fem år efter det år som återkallelsen avser."
+ },
+ {
+  "pool": "v2",
+  "rank": 491,
+  "provision_id": "sfs-2025-606:P19",
+  "document_id": "sfs-2025-606",
+  "document_title": "Lag (2025:606) om tillhandahållande och användning av hållbara flygbränslen",
+  "label": "19 §",
+  "char_count": 399,
+  "score": 15,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2025-606.html#P19",
+  "text": "En sanktionsavgift ska betalas till den myndighet som har beslutat att ta ut avgiften. Avgiften ska betalas senast 30 dagar efter det att beslutet har fått laga kraft. Avgiften tillfaller staten.\n\nOm sanktionsavgiften inte har betalats i rätt tid, ska myndig-\nheten ta ut en dröjsmålsavgift enligt lagen (1997:484) om dröjsmålsavgift och begära indrivning av sanktionsavgiften och dröjsmålsavgiften."
+ },
+ {
+  "pool": "v2",
+  "rank": 691,
+  "provision_id": "sfs-2025-95:P8",
+  "document_id": "sfs-2025-95",
+  "document_title": "Lag (2025:95) om användning av förnybara och koldioxidsnåla bränslen för sjötransport",
+  "label": "8 §",
+  "char_count": 192,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "senast den"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2025-95.html#P8",
+  "text": "Om straffavgiften inte har betalats senast den 30 juni under kontrollperioden, ska den obetalda avgiften lämnas för indrivning enligt lagen (1993:891) om indrivning av statliga fordringar m.m."
+ },
+ {
+  "pool": "v2",
+  "rank": 692,
+  "provision_id": "sfs-2017-496:K2P3",
+  "document_id": "sfs-2017-496",
+  "document_title": "Lag (2017:496) om internationellt polisiärt samarbete",
+  "label": "3 §",
+  "char_count": 202,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem timmar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-496.html#K2P3",
+  "text": "Övervakning enligt 1 eller 2 § ska genast upphöra om en behörig svensk myndighet begär det. Övervakning enligt 2 § ska även upphöra om samtycke inte har lämnats inom fem timmar från gränsöverskridandet."
+ },
+ {
+  "pool": "v2",
+  "rank": 695,
+  "provision_id": "sfs-2014-421:P8",
+  "document_id": "sfs-2014-421",
+  "document_title": "Lag (2014:421) om gymnasial lärlingsanställning",
+  "label": "8 §",
+  "char_count": 218,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2014-421.html#P8",
+  "text": "En arbetstagare som vill kräva skadestånd enligt 7 § ska väcka talan inom sex månader från den tidpunkt då den skadegörande handlingen företogs. Om inte talan väcks inom den tiden, har arbetstagaren förlorat sin talan."
+ },
+ {
+  "pool": "v2",
+  "rank": 701,
+  "provision_id": "sfs-2023-454:P10",
+  "document_id": "sfs-2023-454",
+  "document_title": "Lag (2023:454) om transaktionskonto vid Utbetalningsmyndigheten",
+  "label": "10 §",
+  "char_count": 261,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tio år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-454.html#P10",
+  "text": "Ett tillgodohavande som inte kan betalas ut ska stå kvar på transaktionskontot.\n\nEtt tillgodohavande preskriberas tio år från den tidpunkt som anges i 6 §, om inte preskriptionen avbryts dessförinnan. Ett tillgodohavande som har preskriberats tillfaller staten."
+ },
+ {
+  "pool": "v2",
+  "rank": 702,
+  "provision_id": "sfs-2022-1697:K3P2",
+  "document_id": "sfs-2022-1697",
+  "document_title": "Lag (2022:1697) om samordningsnummer",
+  "label": "2 §",
+  "char_count": 263,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "vid utgången av"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-1697.html#K3P2",
+  "text": "Ett samordningsnummer ska förklaras vilande\n\n1. om inte någon ansökan om förnyelse enligt 1 § första stycket har kommit in vid utgången av det femte kalenderåret efter det år då numret tilldelades eller senast förnyades, eller\n\n2. om det finns andra skäl för det."
+ },
+ {
+  "pool": "v2",
+  "rank": 705,
+  "provision_id": "sfs-2018-597:K7P3",
+  "document_id": "sfs-2018-597",
+  "document_title": "Lag (2018:597) om kommunal bokföring och redovisning",
+  "label": "3 §",
+  "char_count": 287,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-597.html#K7P3",
+  "text": "Anläggningstillgångar med begränsad nyttjandeperiod ska skrivas av systematiskt över denna period.\n\nNyttjandeperioden för en immateriell anläggningstillgång som avses i 6 kap. 7 § ska anses uppgå till högst fem år, om inte en annan längre tid med rimlig grad av säkerhet kan fastställas."
+ },
+ {
+  "pool": "v2",
+  "rank": 707,
+  "provision_id": "sfs-2023-714:K5P4",
+  "document_id": "sfs-2023-714",
+  "document_title": "Lag (2023:714) om förvärv och förvaltning av nödlidande kreditavtal",
+  "label": "4 §",
+  "char_count": 300,
+  "score": 14,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "när/vid"
+  ],
+  "specific_qualifiers": [
+   "två månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-714.html#K5P4",
+  "text": "Kreditförvaltaren får påbörja eller ändra sin verksamhet i värdlandet när den behöriga myndigheten där har bekräftat att den mottagit anmälan enligt 2 §.\n\nOm myndigheten inte har bekräftat mottagandet inom två månader från den dag då anmälan överlämnades, får verksamheten ändå påbörjas eller ändras."
+ },
+ {
+  "pool": "v2",
+  "rank": 710,
+  "provision_id": "sfs-2014-968:K1aP48",
+  "document_id": "sfs-2014-968",
+  "document_title": "Lag (2014:968) om särskild tillsyn över kreditinstitut och värdepappersbolag",
+  "label": "48 §",
+  "char_count": 304,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tio arbetsdagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2014-968.html#K1aP48",
+  "text": "Finansinspektionen ska så snart som möjligt, dock senast inom tio arbetsdagar, skriftligen bekräfta att en ansökan enligt 47 § har tagits emot.\n\nFinansinspektionen ska underrätta Bolagsverket om en ansökan enligt första stycket och om ett beslut som har meddelats med anledning av denna. Lag (2026:1072)."
+ },
+ {
+  "pool": "v2",
+  "rank": 715,
+  "provision_id": "sfs-2017-900:P44",
+  "document_id": "sfs-2017-900",
+  "document_title": "Förvaltningslag (2017:900)",
+  "label": "44 §",
+  "char_count": 317,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "tre veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2017-900.html#P44",
+  "text": "Ett överklagande av ett beslut ska ha kommit in till beslutsmyndigheten inom tre veckor från den dag då den som överklagar fick del av beslutet genom den myndigheten. Om den som överklagar är en part som företräder det allmänna, ska överklagandet dock ha kommit in inom tre veckor från den dag då beslutet meddelades."
+ },
+ {
+  "pool": "v2",
+  "rank": 732,
+  "provision_id": "sfs-2018-673:P15",
+  "document_id": "sfs-2018-673",
+  "document_title": "Lag (2018:673) om införande av lagen (2018:672) om ekonomiska föreningar",
+  "label": "15 §",
+  "char_count": 338,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "vid utgången av"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-673.html#P15",
+  "text": "Om en styrelseledamot eller en verkställande direktör vid ikraftträdandet har ett sådant aktieinnehav som omfattas av 7 kap. 46 § lagen (2018:672) om ekonomiska föreningar, ska han eller hon anmäla det till styrelsen i samband med en anmälan om förändringar i aktieinnehavet enligt den nämnda paragrafen, dock senast vid utgången av 2018."
+ },
+ {
+  "pool": "v2",
+  "rank": 734,
+  "provision_id": "sfs-2022-1568:K7P19a",
+  "document_id": "sfs-2022-1568",
+  "document_title": "Lag (2022:1568) om Sveriges riksbank",
+  "label": "19 a §",
+  "char_count": 346,
+  "score": 14,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "dock",
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-1568.html#K7P19a",
+  "text": "Ett beslut om avstängning får, om personalansvarsnämndens prövning enligt 19 § inte kan inväntas, fattas av ordföranden i nämnden. Ett sådant beslut gäller till dess att ärendet har prövats av nämnden, dock högst i två veckor.\n\nOm nämnden inte prövar frågan om avstängning inom denna tid upphör beslutet om avstängning att gälla. Lag (2025:1024)."
+ },
+ {
+  "pool": "v2",
+  "rank": 737,
+  "provision_id": "sfs-2022-900:P8",
+  "document_id": "sfs-2022-900",
+  "document_title": "Lag (2022:900) om registrering av idéburna organisationer",
+  "label": "8 §",
+  "char_count": 354,
+  "score": 14,
+  "duty_markers": [
+   "får inte",
+   "får"
+  ],
+  "exception_markers": [
+   "annat än"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-900.html#P8",
+  "text": "En registrerad idéburen organisation får inte göra några värdeöverföringar annat än till andra registrerade idéburna organisationer eller till forskning.\n\nBegränsningen i första stycket fortsätter att gälla under en tidsperiod om fem år efter att ett beslut om avregistrering meddelats för en organisation som tidigare varit registrerad enligt denna lag."
+ },
+ {
+  "pool": "v2",
+  "rank": 741,
+  "provision_id": "sfs-2019-601:K4P10",
+  "document_id": "sfs-2019-601",
+  "document_title": "Lag (2019:601) om tvistlösningsförfarande i ärenden som rör skatteavtal inom Europeiska unionen",
+  "label": "10 §",
+  "char_count": 368,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "två veckor"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2019-601.html#K4P10",
+  "text": "Om en sökande inte har fått del av den rådgivande kommitténs arbetsordning inom två veckor från inrättandet av kommittén, ska Skatteverket på begäran av sökanden skicka över den standardiserade arbetsordning som fastställts av Europeiska kommissionen enligt artikel 11.3 i skattetvistlös-\nningsdirektivet, i den ursprungliga lydelsen, till kommittén för komplettering."
+ },
+ {
+  "pool": "v2",
+  "rank": 744,
+  "provision_id": "sfs-2016-1145:K21P13",
+  "document_id": "sfs-2016-1145",
+  "document_title": "Lag (2016:1145) om offentlig upphandling",
+  "label": "13 §",
+  "char_count": 375,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1145.html#K21P13",
+  "text": "En upphandlingsskadeavgift ska betalas till tillsynsmyndigheten inom 30 dagar från det att beslutet fick laga kraft eller inom den längre tid som anges i beslutet.\n\nOm avgiften inte betalas i tid, ska tillsynsmyndigheten lämna den obetalda avgiften till indrivning. Bestämmelser om indrivning finns i lagen (1993:891) om indrivning av statliga fordringar m.m. Lag (2023:815)."
+ },
+ {
+  "pool": "v2",
+  "rank": 753,
+  "provision_id": "sfs-2016-1147:K17P13",
+  "document_id": "sfs-2016-1147",
+  "document_title": "Lag (2016:1147) om upphandling av koncessioner",
+  "label": "13 §",
+  "char_count": 391,
+  "score": 14,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "30 dagar"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1147.html#K17P13",
+  "text": "En upphandlingsskadeavgift ska betalas till tillsynsmyndigheten inom 30 dagar från det att beslutet fick laga kraft eller inom den längre tid som anges i beslutet.\nLag (2023:817).\n\nOm avgiften inte betalas i tid, ska tillsynsmyndigheten lämna den obetalda avgiften till indrivning. Bestämmelser om indrivning finns i lagen (1993:891) om indrivning av statliga fordringar m.m. Lag (2023:817)."
+ },
+ {
+  "pool": "v2",
+  "rank": 956,
+  "provision_id": "sfs-2024-79:K2P3",
+  "document_id": "sfs-2024-79",
+  "document_title": "Lag (2024:79) om placering av barn i skyddat boende",
+  "label": "3 §",
+  "char_count": 198,
+  "score": 13,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "15 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-79.html#K2P3",
+  "text": "Om barnet fyllt 15 år, har han eller hon rätt att själv föra sin talan i ärenden och mål enligt denna lag. Ett barn som är yngre får höras i domstol, om han eller hon inte kan antas ta skada av det."
+ },
+ {
+  "pool": "v2",
+  "rank": 957,
+  "provision_id": "sfs-2016-1091:K2P6",
+  "document_id": "sfs-2016-1091",
+  "document_title": "Lag (2016:1091) om budget och ekonomiadministration för riksdagens myndigheter",
+  "label": "6 §",
+  "char_count": 203,
+  "score": 13,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "efter det att"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2016-1091.html#K2P6",
+  "text": "Myndigheten får använda outnyttjade medel på ett anslag\n(anslagssparande) under följande år. Outnyttjade medel får dock användas längst två år efter det att anslaget senast var uppfört på statens budget."
+ },
+ {
+  "pool": "v2",
+  "rank": 976,
+  "provision_id": "sfs-2024-79:K5P7",
+  "document_id": "sfs-2024-79",
+  "document_title": "Lag (2024:79) om placering av barn i skyddat boende",
+  "label": "7 §",
+  "char_count": 285,
+  "score": 13,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "sex månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-79.html#K5P7",
+  "text": "En framställning från den vårdnadshavare som barnet inte är placerat tillsammans med om att inte hålla vistelseorten hemlig eller om umgängets utövande, får avvisas om framställningen kommer in till socialnämnden inom sex månader från det att ett beslut enligt 4 § har fått laga kraft."
+ },
+ {
+  "pool": "v2",
+  "rank": 979,
+  "provision_id": "sfs-2026-1600:K5P10",
+  "document_id": "sfs-2026-1600",
+  "document_title": "Lag (2026:1600) om omhändertagande för vård av barn och unga",
+  "label": "10 §",
+  "char_count": 302,
+  "score": 13,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "ett år",
+   "två månader"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2026-1600.html#K5P10",
+  "text": "Ett beslut om fortsatt omhändertagande för tillfällig vård enligt 8 § får avse högst två månader åt gången, räknat från den dag då beslutet fattades. Ett fortsatt omhändertagande för tillfällig vård får pågå under högst en sammanhängande period av ett år, om inte fortsatt tillfällig vård är nödvändig."
+ },
+ {
+  "pool": "v2",
+  "rank": 999,
+  "provision_id": "sfs-2022-964:K3P12",
+  "document_id": "sfs-2022-964",
+  "document_title": "Lag (2022:964) om företagsrekonstruktion",
+  "label": "12 §",
+  "char_count": 345,
+  "score": 13,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "gäller inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "senare än"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-964.html#K3P12",
+  "text": "Bestämmelserna i 1-10 §§ gäller inte för anställningsavtal.\n\nOm en arbetstagare fortsätter att fullgöra sina åtaganden enligt ett anställningsavtal med gäldenären, ska arbetstagarens fordran på lön eller annan ersättning för arbete som utförs senare än en månad efter beslutet om företagsrekonstruktion anses ha uppkommit under rekonstruktionen."
+ },
+ {
+  "pool": "v2",
+  "rank": 1008,
+  "provision_id": "sfs-2022-856:P8",
+  "document_id": "sfs-2022-856",
+  "document_title": "Lag (2022:856) om omställningsstudiestöd",
+  "label": "8 §",
+  "char_count": 357,
+  "score": 13,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "dock"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "60 år",
+   "62 år",
+   "63 år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2022-856.html#P8",
+  "text": "Omställningsstudiebidrag får lämnas längst till och med det kalenderår då den studerande fyller 63 år. I 21 § finns dock bestämmelser om att omställningsstudiebidraget är begränsat från och med det kalenderår då den studerande fyller\n62 år.\n\nOmställningsstudielån får lämnas längst till och med det kalenderår då den studerande fyller 60 år. Lag (2022:864)."
+ },
+ {
+  "pool": "v2",
+  "rank": 1852,
+  "provision_id": "sfs-2023-499:P32",
+  "document_id": "sfs-2023-499",
+  "document_title": "Lag (2023:499) med instruktion för Riksdagens ombudsmän (JO)",
+  "label": "32 §",
+  "char_count": 118,
+  "score": 11,
+  "duty_markers": [
+   "bör"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "två år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2023-499.html#P32",
+  "text": "En ombudsman bör inte ta upp förhållanden som ligger mer än två år tillbaka i tiden, om det inte finns särskilda skäl."
+ },
+ {
+  "pool": "v2",
+  "rank": 1854,
+  "provision_id": "sfs-2024-782:K2P12",
+  "document_id": "sfs-2024-782",
+  "document_title": "Lag (2024:782) om förfarandet vid förverkande av egendom och åläggande av företagsbot",
+  "label": "12 §",
+  "char_count": 149,
+  "score": 11,
+  "duty_markers": [
+   "får"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om",
+   "särskilda skäl"
+  ],
+  "specific_qualifiers": [
+   "ett år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2024-782.html#K2P12",
+  "text": "I en utredning om självständigt förverkande får beslag, penningbeslag och kvarstad inte bestå längre tid än ett år, om det inte finns särskilda skäl."
+ },
+ {
+  "pool": "v2",
+  "rank": 2633,
+  "provision_id": "sfs-2018-1138:K16P5",
+  "document_id": "sfs-2018-1138",
+  "document_title": "Spellag (2018:1138)",
+  "label": "5 §",
+  "char_count": 127,
+  "score": 10,
+  "duty_markers": [
+   "ska"
+  ],
+  "exception_markers": [
+   "om inte"
+  ],
+  "qualifier_markers": [
+   "om"
+  ],
+  "specific_qualifiers": [
+   "fem år"
+  ],
+  "vague_qualifiers": [],
+  "source_url": "https://data.riksdagen.se/dokument/sfs-2018-1138.html#K16P5",
+  "text": "En licenshavare ska, om inte spelmyndigheten beslutar om annat, spara alla uppgifter om driften av spelsystemet i minst fem år."
+ }
+]
