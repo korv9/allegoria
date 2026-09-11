@@ -248,6 +248,7 @@ scripts/                        thin CLI wrappers, exporting nothing
 
 notebooks/
 `-- 01_pipeline_walkthrough.py  # %% cells; every cell calls library code
+                                export to .ipynb with scripts/export_notebook.py
 
 review/<date>/                  one dated directory per working session
 |-- REVIEW.md                   decisions, predictions, how each claim was checked
