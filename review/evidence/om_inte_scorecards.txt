@@ -1,0 +1,100 @@
+pattern        TP   FP   FN   TN   precision   recall      F1
+-------------------------------------------------------------
+current        59   21    0    0      73.8%   100.0%   0.849
+allowlist      32    0   27   21     100.0%    54.2%   0.703
+widened        32    0   27   21     100.0%    54.2%   0.703
+tempered       55    4    4   17      93.2%    93.2%   0.932
+tempered_coord   59    6    0   15      90.8%   100.0%   0.952
+pattern        TP   FP   FN   TN   precision   recall      F1
+-------------------------------------------------------------
+current        59   21    0    0      73.8%   100.0%   0.849
+allowlist      32    0   27   21     100.0%    54.2%   0.703
+
+Entries whose classification changed, current -> allowlist:
+  [GOOD]   1 sfs-1977-480:P13                   spurious     now silent  span='om permittering som arbetstagaren inte'
+  [COST]   2 sfs-1982-80:P38                    conditional  now silent  span='om han eller hon inte'
+  [GOOD]   3 sfs-2008-567:K2P15                 spurious     now silent  span='om att en totalförsvarspliktig inte'
+  [GOOD]   4 sfs-2026-1011:K3P1                 spurious     now silent  span='om att en kredit inte'
+  [GOOD]   5 sfs-2026-1054:P8                   spurious     now silent  span='om att karens inte'
+  [GOOD]   6 sfs-2026-1281:K18P6                spurious     now silent  span='om att en systemansvarig inte'
+  [COST]   7 sfs-2026-1281:K19P3                conditional  now silent  span='Om redovisningshandlingarna eller revisorsintyget inte'
+  [GOOD]   8 sfs-2026-1459:P15                  spurious     now silent  span='om att den registrerade inte'
+  [GOOD]   9 sfs-2026-1460:P3                   spurious     now silent  span='om att dennes medlemsavgift inte'
+  [GOOD]  10 sfs-2026-310:P12                   spurious     now silent  span='om överensstämmelse eller inte'
+  [GOOD]  11 sfs-2026-380:P10                   spurious     now silent  span='om avvisning eller utvisning inte'
+  [GOOD]  12 sfs-2026-408:K11P1                 spurious     now silent  span='om delar som inte'
+  [COST]  13 sfs-2026-408:K16P8                 conditional  now silent  span='om vapnet eller vapendelen inte'
+  [GOOD]  14 sfs-2026-408:K20P2                 spurious     now silent  span='om att denna lag inte'
+  [GOOD]  15 sfs-2026-408:K20P3                 spurious     now silent  span='om att denna lag inte'
+  [GOOD]  16 sfs-2026-485:P13                   spurious     now silent  span='om bostadsrättsregister men som inte'
+  [COST]  17 sfs-2026-677:P7                    conditional  now silent  span='om han eller hon inte'
+  [GOOD]  18 sfs-2026-843:P11                   spurious     now silent  span='om att hyrsäljaren inte'
+  [COST]  20 sfs-2016-977:K7P6                  conditional  now silent  span='Om åtgärderna inte'
+  [GOOD]  21 sfs-2019-370:P10                   spurious     now silent  span='om ett fordon som inte'
+  [GOOD]  29 sfs-1982-673:P13a                  spurious     now silent  span='om tjugofyra timmar inte'
+  [COST]  30 sfs-1982-673:P27                   conditional  now silent  span='Om avgiften inte'
+  [COST]  32 sfs-1982-80:P10                    conditional  now silent  span='Om arbetstagaren inte'
+  [COST]  33 sfs-1982-80:P18                    conditional  now silent  span='om någon sådan underrättelse inte'
+  [COST]  34 sfs-1982-80:P20                    conditional  now silent  span='Om arbetstagaren inte'
+  [COST]  36 sfs-1982-80:P7                     conditional  now silent  span='om någon sådan underrättelse inte'
+  [COST]  38 sfs-1995-584:P25                   conditional  now silent  span='om organisationen inte'
+  [COST]  40 sfs-2008-567:K6P2                  conditional  now silent  span='om arbetstagarorganisationen inte'
+  [COST]  44 sfs-2015-338:overgang:2016-1375    conditional  now silent  span='om förvaltaren trots detta inte'
+  [COST]  46 sfs-2015-666:overgang:2021-1074    conditional  now silent  span='om sådana förbindelser inte'
+  [COST]  47 sfs-2015-860:overgang:2018-475     conditional  now silent  span='Om en person inte'
+  [COST]  48 sfs-2015-953:P17                   conditional  now silent  span='om transporten inte'
+  [COST]  51 sfs-2016-429:P14                   conditional  now silent  span='Om ett sanktionsföreläggande inte'
+  [COST]  52 sfs-2016-927:overgang:2016-927     conditional  now silent  span='om förmögenheten inte'
+  [GOOD]  55 sfs-2018-1854:overgang:2018-1854   spurious     now silent  span='om att denna konvention inte'
+  [COST]  56 sfs-2018-672:K17P14                conditional  now silent  span='om bristen inte'
+  [GOOD]  57 sfs-2019-742:K1P11                 spurious     now silent  span='om värdepappersmarknaden ska inte'
+  [COST]  58 sfs-2020-44:overgang:2020-44       conditional  now silent  span='om denna andra stat inte'
+  [COST]  60 sfs-2022-155:K6P2                  conditional  now silent  span='om påförd skatt inte'
+  [COST]  61 sfs-2022-156:K6P2                  conditional  now silent  span='om påförd skatt inte'
+  [COST]  66 sfs-2022-964:K2P8                  conditional  now silent  span='Om en borgenärs ansökan inte'
+  [COST]  67 sfs-2022-964:K4P16                 conditional  now silent  span='Om ändringen inte'
+  [COST]  68 sfs-2022-964:K5P5                  conditional  now silent  span='om förvärvet inte'
+  [GOOD]  70 sfs-2025-400:K20P2                 spurious     now silent  span='om att inleda eller inte'
+  [COST]  72 sfs-2026-1011:K6P8                 conditional  now silent  span='Om någon uppsägningstid inte'
+  [COST]  73 sfs-2026-1113:P7                   conditional  now silent  span='Om bostadsbyggnaden inte'
+  [GOOD]  76 sfs-2026-1637:K5aP2                spurious     now silent  span='om elektronisk övervakning får inte'
+  [GOOD]  80 sfs-2026-999:K5P5:occurrence:2     spurious     now silent  span='om överföring har inte'
+pattern        TP   FP   FN   TN   precision   recall      F1
+-------------------------------------------------------------
+current        59   21    0    0      73.8%   100.0%   0.849
+tempered_coord   59    6    0   15      90.8%   100.0%   0.952
+
+Entries whose classification changed, current -> tempered_coord:
+  [GOOD]   1 sfs-1977-480:P13                   spurious     now silent  span='om permittering som arbetstagaren inte'
+  [GOOD]   3 sfs-2008-567:K2P15                 spurious     now silent  span='om att en totalförsvarspliktig inte'
+  [GOOD]   4 sfs-2026-1011:K3P1                 spurious     now silent  span='om att en kredit inte'
+  [GOOD]   5 sfs-2026-1054:P8                   spurious     now silent  span='om att karens inte'
+  [GOOD]   6 sfs-2026-1281:K18P6                spurious     now silent  span='om att en systemansvarig inte'
+  [GOOD]   8 sfs-2026-1459:P15                  spurious     now silent  span='om att den registrerade inte'
+  [GOOD]   9 sfs-2026-1460:P3                   spurious     now silent  span='om att dennes medlemsavgift inte'
+  [GOOD]  12 sfs-2026-408:K11P1                 spurious     now silent  span='om delar som inte'
+  [GOOD]  14 sfs-2026-408:K20P2                 spurious     now silent  span='om att denna lag inte'
+  [GOOD]  15 sfs-2026-408:K20P3                 spurious     now silent  span='om att denna lag inte'
+  [GOOD]  16 sfs-2026-485:P13                   spurious     now silent  span='om bostadsrättsregister men som inte'
+  [GOOD]  18 sfs-2026-843:P11                   spurious     now silent  span='om att hyrsäljaren inte'
+  [GOOD]  21 sfs-2019-370:P10                   spurious     now silent  span='om ett fordon som inte'
+  [GOOD]  55 sfs-2018-1854:overgang:2018-1854   spurious     now silent  span='om att denna konvention inte'
+  [GOOD]  70 sfs-2025-400:K20P2                 spurious     now silent  span='om att inleda eller inte'
+
+Projected effect of 'tempered_coord' on the candidate set (not shipped):
+  v1: candidates 461 -> 459 (5 leave), specific 119 -> 119
+      leaves: sfs-2026-1054:P8
+      leaves: sfs-2026-1460:P3
+      leaves: sfs-2026-408:K20P2
+      leaves: sfs-2026-408:K20P3
+      leaves: sfs-2026-485:P13
+  v2: candidates 4071 -> 4075 (58 leave), specific 837 -> 847
+      leaves: sfs-2014-447:P2
+      leaves: sfs-2014-912:P4
+      leaves: sfs-2014-968:K1P3a
+      leaves: sfs-2015-1016:K17P16
+      leaves: sfs-2015-1016:K21P24
+      leaves: sfs-2015-485:K3P7
+      leaves: sfs-2015-650:K2P5
+      leaves: sfs-2015-650:K2P5:occurrence:2
+      ... 50 more

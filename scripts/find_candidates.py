@@ -82,6 +82,15 @@ QUALIFIER_MARKERS = _markers(
         ("under förutsättning att", r"\b(?:under\s+förutsättning|förutsatt)\s+att\b", 4),
         ("endast om", r"\b(?:endast|bara)\s+(?:om|när|i\s+de\s+fall)\b", 4),
         ("i den mån", r"\bi\s+den\s+mån\b|\bsåvitt\b|\bi\s+fråga\s+om\b", 2),
+        # Same scope-limiting job as `i den mån`, different wording. Found via
+        # sfs-2026-456:P2 ("i den utsträckning som denna lag avviker"), which the
+        # markers were rejecting as a near-miss. Kept as its own label so the
+        # marker_hits table can show how much each variant actually earns.
+        (
+            "i den utsträckning",
+            r"\bi\s+den\s+utsträckning\b|\btill\s+den\s+del\b|\bi\s+den\s+omfattning\b",
+            2,
+        ),
         ("om", r"\bom\b", 1),
         ("när/vid", r"\bnär\b|\bvid\s+(?:sådan|denna|en|det)\b|\bi\s+de\s+fall\b", 1),
         ("efter det att", r"\befter\s+det\s+att\b|\binnan\b|\bsedan\b", 1),
