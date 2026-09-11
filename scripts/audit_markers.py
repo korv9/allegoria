@@ -59,7 +59,9 @@ CLAUSE_BOUNDARY = re.compile(
     r"[,;:]|\b(?:att|men|som|och|eller|vilket|där|när|då)\b", re.IGNORECASE
 )
 
-WILDCARD_SHAPE = re.compile(r"\\w\+|\{\d+,\d*\}")
+# `\w+` and `\w*` are unbounded wildcards; `{n,m}` is the bounded repetition that
+# stands in for "same clause". All three are the shape Part C is inventorying.
+WILDCARD_SHAPE = re.compile(r"\\w[+*]|\{\d+,\d*\}")
 
 
 def determinacy(text: str, specific: re.Pattern[str]) -> str:

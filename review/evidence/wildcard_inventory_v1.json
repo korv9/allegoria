@@ -1,0 +1,360 @@
+[
+  {
+    "category": "duty",
+    "marker": "får inte",
+    "pattern": "\\bfår\\s+(?:\\w+\\s+){0,3}?inte\\b",
+    "hits": 211,
+    "clause_crossing_hits": 0,
+    "crossing_rate": 0.0,
+    "sample": [
+      {
+        "provision_id": "sfs-2026-999:K9P3",
+        "span": "får delgivning inte",
+        "context": "I mål eller ärenden enligt denna lag får delgivning inte ske enligt 34-38 eller 47-51 §§ delgivningslagen (2010:1932"
+      },
+      {
+        "provision_id": "sfs-2026-408:K16P2",
+        "span": "får inte",
+        "context": " tilldelat någon som tillhör hemvärnets personal. Registret får inte användas för att göra automatiserade sammanställningar över"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K10P6",
+        "span": "får inte",
+        "context": " och för dess installation i uttagspunkten.  En elanvändare får inte debiteras merkostnader för att den har  1. ingått ett avtal"
+      },
+      {
+        "provision_id": "sfs-1976-580:P41",
+        "span": "får inte",
+        "context": "betsgivare och arbetstagare som är bundna av kollektivavtal får inte vidta eller delta i arbetsinställelse (lockout eller strejk"
+      },
+      {
+        "provision_id": "sfs-2026-1282:P24",
+        "span": "får inte",
+        "context": "Ett anvisat elavtal får inte ha  1. en längre uppsägningstid än 14 dagar, eller  2. dyna"
+      },
+      {
+        "provision_id": "sfs-1982-673:P10a",
+        "span": "får tillsammans inte",
+        "context": "imligt sätt (extra mertid).  Extra mertid och allmän mertid får tillsammans inte överstiga 48 timmar per arbetstagare under en tid av fyra v"
+      },
+      {
+        "provision_id": "sfs-2026-772:K5P3",
+        "span": "får inte",
+        "context": "Hyresgästen får inte låta utomstående personer bo i lägenheten (inneboende) i en"
+      },
+      {
+        "provision_id": "sfs-2008-567:K4P16",
+        "span": "får inte",
+        "context": "Beslut enligt denna lag av Nämnden mot diskriminering får inte överklagas."
+      },
+      {
+        "provision_id": "sfs-2026-1326:P16",
+        "span": "får inte",
+        "context": " till allmän förvaltningsdomstol. Andra beslut enligt lagen får inte överklagas.  Prövningstillstånd krävs vid överklagande till"
+      },
+      {
+        "provision_id": "sfs-2026-999:K10P1",
+        "span": "får dock inte",
+        "context": "ch beslut om tilldelning av eller erbjudande om boendeplats får dock inte överklagas.  Prövningstillstånd krävs vid överklagande till"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K13P4",
+        "span": "får inte",
+        "context": "En elleverantör får inte ta ut oskäliga avgifter eller ställa oskäliga krav på en el"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K4P8",
+        "span": "får inte",
+        "context": "a från företag som producerar eller handlar med el, och  2. får inte ha en styrelseledamot, verkställande direktör eller firmate"
+      },
+      {
+        "provision_id": "sfs-2026-1283:K6P1",
+        "span": "får inte",
+        "context": "samma ledning eller ledningsnät.  Nätkoncessioner för linje får inte läggas samman till en nätkoncession för område.  Vid en sam"
+      },
+      {
+        "provision_id": "sfs-2026-1011:K7P7",
+        "span": "får handräckning inte",
+        "context": " återtaganderätt har använts i strid med förbud enligt 2 §, får handräckning inte beviljas.  Handräckning eller verkställighet av dom, varige"
+      },
+      {
+        "provision_id": "sfs-1982-80:P43",
+        "span": "får inte",
+        "context": "skyndsamt.  Ett yrkande om beslut enligt 36 § andra stycket får inte bifallas utan att motparten har fått tillfälle att yttra si"
+      },
+      {
+        "provision_id": "sfs-2026-408:K4P4",
+        "span": "får inte",
+        "context": "s tillstånd att inneha ett skjutvapen enligt denna paragraf får inte utan särskilt tillstånd använda det för skjutning."
+      },
+      {
+        "provision_id": "sfs-2026-983:P15",
+        "span": "får beloppet inte",
+        "context": "gne ska svara för kostnader enligt 5 kap. 3 § fängelselagen får beloppet inte överstiga kostnaden för att sända tillhörigheterna från en "
+      },
+      {
+        "provision_id": "sfs-2026-1011:K8P16",
+        "span": "får inte",
+        "context": "andet ska innehålla samtliga kreditvillkor.  Näringsidkaren får inte i erbjudandet ge konsumenten en kortare betänketid än sju d"
+      },
+      {
+        "provision_id": "sfs-2026-983:P6",
+        "span": "får inte",
+        "context": "En framställning enligt 2 § får inte göras om den intagne  1. inte har fyllt 18 år,  2. är efter"
+      },
+      {
+        "provision_id": "sfs-1982-673:P8a",
+        "span": "får tillsammans inte",
+        "context": "igt sätt (extra övertid).  Extra övertid och allmän övertid får tillsammans inte överstiga 48 timmar per arbetstagare under en tid av fyra v"
+      }
+    ],
+    "crossing_examples": []
+  },
+  {
+    "category": "exception",
+    "marker": "om inte",
+    "pattern": "\\bom\\s+(?:\\w+\\s+){0,3}?inte\\b",
+    "hits": 275,
+    "clause_crossing_hits": 18,
+    "crossing_rate": 0.0655,
+    "sample": [
+      {
+        "provision_id": "sfs-2026-772:K7P1",
+        "span": "om inte",
+        "context": " lägenheten. Görs det senare är rätten till talan förlorad, om inte annat har avtalats.  Om den ena parten har väckt talan i rä"
+      },
+      {
+        "provision_id": "sfs-2026-484:K3P6",
+        "span": "om tillståndshavaren inte",
+        "context": "och funktion.  Ett tillstånd får återkallas av Lantmäteriet om tillståndshavaren inte längre uppfyller kraven i andra stycket."
+      },
+      {
+        "provision_id": "sfs-1995-584:P8",
+        "span": "om föräldern inte",
+        "context": "daren blivit sjuk eller smittad har rätt till ledighet även om föräldern inte har rätt till tillfällig föräldrapenning på grund av att  1"
+      },
+      {
+        "provision_id": "sfs-2026-999:K10P1",
+        "span": "om boendeplats får dock inte",
+        "context": " ordna boende och beslut om tilldelning av eller erbjudande om boendeplats får dock inte överklagas.  Prövningstillstånd krävs vid överklagande till"
+      },
+      {
+        "provision_id": "sfs-2026-966:K3P14",
+        "span": "om avgiften inte",
+        "context": "En sanktionsavgift faller bort till den del beslutet om avgiften inte har verkställts inom fem år från det att beslutet fick laga"
+      },
+      {
+        "provision_id": "sfs-2026-843:P10",
+        "span": "om inte",
+        "context": " jordabalken om bostadslägenhet tillämpas på hyrköpsavtalet om inte något annat föreskrivs i denna lag. Vid tillämpningen ska d"
+      },
+      {
+        "provision_id": "sfs-2026-408:K4P2",
+        "span": "om behovet inte",
+        "context": " annat ändamål som avser skjutning (udda skjutningsändamål) om behovet inte kan tillgodoses på något annat sätt.  Kravet i första styck"
+      },
+      {
+        "provision_id": "sfs-2026-786:K10P4",
+        "span": "om inte",
+        "context": "t och åtgärder i övrigt enligt denna lag betalas av staten, om inte något annat följer av 3 kap. 3 §."
+      },
+      {
+        "provision_id": "sfs-1982-673:P3",
+        "span": "om detta inte",
+        "context": " mot måltidsuppehåll enligt denna paragraf får göras endast om detta inte innebär att mindre förmånliga villkor ska tillämpas för arb"
+      },
+      {
+        "provision_id": "sfs-2026-772:K1P2:occurrence:2",
+        "span": "Om inte",
+        "context": "an ska betalas i förskott före varje kalendermånads början. Om inte annat har avtalats, ska hyran betalas senast den sista vard"
+      },
+      {
+        "provision_id": "sfs-2026-1011:K4P3",
+        "span": "om informationen inte",
+        "context": "ket, 14 och 18 §§, 3 kap. 2 § andra stycket och 6 kap. 8 §, om informationen inte lämnas i en handling. Detsamma gäller ett meddelande som ko"
+      },
+      {
+        "provision_id": "sfs-2026-772:K3P1",
+        "span": "Om inte",
+        "context": "ädet stämma överens med det som följer av parternas avtal.  Om inte annat följer av avtalet ska lägenhetens skick stämma överen"
+      },
+      {
+        "provision_id": "sfs-2008-567:K4P5",
+        "span": "Om ombudsmannen förklarat sig inte",
+        "context": "arbetsgivare eller som huvudman för utbildningsverksamhet.  Om ombudsmannen förklarat sig inte vilja göra en framställning till nämnden om vitesföreläggan"
+      },
+      {
+        "provision_id": "sfs-2026-484:K3P8",
+        "span": "Om panthavaren inte",
+        "context": "äteriet. En sådan anmälan ska undertecknas av panthavaren.  Om panthavaren inte längre finns, får pantsättaren göra en anmälan för avregist"
+      },
+      {
+        "provision_id": "sfs-1977-480:P11",
+        "span": "Om det inte",
+        "context": "Om det inte går att komma överens om hur semesterledighet ska förläggas"
+      },
+      {
+        "provision_id": "sfs-2026-1358:K1P2",
+        "span": "om inte",
+        "context": "föreskrifter som har meddelats i anslutning till den lagen, om inte annat följer av denna lag eller föreskrifter som regeringen"
+      },
+      {
+        "provision_id": "sfs-1977-480:P30",
+        "span": "Om det inte",
+        "context": "jsmål och senast en månad efter anställningens upphörande.  Om det inte går att beräkna semesterersättning inom en månad efter anst"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K16P10",
+        "span": "Om konsumenten inte",
+        "context": "g enligt 6-8 §§ inom två år från det att skadan inträffade. Om konsumenten inte gör det, är rätten till ersättning för den uppkomna skadan "
+      },
+      {
+        "provision_id": "sfs-2026-1011:K9P6",
+        "span": "om överträdelsen inte",
+        "context": " en varning. En varning ska förenas med en sanktionsavgift, om överträdelsen inte är ringa. Avgiften tillfaller staten.  Om näringsidkaren ti"
+      },
+      {
+        "provision_id": "sfs-2026-1113:P7",
+        "span": "Om bostadsbyggnaden inte",
+        "context": " vindkraftsanläggningen eller har ersatt en sådan byggnad.  Om bostadsbyggnaden inte fanns eller inte var under uppförande vid tidpunkten för an"
+      }
+    ],
+    "crossing_examples": [
+      {
+        "provision_id": "sfs-1977-480:P13",
+        "span": "om permittering som arbetstagaren inte"
+      },
+      {
+        "provision_id": "sfs-1982-80:P38",
+        "span": "om han eller hon inte"
+      },
+      {
+        "provision_id": "sfs-2008-567:K2P15",
+        "span": "om att en totalförsvarspliktig inte"
+      },
+      {
+        "provision_id": "sfs-2026-1011:K3P1",
+        "span": "om att en kredit inte"
+      },
+      {
+        "provision_id": "sfs-2026-1054:P8",
+        "span": "om att karens inte"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K18P6",
+        "span": "om att en systemansvarig inte"
+      }
+    ]
+  },
+  {
+    "category": "exception",
+    "marker": "undantag",
+    "pattern": "\\bundantag\\w*\\b",
+    "hits": 44,
+    "clause_crossing_hits": 0,
+    "crossing_rate": 0.0,
+    "sample": [
+      {
+        "provision_id": "sfs-1982-673:P2",
+        "span": "undantagits",
+        "context": "va att lagen ska tillämpas i fråga om fartygsarbete som har undantagits från tilllämpning av bestämmelserna om vilotid i lagen (199"
+      },
+      {
+        "provision_id": "sfs-2026-786:K4P6",
+        "span": "undantag",
+        "context": "ighet i den andra nordiska staten får tillstånd lämnas till undantag från villkoren enligt 5 § första stycket.  Om begäran avser"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K7P6",
+        "span": "undantag",
+        "context": "dighet som regeringen bestämmer får meddela föreskrifter om undantag från kravet i 5 §."
+      },
+      {
+        "provision_id": "sfs-1982-673:P24",
+        "span": "undantag",
+        "context": "betsgivare som uppsåtligen eller av oaktsamhet  1. utan att undantag eller avvikelser har gjorts enligt 3 eller 19 §, har anlita"
+      },
+      {
+        "provision_id": "sfs-2026-408:K20P22",
+        "span": "undantag",
+        "context": "rvaring enligt 12 kap. 4 § till juridiska personer, och  2. undantag från kravet på anmälan för förvaring enligt 12 kap. 3 § and"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K1P5",
+        "span": "undantag",
+        "context": "tning,  systemansvarig: den som bedriver nätverksamhet, med undantag för den som innehar endast nätkoncession för linje och vars"
+      },
+      {
+        "provision_id": "sfs-2026-1459:P12",
+        "span": "undantag",
+        "context": "arkollegiet. Kammarkollegiet får i enskilda fall besluta om undantag från detta.  Anmälan eller redovisningen ska skrivas under "
+      },
+      {
+        "provision_id": "sfs-2026-1011:K4P12",
+        "span": "Undantaget",
+        "context": "ndre än vad som följer av anknytningen till referensräntan. Undantaget ska bestämmas så att det inte blir mindre förmånligt för ko"
+      },
+      {
+        "provision_id": "sfs-2026-999:K11P1",
+        "span": "undantag",
+        "context": " myndighet som regeringen bestämmer meddela föreskrifter om undantag från  1. skyldigheten för en utlänning att inte lämna ett l"
+      },
+      {
+        "provision_id": "sfs-2026-408:K20P10",
+        "span": "undantag",
+        "context": "g får beviljas endast om det finns synnerliga skäl, och  3. undantag från de förutsättningar som ska vara uppfyllda för tillstån"
+      },
+      {
+        "provision_id": "sfs-2026-578:P4",
+        "span": "undantag",
+        "context": " tillämpas. Regeringen får också i enskilda fall besluta om undantag från kravet på särskild redovisning."
+      },
+      {
+        "provision_id": "sfs-2026-408:K20P25",
+        "span": "undantag",
+        "context": "öras, visas upp eller lämnas till Polismyndigheten, och  3. undantag från krav på att lämna eller omhänderta bevis eller annan m"
+      },
+      {
+        "provision_id": "sfs-1982-80:P22",
+        "span": "undantag",
+        "context": "ild betydelse för den fortsatta verksamheten. Om ett sådant undantag har gjorts, får inga ytterligare undantag göras vid en upps"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K7P2",
+        "span": "undantag",
+        "context": "tningsavgift ger rätt att använda elnätet inom Sverige, med undantag för utlandsförbindelser med en spänning som understiger 220"
+      },
+      {
+        "provision_id": "sfs-2026-1358:K4P2",
+        "span": "undantag",
+        "context": "et som regeringen bestämmer får meddela föreskrifter om  1. undantag från kravet i 1 §, och  2. hur kravet i 1 § ska fullgöras."
+      },
+      {
+        "provision_id": "sfs-2026-408:K15P8",
+        "span": "undantag",
+        "context": "Polismyndigheten får efter ansökan medge undantag från skyldigheten enligt 7 § att märka ett skjutvapen eller"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K12P22",
+        "span": "undantag",
+        "context": "dighet som regeringen bestämmer får meddela föreskrifter om undantag från kravet i 21 §."
+      },
+      {
+        "provision_id": "sfs-2026-1281:K4P15",
+        "span": "Undantag",
+        "context": "atar in el från anläggningar för produktion av förnybar el. Undantag får dock inte göras för en sådan systemansvarig som avses i"
+      },
+      {
+        "provision_id": "sfs-2026-999:K1P1",
+        "span": "undantag",
+        "context": "t (10 kap.), och  - möjligheter att meddela föreskrifter om undantag från lagen (11 kap.)."
+      },
+      {
+        "provision_id": "sfs-1982-80:P22",
+        "span": "undantagits",
+        "context": "gar enligt 29 §.  Turordningen för de arbetstagare som inte undantagits bestäms med utgångspunkt i varje arbetstagares sammanlagda "
+      }
+    ],
+    "crossing_examples": []
+  }
+]

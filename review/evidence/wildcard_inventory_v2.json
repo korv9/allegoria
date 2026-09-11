@@ -1,0 +1,385 @@
+[
+  {
+    "category": "duty",
+    "marker": "får inte",
+    "pattern": "\\bfår\\s+(?:\\w+\\s+){0,3}?inte\\b",
+    "hits": 1906,
+    "clause_crossing_hits": 36,
+    "crossing_rate": 0.0189,
+    "sample": [
+      {
+        "provision_id": "sfs-2025-520:K3P11",
+        "span": "får inte",
+        "context": "tsförvaring.  En frihetsberövande påföljd som har anpassats får inte bli strängare än den ursprungliga frihetsberövande påföljde"
+      },
+      {
+        "provision_id": "sfs-2022-155:K9P30",
+        "span": "får inte",
+        "context": "det belopp som denne gjorts ansvarig för.  Beslut om ansvar får inte fattas om statens fordran mot den som beslutet om skatt gäl"
+      },
+      {
+        "provision_id": "sfs-2018-1219:K8P8",
+        "span": "får inte",
+        "context": "en försäkringsdistributör som anställd eller uppdragstagare får inte obehörigen röja en uppgift i en anmälan eller en utsaga om "
+      },
+      {
+        "provision_id": "sfs-1982-80:P18",
+        "span": "får inte",
+        "context": "r åsidosatt sina åligganden mot arbetsgivaren.  Avskedandet får inte grundas enbart på omständigheter som arbetsgivaren har känt"
+      },
+      {
+        "provision_id": "sfs-2018-585:K4P8",
+        "span": "får det inte",
+        "context": "rade förfarandet är olämpligt från säkerhetsskyddssynpunkt, får det inte inledas. Lag (2021:952)."
+      },
+      {
+        "provision_id": "sfs-2026-408:K4P11",
+        "span": "får inte",
+        "context": "tt skjutvapen för jakt eller avlivning av fäll-fångade djur får inte avse ett halvautomatiskt gevär eller en låda som är avsedd "
+      },
+      {
+        "provision_id": "sfs-2015-338:overgang:2016-1375",
+        "span": "får inte",
+        "context": "En transportör mot vilken återkrav riktas enligt artikel 50 får inte bestrida det befogade i en betalning som den återkravssökan"
+      },
+      {
+        "provision_id": "sfs-2022-725:P29",
+        "span": "får den totala ersättningen inte",
+        "context": "tning för sådana kostnader eller förluster som avses i 27 § får den totala ersättningen inte uppgå till mer än 100 procent av kostnaden, värdet eller pr"
+      },
+      {
+        "provision_id": "sfs-2026-983:P6",
+        "span": "får inte",
+        "context": "En framställning enligt 2 § får inte göras om den intagne  1. inte har fyllt 18 år,  2. är efter"
+      },
+      {
+        "provision_id": "sfs-2016-1146:K5P5",
+        "span": "får inte",
+        "context": "Metoden för att uppskatta en upphandlings värde får inte väljas i avsikt att undvika att bestämmelserna om upphandli"
+      },
+      {
+        "provision_id": "sfs-2019-504:P8",
+        "span": "får inte",
+        "context": "Prövning av oredlighet i forskning enligt denna lag får inte grundas på omständigheter som är äldre än tio år när ärende"
+      },
+      {
+        "provision_id": "sfs-2025-621:P6",
+        "span": "får inte",
+        "context": "Lustgas får inte säljas eller på annat sätt lämnas ut i näringsverksamhet ti"
+      },
+      {
+        "provision_id": "sfs-2018-181:overgang:2018-182",
+        "span": "får inte",
+        "context": "dföra obehag eller besvär för de resande eller orsaka skada får inte medföras som handresgods.  § 2 Den resande får sända föremå"
+      },
+      {
+        "provision_id": "sfs-2018-1138:K5P4",
+        "span": "får inte",
+        "context": "Värdeautomater som är placerade i bingohallar får inte ge en högre avkastning än avkastningen på det bingospel som"
+      },
+      {
+        "provision_id": "sfs-2019-1182:K2P10",
+        "span": "får inte",
+        "context": "vändigt för ändamålet med behandlingen. Genetiska uppgifter får inte behandlas."
+      },
+      {
+        "provision_id": "sfs-2016-977:K6P3",
+        "span": "får inte",
+        "context": "lta i den löpande förvaltningen.  Den som ingår i ledningen får inte vara ledamot i övervakningsorganet. Ledamöterna i övervakni"
+      },
+      {
+        "provision_id": "sfs-2016-1091:K7P2",
+        "span": "får inte",
+        "context": "Myndigheten får inte ta emot en donation utan riksdagens medgivande om den överl"
+      },
+      {
+        "provision_id": "sfs-2021-401:K6P1",
+        "span": "får inte",
+        "context": "l allmän förvaltningsdomstol. Andra beslut enligt denna lag får inte överklagas.  Prövningstillstånd krävs vid överklagande till"
+      },
+      {
+        "provision_id": "sfs-2024-926:P13",
+        "span": "får inte",
+        "context": "projektet senast ska vara avslutat.  Det fastställda syftet får inte ändras.  Information om vad som har fastställts ska hållas "
+      },
+      {
+        "provision_id": "sfs-2017-425:P6",
+        "span": "får inte",
+        "context": "nnehåll och utformning som har meddelats med stöd av 48 § 2 får inte tillhandahållas konsumenter på marknaden."
+      }
+    ],
+    "crossing_examples": [
+      {
+        "provision_id": "sfs-2015-1016:K6P17",
+        "span": "får nedskrivningen eller konverteringen inte"
+      },
+      {
+        "provision_id": "sfs-2015-1016:K8P5",
+        "span": "får Riksgäldskontoret besluta att inte"
+      },
+      {
+        "provision_id": "sfs-2015-1016:K20P5",
+        "span": "får förelägga den som inte"
+      },
+      {
+        "provision_id": "sfs-2015-1016:K28P2",
+        "span": "får förelägga den som inte"
+      },
+      {
+        "provision_id": "sfs-2015-912:P8",
+        "span": "får förelägga den som inte"
+      },
+      {
+        "provision_id": "sfs-2016-977:K7P7",
+        "span": "får använda medel som inte"
+      }
+    ]
+  },
+  {
+    "category": "exception",
+    "marker": "om inte",
+    "pattern": "\\bom\\s+(?:\\w+\\s+){0,3}?inte\\b",
+    "hits": 2842,
+    "clause_crossing_hits": 176,
+    "crossing_rate": 0.0619,
+    "sample": [
+      {
+        "provision_id": "sfs-2023-200:K9P2",
+        "span": "om inte",
+        "context": "t denna lag tas ut med 25 procent av beskattningsunderlaget om inte annat följer av 4-19 §§. Lag (2026:118)."
+      },
+      {
+        "provision_id": "sfs-2015-485:K2P6",
+        "span": "om inte",
+        "context": "v 2 §.  Även åklagaren får besluta om tillfälliga undantag, om inte beslutet om övervakningsåtgärder har meddelats eller fastst"
+      },
+      {
+        "provision_id": "sfs-2022-156:K5P8",
+        "span": "om att varorna inte",
+        "context": "de behöriga myndigheterna i det landet får en underrättelse om att varorna inte längre ska föras ut ur unionens tullområde, ska Skatteverke"
+      },
+      {
+        "provision_id": "sfs-2019-601:K3P6",
+        "span": "Om myndigheterna inte",
+        "context": "Om myndigheterna inte träffar en överenskommelse inom två år, eller högst tre år "
+      },
+      {
+        "provision_id": "sfs-2015-96:K3P4",
+        "span": "om den andra staten inte",
+        "context": "etsberövande åtgärd som inte kan verkställas här, eller  9. om den andra staten inte har lämnat Sverige tillstånd till att åtala, döma eller på "
+      },
+      {
+        "provision_id": "sfs-2025-1053:K6P3",
+        "span": "om verkställighet får inte",
+        "context": "r tiden efter det att verkställigheten upphört.  Ett beslut om verkställighet får inte upphävas efter den fastställda dagen för strafftidens slut."
+      },
+      {
+        "provision_id": "sfs-2023-875:K2P22",
+        "span": "Om moderföretaget inte",
+        "context": "erföretaget i en koncern upprättar sin koncernredovisning.  Om moderföretaget inte upprättar en koncernredovisning avses med räkenskapsår i st"
+      },
+      {
+        "provision_id": "sfs-2026-1600:K13P10",
+        "span": "om socialnämnden inte",
+        "context": "Ett tillfälligt utreseförbud upphör  1. om socialnämnden inte inom en vecka från den dag då beslutet om tillfälligt utres"
+      },
+      {
+        "provision_id": "sfs-2023-200:K9P11",
+        "span": "om inte",
+        "context": "erans, unionsinternt förvärv och import av kassettidningar, om inte annat följer av 10 kap. 24 §, och  3. leverans, unionsinter"
+      },
+      {
+        "provision_id": "sfs-2022-725:P12",
+        "span": "om inte",
+        "context": "ers verksamhet och lämnar råd och hjälp i denna verksamhet, om inte regeringen föreskriver något annat."
+      },
+      {
+        "provision_id": "sfs-2026-786:K10P9",
+        "span": "Om det inte",
+        "context": "den tingsrätt inom vars domkrets den dömde är folkbokförd.  Om det inte finns någon behörig domstol enligt första eller andra styck"
+      },
+      {
+        "provision_id": "sfs-2025-520:K7P2",
+        "span": "om det inte",
+        "context": "tt ärende enligt 2, 3 eller 6 kap. förordnas för den dömde, om det inte kan antas att behov av biträde saknas.  I ärenden hos reger"
+      },
+      {
+        "provision_id": "sfs-2024-114:K3P9",
+        "span": "om förvärvet inte",
+        "context": "r Finansinspektionens godkännande. Förvärvet ska godkännas, om förvärvet inte strider mot denna lag eller någon annan författning."
+      },
+      {
+        "provision_id": "sfs-2025-400:K22P21",
+        "span": "om inte",
+        "context": "ll böter döms även den som åsidosätter bestämmelsen i 20 §, om inte gärningen är belagd med straff enligt lagen (1997:192) om i"
+      },
+      {
+        "provision_id": "sfs-2018-181:overgang:2018-182",
+        "span": "om den inte",
+        "context": "g gentemot den andra parten för den skada som blir följden, om den inte visar att skadan inte är en följd av fel eller försummelse "
+      },
+      {
+        "provision_id": "sfs-2022-260:K9P5",
+        "span": "om inte",
+        "context": " senaste version som fanns tillgänglig när avtalet ingicks, om inte något annat följer av avtalet."
+      },
+      {
+        "provision_id": "sfs-2015-1016:K27P16",
+        "span": "Om underskottet inte",
+        "context": "ft. De totala tilläggsavgifterna ska motsvara underskottet. Om underskottet inte, på grund av 17 § andra och tredje styckena, kan täckas med"
+      },
+      {
+        "provision_id": "sfs-2021-579:P25",
+        "span": "om avgift inte",
+        "context": "Sanktionsavgiften faller bort till den del beslutet om avgift inte har verkställts inom fem år från det att beslutet fick laga"
+      },
+      {
+        "provision_id": "sfs-2026-1113:P12",
+        "span": "om avståndet inte",
+        "context": "t vindkraftverket. Andelen ska uppgå  1. till 2,5 promille, om avståndet inte överstiger fem gånger vindkraftverkets höjd,  2. till 2,0 p"
+      },
+      {
+        "provision_id": "sfs-2016-1146:K15P6",
+        "span": "Om kriterierna inte",
+        "context": "år viktas inom intervall med en lämplig största spridning.  Om kriterierna inte kan viktas, ska enheten beakta dem genom en prioritetsordni"
+      }
+    ],
+    "crossing_examples": [
+      {
+        "provision_id": "sfs-1977-480:P13",
+        "span": "om permittering som arbetstagaren inte"
+      },
+      {
+        "provision_id": "sfs-1982-80:P38",
+        "span": "om han eller hon inte"
+      },
+      {
+        "provision_id": "sfs-2008-567:K2P15",
+        "span": "om att en totalförsvarspliktig inte"
+      },
+      {
+        "provision_id": "sfs-2014-1020:P16",
+        "span": "om att inte"
+      },
+      {
+        "provision_id": "sfs-2014-1020:P24",
+        "span": "Om redovisningscentralen eller beställningscentralen inte"
+      },
+      {
+        "provision_id": "sfs-2014-1470:P16",
+        "span": "om att omprövning annars inte"
+      }
+    ]
+  },
+  {
+    "category": "exception",
+    "marker": "undantag",
+    "pattern": "\\bundantag\\w*\\b",
+    "hits": 945,
+    "clause_crossing_hits": 0,
+    "crossing_rate": 0.0,
+    "sample": [
+      {
+        "provision_id": "sfs-2019-1197:overgangP2:occurrence:13",
+        "span": "undantagen",
+        "context": "ekland antingen direkt eller genom skatteavdrag, skall vara undantagen från svensk skatt.  Från denna regel skola dock följande un"
+      },
+      {
+        "provision_id": "sfs-2015-860:overgang:2018-475",
+        "span": "undantag",
+        "context": "erade, eller helikoptrar;  b) flygmotorer: flygmotorer (med undantag för de som används av militär, tull eller polis) som är rea"
+      },
+      {
+        "provision_id": "sfs-2025-327:P22",
+        "span": "undantag",
+        "context": "ighet som regeringen bestämmer får för särskilda fall medge undantag från beslut som har meddelats enligt 20 §."
+      },
+      {
+        "provision_id": "sfs-2022-482:K7P21",
+        "span": "undantag",
+        "context": "ifter om skyldigheterna enligt 18-20 §§ och föreskrifter om undantag från skyldigheterna samt får, i enskilda fall, besluta om u"
+      },
+      {
+        "provision_id": "sfs-2018-1854:overgang:2018-1854",
+        "span": "undantag",
+        "context": " bulklaster, i dess vid varje tid gällande lydelse.  4. Med undantag för vad som anges i punkt 5 gäller bestämmelserna i denna k"
+      },
+      {
+        "provision_id": "sfs-2014-836:P36",
+        "span": "undantag",
+        "context": "r den som har meddelats näringsförbud får vidta. I fråga om undantag enligt 35 § andra stycket ska rätten vidare ange hur länge "
+      },
+      {
+        "provision_id": "sfs-2016-964:K5P6",
+        "span": "undantaget",
+        "context": ". Innehåller handlingen även uppgifter som inte omfattas av undantaget ska rätten behålla ett utdrag ur handlingen med dessa uppgi"
+      },
+      {
+        "provision_id": "sfs-2023-200:K10P93",
+        "span": "Undantag",
+        "context": "styrkorna deltar i de gemensamma försvarsansträngningarna.  Undantag från skatteplikt enligt första stycket gäller bara i den om"
+      },
+      {
+        "provision_id": "sfs-2026-408:K20P10",
+        "span": "undantag",
+        "context": "g får beviljas endast om det finns synnerliga skäl, och  3. undantag från de förutsättningar som ska vara uppfyllda för tillstån"
+      },
+      {
+        "provision_id": "sfs-2026-1281:K4P15",
+        "span": "undantag",
+        "context": "dighet som regeringen bestämmer får meddela föreskrifter om undantag från kraven i 11-13 §§ i fråga om system-ansvariga för dist"
+      },
+      {
+        "provision_id": "sfs-2023-200:K10P53",
+        "span": "undantagen",
+        "context": "m motsvarande leverans av varor inom landet skulle ha varit undantagen från skatteplikt enligt denna lag."
+      },
+      {
+        "provision_id": "sfs-2014-968:K6P9",
+        "span": "undantaget",
+        "context": "Om ett dotterföretag som är ett kreditinstitut är undantaget från tillämpningsområdet för konsoliderad tillsyn med stöd "
+      },
+      {
+        "provision_id": "sfs-2022-366:overgang:2022-366",
+        "span": "undantag",
+        "context": ") under förutsättning att fordonet inte är föremål för  ett undantag, och  e) under förutsättning att fordonet inte är föremål f"
+      },
+      {
+        "provision_id": "sfs-2016-319:overgang:2016-319",
+        "span": "undantag",
+        "context": " lagen. Under denna period gäller den gamla lagen för dessa undantag."
+      },
+      {
+        "provision_id": "sfs-2023-200:K18P33",
+        "span": "undantaget",
+        "context": "beskattningsbara personen inte längre har rätt att tillämpa undantaget från skatteplikt i det EU-landet, eller om undantaget från "
+      },
+      {
+        "provision_id": "sfs-2022-366:overgang:2022-366",
+        "span": "undantag",
+        "context": "f) i de enhetliga rättsreglerna APTU, och möjligheterna för undantag som framgår av artikel 7a. Denna överensstämmelse ska upprä"
+      },
+      {
+        "provision_id": "sfs-2016-1067:P8a",
+        "span": "undantagen",
+        "context": "dlat en distansförsäljning av en skattepliktig vara från en undantagen säljare till konsumenten.  Skatten ska tas ut enligt den sk"
+      },
+      {
+        "provision_id": "sfs-2016-1067:P14a",
+        "span": "undantag",
+        "context": " meddela föreskrifter, eller i ett enskilt fall besluta, om undantag från kravet i andra stycket 2. Lag (2024:550)."
+      },
+      {
+        "provision_id": "sfs-2014-341:P3",
+        "span": "undantag",
+        "context": "främmande stats militära styrka på svenskt territorium samt undantag från vapenlagen (2026:408) enligt 20 kap. 3 § vapenlagen. L"
+      },
+      {
+        "provision_id": "sfs-2023-200:K21P9",
+        "span": "undantagits",
+        "context": "ja frivillig beskattning av förmedling som annars skulle ha undantagits från skatteplikt enligt 6 §, om den för vars räkning förmed"
+      }
+    ],
+    "crossing_examples": []
+  }
+]
