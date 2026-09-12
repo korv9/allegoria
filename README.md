@@ -160,11 +160,11 @@ Current as of the last working session. These limitations remain unresolved.
   v2 hits. A fix is scored and proposed in [`review/2026-09-11/REVIEW.md`](review/2026-09-11/REVIEW.md) but not shipped:
   the prescribed allowlist costs 45.8 points of recall, and the variant that works uses a wildcard
   token class. Awaiting a decision.
-- **`ceiling` is pending ratification.** `dock` marks both a carve-out from a duty and an upper
-  bound on a permission, and removing one tightens where removing the other loosens. The proposed
-  specification change is in
+- **`ceiling` is ratified; implementation and slot review remain.** `dock` marks both a carve-out from a duty and an upper
+  bound on a permission, and removing one tightens where removing the other loosens. DD051/DD052
+  ratify case 9/9b and the ceiling specification on 2026-09-12. The resolved proposal is in
   [`review/2026-09-11/DIRECTION-ceiling-proposal.md`](review/2026-09-11/DIRECTION-ceiling-proposal.md);
-  `DIRECTION.md` is unchanged until it is approved.
+  `DIRECTION.md` contains the accepted rules and the remaining boundary ambiguity.
 - **One test is deliberately red.** `test_fixture_provisions_hit_their_markers` fails on
   `sfs-2026-1283:K5P1`, whose determinacy moved `unmarked → specific` when the number-word list was
   extended. The fixture pinned that provision precisely to record the gap that was closed. Frozen

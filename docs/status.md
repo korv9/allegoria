@@ -56,8 +56,8 @@ three domains, and which analyses the data can and cannot carry.
 - **No Anthropic run has been made.** Zero rows in every research table. The one
   partial run on disk is from the retired OpenAI configuration; it is preserved
   byte-identical, refused by `load_run`, and cannot be resumed.
-- **No direction metric.** `DIRECTION.md` has an unresolved case 9 and an
-  unratified ceiling proposal. Until those are settled, nothing computes whether
+- **No direction metric.** Case 9/9b and ceiling in `DIRECTION.md` are ratified
+  on 2026-09-12 (DD051/DD052). Implementation has not started; nothing computes whether
   a change loosened or tightened a norm; readings only report present, absent or
   uncertain.
 - **No human review of any slot.** Every annotation is an assistant draft, and
@@ -79,8 +79,9 @@ three domains, and which analyses the data can and cannot carry.
    worth building before there is one verified run to look at.
 3. **Human-review the 15 statutory slots** against the source text, and record
    disagreement. This is what turns readings from observations into evidence.
-4. **Resolve `DIRECTION.md`** — case 9 and the ceiling proposal — then implement
-   the deterministic direction metric over reviewed slots.
+4. **Implement `DIRECTION.md`** after the ratification commit and the user's Part 2
+   diff checkpoint. Case 9/9b and ceiling are settled; report remaining encoding
+   ambiguities. Prepare the requested review packet without confirming its drafts.
 5. **Then the RFC domain**, as a check that the effect is not about Swedish. Not
    a replication, and never pooled with the Swedish results.
 6. **Optional, once a run exists:** batch the readings for a 50% discount, and

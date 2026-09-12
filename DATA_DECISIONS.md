@@ -4,6 +4,22 @@ This file is the canonical log for decisions that affect how Allegoria acquires,
 
 Each decision is append-only in meaning. If a decision changes, add a new entry that explicitly supersedes the old one.
 
+## DD051 — Ratify the case 9 correction and preserve same-sign multiplicity
+
+- **Date:** 2026-09-12
+- **Status:** Active; supersedes the old case 9 and the narrowed-actor netting example in `DIRECTION.md`.
+- **Decision:** Case 7 remains `loosening`: narrowing a duty's actor releases excluded actors. Case 9 now combines removal of a qualifier on an exception with a **broadened** duty actor, yielding `(1, 1, 0)`. The former narrowed-actor combination is retained as case 9b, yielding `(0, 2, 0)`.
+- **Rationale:** Both changes in the old case 9 were loosening, so it could not test the prohibition on netting opposite signs. The correction gives case 9 one change in each direction; case 9b tests that two same-sign changes remain two counts.
+- **Consequences:** Cases 1–8 are unchanged. The specification commit ratifies the correction; it does not implement the metric or confirm corpus drafts. Stop after the Part 2 diff report, before preparing the Part 3 review packet, as the user instructed.
+
+## DD052 — Ratify ceiling as a separate normative part
+
+- **Date:** 2026-09-12
+- **Status:** Active; resolves `review/2026-09-11/DIRECTION-ceiling-proposal.md` and supersedes the three-part vocabulary in `DIRECTION.md`.
+- **Decision:** Add `ceiling`, the `bound` slot kind, ceiling qualifier transitions, and explicit whole-part removal/insertion rules. Removing a ceiling loosens while removing an exception tightens; insertion has the opposite signs. Retain cases 10–14, especially case 14's disagreeing readings. Together with DD051, the table contains cases 1–14 plus 9b.
+- **Rationale:** Although weakening a ceiling and weakening an enabling condition have the same sign, mislabelling a ceiling as an exception reverses the whole-part removal sign. Lexical `dock` and bound words cannot settle the structural category.
+- **Consequences:** Boundary (b), `sfs-2026-772:K1P4`, is explicitly resolved by the user as a qualifier on the duty, not a ceiling. Hand annotation uses the applicability-versus-extent test. The main specification records 9 true ceilings among 17 v1 flags (~53% precision); the v2 estimate of roughly 70 is labelled `[inferred]`. The historical proposal stays in place with a resolved header. Boundary (e)'s stated deadline-removal sign and its relationship to the binding-qualifier row remain an implementation ambiguity to report, not a rule to invent. No fixture, corpus annotation, provider, notebook or run changes accompany this ratification.
+
 ## DD044 — Normative-axis source audit before direction
 
 - **Date:** 2026-09-11

@@ -12,8 +12,9 @@ for measurement requirements. Do not duplicate the roadmap here.
 - A dataset is a parameter, not a premise: `simulacria/generation` and
   `simulacria/measurement` must not import a concrete domain, and adding a corpus must
   not require editing either. See [docs/new-domain.md](docs/new-domain.md).
-- Read `DIRECTION.md` before implementing direction; resolve contradictions rather than
-  inventing semantics. Case 9 and the ceiling proposal remain unresolved.
+- Read `DIRECTION.md` before implementing direction; report ambiguities rather than
+  inventing semantics. Case 9/9b and ceiling are ratified on 2026-09-12 (DD051/DD052).
+  This does not confirm corpus drafts; the requested Part 2 diff report precedes Part 3.
 - Model slot readings are exploratory observations, not a validated judge of direction.
   Literal quote nonmatches do not establish semantic absence.
 - Never fabricate generation outputs or fill notebook gaps with simulated results.

@@ -1,9 +1,25 @@
-# Proposed: add `ceiling` to DIRECTION.md
+# Resolved: add `ceiling` to DIRECTION.md
 
-**Status: PROPOSAL. `DIRECTION.md` is unchanged.** This is a specification
-change, so it waits for ratification. Nothing in the code classifies ceilings;
-`scripts/write_specimens.py` only flags the pattern as `ceiling?` for hand
-resolution.
+**Status: RESOLVED — ratified 2026-09-12, DD052.** The accepted changes are
+applied in `DIRECTION.md`. The original proposal below is retained as historical
+reasoning, not as a competing current specification. No classifier is implemented
+by this documentation change; `ceiling?` remains a screening aid for hand review.
+
+The ratification includes four amendments:
+
+1. Boundary (b) is resolved as a **qualifier on the duty, not a ceiling**:
+   deleting the floor permits exercise in more situations, not greater extent.
+2. Whole-part insertion rows are explicit: inserting a ceiling is `tightening`;
+   inserting an exception is `loosening` (the underlying permission/duty intact).
+3. `DIRECTION.md` now carries the v1 screening precision, 9/17 (about 53%), and
+   labels the v2 extrapolation **[inferred]**.
+4. Case 14 remains the exception-versus-ceiling regression test.
+
+DD051 separately fixes case 9 to use a **broadened** duty actor and retains the
+old narrowed-actor combination as case 9b, expected `(0, 2, 0)`. Thus the old
+case 9 and the open question in boundary (b) below are superseded. Boundary (e)'s
+removal sign still needs reconciliation with the binding-qualifier row before
+that boundary is encoded; no corpus label has been confirmed by ratification.
 
 ---
 
