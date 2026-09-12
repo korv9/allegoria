@@ -6,27 +6,29 @@ from pathlib import Path
 
 import pytest
 
-from simulacria import generation_one
-from simulacria.anthropic_io import (
-    EXTRACTOR,
-    SAMPLING,
-    TRANSFORMER,
+from simulacria.generation import pilot, receipts
+from simulacria.generation.models import by_name, resolve, sampling
+from simulacria.generation.provider import (
     api_key,
     request_input,
     request_payload,
     response_text,
     with_schema,
 )
-from simulacria.generation_report import comparison_rows, latest_run, load_run
+
+# The models the default pilot config asks for, resolved through the registry.
+TRANSFORMER = by_name("sonnet-5").model
+EXTRACTOR = by_name("haiku-4-5").model
+from simulacria.measurement.corpus import load_corpus
 from simulacria.measurement.quote_audit import quote_evidence
 from simulacria.measurement.slot_reading import reading_input, validate_reading
-from simulacria.measurement.source_slots import load_source_slots
+from simulacria.reporting.runs import comparison_rows, latest_run, load_run
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_actual_law_sources_and_source_quotes():
-    sources = load_source_slots(ROOT / "corpus/law_probe_v1.yaml", ROOT)
+    sources = load_corpus(ROOT / "corpus/law_probe_v1.yaml", ROOT)
     assert len(sources) == 3
     assert sum(len(s["slots"]) for s in sources) == 15
     for source in sources:
@@ -46,7 +48,11 @@ def test_literal_nonmatch_does_not_claim_semantic_loss():
 
 
 def test_blind_reading_has_no_source_or_generation_metadata():
-    slot = {"slot_id": "compensation", "quote": "SECRET_SOURCE_QUOTE"}
+    slot = {
+        "slot_id": "compensation",
+        "question": "Finns kompensation?",
+        "quote": "SECRET_SOURCE_QUOTE",
+    }
     payload = json.loads(reading_input("current text", [slot]))
     assert set(payload) == {"text", "schema"}
     assert "SECRET_SOURCE_QUOTE" not in json.dumps(payload)
@@ -80,7 +86,8 @@ def test_key_is_loaded_without_being_in_requests(tmp_path, monkeypatch):
     (tmp_path / ".env").write_text('LLM_API_KEY="sk-proj-test-only"\n')
     with pytest.raises(ValueError, match="Anthropic key"):
         api_key(tmp_path)
-    with pytest.raises(ValueError, match="pinned"):
+    # An undeclared model is refused by name: the registry is the only source.
+    with pytest.raises(ValueError, match="not declared"):
         request_payload("unsupported-model", "instruction", "text")
 
 
@@ -99,13 +106,22 @@ def test_incomplete_or_untraceable_response_is_not_a_generation(response):
 
 
 @pytest.fixture
-def pilot_environment(tmp_path, monkeypatch):
+def pilot_environment(experiment_root, monkeypatch):
+    tmp_path = experiment_root
     source = {
         "passage_id": "test-only",
+        "domain": "inline",
         "text": "vila",
         "source_url": "test-only",
         "text_sha256": sha256(b"vila").hexdigest(),
-        "slots": [{"slot_id": "compensation", "kind": "condition", "quote": "vila"}],
+        "slots": [
+            {
+                "slot_id": "compensation",
+                "kind": "condition",
+                "quote": "vila",
+                "question": "Finns kompensation?",
+            }
+        ],
     }
     tasks = [
         {
@@ -115,11 +131,9 @@ def pilot_environment(tmp_path, monkeypatch):
             "payload": request_payload(TRANSFORMER, "test instruction", "vila"),
         }
     ]
-    monkeypatch.setattr(generation_one, "api_key", lambda _root: "test-only")
-    monkeypatch.setattr(generation_one, "prepare", lambda _root: ([source], tasks))
-    monkeypatch.setattr(generation_one, "code_receipt", lambda _root: {"test_fixture": True})
-    (tmp_path / "prompts").mkdir()
-    (tmp_path / "prompts/read_slots.txt").write_text("Test-only reader")
+    monkeypatch.setattr(pilot, "api_key", lambda *_: "test-only")
+    monkeypatch.setattr(pilot, "prepare", lambda *_: ([source], tasks))
+    monkeypatch.setattr(pilot, "code_receipt", lambda *_: {"test_fixture": True})
     return tmp_path
 
 
@@ -152,8 +166,8 @@ def fixture_response(payload, _key):
 
 
 def test_record_and_replay_validates_raw_outputs(pilot_environment, monkeypatch):
-    monkeypatch.setattr(generation_one, "post_response", fixture_response)
-    path = generation_one.run(pilot_environment)
+    monkeypatch.setattr(receipts, "post_response", fixture_response)
+    path = pilot.run(pilot_environment)
     run = load_run(path)
     assert run["manifest"]["status"] == "completed"
     assert run["manifest"]["transformer_model"] != run["manifest"]["extractor_model"]
@@ -167,9 +181,9 @@ def test_record_and_replay_validates_raw_outputs(pilot_environment, monkeypatch)
 
 
 def test_failed_api_retains_failure_and_no_fake_generation(pilot_environment, monkeypatch):
-    monkeypatch.setattr(generation_one, "post_response", lambda *_: (429, b'{"error":"test"}'))
+    monkeypatch.setattr(receipts, "post_response", lambda *_: (429, b'{"error":"test"}'))
     with pytest.raises(ValueError, match="HTTP 429"):
-        generation_one.run(pilot_environment)
+        pilot.run(pilot_environment)
     run = load_run(latest_run(pilot_environment))
     assert run["manifest"]["status"] == "failed"
     assert not run["generations"]
@@ -183,7 +197,7 @@ def test_no_run_means_no_output(tmp_path):
 
 
 def test_source_to_child_plan_is_not_a_style_chain():
-    sources, tasks = generation_one.prepare(ROOT)
+    sources, tasks = pilot.prepare(ROOT)
     assert len(tasks) == 24
     by_id = {s["passage_id"]: s["text"] for s in sources}
     assert all(request_input(t["payload"]) == by_id[t["passage_id"]] for t in tasks)
@@ -191,13 +205,17 @@ def test_source_to_child_plan_is_not_a_style_chain():
 
 
 def test_effort_only_reaches_models_that_accept_it():
-    """Haiku 4.5 answers `effort` with HTTP 400, so a reader payload must not carry it."""
+    """Haiku 4.5 answers `effort` with HTTP 400, so a reader payload must not carry it.
+
+    The registry, not the code, decides this: haiku-4-5 declares no params.
+    """
     reader = with_schema(request_payload(EXTRACTOR, "läs", "text"), {"type": "json_schema"})
     assert "effort" not in reader["output_config"]
     assert reader["output_config"]["format"] == {"type": "json_schema"}
     assert "output_config" not in request_payload(EXTRACTOR, "läs", "text")
     assert request_payload(TRANSFORMER, "skriv", "text")["output_config"] == {"effort": "low"}
-    assert set(SAMPLING) == {TRANSFORMER, EXTRACTOR}
+    models = resolve({"models": {"transformer": "sonnet-5", "extractor": "haiku-4-5"}})
+    assert set(sampling(models)) == {"transformer", "extractor"}
 
 
 @pytest.fixture
@@ -207,8 +225,8 @@ def selection_projection_input(tmp_path, monkeypatch):
 
     import duckdb
 
-    from simulacria.selection.pools import POOLS
-    from simulacria.selection.tables import TABLE_NAMES
+    from simulacria.pipeline.silver import POOLS
+    from simulacria.pipeline.store import TABLE_NAMES
 
     tables = tmp_path / "selection-fixture"
     tables.mkdir()
@@ -224,10 +242,10 @@ def test_sql_projection_lineage_and_rollback(
 ):
     import duckdb
 
-    from simulacria.analysis import build_database
+    from simulacria.pipeline.gold import build_database
 
-    monkeypatch.setattr(generation_one, "post_response", fixture_response)
-    path = generation_one.run(pilot_environment)
+    monkeypatch.setattr(receipts, "post_response", fixture_response)
+    path = pilot.run(pilot_environment)
     database = pilot_environment / "analysis.duckdb"
     counts = build_database(pilot_environment, database)
     assert counts["texts"] == 2
@@ -253,7 +271,7 @@ def test_sql_projection_lineage_and_rollback(
 def test_sql_projection_empty_means_no_runs(tmp_path, selection_projection_input):
     import duckdb
 
-    from simulacria.analysis import build_database
+    from simulacria.pipeline.gold import build_database
 
     database = tmp_path / "analysis.duckdb"
     assert build_database(tmp_path, database)["runs"] == 0

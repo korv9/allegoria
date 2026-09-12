@@ -4,7 +4,7 @@ Extraction only -- this script assigns no labels. It emits the sample with
 context so a human (or, here, a careful read) can label each hit, and it is run
 BEFORE any fix so the evaluation cannot be tuned to the fix.
 
-    python scripts/sample_om_inte.py --out review/2026-09-11/evidence/om_inte_sample.json
+    python scripts/investigations/sample_om_inte.py --out review/2026-09-11/evidence/om_inte_sample.json
 
 Selection, in priority order:
 
@@ -24,9 +24,9 @@ import json
 import random
 from pathlib import Path
 
+from simulacria.pipeline.silver import POOLS, load_provisions
+from simulacria.pipeline.store import connect
 from simulacria.selection.markers import CLAUSE_BOUNDARY, EXCEPTION_MARKERS
-from simulacria.selection.pools import POOLS, load_provisions
-from simulacria.selection.tables import connect
 
 CONTEXT_CHARS = 120
 TARGET_SAMPLE = 80

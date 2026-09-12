@@ -1,4 +1,25 @@
-schema_version: 1
+schema_version: 2
+domain: inline
+corpus_version: philosophy_v1
+annotation_status: assistant_draft_requires_human_review
+purpose: Constructed philosophical controls for the normative axis. Not quotations.
+# Every passage is read with the same three questions, so they are declared once
+# here instead of being repeated on 30 passages or hidden in Python.
+default_slots:
+  - slot_id: explicit_duty
+    kind: modality
+    attaches_to: duty
+    question: Uttrycker texten en uttrycklig plikt eller ett förbud för en handling?
+  - slot_id: allowed_exception
+    kind: exception
+    attaches_to: duty
+    question: >-
+      Uttrycker texten ett faktiskt tillåtet undantag från en plikt eller ett förbud?
+      Ett påstående att undantag saknas är inte ett tillåtet undantag.
+  - slot_id: exception_condition
+    kind: condition
+    attaches_to: exception
+    question: Anger texten ett villkor för ett faktiskt tillåtet undantag?
 passages:
 - passage_id: virtue-01
   group: virtue

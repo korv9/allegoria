@@ -1,15 +1,26 @@
 # Allegoria / Simulacria
 
-Research on how Swedish legal norms change when language models transform text.
+Research on how normative text changes when language models rewrite it, recursively.
 The question is whether duties, exceptions and their conditions survive, and whether
 changes loosen or tighten a norm. That direction metric is not implemented yet.
 
+The corpus that started it is Swedish statute, but the dataset is a parameter: a new
+one is an adapter plus a config, not an edit to the engine. English IETF RFCs ship as
+the second domain.
+
 ## Start here
 
+- [Status: what works and what is next](docs/status.md): the short, current answer.
+- [Data overview notebook](notebooks/00_data_overview.ipynb): every layer counted from
+  disk -- bronze bytes, silver records, gold tables, run evidence, and what to back up.
+- [Architecture](docs/architecture.md): the medallion layers and the package seams.
+- [Adding a dataset](docs/new-domain.md): the four files a new corpus needs.
+- [Choosing models](docs/models.md): the registry, what is verified, and what the
+  cheap reader costs in quality.
+- [Exploratory analysis](eda/README.md): five notebooks that look at the data with
+  no model involved -- corpus shape, marker failure modes, shortlist quality, slots.
 - [Normative-axis notebook](notebooks/02_normative_axis.ipynb): executed lexical
   comparisons of virtue descriptions, categorical duties, conditional controls and law.
-- [Generation-one notebook source](notebooks/03_generation_one.py): reads saved real
-  model responses; fails clearly when no run exists. No simulated results.
 - [Parquet table browser](notebooks/05_parquet_tables.ipynb): schemas, first rows and
   distributions of the selection tables, with a CSV export helper. Selection data, not measurement.
 - [Data structure and SQL](docs/data-analysis.md): storage, keys, lineage and worked queries.
@@ -22,10 +33,10 @@ Python 3.12. Install the local development dependencies when setting up a new en
 
 ```powershell
 python -m pip install -e ".[dev]"
-python scripts/build_silver.py
-python scripts/build_tables.py
-python scripts/build_database.py
-python scripts/query.py --database data/local/allegoria.duckdb -c "SELECT count(*) FROM selection.provisions"
+python scripts/pipeline/build_silver.py
+python scripts/pipeline/build_tables.py
+python scripts/pipeline/build_database.py
+python scripts/report/query.py --database data/local/allegoria.duckdb -c "SELECT count(*) FROM selection.provisions"
 ```
 
 The checked-in v1 corpus contains 50 law snapshots and produces exactly 1,952 provisions.
@@ -33,15 +44,20 @@ The selection tables contain 461 candidates, 8,983 marker occurrences and 28 mar
 These are lexical selection aids, not measured normative slots.
 
 For a separately authorized real model pilot, put an Anthropic key in `LLM_API_KEY` in the
-ignored `.env` (see `.env.example`). Models are pinned in `simulacria/anthropic_io.py`:
-`claude-sonnet-5` transforms and `claude-haiku-4-5-20251001` reads, the cheapest pair; see
-`predictions/2026-09-11-amendment-cheapest-models.md` for what that costs in reader quality.
+ignored `.env` (see `.env.example`). Models are declared in `configs/models.yaml` and chosen
+per experiment: `sonnet-5` transforms and `haiku-4-5` reads by default, the cheapest pair.
+See [docs/models.md](docs/models.md) for the evidence behind that choice, what `verified`
+means, and how to switch model or provider.
+
+Which passages, prompts and depth a run uses come from a config under `configs/`.
+`--check` plans and validates everything without making a single call:
 
 ```powershell
-python scripts/run_generation_one.py --check
-python scripts/run_generation_one.py
-python scripts/build_database.py
-python scripts/export_notebook.py notebooks/03_generation_one.py --execute
+python scripts/run/pilot.py  --check                               # configs/pilot-sv.yaml
+python scripts/run/chains.py --check --config configs/rfc-en.yaml  # the English domain
+python scripts/run/pilot.py                                        # spends, up to --limit-usd
+python scripts/pipeline/build_database.py
+python scripts/report/export_notebook.py notebooks/03_generation_one.py --execute
 ```
 
 The pilot takes three original provisions through four styles with two prompt variants:
@@ -54,17 +70,28 @@ and available account credit. The database build and notebooks make no API calls
 
 | Path | Responsibility |
 | --- | --- |
-| `simulacria/` | Active Python research code: selection, model pilot, measurement, SQL projection |
-| `scripts/` | Command-line entrypoints |
+| `simulacria/domains/` | What a dataset is: `sfs`, `rfc`, `inline`, and the adapter contract |
+| `simulacria/pipeline/` | Bronze to silver to gold: parsing, Parquet tables, the DuckDB projection |
+| `simulacria/generation/` | The experiment engine: provider I/O, plan, pilot, recursive chains |
+| `simulacria/measurement/` | Corpus loading, blinded slot reading, quote audit, metrics |
+| `simulacria/reporting/` | Run verification, notebook views, portable exports |
+| `simulacria/selection/` | Marker heuristics for finding Swedish provisions worth reading |
+| `scripts/pipeline/` | Ingest and build commands, in medallion order |
+| `scripts/run/` | The two commands that spend money: `pilot.py`, `chains.py` |
+| `scripts/report/` | Query, export a run, export a notebook, print the shortlist |
+| `scripts/investigations/` | One-off studies that produced a dated artifact under `review/` |
+| `configs/` | One YAML per experiment: corpora, prompts, depth, models -- plus `models.yaml`, the registry |
+| `simulacria/providers/` | One module per LLM API: `anthropic` (verified), `openai` (fixtures only) |
+| `corpus/` | Versioned passage specifications and draft slot annotations |
+| `prompts/sv/`, `prompts/en/` | Transformer styles and the reader instruction, per language |
+| `predictions/` | Dated design notes and amendments; never edited after the fact |
 | `notebooks/` | Read and explain actual results |
-| `corpus/` | Versioned passage specifications and draft annotations |
-| `prompts/`, `predictions/` | Model instructions and dated prediction drafts |
-| `data/source/sfs/` | Original XML bytes and manifests; preserve |
-| `data/bronze/sfs/` | Full JSON source envelopes used by the parser; preserve |
-| `data/local/` | Local run evidence and rebuildable analysis outputs; see backup rules below |
-| `products/allegoria/` | Existing Databricks pipeline plus the shared parser and ingestion code |
+| `eda/` | Model-free exploration of the data and of what it can support |
+| `data/source/`, `data/bronze/` | Original bytes and their envelopes, per domain; preserve |
+| `data/local/` | Run evidence and rebuildable analysis outputs; see backup rules below |
+| `products/allegoria/` | Existing Databricks pipeline plus the shared SFS parser |
 | `review/` | Dated evidence, specimen sheets and unresolved investigations |
-| `docs/` | Data contracts and SQL instructions |
+| `docs/` | Architecture, data contracts, SQL, status |
 | `tests/` | Regression and provenance checks |
 
 `products/` is code; `data/` is data. Bronze JSON and source XML serve different
@@ -102,6 +129,9 @@ Do not refresh either source pool during an experiment.
 3. Resolve the direction specification and validate deterministic measurement.
 4. Extend to recursive generations and twinned controls with preregistered parameters.
 5. Export verified results for a portfolio demo; build the presentation after results exist.
+
+Where the work actually stands in that order, and what unblocks what, is in
+[docs/status.md](docs/status.md).
 
 ```powershell
 python -m ruff check .

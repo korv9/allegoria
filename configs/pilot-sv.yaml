@@ -1,0 +1,19 @@
+experiment: pilot-sv
+description: >-
+  The bounded one-generation pilot: the three statutory passages through every
+  style and variant, read once. It exists to exercise the whole path -- key,
+  budget, receipts, blinded reading, replay verification -- for at most USD 0.50,
+  not to produce findings.
+language: sv
+generations: 1
+corpora:
+  - path: corpus/law_probe_v1.yaml
+    styles: all
+# Which models do the work. Names come from configs/models.yaml, which holds
+# the prices, the parameters and what has actually been verified.
+models:
+  transformer: sonnet-5
+  extractor: haiku-4-5
+prompts: prompts/sv/transform.yaml
+reader_prompt: prompts/sv/read_slots.txt
+prediction: predictions/2026-09-11-generation-one.md

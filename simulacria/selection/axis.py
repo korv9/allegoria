@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
 def load_corpus(path: Path) -> list[dict]:
     """Read the shared passage envelope; reject corrupt identity and provenance."""
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    if not isinstance(data, dict) or data.get("schema_version") != 1:
+    if not isinstance(data, dict) or data.get("schema_version") != 2:
         raise ValueError(f"{path}: unsupported corpus schema")
     rows = data.get("passages")
     if not isinstance(rows, list) or not rows:

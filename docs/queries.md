@@ -4,12 +4,12 @@ The shortlist is Parquet, not a printout. Build the tables once, then ask
 questions of them:
 
 ```powershell
-python scripts/build_silver.py     # data/local/provisions.jsonl
-python scripts/build_tables.py     # data/local/tables/*.parquet
-python scripts/query.py -c "select count(*) from candidates"
+python scripts/pipeline/build_silver.py     # data/local/provisions.jsonl
+python scripts/pipeline/build_tables.py     # data/local/tables/*.parquet
+python scripts/report/query.py -c "select count(*) from candidates"
 ```
 
-`scripts/query.py` registers four views over `data/local/tables/` and runs the
+`scripts/report/query.py` registers four views over `data/local/tables/` and runs the
 SQL you hand it, on `-c` or on stdin. There is no schema layer to learn — run
 `describe provisions` to see the columns.
 
@@ -30,10 +30,10 @@ Every script takes `--pool v1|v2`, defaulting to `v1`.
 | `v2` | the larger selection pool (see `DD040`) | `data/local/tables_v2/` |
 
 ```powershell
-python scripts/ingest_pool_v2.py                    # fetch the pool (resumable)
-python scripts/build_silver.py --pool v2
-python scripts/build_tables.py --pool v2
-python scripts/query.py --pool v2 -c "select count(*) from candidates"
+python scripts/pipeline/ingest_sfs_pool.py                    # fetch the pool (resumable)
+python scripts/pipeline/build_silver.py --pool v2
+python scripts/pipeline/build_tables.py --pool v2
+python scripts/report/query.py --pool v2 -c "select count(*) from candidates"
 ```
 
 v1 keeps its hard expected counts and is the regression corpus. v2 has none, and

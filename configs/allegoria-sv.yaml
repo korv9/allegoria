@@ -1,0 +1,23 @@
+experiment: allegoria-sv
+description: >-
+  The founding experiment: Swedish statutory provisions and constructed
+  philosophical controls, rewritten recursively for ten generations and read
+  blind by a second model. Exploratory, not a preregistered study.
+language: sv
+generations: 10
+corpora:
+  # Statute carries the duty / exception / condition structure the study is about.
+  - path: corpus/law_probe_v1.yaml
+    styles: all
+  # The philosophical passages are controls, and only paraphrase applies to them:
+  # summarising or allegorising a virtue description would test something else.
+  - path: corpus/philosophy_v1.yaml
+    styles: [paraphrase]
+# Which models do the work. Names come from configs/models.yaml, which holds
+# the prices, the parameters and what has actually been verified.
+models:
+  transformer: sonnet-5
+  extractor: haiku-4-5
+prompts: prompts/sv/transform.yaml
+reader_prompt: prompts/sv/read_slots.txt
+prediction: predictions/2026-09-11-recursive.md

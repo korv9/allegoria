@@ -1,0 +1,80 @@
+schema_version: 2
+domain: rfc
+corpus_version: rfc_probe_v1
+group: technical_norm
+annotation_status: assistant_draft_requires_human_review
+purpose: >-
+  English technical norms, to show the instrument is not tied to Swedish statute.
+  Section text is cut from the hash-pinned plain-text RFC by its numbered heading.
+  Slots are assistant drafts and have had no human review, exactly as in the
+  Swedish corpus. Quotes are verbatim spans, line wrapping included.
+passages:
+  - passage_id: rfc-2119:3
+    rationale: "A recommendation with an explicit, conditioned departure: the English analogue of a statutory exception."
+    slots:
+      - slot_id: recommended_course
+        kind: modality
+        attaches_to: duty
+        question: "Does the text define a recommended course of action rather than an absolute requirement?"
+        quote: "SHOULD   This word, or the adjective \"RECOMMENDED\""
+      - slot_id: deviation_allowed
+        kind: exception
+        attaches_to: duty
+        question: "Does the text allow an implementer to depart from the recommended course?"
+        quote: "there\n   may exist valid reasons in particular circumstances to ignore a\n   particular item"
+      - slot_id: deviation_condition
+        kind: condition
+        attaches_to: exception
+        question: "Does the text state a condition that must be met before departing from the recommendation?"
+        quote: "the full implications must be understood and\n   carefully weighed"
+      - slot_id: deviation_timing
+        kind: deadline
+        attaches_to: exception
+        question: "Does the text say at what point the condition on departing must be satisfied?"
+        quote: "before choosing a different course"
+  - passage_id: rfc-2119:6
+    rationale: "A duty of restraint with both a permitted scope and a prohibited use, each carrying its own condition."
+    slots:
+      - slot_id: restraint_duty
+        kind: modality
+        attaches_to: duty
+        question: "Does the text impose a duty of restraint on the use of these imperatives?"
+        quote: "must be used with care\n   and sparingly"
+      - slot_id: permitted_scope
+        kind: condition
+        attaches_to: duty
+        question: "Does the text limit the circumstances in which the imperatives may be used?"
+        quote: "they MUST only be used where it is\n   actually required for interoperation or to limit behavior which has\n   potential for causing harm"
+      - slot_id: prohibited_use
+        kind: modality
+        attaches_to: duty
+        question: "Does the text prohibit a particular use of the imperatives?"
+        quote: "they must not be used to try to impose a particular method\n   on implementors"
+      - slot_id: prohibition_condition
+        kind: condition
+        attaches_to: duty
+        question: "Does the text state the condition under which that use is prohibited?"
+        quote: "where the method is not required for\n   interoperability"
+  - passage_id: rfc-6265:4.1.2.5
+    rationale: "A protocol duty whose condition is a security property, plus an explicit limit on what the protection covers."
+    slots:
+      - slot_id: scope_limit
+        kind: modality
+        attaches_to: duty
+        question: "Does the text limit where the cookie may be sent?"
+        quote: "The Secure attribute limits the scope of the cookie to \"secure\"\n   channels"
+      - slot_id: transmission_condition
+        kind: condition
+        attaches_to: duty
+        question: "Does the text state the condition under which the cookie is included in a request?"
+        quote: "only if the request is transmitted over a\n   secure channel"
+      - slot_id: actor
+        kind: actor
+        attaches_to: duty
+        question: "Does the text name who carries out the behaviour described?"
+        quote: "the user agent will include the\n   cookie in an HTTP request"
+      - slot_id: protection_limit
+        kind: condition
+        attaches_to: duty
+        question: "Does the text limit what the described protection actually covers?"
+        quote: "the Secure attribute protects only the cookie's\n   confidentiality"

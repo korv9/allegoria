@@ -4,7 +4,7 @@ The labels below were assigned by reading all 80 sampled hits in context, before
 any fix was written. This script only joins them to the sampled spans so the
 gold file cannot drift from the sample through transcription.
 
-    python scripts/write_om_inte_gold.py \
+    python scripts/investigations/write_om_inte_gold.py \
         --sample review/2026-09-11/evidence/om_inte_sample.json \
         --out tests/fixtures/om_inte_gold.yaml
 

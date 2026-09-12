@@ -20,8 +20,8 @@ if str(ROOT) not in sys.path:
 import pandas as pd
 from IPython.display import display
 
-from simulacria.selection.pools import POOLS
-from simulacria.selection.tables import TABLE_NAMES, connect
+from simulacria.pipeline.silver import POOLS
+from simulacria.pipeline.store import TABLE_NAMES, connect
 
 POOL = "v1"  # "v1" = the frozen 50-law corpus, "v2" = the larger pool
 TABLES_DIR = POOLS[POOL].tables_dir
@@ -188,7 +188,7 @@ def to_csv(sql: str, path: Path) -> Path:
 #
 # `data/local/allegoria.duckdb` holds the same selection tables under the
 # `selection` schema, plus the `research` tables for model runs. Rebuild it with
-# `python scripts/build_database.py`; it stays empty of runs until one exists.
+# `python scripts/pipeline/build_database.py`; it stays empty of runs until one exists.
 # The view to go to then is `research.slot_comparisons`, which lines up a source
 # slot with the parent and child readings of it.
 
@@ -217,4 +217,4 @@ if DATABASE.is_file():
             )
         )
 else:
-    print(f"{DATABASE} is missing — run python scripts/build_database.py")
+    print(f"{DATABASE} is missing — run python scripts/pipeline/build_database.py")

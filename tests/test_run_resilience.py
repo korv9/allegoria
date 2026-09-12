@@ -9,11 +9,9 @@ from hashlib import sha256
 
 import pytest
 
-from simulacria import generation_one, recursive_run
-from simulacria.anthropic_io import (
-    EXTRACTOR,
-    PRICES,
-    TRANSFORMER,
+from simulacria.generation import chains, design, pilot, receipts
+from simulacria.generation.models import by_name
+from simulacria.generation.provider import (
     RecordedAPIError,
     billed_cost,
     estimated_cost,
@@ -21,7 +19,10 @@ from simulacria.anthropic_io import (
     request_instructions,
     request_payload,
 )
-from simulacria.generation_report import jsonl, load_run
+
+TRANSFORMER = by_name("sonnet-5").model
+EXTRACTOR = by_name("haiku-4-5").model
+from simulacria.reporting.runs import jsonl, load_run
 
 GOOD_READING = json.dumps(
     {"slots": [{"slot_id": "compensation", "status": "present", "quote": "vila", "note": "t"}]}
@@ -59,20 +60,20 @@ def test_rate_limited_calls_release_their_reservation(run_dir, monkeypatch):
     # Room for three reservations. The old accounting kept every hold, so the
     # fourth rejected call would have tripped the limit despite costing nothing.
     budget = {"limit": estimated_cost(payload) * 3, "reserved": 0.0, "usage_estimate": 0.0}
-    monkeypatch.setattr(generation_one, "post_response", lambda *_: RATE_LIMITED)
+    monkeypatch.setattr(receipts, "post_response", lambda *_: RATE_LIMITED)
     for _ in range(10):
         with pytest.raises(RecordedAPIError):
-            generation_one.call_recorded(run_dir, payload, "test-only", budget)
+            receipts.call_recorded(run_dir, payload, "test-only", budget)
     assert budget == {"limit": budget["limit"], "reserved": 0.0, "usage_estimate": 0.0}
 
 
 def test_success_is_charged_what_it_used_not_its_reservation(run_dir, monkeypatch):
     payload = request_payload(TRANSFORMER, "test-only", "vila", 900)
     budget = {"limit": 1.0, "reserved": 0.0, "usage_estimate": 0.0}
-    monkeypatch.setattr(generation_one, "post_response", lambda p, _: (200, raw(p["model"], "x")))
-    generation_one.call_recorded(run_dir, payload, "test-only", budget)
+    monkeypatch.setattr(receipts, "post_response", lambda p, _: (200, raw(p["model"], "x")))
+    receipts.call_recorded(run_dir, payload, "test-only", budget)
     assert budget["reserved"] == 0.0
-    input_rate, output_rate = PRICES[TRANSFORMER]
+    input_rate, output_rate = by_name("sonnet-5").prices
     assert budget["usage_estimate"] == pytest.approx((10 * input_rate + 10 * output_rate) / 1e6)
 
 
@@ -84,9 +85,9 @@ def test_network_failure_keeps_its_hold(run_dir, monkeypatch):
 
     payload = request_payload(TRANSFORMER, "test-only", "vila", 900)
     budget = {"limit": 1.0, "reserved": 0.0, "usage_estimate": 0.0}
-    monkeypatch.setattr(generation_one, "post_response", unreachable)
+    monkeypatch.setattr(receipts, "post_response", unreachable)
     with pytest.raises(OSError):
-        generation_one.call_recorded(run_dir, payload, "test-only", budget)
+        receipts.call_recorded(run_dir, payload, "test-only", budget)
     assert budget["reserved"] == pytest.approx(estimated_cost(payload))
 
 
@@ -101,9 +102,11 @@ def test_resume_holds_only_calls_that_never_got_a_receipt(run_dir):
         {"call_id": "a", "event": "received", "raw_path": "raw/a.json"},
         {"call_id": "b", "event": "received", "raw_path": "raw/b.json"},
     ]
-    budget = generation_one.budget_from_calls(run_dir, calls, 15)
+    budget = receipts.budget_from_calls(run_dir, calls, 15)
     assert budget["reserved"] == pytest.approx(0.01)  # only "c", which never answered
-    assert budget["usage_estimate"] == pytest.approx(billed_cost(raw(TRANSFORMER, "x"), ""))
+    assert budget["usage_estimate"] == pytest.approx(
+        billed_cost(raw(TRANSFORMER, "x"), TRANSFORMER)
+    )
 
 
 def test_billed_cost_counts_truncations_and_survives_gateway_pages():
@@ -116,13 +119,22 @@ def test_billed_cost_counts_truncations_and_survives_gateway_pages():
 
 
 @pytest.fixture
-def pilot(tmp_path, monkeypatch):
+def pilot_environment(experiment_root, monkeypatch):
+    tmp_path = experiment_root
     source = {
         "passage_id": "test-only",
+        "domain": "inline",
         "text": "vila",
         "source_url": "test-only",
         "text_sha256": sha256(b"vila").hexdigest(),
-        "slots": [{"slot_id": "compensation", "kind": "condition", "quote": "vila"}],
+        "slots": [
+            {
+                "slot_id": "compensation",
+                "kind": "condition",
+                "quote": "vila",
+                "question": "Finns kompensation?",
+            }
+        ],
     }
     task = {
         "passage_id": "test-only",
@@ -130,11 +142,9 @@ def pilot(tmp_path, monkeypatch):
         "variant": "a",
         "payload": request_payload(TRANSFORMER, "test-only", "vila"),
     }
-    monkeypatch.setattr(generation_one, "api_key", lambda _root: "test-only")
-    monkeypatch.setattr(generation_one, "prepare", lambda _root: ([source], [task]))
-    monkeypatch.setattr(generation_one, "code_receipt", lambda _root: {"test_only": True})
-    (tmp_path / "prompts").mkdir()
-    (tmp_path / "prompts/read_slots.txt").write_text("test-only")
+    monkeypatch.setattr(pilot, "api_key", lambda *_: "test-only")
+    monkeypatch.setattr(pilot, "prepare", lambda *_: ([source], [task]))
+    monkeypatch.setattr(pilot, "code_receipt", lambda *_: {"test_only": True})
     return tmp_path
 
 
@@ -148,23 +158,23 @@ def scripted_reader(monkeypatch, answers):
             return 200, raw(TRANSFORMER, "vila")
         return 200, raw(EXTRACTOR, queue.pop(0))
 
-    monkeypatch.setattr(generation_one, "post_response", respond)
+    monkeypatch.setattr(receipts, "post_response", respond)
     return seen
 
 
-def test_invalid_reading_is_retried_then_accepted(pilot, monkeypatch):
+def test_invalid_reading_is_retried_then_accepted(pilot_environment, monkeypatch):
     # Two texts to read. The first answer is not JSON; its retry succeeds.
     scripted_reader(monkeypatch, ["```json\nnot json\n```", GOOD_READING, GOOD_READING])
-    run = load_run(generation_one.run(pilot))
+    run = load_run(pilot.run(pilot_environment))
     assert run["manifest"]["status"] == "completed"
     assert len(run["readings"]) == 2
-    errors = jsonl(run_directory(pilot) / "errors.jsonl")
+    errors = jsonl(run_directory(pilot_environment) / "errors.jsonl")
     assert [e["reason"] for e in errors] == ["invalid_slot_evidence"]
 
 
-def test_persistent_bad_readings_are_flagged_and_the_pilot_finishes(pilot, monkeypatch):
+def test_persistent_bad_readings_are_flagged_and_the_pilot_finishes(pilot_environment, monkeypatch):
     scripted_reader(monkeypatch, ["not json"] * 4)
-    path = generation_one.run(pilot)  # must not raise
+    path = pilot.run(pilot_environment)  # must not raise
     run = load_run(path)
     assert run["manifest"]["status"] == "partial"
     assert run["manifest"]["flagged_readings"] == 2
@@ -174,9 +184,9 @@ def test_persistent_bad_readings_are_flagged_and_the_pilot_finishes(pilot, monke
     assert reasons.count("invalid_slot_evidence") == 4
 
 
-def test_generation_one_reader_requests_structured_output(pilot, monkeypatch):
+def test_generation_one_reader_requests_structured_output(pilot_environment, monkeypatch):
     seen = scripted_reader(monkeypatch, [GOOD_READING, GOOD_READING])
-    generation_one.run(pilot)
+    pilot.run(pilot_environment)
     readers = [p for p in seen if p["model"] == EXTRACTOR]
     assert readers and all(p["output_config"]["format"]["type"] == "json_schema" for p in readers)
 
@@ -189,28 +199,34 @@ def run_directory(root):
 
 
 @pytest.fixture
-def two_chains(tmp_path, monkeypatch):
+def two_chains(experiment_root, monkeypatch):
+    tmp_path = experiment_root
     source = {
         "text_id": "source:test",
         "passage_id": "test",
+        "domain": "inline",
         "generation": 0,
         "text": "vila",
         "text_sha256": sha256(b"vila").hexdigest(),
         "source_url": "test-only",
-        "slots": [{"slot_id": "compensation", "quote": "vila", "kind": "condition"}],
+        "slots": [
+            {
+                "slot_id": "compensation",
+                "quote": "vila",
+                "kind": "condition",
+                "question": "Finns kompensation?",
+            }
+        ],
     }
-    chains = [
+    planned = [
         {"chain_id": f"test:paraphrase:{v}", "passage_id": "test", "style": "paraphrase",
          "variant": v, "instruction": instruction}
         for v, instruction in (("a", "refuses-at-two"), ("b", "complies"))
     ]  # fmt: skip
-    monkeypatch.setattr(recursive_run, "plan", lambda _: ([source], chains))
-    monkeypatch.setattr(recursive_run, "api_key", lambda _: "test-only")
-    monkeypatch.setattr(recursive_run, "code_receipt", lambda _: {"test_only": True})
-    (tmp_path / "prompts").mkdir()
-    (tmp_path / "prompts/read_slots.txt").write_text("test-only")
-    (tmp_path / "predictions").mkdir()
-    (tmp_path / "predictions/2026-09-11-recursive.md").write_text("test-only")
+    monkeypatch.setattr(design, "plan", lambda *_: ([source], planned))
+    monkeypatch.setattr(chains, "api_key", lambda *_: "test-only")
+    monkeypatch.setattr(design, "code_receipt", lambda *_: {"test_only": True})
+    monkeypatch.setattr(chains, "code_receipt", lambda *_: {"test_only": True})
     seen = []
 
     def respond(payload, _key):
@@ -222,14 +238,14 @@ def two_chains(tmp_path, monkeypatch):
             return 200, raw(TRANSFORMER, "", stop="refusal")
         return 200, raw(TRANSFORMER, text + " igen")
 
-    monkeypatch.setattr(generation_one, "post_response", respond)
+    monkeypatch.setattr(receipts, "post_response", respond)
     return tmp_path, seen
 
 
 def test_refusal_ends_one_chain_without_stopping_the_run(two_chains):
     root, _ = two_chains
-    directory = recursive_run.create(root, 1, depth=3)
-    recursive_run.execute(root, directory, workers=1, interval=0)
+    directory = chains.create(root, 1, depth=3)
+    chains.execute(root, directory, workers=1, interval=0)
     run = load_run(directory)
     by_chain = {}
     for g in run["generations"]:
@@ -248,10 +264,10 @@ def test_refusal_ends_one_chain_without_stopping_the_run(two_chains):
 
 def test_resume_does_not_retry_a_refused_chain(two_chains):
     root, seen = two_chains
-    directory = recursive_run.create(root, 1, depth=3)
-    recursive_run.execute(root, directory, workers=1, interval=0)
+    directory = chains.create(root, 1, depth=3)
+    chains.execute(root, directory, workers=1, interval=0)
     before = len(seen)
-    recursive_run.execute(root, directory, workers=1, interval=0)
+    chains.execute(root, directory, workers=1, interval=0)
     # Retrying until the model complies would swap a recorded refusal for a
     # success and bias the sample toward passages the model found easy.
     assert len(seen) == before

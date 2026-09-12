@@ -14,6 +14,8 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
+from simulacria.pipeline.silver import POOLS, SOURCE_DIR, Pool, bronze_document, load_pool
+from simulacria.pipeline.store import connect
 from simulacria.selection.determinacy import (
     provision_determinacy,
     qualifier_determinacy,
@@ -21,9 +23,7 @@ from simulacria.selection.determinacy import (
 )
 from simulacria.selection.highlight import marker_spans
 from simulacria.selection.markers import ceiling_hits
-from simulacria.selection.pools import POOLS, SOURCE_DIR, Pool, bronze_document, load_pool
 from simulacria.selection.shortlist import ranked, score_breakdown
-from simulacria.selection.tables import connect
 
 
 def provenance(document_id: str, pool: Pool = POOLS["v1"]) -> dict[str, object]:

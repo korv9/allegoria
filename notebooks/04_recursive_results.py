@@ -23,9 +23,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from IPython.display import HTML, Markdown, display
 
-from simulacria.generation_report import latest_recursive_run, load_run
-from simulacria.recursive_metrics import law_ordering, observations, planned_coverage
-from simulacria.recursive_view import chain_cards, error_summary, law_curves
+from simulacria.measurement.metrics import law_ordering, observations, planned_coverage
+from simulacria.reporting.runs import latest_recursive_run, load_run
+from simulacria.reporting.view import chain_cards, error_summary, law_curves
 
 RUN = latest_recursive_run(ROOT)
 RUN_ID = RUN.name

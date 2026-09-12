@@ -1,4 +1,6 @@
-schema_version: 1
+schema_version: 2
+domain: sfs
+group: statutory
 corpus_version: law_probe_v1
 annotation_status: assistant_draft_requires_human_review
 purpose: Source-anchored generation-one inspection, not a validated direction experiment.
@@ -7,22 +9,27 @@ passages:
     rationale: Worked example from DIRECTION.md, a deadline attached to an exception.
     slots:
       - slot_id: duty
+        question: Finns en plikt att ta upp en tvist?
         kind: modality
         attaches_to: duty
         quote: Nätmyndigheten ska ta upp en tvist
       - slot_id: scope
+        question: Finns en avgränsning av vilka kostnader tvistprövningen avser?
         kind: condition
         attaches_to: duty
         quote: enligt 6, 7 eller 9 §
       - slot_id: exception
+        question: Finns ett undantag från den huvudsakliga regeln?
         kind: exception
         attaches_to: duty
         quote: En tvist ska dock inte prövas
       - slot_id: exception_deadline
+        question: Finns en tidsgräns för när en ansökan kan prövas?
         kind: deadline
         attaches_to: exception
         quote: senare än två år
       - slot_id: deadline_start
+        question: Finns en händelse från vilken tidsgränsen för ansökan räknas?
         kind: condition
         attaches_to: exception
         quote: efter det att den systemansvariga skickat ett skriftligt ställningstagande till den berörda partens senaste kända adress
@@ -30,26 +37,32 @@ passages:
     rationale: Rest-period source; compensation condition is central to the founding idea.
     slots:
       - slot_id: daily_rest
+        question: Finns en bestämd varaktighet och beräkningsperiod för dygnsvila?
         kind: deadline
         attaches_to: duty
         quote: minst elva timmars sammanhängande ledighet under varje period om tjugofyra timmar
       - slot_id: temporary_exception
+        question: Finns en möjlighet till tillfälligt avsteg från dygnsvilan?
         kind: exception
         attaches_to: duty
         quote: Avvikelse får göras tillfälligtvis
       - slot_id: unforeseen_event
+        question: Finns en beskrivning av vilka händelser som medger avsteg från dygnsvilan?
         kind: condition
         attaches_to: exception
         quote: om det föranleds av något särskilt förhållande som inte har kunnat förutses av arbetsgivaren
       - slot_id: compensation
+        question: Finns ett krav på kompensation som villkor för avsteg från dygnsvilan?
         kind: condition
         attaches_to: exception
         quote: under förutsättning att arbetstagaren ges motsvarande kompensationsledighet
       - slot_id: night_interval
+        question: Finns ett klockslag eller intervall som nattvilan omfattar?
         kind: deadline
         attaches_to: duty
         quote: tiden mellan midnatt och klockan 5
       - slot_id: night_exception
+        question: Finns ett villkor för att arbete utförs under nattvilan?
         kind: condition
         attaches_to: exception
         quote: om arbetet med hänsyn till dess art, allmänhetens behov eller andra särskilda omständigheter måste bedrivas mellan midnatt och klockan 5
@@ -57,18 +70,22 @@ passages:
     rationale: Existing specimen with conditions in both positions.
     slots:
       - slot_id: agreement
+        question: Finns en avtalsanknuten avgränsning av semesterregeln?
         kind: condition
         attaches_to: duty
         quote: Om inte annat har avtalats
       - slot_id: leave_period
+        question: Finns en bestämd längd och förläggning för semesterperioden?
         kind: deadline
         attaches_to: duty
         quote: minst fyra veckor under juni-augusti
       - slot_id: exception
+        question: Finns ett undantag från den huvudsakliga regeln?
         kind: exception
         attaches_to: duty
         quote: Även utan stöd av avtal får en sådan semesterperiod förläggas till annan tid
       - slot_id: special_reasons
+        question: Finns ett villkor för att semesterperioden läggs till en annan tid?
         kind: condition
         attaches_to: exception
         quote: när särskilda skäl föranleder det

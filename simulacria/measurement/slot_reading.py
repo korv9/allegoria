@@ -1,34 +1,43 @@
-"""Blind, quoted slot observations. No direction labels are requested or inferred."""
+"""Blind, quoted slot observations. No direction labels are requested or inferred.
+
+The questions belong to the corpus, not to this module: a reading asks exactly
+what the corpus file declares for that slot, in that corpus's language. Nothing
+here knows which domain the text came from, which is what keeps a Swedish
+statute and an English RFC readable by the same instrument.
+"""
 
 import json
 
-QUESTIONS = {
-    "duty": "Finns en plikt att ta upp en tvist?",
-    "scope": "Finns en avgränsning av vilka kostnader tvistprövningen avser?",
-    "exception": "Finns ett undantag från den huvudsakliga regeln?",
-    "exception_deadline": "Finns en tidsgräns för när en ansökan kan prövas?",
-    "deadline_start": "Finns en händelse från vilken tidsgränsen för ansökan räknas?",
-    "daily_rest": "Finns en bestämd varaktighet och beräkningsperiod för dygnsvila?",
-    "temporary_exception": "Finns en möjlighet till tillfälligt avsteg från dygnsvilan?",
-    "unforeseen_event": "Finns en beskrivning av vilka händelser som medger avsteg från dygnsvilan?",
-    "compensation": "Finns ett krav på kompensation som villkor för avsteg från dygnsvilan?",
-    "night_interval": "Finns ett klockslag eller intervall som nattvilan omfattar?",
-    "night_exception": "Finns ett villkor för att arbete utförs under nattvilan?",
-    "agreement": "Finns en avtalsanknuten avgränsning av semesterregeln?",
-    "leave_period": "Finns en bestämd längd och förläggning för semesterperioden?",
-    "special_reasons": "Finns ett villkor för att semesterperioden läggs till en annan tid?",
-}
+
+def reading_format(slots: list[dict]) -> dict:
+    """The JSON schema a reader must answer with. Syntax only, never correctness."""
+    row = {
+        "type": "object",
+        "additionalProperties": False,
+        "properties": {
+            "slot_id": {"type": "string", "enum": [s["slot_id"] for s in slots]},
+            "status": {"type": "string", "enum": ["present", "absent", "uncertain"]},
+            "quote": {"type": ["string", "null"]},
+            "note": {"type": "string"},
+        },
+        "required": ["slot_id", "status", "quote", "note"],
+    }
+    # An Anthropic `output_config.format`. The nullable `quote` union was checked
+    # against the live API in the model-selection probe before relying on it.
+    return {
+        "type": "json_schema",
+        "schema": {
+            "type": "object",
+            "additionalProperties": False,
+            "properties": {"slots": {"type": "array", "items": row}},
+            "required": ["slots"],
+        },
+    }
 
 
 def reading_input(text: str, slots: list[dict]) -> str:
     """Only current text and questions, no source quotes, parent, style or generation."""
-    schema = [
-        {
-            "slot_id": s["slot_id"],
-            "question": s["question"] if "question" in s else QUESTIONS[s["slot_id"]],
-        }
-        for s in slots
-    ]
+    schema = [{"slot_id": s["slot_id"], "question": s["question"]} for s in slots]
     return json.dumps({"text": text, "schema": schema}, ensure_ascii=False)
 
 

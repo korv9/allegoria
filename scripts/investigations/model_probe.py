@@ -34,9 +34,8 @@ from uuid import uuid4
 import anthropic
 import yaml
 
-from simulacria.measurement.slot_reading import reading_input, validate_reading
-from simulacria.measurement.source_slots import load_source_slots
-from simulacria.recursive_plan import reading_format
+from simulacria.measurement.corpus import load_corpus
+from simulacria.measurement.slot_reading import reading_format, reading_input, validate_reading
 
 ROOT = Path(__file__).resolve().parents[2]
 CANDIDATES = ("claude-sonnet-5", "claude-opus-5")
@@ -101,10 +100,8 @@ def readers_on_allegories(client, probe: Path) -> None:
     accuracy. Readers are never shown which model wrote the text.
     """
     manifest = json.loads((probe / "manifest.json").read_text(encoding="utf-8"))
-    sources = {
-        s["passage_id"]: s for s in load_source_slots(ROOT / "corpus/law_probe_v1.yaml", ROOT)
-    }
-    reader = (ROOT / "prompts/read_slots.txt").read_text(encoding="utf-8")
+    sources = {s["passage_id"]: s for s in load_corpus(ROOT / "corpus/law_probe_v1.yaml", ROOT)}
+    reader = (ROOT / "prompts/sv/read_slots.txt").read_text(encoding="utf-8")
     rows = []
     for text_row in manifest["rows"]:
         if not text_row["label"].startswith("transform:allegorize") or not text_row.get("text"):
@@ -150,9 +147,9 @@ def main() -> None:
     if len(sys.argv) == 3 and sys.argv[1] == "--readers-on":
         readers_on_allegories(client, Path(sys.argv[2]))
         return
-    sources = load_source_slots(ROOT / "corpus/law_probe_v1.yaml", ROOT)
-    prompts = yaml.safe_load((ROOT / "prompts/generation_one.yaml").read_text(encoding="utf-8"))
-    reader = (ROOT / "prompts/read_slots.txt").read_text(encoding="utf-8")
+    sources = load_corpus(ROOT / "corpus/law_probe_v1.yaml", ROOT)
+    prompts = yaml.safe_load((ROOT / "prompts/sv/transform.yaml").read_text(encoding="utf-8"))
+    reader = (ROOT / "prompts/sv/read_slots.txt").read_text(encoding="utf-8")
 
     directory = ROOT / "data/local/probes" / ("model-probe-" + uuid4().hex[:12])
     directory.mkdir(parents=True)

@@ -1,0 +1,17 @@
+version: en_v1
+# The English mirror of prompts/sv/transform.yaml: same four styles, same two
+# variants, same "answer with the text only" constraint. Variants a and b are
+# different instructions, never repetitions of one treatment.
+styles:
+  paraphrase:
+    a: Rewrite the following English text in different words in English. Answer with the rewritten text only.
+    b: Restate the content of the following text in new English wording. Answer with your version only.
+  summarize:
+    a: Summarise the following English text in English. Answer with the summary only.
+    b: Write an English précis of the following text. Answer with the précis only.
+  explain:
+    a: Explain the following text in English to a reader with no engineering background. Answer with the explanation only.
+    b: Restate the following text as an English explanation aimed at a layperson. Answer with the explanation only.
+  allegorize:
+    a: Render the following text as an allegory in English. Answer with the allegory only.
+    b: Write an English allegorical story based on the following text. Answer with the story only.

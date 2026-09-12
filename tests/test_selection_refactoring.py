@@ -2,11 +2,11 @@
 
 import re
 
+from simulacria.pipeline.tables import marker_hit_rows, provision_rows
 from simulacria.selection.determinacy import qualifier_spans, qualifier_spans_with_offsets
 from simulacria.selection.highlight import marker_spans
 from simulacria.selection.markers import EXCEPTION_MARKERS
 from simulacria.selection.shortlist import score_breakdown, score_provision
-from simulacria.selection.table_build import marker_hit_rows, provision_rows
 
 
 def test_span_api_preserves_overlapping_quotes():

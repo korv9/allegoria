@@ -18,7 +18,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 
-from simulacria.selection.pools import BRONZE_DIR, build_provisions
+from simulacria.pipeline.silver import BRONZE_DIR, build_provisions
 from simulacria.selection.shortlist import shortlist
 
 FIXTURE = Path(__file__).parent / "fixtures/must_surface.yaml"

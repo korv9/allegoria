@@ -4,7 +4,7 @@
 # Only saved model responses are read here. This notebook makes no API calls.
 # A missing run raises a clear error, never sample text or simulated numbers.
 #
-# Run `python scripts/run_generation_one.py` from the project root first.
+# Run `python scripts/run/pilot.py` from the project root first.
 # This is an exploratory pilot whose slot readings are not yet reviewed.
 
 # %%
@@ -19,7 +19,7 @@ if str(ROOT) not in sys.path:
 import pandas as pd
 from IPython.display import HTML, display
 
-from simulacria.generation_report import comparison_rows, latest_run, load_run, side_by_side
+from simulacria.reporting.runs import comparison_rows, latest_run, load_run, side_by_side
 
 RUN = (
     Path(os.environ["ALLEGORIA_RUN_DIR"]) if "ALLEGORIA_RUN_DIR" in os.environ else latest_run(ROOT)

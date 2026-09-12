@@ -12,7 +12,7 @@
 # reviewed the wrong system.
 #
 # Prerequisites: `pip install -e ".[dev]"`, then
-# `python scripts/build_silver.py` and `python scripts/build_tables.py` for
+# `python scripts/pipeline/build_silver.py` and `python scripts/pipeline/build_tables.py` for
 # whichever pool you select below.
 
 # %%
@@ -21,13 +21,13 @@ import time
 import pandas as pd
 from IPython.display import HTML, display
 
+from simulacria.pipeline.silver import POOLS, bronze_document, build_provisions, check
+from simulacria.pipeline.store import TABLE_NAMES, query
 from simulacria.selection import highlight
 from simulacria.selection.determinacy import classify
 from simulacria.selection.inspect import inspect_provision, provenance
 from simulacria.selection.markers import ceiling_hits
-from simulacria.selection.pools import POOLS, bronze_document, build_provisions, check
 from simulacria.selection.shortlist import score_breakdown, shortlist
-from simulacria.selection.tables import TABLE_NAMES, query
 
 # Change this one line to re-run the whole notebook against the other pool.
 POOL = POOLS["v1"]

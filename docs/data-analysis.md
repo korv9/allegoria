@@ -19,7 +19,7 @@ References: [Databricks medallion pattern](https://docs.databricks.com/gcp/en/la
 | Experiment specification | `corpus/`, `prompts/`, `predictions/` | Version in git; annotation drafts are explicitly marked |
 | Raw model evidence | `data/local/runs/<run_id>/raw/`, `calls.jsonl`, `manifest.json` | Preserve and back up the whole run directory |
 | Verified records (Silver) | `sources.jsonl`, `generations.jsonl`, `readings.jsonl` inside each run | Immutable completed evidence; readers validate output hashes against raw responses |
-| SQL projection | `data/local/allegoria.duckdb` | Rebuild with `scripts/build_database.py`; do not hand-edit |
+| SQL projection | `data/local/allegoria.duckdb` | Rebuild with `scripts/pipeline/build_database.py`; do not hand-edit |
 | Analysis (Gold) | `research.slot_comparisons` view, notebooks | Derived observations; no implicit direction or human validation |
 
 Do not treat all of `data/local/` as disposable. Back up the runs before removing local
@@ -66,8 +66,8 @@ is a model observation, not proof of semantic loss. Direction is not computed.
 Build, then query the persistent file read-only:
 
 ```powershell
-python scripts/build_database.py
-python scripts/query.py --database data/local/allegoria.duckdb -c "SELECT * FROM research.runs"
+python scripts/pipeline/build_database.py
+python scripts/report/query.py --database data/local/allegoria.duckdb -c "SELECT * FROM research.runs"
 ```
 
 Inspect original text beside each generation:

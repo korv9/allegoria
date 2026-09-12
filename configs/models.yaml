@@ -1,0 +1,122 @@
+schema_version: 1
+
+# Every model this code may talk to, and what it costs. An experiment names two
+# of these (transformer and extractor); nothing else in the code knows a model
+# id. Adding a model is an entry here, not a code change -- adding a *provider*
+# is a module under simulacria/providers/.
+#
+# `verified` is the date someone made a real call with this entry and checked the
+# response decoded, the price fields matched the published rate, and the pinning
+# check passed. An unverified entry is a hypothesis: `--check` warns, and a paid
+# run refuses unless you pass --allow-unverified-model.
+#
+# Prices are USD per million tokens. Thinking tokens bill as output.
+#
+# `requests_per_minute` is what the account dashboard says, where it has been
+# read off and recorded. It is only used to suggest a pacing interval before a
+# run; it is left out rather than guessed.
+
+defaults:
+  transformer: sonnet-5
+  extractor: haiku-4-5
+
+models:
+  sonnet-5:
+    provider: anthropic
+    model: claude-sonnet-5
+    input_usd_per_million: 2.00
+    output_usd_per_million: 10.00
+    max_tokens: 8000
+    params:
+      effort: low
+    structured_output: true
+    verified: 2026-09-11
+    notes: >-
+      The transformer in use. Rewriting is routine work, so effort is low.
+      Temperature is not settable on this model; thinking is adaptive by default
+      and its tokens count against max_tokens, which is why the cap is generous.
+
+  haiku-4-5:
+    provider: anthropic
+    model: claude-haiku-4-5-20251001
+    input_usd_per_million: 1.00
+    output_usd_per_million: 5.00
+    max_tokens: 8000
+    params: {}
+    structured_output: true
+    verified: 2026-09-12
+    notes: >-
+      The cheapest reader, in use since DD047. Pinned by dated id because the
+      alias resolves to it and a response naming a different model fails the
+      pinning check. Does NOT accept `effort` (HTTP 400), and thinking is off by
+      default. A nine-reading check found 3 invalid quotes and no detection of
+      the one shift Opus 5 caught: cheap, and measurably weaker at the job.
+
+  opus-5:
+    provider: anthropic
+    model: claude-opus-5
+    input_usd_per_million: 5.00
+    output_usd_per_million: 25.00
+    max_tokens: 8000
+    params:
+      effort: medium
+    structured_output: true
+    verified: 2026-09-11
+    notes: >-
+      The reader the selection probe preferred: right in both allegory
+      disagreements, including a duty rewritten as a mere possibility. Five times
+      the price of Haiku on output. Switch to it by naming it in a config.
+
+  sonnet-4-6:
+    provider: anthropic
+    model: claude-sonnet-4-6
+    input_usd_per_million: 3.00
+    output_usd_per_million: 15.00
+    max_tokens: 8000
+    params:
+      effort: low
+    structured_output: true
+    verified: null
+    notes: >-
+      Previous-generation Sonnet. Present as a second transformer for a
+      cross-model comparison, which PROTOCOL.md lists as an open limitation
+      ("one transformer"). Never called from this repository.
+
+  # --- OpenAI, through the Responses API ---------------------------------
+  # Verified live 2026-09-12: both models answered, decoded, returned their
+  # pinned id and reported usage where the cost accounting looks for it, with
+  # structured output. Key: OPENAI_API_KEY.
+  # PRICES ARE UNCONFIRMED against the current price list -- they are the ones
+  # recorded on 2026-09-11. Check them before a paid run; a stale price makes the
+  # budget guard wrong in the direction that costs money.
+  gpt-5-4-mini:
+    provider: openai
+    model: gpt-5.4-mini-2026-03-17
+    input_usd_per_million: 0.25
+    output_usd_per_million: 2.00
+    max_tokens: 8000
+    params:
+      reasoning_effort: low
+    structured_output: true
+    verified: 2026-09-12
+    requests_per_minute: 5000
+    notes: >-
+      Reports reasoning tokens separately and bills them as output. Rate limits
+      as of 2026-09-12: 2M TPM, 5000 RPM, 20M TPD -- no longer the 50-per-day
+      ceiling that drove this project off OpenAI. Prices unconfirmed.
+
+  gpt-5-4-nano:
+    provider: openai
+    model: gpt-5.4-nano-2026-03-17
+    input_usd_per_million: 0.05
+    output_usd_per_million: 0.40
+    max_tokens: 8000
+    params:
+      reasoning_effort: low
+    structured_output: true
+    verified: 2026-09-12
+    requests_per_minute: 5000
+    notes: >-
+      The transformer of the abandoned OpenAI run. Listing it does not resume
+      that run: its design is frozen to its own models and its receipts stay
+      refused by name. Same rate limits as mini. Prices unconfirmed.

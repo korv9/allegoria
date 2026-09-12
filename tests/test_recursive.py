@@ -5,10 +5,13 @@ from hashlib import sha256
 
 import pytest
 
-from simulacria import generation_one, recursive_run
-from simulacria.anthropic_io import request_input
-from simulacria.generation_report import load_run
-from simulacria.recursive_plan import plan
+from simulacria.generation import chains, design, receipts
+from simulacria.generation.models import by_name
+from simulacria.generation.plan import plan
+from simulacria.generation.provider import request_input
+
+TRANSFORMER = by_name("sonnet-5").model
+from simulacria.reporting.runs import load_run
 
 
 def test_full_plan_has_expected_matched_chains():
@@ -22,15 +25,24 @@ def test_full_plan_has_expected_matched_chains():
 
 
 @pytest.fixture
-def recursive_fixture(tmp_path, monkeypatch):
+def recursive_fixture(experiment_root, monkeypatch):
+    tmp_path = experiment_root
     source = {
         "text_id": "source:test",
         "passage_id": "test",
+        "domain": "inline",
         "generation": 0,
         "text": "vila",
         "text_sha256": sha256(b"vila").hexdigest(),
         "source_url": "test-only",
-        "slots": [{"slot_id": "compensation", "quote": "vila", "kind": "condition"}],
+        "slots": [
+            {
+                "slot_id": "compensation",
+                "quote": "vila",
+                "kind": "condition",
+                "question": "Finns kompensation?",
+            }
+        ],
     }
     chain = {
         "chain_id": "test:paraphrase:a",
@@ -39,18 +51,16 @@ def recursive_fixture(tmp_path, monkeypatch):
         "variant": "a",
         "instruction": "test-only",
     }
-    monkeypatch.setattr(recursive_run, "plan", lambda _: ([source], [chain]))
-    monkeypatch.setattr(recursive_run, "api_key", lambda _: "test-only")
-    monkeypatch.setattr(recursive_run, "code_receipt", lambda _: {"test_only": True})
-    (tmp_path / "prompts").mkdir()
-    (tmp_path / "prompts/read_slots.txt").write_text("test-only")
-    (tmp_path / "predictions").mkdir()
-    (tmp_path / "predictions/2026-09-11-recursive.md").write_text("test-only")
+    monkeypatch.setattr(design, "plan", lambda *_: ([source], [chain]))
+    monkeypatch.setattr(chains, "api_key", lambda *_: "test-only")
+    monkeypatch.setattr(design, "code_receipt", lambda *_: {"test_only": True})
+    monkeypatch.setattr(chains, "code_receipt", lambda *_: {"test_only": True})
+
     requests = []
 
     def respond(payload, key):
         requests.append(payload)
-        if payload["model"] == recursive_run.TRANSFORMER:
+        if payload["model"] == TRANSFORMER:
             answer = request_input(payload) + " igen"
         else:
             answer = json.dumps(
@@ -75,14 +85,14 @@ def recursive_fixture(tmp_path, monkeypatch):
         }
         return 200, json.dumps(raw).encode()
 
-    monkeypatch.setattr(generation_one, "post_response", respond)
+    monkeypatch.setattr(receipts, "post_response", respond)
     return tmp_path, requests
 
 
 def test_recursive_parent_reading_resume_and_tamper(recursive_fixture):
     root, requests = recursive_fixture
-    directory = recursive_run.create(root, 1, depth=3)
-    recursive_run.execute(root, directory, workers=1, interval=0)
+    directory = chains.create(root, 1, depth=3)
+    chains.execute(root, directory, workers=1, interval=0)
     result = load_run(directory)
     assert result["manifest"]["status"] == "completed"
     assert [g["text"] for g in result["generations"]] == [
@@ -92,7 +102,7 @@ def test_recursive_parent_reading_resume_and_tamper(recursive_fixture):
     ]
     assert len(result["readings"]) == 4
     assert len(requests) == 7
-    recursive_run.execute(root, directory, workers=1, interval=0)
+    chains.execute(root, directory, workers=1, interval=0)
     assert len(requests) == 7
     rows = result["generations"]
     rows[1]["parent_text_id"] = "source:test"
@@ -108,7 +118,7 @@ def test_quota_failure_is_retained_without_fake_text(recursive_fixture, monkeypa
     # fail the same way, so it stops the run. A 429 would instead be retried.
     root, _ = recursive_fixture
     monkeypatch.setattr(
-        generation_one,
+        receipts,
         "post_response",
         lambda *_: (
             400,
@@ -118,8 +128,8 @@ def test_quota_failure_is_retained_without_fake_text(recursive_fixture, monkeypa
             ),
         ),
     )
-    directory = recursive_run.create(root, 1, depth=2)
-    recursive_run.execute(root, directory, workers=1, interval=0)
+    directory = chains.create(root, 1, depth=2)
+    chains.execute(root, directory, workers=1, interval=0)
     result = load_run(directory)
     assert result["manifest"]["status"] == "partial"
     assert result["generations"] == []
