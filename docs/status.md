@@ -56,10 +56,14 @@ three domains, and which analyses the data can and cannot carry.
 - **No Anthropic run has been made.** Zero rows in every research table. The one
   partial run on disk is from the retired OpenAI configuration; it is preserved
   byte-identical, refused by `load_run`, and cannot be resumed.
-- **No direction metric.** Case 9/9b and ceiling in `DIRECTION.md` are ratified
-  on 2026-09-12 (DD051/DD052). Implementation has not started; nothing computes whether
-  a change loosened or tightened a norm; readings only report present, absent or
-  uncertain.
+- **The direction metric is a classifier, not yet a pipeline.**
+  `simulacria/measurement/direction.py` implements the ratified derivation rule
+  (DD051/DD052) deterministically, and `tests/test_direction.py` pins all fifteen
+  `DIRECTION.md` table entries (cases 1--14 plus 9b). What is still missing is the
+  wiring: readings report present / absent / uncertain, not a determinacy rung,
+  and nothing yet turns a parent/child reading pair into the `SlotChange` values
+  the classifier consumes. The corpus also does not yet annotate determinacy
+  state. So the sign of a real change cannot be computed end to end.
 - **No human review of any slot.** Every annotation is an assistant draft, and
   no inter-annotator agreement figure exists.
 - **The reader is weak.** A nine-reading live check found 3 invalid quotes and no
@@ -79,9 +83,11 @@ three domains, and which analyses the data can and cannot carry.
    worth building before there is one verified run to look at.
 3. **Human-review the 15 statutory slots** against the source text, and record
    disagreement. This is what turns readings from observations into evidence.
-4. **Implement `DIRECTION.md`** after the ratification commit and the user's Part 2
-   diff checkpoint. Case 9/9b and ceiling are settled; report remaining encoding
-   ambiguities. Prepare the requested review packet without confirming its drafts.
+4. **Finish wiring `DIRECTION.md`.** The deterministic classifier and its test
+   table now exist (`direction.py`). What remains is annotating determinacy state
+   in the corpus and building the parent/child reading comparison that produces
+   `SlotChange` values, then reporting remaining encoding ambiguities. Prepare the
+   requested review packet without confirming its drafts.
 5. **Then the RFC domain**, as a check that the effect is not about Swedish. Not
    a replication, and never pooled with the Swedish results.
 6. **Optional, once a run exists:** batch the readings for a 50% discount, and

@@ -16,3 +16,35 @@ enters this package from the hand-annotated corpus, never from a regex.
 """
 
 from __future__ import annotations
+
+from simulacria.measurement.direction import (
+    Determinacy,
+    DirectionVector,
+    Modality,
+    Move,
+    Part,
+    Presence,
+    Scope,
+    Sign,
+    SlotChange,
+    UnratifiedDirection,
+    classify,
+    direction_vector,
+    ladder_move,
+)
+
+__all__ = [
+    "Determinacy",
+    "DirectionVector",
+    "Modality",
+    "Move",
+    "Part",
+    "Presence",
+    "Scope",
+    "Sign",
+    "SlotChange",
+    "UnratifiedDirection",
+    "classify",
+    "direction_vector",
+    "ladder_move",
+]
