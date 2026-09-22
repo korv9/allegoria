@@ -56,14 +56,18 @@ three domains, and which analyses the data can and cannot carry.
 - **No Anthropic run has been made.** Zero rows in every research table. The one
   partial run on disk is from the retired OpenAI configuration; it is preserved
   byte-identical, refused by `load_run`, and cannot be resumed.
-- **The direction metric is a classifier, not yet a pipeline.**
+- **The direction metric is wired but starved of data.**
   `simulacria/measurement/direction.py` implements the ratified derivation rule
-  (DD051/DD052) deterministically, and `tests/test_direction.py` pins all fifteen
-  `DIRECTION.md` table entries (cases 1--14 plus 9b). What is still missing is the
-  wiring: readings report present / absent / uncertain, not a determinacy rung,
-  and nothing yet turns a parent/child reading pair into the `SlotChange` values
-  the classifier consumes. The corpus also does not yet annotate determinacy
-  state. So the sign of a real change cannot be computed end to end.
+  (DD051/DD052) deterministically, `tests/test_direction.py` pins all fifteen
+  `DIRECTION.md` table entries (cases 1--14 plus 9b), and
+  `simulacria/measurement/changes.py` bridges a blinded reading to a `SlotChange`.
+  The statutory corpus (`law_probe_v1.yaml`) now carries draft determinacy and
+  modality rungs. Two real limits remain. First, no run exists, so there is
+  nothing to classify. Second, the bridge is only as sharp as the reader: a
+  present/absent reading resolves a slot vanishing (an exception removed, a
+  qualifier dropped to `absent`) but not a `specific -> vague` step, so those are
+  reported as unobservable rather than counted as neutral. Seeing the middle rung
+  needs either a determinacy question in the reading or a stronger reader.
 - **No human review of any slot.** Every annotation is an assistant draft, and
   no inter-annotator agreement figure exists.
 - **The reader is weak.** A nine-reading live check found 3 invalid quotes and no
@@ -83,11 +87,16 @@ three domains, and which analyses the data can and cannot carry.
    worth building before there is one verified run to look at.
 3. **Human-review the 15 statutory slots** against the source text, and record
    disagreement. This is what turns readings from observations into evidence.
-4. **Finish wiring `DIRECTION.md`.** The deterministic classifier and its test
-   table now exist (`direction.py`). What remains is annotating determinacy state
-   in the corpus and building the parent/child reading comparison that produces
-   `SlotChange` values, then reporting remaining encoding ambiguities. Prepare the
-   requested review packet without confirming its drafts.
+4. **Human-review the direction annotations and sharpen the reader.** The
+   classifier (`direction.py`), the reading bridge (`changes.py`) and draft
+   determinacy/modality rungs on the statutory corpus now exist. What remains is a
+   person confirming those draft rungs, and deciding how the middle of the ladder
+   (`specific -> vague`) gets seen -- a determinacy question in the reading, or a
+   stronger reader -- since a binary reader leaves it unobservable. Then extend
+   the slot contract to `ceiling`/`bound`, which `DIRECTION.md` ratified but the
+   corpus vocabulary (`SLOT_KINDS`, `ATTACHMENTS`) does not yet carry. Report
+   remaining encoding ambiguities; prepare the requested review packet without
+   confirming its drafts.
 5. **Then the RFC domain**, as a check that the effect is not about Swedish. Not
    a replication, and never pooled with the Swedish results.
 6. **Optional, once a run exists:** batch the readings for a 50% discount, and

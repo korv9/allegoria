@@ -21,6 +21,13 @@ from simulacria.domains.base import ATTACHMENTS, SLOT_KINDS
 SCHEMA_VERSION = 2
 DRAFT_STATUS = "assistant_draft_requires_human_review"
 
+# Baseline slot state for the `direction` metric (DIRECTION.md). Optional: a
+# corpus annotates it slot by slot as it is hand-reviewed, and a corpus that has
+# not started still loads. The values are the ladder rungs, never the selection
+# side's marker determinacy, which is a different vocabulary ("unmarked").
+DETERMINACY_STATES = frozenset({"specific", "vague", "absent"})
+MODALITY_STATES = frozenset({"binding", "weak", "absent"})
+
 
 def _slots(passage_id: str, spec: dict, defaults: list[dict], text: str) -> list[dict]:
     slots = spec.get("slots") or defaults
@@ -37,6 +44,14 @@ def _slots(passage_id: str, spec: dict, defaults: list[dict], text: str) -> list
             raise ValueError(f"unknown attachment {slot['attaches_to']!r} in {passage_id}")
         if not slot.get("question", "").strip():
             raise ValueError(f"slot {passage_id}/{slot['slot_id']} has no reading question")
+        determinacy = slot.get("determinacy")
+        if determinacy is not None and determinacy not in DETERMINACY_STATES:
+            raise ValueError(
+                f"unknown determinacy {determinacy!r} in {passage_id}/{slot['slot_id']}"
+            )
+        modality = slot.get("modality")
+        if modality is not None and modality not in MODALITY_STATES:
+            raise ValueError(f"unknown modality {modality!r} in {passage_id}/{slot['slot_id']}")
         quote = slot.get("quote")
         # A quote anchors the slot in the source text. Default slots describe a
         # question to ask of any passage, so they are allowed to carry none.

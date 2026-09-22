@@ -17,6 +17,13 @@ enters this package from the hand-annotated corpus, never from a regex.
 
 from __future__ import annotations
 
+from simulacria.measurement.changes import (
+    ChangeOutcome,
+    passage_changes,
+    passage_vector,
+    read_change,
+    unobservable_reasons,
+)
 from simulacria.measurement.direction import (
     Determinacy,
     DirectionVector,
@@ -34,6 +41,7 @@ from simulacria.measurement.direction import (
 )
 
 __all__ = [
+    "ChangeOutcome",
     "Determinacy",
     "DirectionVector",
     "Modality",
@@ -47,4 +55,8 @@ __all__ = [
     "classify",
     "direction_vector",
     "ladder_move",
+    "passage_changes",
+    "passage_vector",
+    "read_change",
+    "unobservable_reasons",
 ]

@@ -4,6 +4,11 @@ group: statutory
 corpus_version: law_probe_v1
 annotation_status: assistant_draft_requires_human_review
 purpose: Source-anchored generation-one inspection, not a validated direction experiment.
+# determinacy/modality are the DIRECTION.md baseline rungs, added as assistant
+# drafts (see annotation_status). Draft principle: `specific` = a checkable
+# numeric, enumerated or binary criterion; `vague` = an open-textured evaluative
+# standard ("särskilda skäl", "andra särskilda omständigheter"). These are the
+# rungs a change is measured against and need human review before any result.
 passages:
   - passage_id: sfs-2026-1281:K10P10
     rationale: Worked example from DIRECTION.md, a deadline attached to an exception.
@@ -12,11 +17,13 @@ passages:
         question: Finns en plikt att ta upp en tvist?
         kind: modality
         attaches_to: duty
+        modality: binding
         quote: Nätmyndigheten ska ta upp en tvist
       - slot_id: scope
         question: Finns en avgränsning av vilka kostnader tvistprövningen avser?
         kind: condition
         attaches_to: duty
+        determinacy: specific
         quote: enligt 6, 7 eller 9 §
       - slot_id: exception
         question: Finns ett undantag från den huvudsakliga regeln?
@@ -27,11 +34,13 @@ passages:
         question: Finns en tidsgräns för när en ansökan kan prövas?
         kind: deadline
         attaches_to: exception
+        determinacy: specific
         quote: senare än två år
       - slot_id: deadline_start
         question: Finns en händelse från vilken tidsgränsen för ansökan räknas?
         kind: condition
         attaches_to: exception
+        determinacy: specific
         quote: efter det att den systemansvariga skickat ett skriftligt ställningstagande till den berörda partens senaste kända adress
   - passage_id: sfs-1982-673:P13
     rationale: Rest-period source; compensation condition is central to the founding idea.
@@ -40,6 +49,7 @@ passages:
         question: Finns en bestämd varaktighet och beräkningsperiod för dygnsvila?
         kind: deadline
         attaches_to: duty
+        determinacy: specific
         quote: minst elva timmars sammanhängande ledighet under varje period om tjugofyra timmar
       - slot_id: temporary_exception
         question: Finns en möjlighet till tillfälligt avsteg från dygnsvilan?
@@ -50,21 +60,25 @@ passages:
         question: Finns en beskrivning av vilka händelser som medger avsteg från dygnsvilan?
         kind: condition
         attaches_to: exception
+        determinacy: vague
         quote: om det föranleds av något särskilt förhållande som inte har kunnat förutses av arbetsgivaren
       - slot_id: compensation
         question: Finns ett krav på kompensation som villkor för avsteg från dygnsvilan?
         kind: condition
         attaches_to: exception
+        determinacy: specific
         quote: under förutsättning att arbetstagaren ges motsvarande kompensationsledighet
       - slot_id: night_interval
         question: Finns ett klockslag eller intervall som nattvilan omfattar?
         kind: deadline
         attaches_to: duty
+        determinacy: specific
         quote: tiden mellan midnatt och klockan 5
       - slot_id: night_exception
         question: Finns ett villkor för att arbete utförs under nattvilan?
         kind: condition
         attaches_to: exception
+        determinacy: vague
         quote: om arbetet med hänsyn till dess art, allmänhetens behov eller andra särskilda omständigheter måste bedrivas mellan midnatt och klockan 5
   - passage_id: sfs-1977-480:P12
     rationale: Existing specimen with conditions in both positions.
@@ -73,11 +87,13 @@ passages:
         question: Finns en avtalsanknuten avgränsning av semesterregeln?
         kind: condition
         attaches_to: duty
+        determinacy: specific
         quote: Om inte annat har avtalats
       - slot_id: leave_period
         question: Finns en bestämd längd och förläggning för semesterperioden?
         kind: deadline
         attaches_to: duty
+        determinacy: specific
         quote: minst fyra veckor under juni-augusti
       - slot_id: exception
         question: Finns ett undantag från den huvudsakliga regeln?
@@ -88,4 +104,5 @@ passages:
         question: Finns ett villkor för att semesterperioden läggs till en annan tid?
         kind: condition
         attaches_to: exception
+        determinacy: vague
         quote: när särskilda skäl föranleder det
