@@ -45,6 +45,14 @@ LOOSEN = re.compile(
     r"avskaffa förbud\w*)\b",
     re.I,
 )
+# #1 Precision: a cue only counts as high-confidence when a concrete legal object
+# sits in the same sentence -- a rule, a requirement, a ban, a law, a section.
+# A bare "hårdare skolarbete" then drops to low-confidence instead of a false hit.
+LEGAL = re.compile(
+    r"\b(lag\w*|regel\w*|regelverk|kravet|kraven|förbud\w*|bestämmels\w*|paragraf|§|"
+    r"rättighet\w*|skyddet|villkor\w*|straff\w*|propositionen|betänkand\w*)\b",
+    re.I,
+)
 
 
 def norm(title: str) -> str:
@@ -115,11 +123,19 @@ def load_motions(pdata: Path) -> dict:
     return props
 
 
+def _blank_dir() -> dict:
+    return {"t": 0, "tlo": 0, "l": 0, "llo": 0, "ex_t": None, "ex_l": None}
+
+
 def load_debate_direction(pdata: Path) -> dict:
-    """norm(title) -> {party -> {t, l, ex_t, ex_l}} from the sakdebatt."""
-    out: dict = defaultdict(
-        lambda: defaultdict(lambda: {"t": 0, "l": 0, "ex_t": None, "ex_l": None})
-    )
+    """norm(title) -> {party -> {t, tlo, l, llo, ex_t, ex_l}} from the sakdebatt.
+
+    #1 precision: `t`/`l` are high-confidence hits (a cue beside a legal object in
+    the same sentence); `tlo`/`llo` are low-confidence (cue alone). The stored
+    example prefers a high-confidence one, so a bare "hårdare skolarbete" no longer
+    stands in for a claim about a rule.
+    """
+    out: dict = defaultdict(lambda: defaultdict(_blank_dir))
     for s in SESSIONS:
         for f in glob.glob(str(pdata / f"issues/{s}/*.json")):
             data = json.loads(Path(f).read_text(encoding="utf-8"))
@@ -133,16 +149,22 @@ def load_debate_direction(pdata: Path) -> dict:
                     sp.get("speech_text", ""),
                 )
                 cell = out[title][party]
-                for direction, pat, key in (("t", TIGHTEN, "ex_t"), ("l", LOOSEN, "ex_l")):
-                    m = pat.search(text)
-                    if m:
-                        cell[direction] += 1
-                        if cell[key] is None:
-                            cell[key] = {
-                                "s": sentence(text, m.start()),
-                                "w": sp.get("speaker", ""),
-                                "u": sp.get("source_url", ""),
-                            }
+                for hi, lo, pat, exk in (
+                    ("t", "tlo", TIGHTEN, "ex_t"),
+                    ("l", "llo", LOOSEN, "ex_l"),
+                ):
+                    for m in list(pat.finditer(text))[:4]:
+                        sent = sentence(text, m.start())
+                        strong = bool(LEGAL.search(sent))
+                        cell[hi if strong else lo] += 1
+                        ex = {
+                            "s": sent,
+                            "w": sp.get("speaker", ""),
+                            "u": sp.get("source_url", ""),
+                            "hi": strong,
+                        }
+                        if cell[exk] is None or (strong and not cell[exk].get("hi")):
+                            cell[exk] = ex
     return out
 
 
@@ -159,16 +181,25 @@ def build(pdata: Path) -> dict:
             if not v and not d:
                 continue
             pos = v["dist"].most_common(1)[0][0] if v else None
+            th, lh = (d["t"], d["l"]) if d else (0, 0)
+            argued = th + lh > 0  # high-confidence direction claim
             parties[party] = {
                 "vote": pos,
                 "vote_dist": dict(v["dist"]) if v else {},
                 "vote_url": v["url"] if v else "",
-                "tighten": d["t"] if d else 0,
-                "loosen": d["l"] if d else 0,
+                "tighten": th,
+                "loosen": lh,
+                "tighten_lo": d["tlo"] if d else 0,
+                "loosen_lo": d["llo"] if d else 0,
                 "ex_t": d["ex_t"] if d else None,
                 "ex_l": d["ex_l"] if d else None,
+                # #2 conflict flags: rhetoric vs the actual vote.
+                "argued": argued,
+                "talk_no_back": bool(argued and pos in ("Avstår", "Frånvarande")),
+                "dissent": pos == "Nej",
             }
         has_debate = ntitle in direction
+        has_conflict = any(p["talk_no_back"] for p in parties.values())
         decisions.append(
             {
                 "session": session,
@@ -176,6 +207,7 @@ def build(pdata: Path) -> dict:
                 "title": title,
                 "laws": motions.get(desig, []),
                 "has_debate": has_debate,
+                "has_conflict": has_conflict,
                 "parties": parties,
             }
         )
@@ -183,10 +215,11 @@ def build(pdata: Path) -> dict:
     return {
         "source": "Sveriges riksdag via partiledardebatt-analys @14c58f2 (votes, decision-motions, issues)",
         "method": "votes are real per-point party positions (modal shown); direction is a lexical screen "
-        "of the sakdebatt with verbatim kept; join is exact decision-title match. A point vote is not "
-        "automatic support for one motion.",
+        "of the sakdebatt (high-confidence = cue beside a legal object) with verbatim kept; join is exact "
+        "decision-title match. A point vote is not automatic support for one motion.",
         "sessions": list(SESSIONS),
         "decisions_with_debate": sum(d["has_debate"] for d in decisions),
+        "decisions_with_conflict": sum(d["has_conflict"] for d in decisions),
         "decisions_total": len(decisions),
         "decisions": decisions,
     }
@@ -201,7 +234,9 @@ def main() -> None:
     path = out_dir / "law_positions.json"
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(
-        f"decisions: {report['decisions_total']} ({report['decisions_with_debate']} with a matched debate)"
+        f"decisions: {report['decisions_total']} "
+        f"({report['decisions_with_debate']} with a matched debate, "
+        f"{report['decisions_with_conflict']} with a talk-no-back conflict)"
     )
     print(f"wrote {path.relative_to(ROOT)} ({path.stat().st_size // 1024} KB)")
 
