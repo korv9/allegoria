@@ -1,0 +1,4 @@
+provision_id,title,unit,from,to,before,after,direction,status
+sfs-1982-80:P22,"LAS 22 § – undantag från turordningen (""sist in, först ut"")",arbetstagare som får undantas från turordningen,2001 års regim (SFS 2000:763),Efter arbetsrättsreformen (SFS 2022:835),2,3,loosening,enacted
+sfs-1982-80:P5a,LAS 5 a § – tidsbegränsad anställnings övergång till tillsvidare,månader tidsbegränsad anställning innan övergång till tillsvidare,Allmän visstidsanställning (SFS 2007:389),Särskild visstidsanställning (SFS 2022:835),24,12,tightening,enacted
+sfs-1982-80:P6,LAS 6 § – provanställning (tak på prövotiden),månader (prövotidens längsta längd),Gällande rätt,Förslag (M/KD i partiledardebatt),6,12,loosening,proposed

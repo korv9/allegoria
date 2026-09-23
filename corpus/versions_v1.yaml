@@ -1,36 +1,80 @@
-schema_version: 1
+schema_version: 2
 kind: version_drift
-annotation_status: assistant_draft_requires_human_review
+annotation_status: current_lydelse_source_verified; historical_values_cite_amending_sfs
 source: >
-  Current LAS text from partiledardebatt-analys laws/sfs-1982-80 (snapshot t.o.m.
-  SFS 2022:836). Historical and proposed magnitudes are assistant drafts to be
-  verified against the SFS lydelse; this is Spår 1 (real institutional drift,
-  no LLM) demonstrated on the change the engine can now sign after adding
-  numeric magnitude to a ceiling.
+  Lag (1982:80) om anställningsskydd (LAS). Gällande lydelse citerad ordagrant ur
+  konsoliderad text i data/source/sfs/sfs-1982-80.txt (lagen.nu, ändring införd
+  t.o.m. SFS 2022:836, hämtad 2026-09-23, byte-hash i filhuvudet). Historiska
+  före-värden anger den ändringsförfattning (SFS) och proposition som satte dem,
+  enligt lagen.nu:s ändringsregister; exakt äldre ordalydelse är inte committad
+  som byte (arkivtext ej programmatiskt tillgänglig) utan hänvisas till SFS/prop.
+  Detta är Spår 1: verklig institutionell drift, signerad deterministiskt, utan LLM.
 provisions:
   - provision_id: sfs-1982-80:P22
-    title: Lag (1982:80) om anställningsskydd 22 § – undantag från turordning
-    slot: {slot_id: exemption_cap, kind: bound, attaches_to: ceiling}
+    title: LAS 22 § – undantag från turordningen ("sist in, först ut")
+    slot: {slot_id: turordning_undantag, kind: bound, attaches_to: ceiling}
     unit: arbetstagare som får undantas från turordningen
+    note: >
+      Ett högre tak = fler får undantas = arbetsgivarens tillåtna mängd växer =
+      loosening av turordningsskyddet.
     versions:
-      - label: Före 2022 års reform
+      - label: 2001 års regim (SFS 2000:763)
         magnitude: 2
         status: enacted
-        verify: "SFS-lydelse före 2022:835 — assistant-utkast, verifiera mot källa"
-      - label: Efter SFS 2022:835 (reformen)
+        quote: >
+          "en arbetsgivare med högst tio arbetstagare [får] undanta högst två
+          arbetstagare" (22 § i lydelsen enligt SFS 2000:763, i kraft 2001-01-01)
+        verify: "SFS 2000:763, prop. 1999/2000:144; lagen.nu-registret: 'Omfattning ändr. 22 §'"
+      - label: Efter arbetsrättsreformen (SFS 2022:835)
         magnitude: 3
         status: enacted
-        verify: "verifierbar i laws/sfs-1982-80 provisions.json 22 §: 'undanta högst tre arbetstagare'"
+        quote: >
+          "Innan turordningen fastställs får en arbetsgivare, oavsett antalet
+          turordningskretsar, undanta högst tre arbetstagare som enligt
+          arbetsgivarens bedömning är av särskild betydelse..." (22 §, Lag (2022:835))
+        verify: "ordagrant i data/source/sfs/sfs-1982-80.txt; prop. 2021/22:176"
+  - provision_id: sfs-1982-80:P5a
+    title: LAS 5 a § – tidsbegränsad anställnings övergång till tillsvidare
+    slot: {slot_id: visstid_tak, kind: bound, attaches_to: ceiling}
+    unit: månader tidsbegränsad anställning innan övergång till tillsvidare
+    note: >
+      Taket är hur länge arbetsgivaren FÅR hålla någon tidsbegränsat innan
+      anställningen måste övergå till tillsvidare. Ett lägre tak = kortare tillåten
+      visstid = arbetsgivarens tillåtna mängd krymper = tightening.
+    versions:
+      - label: Allmän visstidsanställning (SFS 2007:389)
+        magnitude: 24
+        status: enacted
+        quote: >
+          allmän visstidsanställning övergick till tillsvidareanställning efter
+          sammanlagt "mer än två år" (24 månader) under en femårsperiod
+          (5 § i lydelsen enligt SFS 2007:389, i kraft 2007-07-01)
+        verify: "SFS 2007:389, prop. 2006/07:111; lagen.nu-registret: 'Omfattning ändr. 5 §'"
+      - label: Särskild visstidsanställning (SFS 2022:835)
+        magnitude: 12
+        status: enacted
+        quote: >
+          "övergår till en tillsvidareanställning när arbetstagaren har varit
+          anställd hos arbetsgivaren i särskild visstidsanställning i sammanlagt
+          mer än tolv månader" (5 a §, Lag (2022:835))
+        verify: "ordagrant i data/source/sfs/sfs-1982-80.txt; prop. 2021/22:176"
   - provision_id: sfs-1982-80:P6
-    title: Lag (1982:80) om anställningsskydd 6 § – provanställning (tak på prövotid)
-    slot: {slot_id: probation_cap, kind: bound, attaches_to: ceiling}
+    title: LAS 6 § – provanställning (tak på prövotiden)
+    slot: {slot_id: provanstallning_tak, kind: bound, attaches_to: ceiling}
     unit: månader (prövotidens längsta längd)
+    note: >
+      Gällande rätt kontra ett debatterat förslag; visar att motorn signerar en
+      föreslagen ändring lika deterministiskt som en genomförd.
     versions:
       - label: Gällande rätt
         magnitude: 6
         status: enacted
-        verify: "provisions.json 6 §: 'högst sex månader'"
-      - label: Förslag (M/KD i debatt)
+        quote: >
+          "Avtal får även träffas om tidsbegränsad provanställning, om prövotiden
+          är högst sex månader" (6 §)
+        verify: "ordagrant i data/source/sfs/sfs-1982-80.txt"
+      - label: Förslag (M/KD i partiledardebatt)
         magnitude: 12
         status: proposed
-        verify: "föreslaget, ej gällande rätt — se claims_v3 (Roswall/Bali)"
+        quote: "förslag om förlängd provanställning till tolv månader; ej gällande rätt"
+        verify: "föreslaget, ej gällande rätt — se corpus/claims_v3_proposals.yaml (Roswall/Bali)"

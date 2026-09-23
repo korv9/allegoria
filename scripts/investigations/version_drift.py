@@ -6,18 +6,25 @@ engine signs each version-to-version change. Measurement was always model-free,
 so with real versions in and a deterministic classifier, the whole pipeline is
 LLM-free.
 
-Reads corpus/versions_v1.yaml (an ordered version chain per provision, each
-version carrying the slot's magnitude) and classifies each consecutive change
-with the numeric ceiling metric added to direction.py. Assistant-draft magnitudes
-are flagged for verification; the current values are checkable in the source repo.
+Reads corpus/versions_v1.yaml (an ordered version chain per LAS provision, each
+version carrying the slot's magnitude and the source lydelse) and classifies each
+consecutive change with the numeric ceiling metric in direction.py. Current values
+are quoted verbatim from the committed source text (data/source/sfs/sfs-1982-80.txt,
+lagen.nu); historical before-values cite the amending SFS act and proposition.
 
-    python scripts/investigations/version_drift.py
+The 2022 arbetsrättsreform (SFS 2022:835) is the clean case: it *loosened* the
+turordning exemption (22 §: 2 -> 3 workers) yet *tightened* fixed-term employment
+(5 a §: 24 -> 12 months before mandatory conversion) -- one reform, opposite signs
+on different provisions, which is exactly what a signed metric can show.
 
-No model, no network.
+    PYTHONPATH=. python scripts/investigations/version_drift.py
+
+Writes review/<date>/sfs_drift.{json,csv}. No model; reads committed text only.
 """
 
 from __future__ import annotations
 
+import csv
 import json
 from datetime import date
 from pathlib import Path
@@ -46,6 +53,8 @@ def drift_for(slot: dict, versions: list[dict]) -> list[dict]:
                 "after": after["magnitude"],
                 "status": after.get("status"),
                 "direction": classify(change).value,
+                "quote_before": " ".join((before.get("quote") or "").split()),
+                "quote_after": " ".join((after.get("quote") or "").split()),
                 "verify": after.get("verify"),
             }
         )
@@ -61,6 +70,7 @@ def build() -> dict:
                 "provision_id": p["provision_id"],
                 "title": p["title"],
                 "unit": p.get("unit", ""),
+                "note": " ".join((p.get("note") or "").split()),
                 "transitions": drift_for(p["slot"], p["versions"]),
             }
         )
@@ -72,19 +82,36 @@ def build() -> dict:
     }
 
 
+def write_csv(report: dict, path: Path) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        w = csv.writer(handle)
+        w.writerow(
+            ["provision_id", "title", "unit", "from", "to", "before", "after",
+             "direction", "status"]
+        )
+        for p in report["provisions"]:
+            for t in p["transitions"]:
+                w.writerow(
+                    [p["provision_id"], p["title"], p["unit"], t["from"], t["to"],
+                     t["before"], t["after"], t["direction"], t["status"]]
+                )
+
+
 def main() -> None:
     report = build()
     out_dir = ROOT / "review" / date.today().isoformat()
     out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / "version_drift.json"
+    path = out_dir / "sfs_drift.json"
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    csv_path = out_dir / "sfs_drift.csv"
+    write_csv(report, csv_path)
     for p in report["provisions"]:
         print(f"\n{p['provision_id']} — {p['title']}")
         for t in p["transitions"]:
             print(
                 f"  {t['direction']:<11} {t['before']} -> {t['after']} {p['unit']}  ({t['status']}: {t['from']} -> {t['to']})"
             )
-    print(f"\nWrote {path.relative_to(ROOT)}")
+    print(f"\nWrote {path.relative_to(ROOT)} and {csv_path.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

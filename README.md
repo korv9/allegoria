@@ -104,6 +104,10 @@ annotations, and a reader sharp enough to see the middle of the ladder. See
 - [Normative drift over real version chains](scripts/investigations/normative_drift.py):
   the MUST-share of four IETF protocol families across two decades, LLM-free -- data in
   `review/2026-09-23/normative_drift.{json,csv}`.
+- [Signed drift on real Swedish law](scripts/investigations/version_drift.py): LAS
+  (SFS 1982:80) amendments signed by the engine -- the 2022 reform loosened the turordning
+  exemption (22 §) yet tightened fixed-term employment (5 a §). Source text under
+  `data/source/sfs/`, results in `review/2026-09-23/sfs_drift.{json,csv}`.
 - [Data overview notebook](notebooks/00_data_overview.ipynb): every layer counted from
   disk -- bronze bytes, silver records, gold tables, run evidence, and what to back up.
 - [Architecture](docs/architecture.md): the medallion layers and the package seams.

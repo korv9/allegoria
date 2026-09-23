@@ -1,0 +1,64 @@
+{
+  "source": "Lag (1982:80) om anställningsskydd (LAS). Gällande lydelse citerad ordagrant ur konsoliderad text i data/source/sfs/sfs-1982-80.txt (lagen.nu, ändring införd t.o.m. SFS 2022:836, hämtad 2026-09-23, byte-hash i filhuvudet). Historiska före-värden anger den ändringsförfattning (SFS) och proposition som satte dem, enligt lagen.nu:s ändringsregister; exakt äldre ordalydelse är inte committad som byte (arkivtext ej programmatiskt tillgänglig) utan hänvisas till SFS/prop. Detta är Spår 1: verklig institutionell drift, signerad deterministiskt, utan LLM.",
+  "annotation_status": "current_lydelse_source_verified; historical_values_cite_amending_sfs",
+  "method": "real successive versions; deterministic numeric-ceiling sign; no model, no network",
+  "provisions": [
+    {
+      "provision_id": "sfs-1982-80:P22",
+      "title": "LAS 22 § – undantag från turordningen (\"sist in, först ut\")",
+      "unit": "arbetstagare som får undantas från turordningen",
+      "note": "Ett högre tak = fler får undantas = arbetsgivarens tillåtna mängd växer = loosening av turordningsskyddet.",
+      "transitions": [
+        {
+          "from": "2001 års regim (SFS 2000:763)",
+          "to": "Efter arbetsrättsreformen (SFS 2022:835)",
+          "before": 2,
+          "after": 3,
+          "status": "enacted",
+          "direction": "loosening",
+          "quote_before": "\"en arbetsgivare med högst tio arbetstagare [får] undanta högst två arbetstagare\" (22 § i lydelsen enligt SFS 2000:763, i kraft 2001-01-01)",
+          "quote_after": "\"Innan turordningen fastställs får en arbetsgivare, oavsett antalet turordningskretsar, undanta högst tre arbetstagare som enligt arbetsgivarens bedömning är av särskild betydelse...\" (22 §, Lag (2022:835))",
+          "verify": "ordagrant i data/source/sfs/sfs-1982-80.txt; prop. 2021/22:176"
+        }
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P5a",
+      "title": "LAS 5 a § – tidsbegränsad anställnings övergång till tillsvidare",
+      "unit": "månader tidsbegränsad anställning innan övergång till tillsvidare",
+      "note": "Taket är hur länge arbetsgivaren FÅR hålla någon tidsbegränsat innan anställningen måste övergå till tillsvidare. Ett lägre tak = kortare tillåten visstid = arbetsgivarens tillåtna mängd krymper = tightening.",
+      "transitions": [
+        {
+          "from": "Allmän visstidsanställning (SFS 2007:389)",
+          "to": "Särskild visstidsanställning (SFS 2022:835)",
+          "before": 24,
+          "after": 12,
+          "status": "enacted",
+          "direction": "tightening",
+          "quote_before": "allmän visstidsanställning övergick till tillsvidareanställning efter sammanlagt \"mer än två år\" (24 månader) under en femårsperiod (5 § i lydelsen enligt SFS 2007:389, i kraft 2007-07-01)",
+          "quote_after": "\"övergår till en tillsvidareanställning när arbetstagaren har varit anställd hos arbetsgivaren i särskild visstidsanställning i sammanlagt mer än tolv månader\" (5 a §, Lag (2022:835))",
+          "verify": "ordagrant i data/source/sfs/sfs-1982-80.txt; prop. 2021/22:176"
+        }
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P6",
+      "title": "LAS 6 § – provanställning (tak på prövotiden)",
+      "unit": "månader (prövotidens längsta längd)",
+      "note": "Gällande rätt kontra ett debatterat förslag; visar att motorn signerar en föreslagen ändring lika deterministiskt som en genomförd.",
+      "transitions": [
+        {
+          "from": "Gällande rätt",
+          "to": "Förslag (M/KD i partiledardebatt)",
+          "before": 6,
+          "after": 12,
+          "status": "proposed",
+          "direction": "loosening",
+          "quote_before": "\"Avtal får även träffas om tidsbegränsad provanställning, om prövotiden är högst sex månader\" (6 §)",
+          "quote_after": "förslag om förlängd provanställning till tolv månader; ej gällande rätt",
+          "verify": "föreslaget, ej gällande rätt — se corpus/claims_v3_proposals.yaml (Roswall/Bali)"
+        }
+      ]
+    }
+  ]
+}
