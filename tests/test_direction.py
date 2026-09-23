@@ -96,6 +96,18 @@ def test_case_12_ceiling_strengthened_vague_to_specific_tightens():
     assert sign(SlotChange.ceiling_magnitude(D.VAGUE, D.SPECIFIC)) == "tightening"
 
 
+def test_ceiling_bound_larger_cap_loosens():
+    # A bigger cap on a granted power is a weaker ceiling: 6 -> 12 months, or the
+    # turordning exemption 2 -> 3 employees, both loosen.
+    assert sign(SlotChange.ceiling_bound(6, 12)) == "loosening"
+    assert sign(SlotChange.ceiling_bound(2, 3)) == "loosening"
+
+
+def test_ceiling_bound_smaller_cap_tightens_and_equal_is_neutral():
+    assert sign(SlotChange.ceiling_bound(12, 6)) == "tightening"
+    assert classify(SlotChange.ceiling_bound(6, 6)) is Sign.NEUTRAL
+
+
 def test_case_13_qualifier_on_ceiling_specific_to_absent_loosens():
     assert sign(SlotChange.qualifier(Part.CEILING, D.SPECIFIC, D.ABSENT)) == "loosening"
 

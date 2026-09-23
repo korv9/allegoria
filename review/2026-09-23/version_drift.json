@@ -1,0 +1,39 @@
+{
+  "source": "Current LAS text from partiledardebatt-analys laws/sfs-1982-80 (snapshot t.o.m. SFS 2022:836). Historical and proposed magnitudes are assistant drafts to be verified against the SFS lydelse; this is Spår 1 (real institutional drift, no LLM) demonstrated on the change the engine can now sign after adding numeric magnitude to a ceiling.",
+  "annotation_status": "assistant_draft_requires_human_review",
+  "method": "real successive versions; deterministic numeric-ceiling sign; no model, no network",
+  "provisions": [
+    {
+      "provision_id": "sfs-1982-80:P22",
+      "title": "Lag (1982:80) om anställningsskydd 22 § – undantag från turordning",
+      "unit": "arbetstagare som får undantas från turordningen",
+      "transitions": [
+        {
+          "from": "Före 2022 års reform",
+          "to": "Efter SFS 2022:835 (reformen)",
+          "before": 2,
+          "after": 3,
+          "status": "enacted",
+          "direction": "loosening",
+          "verify": "verifierbar i laws/sfs-1982-80 provisions.json 22 §: 'undanta högst tre arbetstagare'"
+        }
+      ]
+    },
+    {
+      "provision_id": "sfs-1982-80:P6",
+      "title": "Lag (1982:80) om anställningsskydd 6 § – provanställning (tak på prövotid)",
+      "unit": "månader (prövotidens längsta längd)",
+      "transitions": [
+        {
+          "from": "Gällande rätt",
+          "to": "Förslag (M/KD i debatt)",
+          "before": 6,
+          "after": 12,
+          "status": "proposed",
+          "direction": "loosening",
+          "verify": "föreslaget, ej gällande rätt — se claims_v3 (Roswall/Bali)"
+        }
+      ]
+    }
+  ]
+}

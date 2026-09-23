@@ -142,6 +142,25 @@ class SlotChange:
         return cls(kind="bound", part=Part.CEILING, move=ladder_move(before, after))
 
     @classmethod
+    def ceiling_bound(cls, before: float, after: float) -> SlotChange:
+        """A numeric cap on a granted power changing size. A larger cap (e.g. a
+        probation of 6 -> 12 months, or 2 -> 3 employees exempted from a duty) is a
+        WEAKER ceiling -- more permitted extent -- so it loosens; a smaller cap
+        tightens. This is the magnitude the determinacy ladder alone cannot express.
+
+        Only defined for a ceiling. A magnitude on a duty (a longer deadline to
+        comply, a higher threshold to qualify) is part-dependent and not ratified
+        here; encode those as determinacy or report the ambiguity.
+        """
+        if after > before:
+            move = Move.WEAKENED
+        elif after < before:
+            move = Move.STRENGTHENED
+        else:
+            move = Move.UNCHANGED
+        return cls(kind="bound", part=Part.CEILING, move=move)
+
+    @classmethod
     def modality(cls, part: Part, before: Modality, after: Modality) -> SlotChange:
         """The deontic operator of a part changing force (e.g. `ska` -> `bör`)."""
         return cls(kind="modality", part=part, move=ladder_move(before, after))
