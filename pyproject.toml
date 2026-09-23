@@ -23,8 +23,11 @@ dev = [
     "ruff>=0.4",
 ]
 
+[project.scripts]
+meaning-quality = "meaningquality.cli:main"
+
 [tool.setuptools.packages.find]
-include = ["products*", "simulacria*"]
+include = ["products*", "simulacria*", "meaningquality*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -137,12 +137,26 @@ extractor, no network.
 
 ## Roadmap to the engine
 
-1. Add the **reader interface** and refactor the three existing readers behind it.
-2. Add **magnitude** to `bound`/determinacy so numeric cap changes sign.
-3. Ingest one **versioned corpus** (a handful of amended SFS provisions, or a
-   small RFC obsoletes chain) and measure real historical drift — the first
-   LLM-free drift result.
-4. Extract `measurement/` into a standalone `meaningquality` package + CLI, with
-   the 15 cases as its conformance suite.
+1. ✅ **Reader interface** — `meaningquality/readers.py` defines the `Reader`
+   shape and two model-free readers (annotation pass-through, verbatim survival).
+2. ✅ **Magnitude** — `SlotChange.ceiling_bound` signs a numeric cap change
+   (6 → 12 months, 2 → 3 exempted employees), the ladder's old blind spot.
+3. ✅/⏳ **Versioned corpus** — `corpus/versions_v1.yaml` +
+   `scripts/investigations/version_drift.py` sign real institutional drift
+   LLM-free (turordning cap 2 → 3 = loosening). A full multi-version chain with
+   exact per-version text still needs the historical SFS lydelser ingested
+   (network-blocked here; a local ingest feeds the harness directly).
+4. ✅ **Standalone package** — `meaningquality/` (stdlib-only core, `pyproject`
+   console script, `python -m meaningquality selftest`), with the conformance
+   suite in `meaningquality/conformance.py`. `simulacria.measurement` re-exports
+   it, so existing imports are unchanged.
 5. Keep Track A (engine + drift) and Track B (the debate product) labelled as
    separate throughout; never present the lexical screen as the metric.
+
+### Next, still open
+- More real SFS version chains (needs the historical text ingested locally).
+- An RFC `MUST`/`SHOULD` reader + obsoletes chains — explicit deontic keywords
+  make a deterministic reader trustworthy, and it is legible to a technical
+  audience (a strong, novel demo).
+- A magnitude semantics for duty-side thresholds (deadlines, qualifying bars),
+  which is part-dependent and currently reported as unratified rather than signed.
