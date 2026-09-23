@@ -1,0 +1,15 @@
+{
+  "source": "Sveriges riksdag via partiledardebatt-analys portfolio-data",
+  "method": "keyword screen for 'law/rule/proposal + modal'; upper bound, not a hand count",
+  "party_leader_debate": {
+    "speeches": 933,
+    "deontic_claims": 3,
+    "share_pct": 0.3
+  },
+  "issue_debate": {
+    "speeches": 131632,
+    "deontic_claims": 24316,
+    "share_pct": 18.5,
+    "las_debates": 278
+  }
+}

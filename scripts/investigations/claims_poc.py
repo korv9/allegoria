@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import csv
 import json
+import sys
 from datetime import date
 from pathlib import Path
 
@@ -28,7 +29,7 @@ from simulacria.measurement.changes import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-CORPUS = ROOT / "corpus/claims_v1.yaml"
+CORPUS = ROOT / (sys.argv[1] if len(sys.argv) > 1 else "corpus/claims_v1.yaml")
 
 
 def verdict(tightening: int, loosening: int, neutral: int) -> str:
@@ -71,6 +72,10 @@ def run_description(slots: list[dict], description: dict) -> dict:
         "label": description["label"],
         "provenance": description["provenance"],
         "reader": description.get("reader", "determinacy-aware"),
+        "speaker": description.get("speaker"),
+        "party": description.get("party"),
+        "session": description.get("session"),
+        "source_url": description.get("source_url"),
         "text": " ".join(description["text"].split()),
         "tightening": vector.tightening,
         "loosening": vector.loosening,
@@ -120,9 +125,10 @@ def build() -> dict:
 def write(report: dict) -> tuple[Path, Path]:
     out_dir = ROOT / "review" / date.today().isoformat()
     out_dir.mkdir(parents=True, exist_ok=True)
-    json_path = out_dir / "claims_poc_results.json"
+    stem = CORPUS.stem + "_results"
+    json_path = out_dir / f"{stem}.json"
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    csv_path = out_dir / "claims_poc_results.csv"
+    csv_path = out_dir / f"{stem}.csv"
     with csv_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle)
         writer.writerow(

@@ -1,0 +1,87 @@
+schema_version: 1
+kind: claims_real
+annotation_status: assistant_draft_requires_human_review
+source: Sveriges riksdag (partiledardebatt-analys @ 14c58f2, issues/ fulltext)
+purpose: >
+  A REAL debate-vs-law measurement: five real Riksdagen speeches that describe the
+  probation rule in the Employment Protection Act, read against the actual statute
+  text. Unlike claims_v1, the descriptions are verbatim quotes from named speakers,
+  each with its source link. The slot readings are assistant hand-annotations
+  (see annotation_status) and score only what a speech ACTUALLY addresses.
+reading_semantics: >
+  Description fidelity, not rewrite drift: a slot a speech does not mention is
+  "not addressed" (omitted from readings -> unobservable), never "removed". A slot
+  is scored only when the speaker actually characterises it. This is why most
+  slots come back unobservable -- a speech is not a restatement of the whole rule.
+known_limits: >
+  The determinacy ladder signs specific/vague/absent, not numeric magnitude. A
+  proposal to raise the cap from six to twelve months is a real loosening of the
+  ceiling, but both rungs are `specific`, so the current engine reads the change
+  as neutral. Proposals are therefore reported as policy, not signed here.
+provisions:
+  - provision_id: sfs-1982-80:P6
+    title: Lag (1982:80) om anställningsskydd 6 § – provanställning
+    slot_source: portfolio-data/laws/sfs-1982-80/provisions.json (snapshot t.o.m. SFS 2022:836)
+    law_says: >
+      Avtal FÅR träffas om tidsbegränsad provanställning, om prövotiden är HÖGST
+      sex månader. Vill inte arbetsgivaren eller arbetstagaren att anställningen
+      ska fortsätta efter prövotiden, SKA besked lämnas till motparten senast vid
+      prövotidens utgång. Sex-månaderstaket har varit oförändrat sedan 1982; 2022
+      års reform rörde inte 6 §.
+    slots:
+      - {slot_id: cap, kind: bound, attaches_to: ceiling, determinacy: specific}
+      - {slot_id: notice_deadline, kind: deadline, attaches_to: duty, determinacy: specific}
+    descriptions:
+      - description_id: roswall_2017_18
+        provenance: real_speech
+        reader: determinacy-aware
+        speaker: Jessika Roswall
+        party: M
+        session: 2017/18
+        source_url: https://data.riksdagen.se/anforande/H509104-87/html
+        label: Roswall (M) – citerar dagens gräns korrekt
+        text: >-
+          Vi i Alliansen tror att det krävs längre tid för en provanställning än
+          dagens sex månader.
+        readings:
+          cap: {status: present, determinacy: specific, quote: "dagens sex månader"}
+      - description_id: hirvonen_falk_2020_21
+        provenance: real_speech
+        reader: determinacy-aware
+        speaker: Annika Hirvonen Falk
+        party: MP
+        session: 2020/21
+        source_url: https://data.riksdagen.se/anforande/H80933-61/html
+        label: Hirvonen Falk (MP) – citerar gränsen korrekt
+        text: >-
+          Det är glädjande att Migrationsverket nu ändrat sin praxis, så att den
+          så vanliga provanställningen på sex månader också ska kunna vara giltig.
+        readings:
+          cap: {status: present, determinacy: specific, quote: "provanställningen på sex månader"}
+      - description_id: lifvenhage_2020_21
+        provenance: real_speech
+        reader: determinacy-aware
+        speaker: Ann-Sofie Lifvenhage
+        party: M
+        session: 2020/21
+        source_url: https://data.riksdagen.se/anforande/H80955-50/html
+        label: Lifvenhage (M) – anger dagens gräns, föreslår förlängning
+        text: >-
+          Till exempel bör provanställningar förlängas från sex till tolv månader
+          för att få fler att våga prova att anställa en medarbetare till.
+        readings:
+          cap: {status: present, determinacy: specific, quote: "från sex till tolv månader"}
+      - description_id: bali_2018_19
+        provenance: real_speech
+        reader: determinacy-aware
+        speaker: Hanif Bali
+        party: M
+        session: 2018/19
+        source_url: https://data.riksdagen.se/anforande/H60988-173/html
+        label: Bali (M) – anger dagens gräns, föreslår förlängning
+        text: >-
+          Som ett steg i att utveckla den svenska arbetsmarknadsmodellen vill vi
+          förlänga tiden för provanställning i anställningsskyddslagen från sex
+          till tolv månader.
+        readings:
+          cap: {status: present, determinacy: specific, quote: "från sex till tolv månader"}

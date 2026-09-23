@@ -1,0 +1,163 @@
+{
+  "generated_from": "corpus/claims_v1.yaml",
+  "annotation_status": "assistant_draft_requires_human_review",
+  "method": "hand-annotated readings; deterministic direction; no model, no network",
+  "quote_problems": [],
+  "provisions": [
+    {
+      "provision_id": "sfs-1982-80:P6",
+      "title": "Lag (1982:80) om anställningsskydd 6 § – provanställning",
+      "law_says": "Avtal FÅR träffas om tidsbegränsad provanställning, om prövotiden är HÖGST sex månader. Vill inte arbetsgivaren eller arbetstagaren att anställningen ska fortsätta efter prövotiden, SKA besked lämnas till motparten senast vid prövotidens utgång. Sex-månaderstaket har varit oförändrat sedan 1982; 2022 års reform rörde inte 6 §.",
+      "descriptions": [
+        {
+          "description_id": "roswall_2017_18",
+          "label": "Roswall (M) – citerar dagens gräns korrekt",
+          "provenance": "real_speech",
+          "reader": "determinacy-aware",
+          "speaker": "Jessika Roswall",
+          "party": "M",
+          "session": "2017/18",
+          "source_url": "https://data.riksdagen.se/anforande/H509104-87/html",
+          "text": "Vi i Alliansen tror att det krävs längre tid för en provanställning än dagens sex månader.",
+          "tightening": 0,
+          "loosening": 0,
+          "neutral": 1,
+          "verdict": "faithful",
+          "observable_slots": 1,
+          "unobservable": {
+            "reading not resolved to present/absent": 1
+          },
+          "per_slot": [
+            {
+              "slot_id": "cap",
+              "kind": "bound",
+              "part": "ceiling",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "notice_deadline",
+              "kind": "deadline",
+              "part": "duty",
+              "observable": false,
+              "sign": null,
+              "reason": "reading not resolved to present/absent"
+            }
+          ]
+        },
+        {
+          "description_id": "hirvonen_falk_2020_21",
+          "label": "Hirvonen Falk (MP) – citerar gränsen korrekt",
+          "provenance": "real_speech",
+          "reader": "determinacy-aware",
+          "speaker": "Annika Hirvonen Falk",
+          "party": "MP",
+          "session": "2020/21",
+          "source_url": "https://data.riksdagen.se/anforande/H80933-61/html",
+          "text": "Det är glädjande att Migrationsverket nu ändrat sin praxis, så att den så vanliga provanställningen på sex månader också ska kunna vara giltig.",
+          "tightening": 0,
+          "loosening": 0,
+          "neutral": 1,
+          "verdict": "faithful",
+          "observable_slots": 1,
+          "unobservable": {
+            "reading not resolved to present/absent": 1
+          },
+          "per_slot": [
+            {
+              "slot_id": "cap",
+              "kind": "bound",
+              "part": "ceiling",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "notice_deadline",
+              "kind": "deadline",
+              "part": "duty",
+              "observable": false,
+              "sign": null,
+              "reason": "reading not resolved to present/absent"
+            }
+          ]
+        },
+        {
+          "description_id": "lifvenhage_2020_21",
+          "label": "Lifvenhage (M) – anger dagens gräns, föreslår förlängning",
+          "provenance": "real_speech",
+          "reader": "determinacy-aware",
+          "speaker": "Ann-Sofie Lifvenhage",
+          "party": "M",
+          "session": "2020/21",
+          "source_url": "https://data.riksdagen.se/anforande/H80955-50/html",
+          "text": "Till exempel bör provanställningar förlängas från sex till tolv månader för att få fler att våga prova att anställa en medarbetare till.",
+          "tightening": 0,
+          "loosening": 0,
+          "neutral": 1,
+          "verdict": "faithful",
+          "observable_slots": 1,
+          "unobservable": {
+            "reading not resolved to present/absent": 1
+          },
+          "per_slot": [
+            {
+              "slot_id": "cap",
+              "kind": "bound",
+              "part": "ceiling",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "notice_deadline",
+              "kind": "deadline",
+              "part": "duty",
+              "observable": false,
+              "sign": null,
+              "reason": "reading not resolved to present/absent"
+            }
+          ]
+        },
+        {
+          "description_id": "bali_2018_19",
+          "label": "Bali (M) – anger dagens gräns, föreslår förlängning",
+          "provenance": "real_speech",
+          "reader": "determinacy-aware",
+          "speaker": "Hanif Bali",
+          "party": "M",
+          "session": "2018/19",
+          "source_url": "https://data.riksdagen.se/anforande/H60988-173/html",
+          "text": "Som ett steg i att utveckla den svenska arbetsmarknadsmodellen vill vi förlänga tiden för provanställning i anställningsskyddslagen från sex till tolv månader.",
+          "tightening": 0,
+          "loosening": 0,
+          "neutral": 1,
+          "verdict": "faithful",
+          "observable_slots": 1,
+          "unobservable": {
+            "reading not resolved to present/absent": 1
+          },
+          "per_slot": [
+            {
+              "slot_id": "cap",
+              "kind": "bound",
+              "part": "ceiling",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "notice_deadline",
+              "kind": "deadline",
+              "part": "duty",
+              "observable": false,
+              "sign": null,
+              "reason": "reading not resolved to present/absent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

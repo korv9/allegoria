@@ -1,0 +1,5 @@
+provision_id,description_id,label,verdict,tightening,loosening,neutral,observable_slots,unobservable_count
+sfs-1982-80:P6,roswall_2017_18,Roswall (M) – citerar dagens gräns korrekt,faithful,0,0,1,1,1
+sfs-1982-80:P6,hirvonen_falk_2020_21,Hirvonen Falk (MP) – citerar gränsen korrekt,faithful,0,0,1,1,1
+sfs-1982-80:P6,lifvenhage_2020_21,"Lifvenhage (M) – anger dagens gräns, föreslår förlängning",faithful,0,0,1,1,1
+sfs-1982-80:P6,bali_2018_19,"Bali (M) – anger dagens gräns, föreslår förlängning",faithful,0,0,1,1,1
