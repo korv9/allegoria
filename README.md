@@ -96,6 +96,9 @@ annotations, and a reader sharp enough to see the middle of the ladder. See
 ## Start here
 
 - [Status: what works and what is next](docs/status.md): the short, current answer.
+- [Meaning quality engine](docs/meaning-quality-engine.md): the two tracks (the
+  deterministic engine vs the applications), how to make it a reusable engine, and
+  how to produce drift without an LLM.
 - [Data overview notebook](notebooks/00_data_overview.ipynb): every layer counted from
   disk -- bronze bytes, silver records, gold tables, run evidence, and what to back up.
 - [Architecture](docs/architecture.md): the medallion layers and the package seams.
