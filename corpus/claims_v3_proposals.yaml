@@ -1,0 +1,43 @@
+schema_version: 1
+kind: proposals_real
+annotation_status: assistant_draft_requires_human_review
+source: Sveriges riksdag (partiledardebatt-analys @ 14c58f2, issues/ fulltext)
+purpose: >
+  Real signed examples: the DIRECTION of a change a speaker proposes to a rule.
+  This is not a claim that anyone misdescribed the law -- it signs, from verbatim
+  words, whether the proposed change would loosen or tighten the norm. Only
+  whole-part operations (insert/remove a named exception) are encoded, because
+  those carry an unambiguous sign (DIRECTION.md, whole-part table). The operation
+  and target for each are assistant hand-annotations that require human review.
+proposals:
+  - proposal_id: bieler_las_more_exceptions
+    speaker: Paula Bieler
+    party: SD
+    session: 2014/15
+    source_url: https://data.riksdagen.se/anforande/H20938-26/html
+    target: Lag (1982:80) om anställningsskydd – skyddsplikten
+    quote: >-
+      Vi har bland annat fler undantagsregler inom LAS som öppnar för större
+      rörlighet på arbetsmarknaden så att såväl ungdomar som personer med
+      utländsk bakgrund får lättare att ta sig in på arbetsmarknaden.
+    operation: exception_inserted
+    attribution: first_person
+    note: >-
+      More exceptions to the protection duty; self-described as widening ("öppnar
+      för större rörlighet", "lättare att ta sig in").
+  - proposal_id: turordning_remove_exceptions_S
+    speaker: Ulf Holm
+    party: MP
+    session: 2003/04
+    source_url: https://data.riksdagen.se/anforande/GR09115-20/html
+    target: Lag (1982:80) om anställningsskydd 22 § – turordning
+    quote: >-
+      Socialdemokraterna presenterade i sin skrift om ohälsa i arbetslivet
+      kravet på att ta bort undantagen i turordningsreglerna som ett sätt att
+      öka tryggheten och minska stressen på arbetsplatsen.
+    operation: exception_removed
+    attribution: reported_proposal_of_S
+    note: >-
+      Removing the turordning exceptions makes the duty reach further; described
+      in debate as increasing security ("öka tryggheten"). Proposal attributed to
+      S, quoted by Holm (MP).

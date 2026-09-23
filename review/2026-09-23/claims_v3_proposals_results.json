@@ -1,0 +1,31 @@
+{
+  "source": "Sveriges riksdag (partiledardebatt-analys @ 14c58f2, issues/ fulltext)",
+  "annotation_status": "assistant_draft_requires_human_review",
+  "method": "verbatim proposal -> whole-part SlotChange -> deterministic sign; no model, no network",
+  "proposals": [
+    {
+      "proposal_id": "bieler_las_more_exceptions",
+      "speaker": "Paula Bieler",
+      "party": "SD",
+      "session": "2014/15",
+      "target": "Lag (1982:80) om anställningsskydd – skyddsplikten",
+      "operation": "exception_inserted",
+      "direction": "loosening",
+      "attribution": "first_person",
+      "quote": "Vi har bland annat fler undantagsregler inom LAS som öppnar för större rörlighet på arbetsmarknaden så att såväl ungdomar som personer med utländsk bakgrund får lättare att ta sig in på arbetsmarknaden.",
+      "source_url": "https://data.riksdagen.se/anforande/H20938-26/html"
+    },
+    {
+      "proposal_id": "turordning_remove_exceptions_S",
+      "speaker": "Ulf Holm",
+      "party": "MP",
+      "session": "2003/04",
+      "target": "Lag (1982:80) om anställningsskydd 22 § – turordning",
+      "operation": "exception_removed",
+      "direction": "tightening",
+      "attribution": "reported_proposal_of_S",
+      "quote": "Socialdemokraterna presenterade i sin skrift om ohälsa i arbetslivet kravet på att ta bort undantagen i turordningsreglerna som ett sätt att öka tryggheten och minska stressen på arbetsplatsen.",
+      "source_url": "https://data.riksdagen.se/anforande/GR09115-20/html"
+    }
+  ]
+}
