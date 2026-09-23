@@ -99,6 +99,11 @@ annotations, and a reader sharp enough to see the middle of the ladder. See
 - [Meaning quality engine](docs/meaning-quality-engine.md): the two tracks (the
   deterministic engine vs the applications), how to make it a reusable engine, and
   how to produce drift without an LLM.
+- [Simulacra: the philosophy behind the measurement](docs/simulacra.md): Baudrillard's
+  four orders, deontic logic (von Wright, RFC 2119) and why the drift has a *sign*.
+- [Normative drift over real version chains](scripts/investigations/normative_drift.py):
+  the MUST-share of four IETF protocol families across two decades, LLM-free -- data in
+  `review/2026-09-23/normative_drift.{json,csv}`.
 - [Data overview notebook](notebooks/00_data_overview.ipynb): every layer counted from
   disk -- bronze bytes, silver records, gold tables, run evidence, and what to back up.
 - [Architecture](docs/architecture.md): the medallion layers and the package seams.
