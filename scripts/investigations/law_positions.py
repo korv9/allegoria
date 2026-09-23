@@ -53,6 +53,39 @@ LEGAL = re.compile(
     r"rättighet\w*|skyddet|villkor\w*|straff\w*|propositionen|betänkand\w*)\b",
     re.I,
 )
+# The speaker proposes it themselves...
+OWN = re.compile(
+    r"\b(vi vill|vi föreslår|vi anser|vi kräver|vi driver|vi vill se|vårt förslag|"
+    r"vi kommer att|jag vill|jag föreslår|vi yrkar)\b",
+    re.I,
+)
+# ...and is NOT attributing the position to someone else. A speaker who says
+# another party "vill skärpa/slopa" (which they oppose) must not be scored as
+# holding that direction -- the dominant false positive in replies.
+ATTR = re.compile(
+    r"\b(ni vill|vill ni|de vill|dom vill|man vill|de föreslår|ni föreslår|"
+    r"regeringen vill|oppositionen|alliansen vill)\b",
+    re.I,
+)
+PARTY_WORDS = {
+    "S": r"socialdemokrat\w*",
+    "M": r"moderat\w*",
+    "SD": r"sverigedemokrat\w*",
+    "C": r"centerpartiet|centern",
+    "V": r"vänsterpart\w*",
+    "KD": r"kristdemokrat\w*",
+    "L": r"liberalern\w*|folkpart\w*",
+    "MP": r"miljöpart\w*",
+}
+
+
+def _other_party_named(sent: str, speaker_party: str) -> bool:
+    """A party other than the speaker's is named in the sentence -> likely the
+    speaker is describing that party's position, not their own."""
+    for code, pat in PARTY_WORDS.items():
+        if code != speaker_party and re.search(pat, sent, re.I):
+            return True
+    return False
 
 
 def norm(title: str) -> str:
@@ -155,7 +188,14 @@ def load_debate_direction(pdata: Path) -> dict:
                 ):
                     for m in list(pat.finditer(text))[:4]:
                         sent = sentence(text, m.start())
-                        strong = bool(LEGAL.search(sent))
+                        # High confidence = about a rule, the speaker's OWN proposal,
+                        # not a position attributed to another party.
+                        strong = bool(
+                            LEGAL.search(sent)
+                            and OWN.search(sent)
+                            and not ATTR.search(sent)
+                            and not _other_party_named(sent, party)
+                        )
                         cell[hi if strong else lo] += 1
                         ex = {
                             "s": sent,
