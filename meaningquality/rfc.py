@@ -86,6 +86,19 @@ def requirements(text: str) -> list[Requirement]:
     return out
 
 
+def profile(reqs: list[Requirement]) -> dict:
+    """The requirement-strength profile of one spec: counts and shares by modality
+    rung. A descriptive corpus-level view, distinct from the per-requirement sign:
+    a successor with a smaller binding (MUST) share has loosened its overall
+    posture even when no single requirement can be matched one-to-one."""
+    total = len(reqs) or 1
+    counts = {"binding": 0, "weak": 0, "absent": 0}
+    for r in reqs:
+        counts[r.modality.name.lower()] += 1
+    shares = {k: round(100 * v / total, 1) for k, v in counts.items()}
+    return {"requirements": len(reqs), "counts": counts, "shares_pct": shares}
+
+
 def _key(sentence: str) -> str:
     """A version-stable key: the sentence with the keyword masked out, so the same
     requirement stated at a different strength across revisions matches."""

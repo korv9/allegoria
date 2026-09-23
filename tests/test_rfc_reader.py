@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from meaningquality.direction import Modality
-from meaningquality.rfc import Requirement, drift, requirements
+from meaningquality.rfc import Requirement, drift, profile, requirements
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -40,6 +40,19 @@ def test_drift_signs_a_downgrade_and_upgrade():
     assert len(up) == 1 and up[0]["direction"] == "tightening"
     # unchanged keyword -> no signed change
     assert drift(must, must) == []
+
+
+def test_profile_shares_sum_and_count():
+    reqs = [
+        Requirement("a MUST b", "MUST", Modality.BINDING),
+        Requirement("c SHOULD d", "SHOULD", Modality.WEAK),
+        Requirement("e MAY f", "MAY", Modality.ABSENT),
+        Requirement("g MUST h", "MUST", Modality.BINDING),
+    ]
+    p = profile(reqs)
+    assert p["requirements"] == 4
+    assert p["counts"] == {"binding": 2, "weak": 1, "absent": 1}
+    assert p["shares_pct"]["binding"] == 50.0
 
 
 def test_reads_the_real_committed_rfc_6265():

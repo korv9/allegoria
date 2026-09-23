@@ -1,0 +1,33 @@
+{
+  "source": "IETF RFC 2965 (2000) and RFC 6265 (2011, obsoletes 2965), rfc-editor.org",
+  "method": "deterministic RFC 2119 reader; per-requirement drift signed by the engine; profile shift is a descriptive corpus-level view. No model.",
+  "old": {
+    "rfc": "rfc-2965",
+    "requirements": 78,
+    "counts": {
+      "binding": 33,
+      "weak": 24,
+      "absent": 21
+    },
+    "shares_pct": {
+      "binding": 42.3,
+      "weak": 30.8,
+      "absent": 26.9
+    }
+  },
+  "new": {
+    "rfc": "rfc-6265",
+    "requirements": 47,
+    "counts": {
+      "binding": 13,
+      "weak": 26,
+      "absent": 8
+    },
+    "shares_pct": {
+      "binding": 27.7,
+      "weak": 55.3,
+      "absent": 17.0
+    }
+  },
+  "matched_requirement_drift": []
+}
