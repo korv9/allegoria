@@ -1,0 +1,98 @@
+{
+  "source": "IETF RFC plain text committed under data/source/rfc/",
+  "method": "deterministic RFC 2119 reader; MUST/SHALL=binding, SHOULD/RECOMMENDED=weak, MAY/OPTIONAL=absent; no model, no network. Signed drift needs a second version.",
+  "documents": [
+    {
+      "rfc": "rfc-6265",
+      "source": "data/source/rfc/rfc-6265.txt",
+      "requirements": 47,
+      "by_keyword": {
+        "SHOULD": 17,
+        "MUST": 11,
+        "SHOULD NOT": 9,
+        "MAY": 8,
+        "MUST NOT": 2
+      },
+      "by_modality": {
+        "weak": 26,
+        "binding": 13,
+        "absent": 8
+      },
+      "examples": [
+        {
+          "keyword": "SHOULD",
+          "modality": "weak",
+          "text": "To maximize interoperability with user agents, servers SHOULD limit themselves to the well-behaved profile defined in Section 4 when generating cookies."
+        },
+        {
+          "keyword": "MUST",
+          "modality": "binding",
+          "text": "User agents MUST implement the more liberal processing rules defined in Section 5, in order to maximize interoperability with existing servers that do not conform to the well-behav"
+        },
+        {
+          "keyword": "MAY",
+          "modality": "absent",
+          "text": "The OWS (optional whitespace) rule is used where zero or more linear whitespace characters MAY appear:"
+        },
+        {
+          "keyword": "SHOULD",
+          "modality": "weak",
+          "text": "OWS SHOULD either not be produced or be produced as a single SP character."
+        },
+        {
+          "keyword": "MAY",
+          "modality": "absent",
+          "text": "Origin servers MAY send a Set-Cookie response header with any response."
+        },
+        {
+          "keyword": "MAY",
+          "modality": "absent",
+          "text": "User agents MAY ignore Set-Cookie headers contained in responses with 100-level status codes but MUST process Set-Cookie headers contained in other responses (including responses w"
+        },
+        {
+          "keyword": "SHOULD NOT",
+          "modality": "weak",
+          "text": "Origin servers SHOULD NOT fold multiple Set-Cookie header fields into a single header field."
+        },
+        {
+          "keyword": "SHOULD NOT",
+          "modality": "weak",
+          "text": "Servers SHOULD NOT send Set-Cookie headers that fail to conform to the following grammar:"
+        }
+      ]
+    },
+    {
+      "rfc": "rfc-2119",
+      "source": "data/source/rfc/rfc-2119.txt",
+      "requirements": 4,
+      "by_keyword": {
+        "MUST": 4
+      },
+      "by_modality": {
+        "binding": 4
+      },
+      "examples": [
+        {
+          "keyword": "MUST",
+          "modality": "binding",
+          "text": "An implementation which does not include a particular option MUST be prepared to interoperate with another implementation which does include the option, though perhaps with reduced"
+        },
+        {
+          "keyword": "MUST",
+          "modality": "binding",
+          "text": "In the same vein an implementation which does include a particular option MUST be prepared to interoperate with another implementation which does not include the option (except, of"
+        },
+        {
+          "keyword": "MUST",
+          "modality": "binding",
+          "text": "In particular, they MUST only be used where it is actually required for interoperation or to limit behavior which has potential for causing harm (e.g., limiting retransmisssions) F"
+        },
+        {
+          "keyword": "MUST",
+          "modality": "binding",
+          "text": "The effects on security of not implementing a MUST or SHOULD, or doing something the specification says MUST NOT or SHOULD NOT be done may be very subtle."
+        }
+      ]
+    }
+  ]
+}
