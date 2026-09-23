@@ -19,8 +19,14 @@ from pathlib import Path
 
 # Slot vocabulary. Shared by every domain on purpose: a corpus may not invent a
 # kind, because `attaches_to` is what decides the sign of a direction change.
-SLOT_KINDS = frozenset({"modality", "actor", "condition", "deadline", "exception"})
-ATTACHMENTS = frozenset({"duty", "exception"})
+#
+# `bound` and `ceiling` carry the ratified ceiling category (DIRECTION.md,
+# DD051/DD052): a `bound` slot is a cap on how far a granted power reaches, and
+# `ceiling` is the part a slot hangs on. They matter because removing a ceiling
+# loosens where removing an exception tightens, so filing a cap under `exception`
+# flips the sign the moment it disappears -- the generation the experiment watches.
+SLOT_KINDS = frozenset({"modality", "actor", "condition", "deadline", "exception", "bound"})
+ATTACHMENTS = frozenset({"duty", "exception", "ceiling"})
 
 
 @dataclass(frozen=True)

@@ -2,11 +2,96 @@
 
 Research on how normative text changes when language models rewrite it, recursively.
 The question is whether duties, exceptions and their conditions survive, and whether
-changes loosen or tighten a norm. That direction metric is not implemented yet.
+changes loosen or tighten a norm. The metric that answers it -- `direction` -- is
+specified in [DIRECTION.md](DIRECTION.md) and now implemented as a deterministic
+classifier; what is still missing is a verified model run to feed it.
 
 The corpus that started it is Swedish statute, but the dataset is a parameter: a new
 one is an adapter plus a config, not an edit to the engine. English IETF RFCs ship as
 the second domain.
+
+## The idea in plain terms
+
+If you want the full argument, read [IDEA.md](IDEA.md). This is the short version,
+enough to understand what every part of the repository is for.
+
+**The observation.** Ask a language model to rewrite a rule, then rewrite its own
+rewrite, and again -- a recursive chain. The naive expectation is that detail simply
+wears away: the text gets thinner until only the main rule is left. That is not what
+happens. Consider a rule with three parts:
+
+> *Rest shall be granted. An exception may be made for an unforeseen event, provided
+> compensation is given within seven days.*
+
+After a few generations what survived was *"Rest shall be granted. An exception may be
+made for an unforeseen event."* The **qualifier died before the exception did.** The
+compensation condition vanished while the exception it guarded stayed. A conditional
+escape hatch became an unconditional one. Measured as information loss this looks like
+mild degradation; measured as legal effect, the rule got **more permissive**.
+
+**The claim: degradation has a sign.** A rule can drift two ways. `tightening` shrinks
+the set of permitted world-states (the norm binds harder); `loosening` grows it (the
+norm lets more through). The whole project rests on one definition:
+
+> **Loosening = the set of permitted world-states grows. Tightening = it shrinks.**
+
+For any change, ask: *after it, is it easier or harder to do the thing?* Easier is
+loosening, harder is tightening, neither is neutral.
+
+**Why not cosine similarity.** The obvious metric embeds each generation and measures
+distance from the source. It gives a clean falling curve -- and it is blind to this.
+*"...provided compensation is given"* and *"..."* with the condition gone sit almost
+on top of each other in vector space: nearly the same words, the same syntax. An
+embedding calls them highly similar. The difference in legal effect is total. Every
+prior study of iterative LLM drift reports unsigned measures (BLEU, chrF, ROUGE,
+BERTScore, cosine). They can say meaning moved; they cannot say which way. The sign is
+the contribution.
+
+**How the sign is computed -- deterministically, not by a judge model.** A rule has up
+to four moving parts: a **duty** (what shall happen), an **exception** (a carve-out), a
+**ceiling** (a cap on how far a granted power reaches), and **qualifiers** (conditions
+hung on any of those). During corpus construction, by hand, each slot is annotated with
+which part it attaches to and its rung on a **determinacy ladder** -- `specific`
+("within two years") &rarr; `vague` ("within a reasonable time") &rarr; `absent`. The
+ladder matters because force drains out of a condition before the words do: "a
+reasonable time" is already unenforceable while "two years" is checkable.
+
+The sign then follows mechanically from *where* a change happens, not from what a model
+thinks it means:
+
+| A condition is weakened on a... | Sign | Why |
+|---|---|---|
+| duty (`ska`) | `tightening` | the duty now applies more broadly |
+| exception | `loosening` | the escape hatch is easier to reach |
+| ceiling | `loosening` | the cap on the power is lifted |
+
+Removing a whole exception `tightens`; removing a whole ceiling `loosens` -- the same
+surface edit, opposite signs, which is exactly why a ceiling must be its own part and
+not filed under exception. `direction` is reported **per passage as a count vector**
+`(tightening, loosening, neutral)` and **never netted**: a loosening and a tightening in
+the same passage are two findings, not zero.
+
+**Two controls keep it honest.**
+
+- *Corpus twinning.* The model may have memorized real statute. So every passage has an
+  **authentic** version and a **fictional twin** with identical structure -- same slot
+  count, same deontic pattern -- but invented actors and numbers. The retention gap
+  between the twins **is** the memorization effect, with nothing to estimate.
+- *A dose-response axis.* Allegory is not a product on top of the engine; it is the most
+  extreme transformation mode. `paraphrase &rarr; summarize &rarr; explain &rarr;
+  allegorize` swaps out more of the text at each step. If qualifier death happens at
+  generation 8 under paraphrase and generation 2 under allegory, an anecdote becomes a
+  curve.
+
+**How the pieces map to the code.** `simulacria/measurement/direction.py` is the pure
+classifier (the derivation table above, plus the DD051/DD052 test cases). `changes.py`
+is the honest bridge from a blinded reading -- which reports only `present` / `absent` /
+`uncertain` -- to that classifier, and it *refuses to guess*: a binary reader cannot see
+a `specific &rarr; vague` step, so it reports that as unobservable rather than miscount
+it as neutral. The corpus carries the hand-annotated rungs. What is not built is the
+part no code can supply: a verified model run to classify, human review of the draft
+annotations, and a reader sharp enough to see the middle of the ladder. See
+[docs/status.md](docs/status.md) for exactly where that line sits.
 
 ## Start here
 

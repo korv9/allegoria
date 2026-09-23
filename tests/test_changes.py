@@ -43,6 +43,17 @@ def test_modality_on_duty_vanishing_loosens():
     assert outcome.observable and outcome.sign.value == "loosening"
 
 
+def test_bound_vanishing_is_a_ceiling_removed_and_loosens():
+    slot = {"slot_id": "cap", "kind": "bound", "attaches_to": "ceiling"}
+    outcome = read_change(slot, PRESENT, ABSENT)
+    assert outcome.observable and outcome.sign.value == "loosening"
+
+
+def test_qualifier_on_ceiling_vanishing_loosens():
+    outcome = read_change(qualifier("ceiling", "specific"), PRESENT, ABSENT)
+    assert outcome.observable and outcome.sign.value == "loosening"
+
+
 def test_slot_still_present_is_unobservable_not_neutral():
     outcome = read_change(qualifier("exception", "specific"), PRESENT, PRESENT)
     assert not outcome.observable

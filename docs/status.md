@@ -92,9 +92,9 @@ three domains, and which analyses the data can and cannot carry.
    determinacy/modality rungs on the statutory corpus now exist. What remains is a
    person confirming those draft rungs, and deciding how the middle of the ladder
    (`specific -> vague`) gets seen -- a determinacy question in the reading, or a
-   stronger reader -- since a binary reader leaves it unobservable. Then extend
-   the slot contract to `ceiling`/`bound`, which `DIRECTION.md` ratified but the
-   corpus vocabulary (`SLOT_KINDS`, `ATTACHMENTS`) does not yet carry. Report
+   stronger reader -- since a binary reader leaves it unobservable. The slot
+   vocabulary (`SLOT_KINDS`, `ATTACHMENTS`) now carries the ratified `ceiling`/`bound`
+   category, so a corpus can express a cap; no shipped passage uses it yet. Report
    remaining encoding ambiguities; prepare the requested review packet without
    confirming its drafts.
 5. **Then the RFC domain**, as a check that the effect is not about Swedish. Not

@@ -15,6 +15,7 @@ import pytest
 import yaml
 
 from simulacria.domains import get, names
+from simulacria.domains.base import ATTACHMENTS, SLOT_KINDS
 from simulacria.domains.rfc import sections
 from simulacria.generation.plan import load_config, plan
 from simulacria.measurement.corpus import load_corpus
@@ -28,6 +29,14 @@ def test_every_shipped_domain_is_registered_and_describes_itself():
     for name in names():
         domain = get(name)
         assert domain.language and domain.id_format and callable(domain.resolve)
+
+
+def test_slot_vocabulary_carries_the_ratified_ceiling_category():
+    # DIRECTION.md (DD051/DD052) ratified `ceiling`/`bound`; the shared slot
+    # vocabulary must let a corpus express it, or a cap has nowhere to live but
+    # `exception`, where its sign flips on removal.
+    assert "bound" in SLOT_KINDS
+    assert "ceiling" in ATTACHMENTS
 
 
 def test_unknown_domain_names_itself_rather_than_failing_obscurely():
