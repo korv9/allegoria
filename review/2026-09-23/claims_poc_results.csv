@@ -1,0 +1,6 @@
+provision_id,description_id,label,verdict,tightening,loosening,neutral,observable_slots,unobservable_count
+sfs-1982-673:P13,faithful,Troget – båda villkoren kvar,faithful,0,0,4,4,0
+sfs-1982-673:P13,loosening_dropped_qualifier,Lösgörande – kompensationsvillkoret utelämnat,loosening,0,1,3,4,0
+sfs-1982-673:P13,tightening_absolutised,Skärpande – undantaget bortbeskrivet,tightening,1,0,1,2,2
+sfs-1982-673:P13,loosening_vague_rung_aware,Lösgörande via vaghet – rung-medveten läsare,loosening,0,1,3,4,0
+sfs-1982-673:P13,loosening_vague_binary_reader,Samma text – binär läsare ser inget,faithful,0,0,3,3,1

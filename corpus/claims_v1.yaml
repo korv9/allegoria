@@ -1,0 +1,95 @@
+schema_version: 1
+kind: claims_poc
+annotation_status: assistant_draft_requires_human_review
+purpose: >
+  Proof of concept for the debate-vs-law application: measure the signed direction
+  between how a rule is DESCRIBED and what the rule actually SAYS, reusing the
+  Allegoria direction metric. The source of truth is a real, slot-annotated SFS
+  provision. The descriptions here are CONSTRUCTED illustrations, not quotes from
+  any person, so the pipeline can be demonstrated without attributing a
+  misstatement to a real speaker. Every slot reading below is an assistant
+  hand-annotation (see annotation_status), never a model output.
+reading_note: >
+  A reading carries status plus, where present, the observed rung (determinacy for
+  a condition, modality for the operator). A reading that reports the rung is
+  "determinacy-aware"; one that reports only present/absent is "binary". The last
+  two descriptions share identical text to show that a specific->vague softening is
+  seen only when the reader reports the rung.
+provisions:
+  - provision_id: sfs-1982-673:P13
+    title: Arbetstidslagen (1982:673) 13 § – dygnsvila
+    slot_source: corpus/law_probe_v1.yaml
+    provenance_note: >
+      Slots copied from law_probe_v1.yaml, where the SFS byte lineage and original
+      quotes live. A focused four-slot subset is used: duty, the temporary
+      exception, and its two conditions.
+    law_says: >
+      Dygnsvila SKA ges. Avvikelse FÅR göras tillfälligtvis, men bara om den
+      föranleds av en oförutsedd händelse OCH under förutsättning att motsvarande
+      kompensationsledighet ges. Två villkor vaktar undantaget.
+    slots:
+      - {slot_id: duty, kind: modality, attaches_to: duty, modality: binding}
+      - {slot_id: temporary_exception, kind: exception, attaches_to: duty}
+      - {slot_id: unforeseen_event, kind: condition, attaches_to: exception, determinacy: vague}
+      - {slot_id: compensation, kind: condition, attaches_to: exception, determinacy: specific}
+    descriptions:
+      - description_id: faithful
+        provenance: constructed_illustrative
+        reader: determinacy-aware
+        label: Troget – båda villkoren kvar
+        text: >-
+          Arbetstagaren ska ges dygnsvila. Avvikelse får göras tillfälligtvis om
+          det föranleds av en oförutsedd händelse, under förutsättning att
+          kompensationsledighet ges.
+        readings:
+          duty: {status: present, modality: binding, quote: "ska ges dygnsvila"}
+          temporary_exception: {status: present, quote: "Avvikelse får göras tillfälligtvis"}
+          unforeseen_event: {status: present, determinacy: vague, quote: "oförutsedd händelse"}
+          compensation: {status: present, determinacy: specific, quote: "kompensationsledighet ges"}
+      - description_id: loosening_dropped_qualifier
+        provenance: constructed_illustrative
+        reader: determinacy-aware
+        label: Lösgörande – kompensationsvillkoret utelämnat
+        text: >-
+          Arbetstagaren ska ges dygnsvila. Undantag får göras vid oförutsedda
+          händelser.
+        readings:
+          duty: {status: present, modality: binding, quote: "ska ges dygnsvila"}
+          temporary_exception: {status: present, quote: "Undantag får göras"}
+          unforeseen_event: {status: present, determinacy: vague, quote: "oförutsedda händelser"}
+          compensation: {status: absent, quote: null}
+      - description_id: tightening_absolutised
+        provenance: constructed_illustrative
+        reader: determinacy-aware
+        label: Skärpande – undantaget bortbeskrivet
+        text: >-
+          Arbetstagaren ska alltid ges full dygnsvila utan undantag.
+        readings:
+          duty: {status: present, modality: binding, quote: "ska alltid ges full dygnsvila"}
+          temporary_exception: {status: absent, quote: null}
+          unforeseen_event: {status: absent, quote: null}
+          compensation: {status: absent, quote: null}
+      - description_id: loosening_vague_rung_aware
+        provenance: constructed_illustrative
+        reader: determinacy-aware
+        label: Lösgörande via vaghet – rung-medveten läsare
+        text: >-
+          Arbetstagaren ska ges dygnsvila. Undantag får göras vid oförutsedda
+          händelser, om kompensation ges inom rimlig tid.
+        readings:
+          duty: {status: present, modality: binding, quote: "ska ges dygnsvila"}
+          temporary_exception: {status: present, quote: "Undantag får göras"}
+          unforeseen_event: {status: present, determinacy: vague, quote: "oförutsedda händelser"}
+          compensation: {status: present, determinacy: vague, quote: "inom rimlig tid"}
+      - description_id: loosening_vague_binary_reader
+        provenance: constructed_illustrative
+        reader: binary
+        label: Samma text – binär läsare ser inget
+        text: >-
+          Arbetstagaren ska ges dygnsvila. Undantag får göras vid oförutsedda
+          händelser, om kompensation ges inom rimlig tid.
+        readings:
+          duty: {status: present, modality: binding, quote: "ska ges dygnsvila"}
+          temporary_exception: {status: present, quote: "Undantag får göras"}
+          unforeseen_event: {status: present, determinacy: vague, quote: "oförutsedda händelser"}
+          compensation: {status: present, quote: "inom rimlig tid"}

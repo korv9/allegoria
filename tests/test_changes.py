@@ -84,25 +84,44 @@ def test_baseline_absent_is_out_of_scope():
 
 
 def test_passage_vector_counts_observable_only_and_reports_the_rest():
+    # A duty-side qualifier that vanishes loosens... no: on the duty it tightens.
+    # Here: exception vanishes (tightening); a duty qualifier stays (rung unseen).
     slots = [
         {"slot_id": "exc", "kind": "exception", "attaches_to": "duty"},
-        qualifier_slot := {
-            "slot_id": "cond",
+        {"slot_id": "kept", "kind": "condition", "attaches_to": "duty", "determinacy": "vague"},
+    ]
+    before = {s["slot_id"]: PRESENT for s in slots}
+    after = {"exc": ABSENT, "kept": PRESENT}
+    outcomes = passage_changes(slots, before, after)
+    assert passage_vector(outcomes).as_tuple() == (1, 0, 0)
+    assert unobservable_reasons(outcomes) == {
+        "slot still present; determinacy rung not observable": 1
+    }
+
+
+def test_removed_exception_subsumes_its_dependent_qualifiers():
+    # Whole exception gone: its conditions are absent by consequence. One
+    # tightening (case 5), not one tightening plus two spurious loosenings.
+    slots = [
+        {"slot_id": "exc", "kind": "exception", "attaches_to": "duty"},
+        {
+            "slot_id": "cond1",
             "kind": "condition",
             "attaches_to": "exception",
             "determinacy": "specific",
         },
-        {"slot_id": "kept", "kind": "condition", "attaches_to": "duty", "determinacy": "vague"},
+        {
+            "slot_id": "cond2",
+            "kind": "condition",
+            "attaches_to": "exception",
+            "determinacy": "vague",
+        },
     ]
     before = {s["slot_id"]: PRESENT for s in slots}
-    after = {"exc": ABSENT, "cond": ABSENT, "kept": PRESENT}
+    after = {"exc": ABSENT, "cond1": ABSENT, "cond2": ABSENT}
     outcomes = passage_changes(slots, before, after)
-    # exc removed -> tightening, cond on exception vanished -> loosening, kept -> unobservable
-    assert passage_vector(outcomes).as_tuple() == (1, 1, 0)
-    assert unobservable_reasons(outcomes) == {
-        "slot still present; determinacy rung not observable": 1
-    }
-    assert qualifier_slot["determinacy"] == "specific"
+    assert passage_vector(outcomes).as_tuple() == (1, 0, 0)
+    assert unobservable_reasons(outcomes) == {"parent exception removed; subsumed": 2}
 
 
 def test_integration_with_real_corpus_when_the_exception_dies():

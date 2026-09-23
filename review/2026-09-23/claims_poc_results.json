@@ -1,0 +1,254 @@
+{
+  "generated_from": "corpus/claims_v1.yaml",
+  "annotation_status": "assistant_draft_requires_human_review",
+  "method": "hand-annotated readings; deterministic direction; no model, no network",
+  "quote_problems": [],
+  "provisions": [
+    {
+      "provision_id": "sfs-1982-673:P13",
+      "title": "Arbetstidslagen (1982:673) 13 § – dygnsvila",
+      "law_says": "Dygnsvila SKA ges. Avvikelse FÅR göras tillfälligtvis, men bara om den föranleds av en oförutsedd händelse OCH under förutsättning att motsvarande kompensationsledighet ges. Två villkor vaktar undantaget.",
+      "descriptions": [
+        {
+          "description_id": "faithful",
+          "label": "Troget – båda villkoren kvar",
+          "provenance": "constructed_illustrative",
+          "reader": "determinacy-aware",
+          "text": "Arbetstagaren ska ges dygnsvila. Avvikelse får göras tillfälligtvis om det föranleds av en oförutsedd händelse, under förutsättning att kompensationsledighet ges.",
+          "tightening": 0,
+          "loosening": 0,
+          "neutral": 4,
+          "verdict": "faithful",
+          "observable_slots": 4,
+          "unobservable": {},
+          "per_slot": [
+            {
+              "slot_id": "duty",
+              "kind": "modality",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "temporary_exception",
+              "kind": "exception",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "exception intact"
+            },
+            {
+              "slot_id": "unforeseen_event",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "compensation",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            }
+          ]
+        },
+        {
+          "description_id": "loosening_dropped_qualifier",
+          "label": "Lösgörande – kompensationsvillkoret utelämnat",
+          "provenance": "constructed_illustrative",
+          "reader": "determinacy-aware",
+          "text": "Arbetstagaren ska ges dygnsvila. Undantag får göras vid oförutsedda händelser.",
+          "tightening": 0,
+          "loosening": 1,
+          "neutral": 3,
+          "verdict": "loosening",
+          "observable_slots": 4,
+          "unobservable": {},
+          "per_slot": [
+            {
+              "slot_id": "duty",
+              "kind": "modality",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "temporary_exception",
+              "kind": "exception",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "exception intact"
+            },
+            {
+              "slot_id": "unforeseen_event",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "compensation",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "loosening",
+              "reason": "computed"
+            }
+          ]
+        },
+        {
+          "description_id": "tightening_absolutised",
+          "label": "Skärpande – undantaget bortbeskrivet",
+          "provenance": "constructed_illustrative",
+          "reader": "determinacy-aware",
+          "text": "Arbetstagaren ska alltid ges full dygnsvila utan undantag.",
+          "tightening": 1,
+          "loosening": 0,
+          "neutral": 1,
+          "verdict": "tightening",
+          "observable_slots": 2,
+          "unobservable": {
+            "parent exception removed; subsumed": 2
+          },
+          "per_slot": [
+            {
+              "slot_id": "duty",
+              "kind": "modality",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "temporary_exception",
+              "kind": "exception",
+              "part": "duty",
+              "observable": true,
+              "sign": "tightening",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "unforeseen_event",
+              "kind": "condition",
+              "part": "exception",
+              "observable": false,
+              "sign": null,
+              "reason": "parent exception removed; subsumed"
+            },
+            {
+              "slot_id": "compensation",
+              "kind": "condition",
+              "part": "exception",
+              "observable": false,
+              "sign": null,
+              "reason": "parent exception removed; subsumed"
+            }
+          ]
+        },
+        {
+          "description_id": "loosening_vague_rung_aware",
+          "label": "Lösgörande via vaghet – rung-medveten läsare",
+          "provenance": "constructed_illustrative",
+          "reader": "determinacy-aware",
+          "text": "Arbetstagaren ska ges dygnsvila. Undantag får göras vid oförutsedda händelser, om kompensation ges inom rimlig tid.",
+          "tightening": 0,
+          "loosening": 1,
+          "neutral": 3,
+          "verdict": "loosening",
+          "observable_slots": 4,
+          "unobservable": {},
+          "per_slot": [
+            {
+              "slot_id": "duty",
+              "kind": "modality",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "temporary_exception",
+              "kind": "exception",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "exception intact"
+            },
+            {
+              "slot_id": "unforeseen_event",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "compensation",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "loosening",
+              "reason": "computed"
+            }
+          ]
+        },
+        {
+          "description_id": "loosening_vague_binary_reader",
+          "label": "Samma text – binär läsare ser inget",
+          "provenance": "constructed_illustrative",
+          "reader": "binary",
+          "text": "Arbetstagaren ska ges dygnsvila. Undantag får göras vid oförutsedda händelser, om kompensation ges inom rimlig tid.",
+          "tightening": 0,
+          "loosening": 0,
+          "neutral": 3,
+          "verdict": "faithful",
+          "observable_slots": 3,
+          "unobservable": {
+            "slot still present; determinacy rung not observable": 1
+          },
+          "per_slot": [
+            {
+              "slot_id": "duty",
+              "kind": "modality",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "temporary_exception",
+              "kind": "exception",
+              "part": "duty",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "exception intact"
+            },
+            {
+              "slot_id": "unforeseen_event",
+              "kind": "condition",
+              "part": "exception",
+              "observable": true,
+              "sign": "neutral",
+              "reason": "computed"
+            },
+            {
+              "slot_id": "compensation",
+              "kind": "condition",
+              "part": "exception",
+              "observable": false,
+              "sign": null,
+              "reason": "slot still present; determinacy rung not observable"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
