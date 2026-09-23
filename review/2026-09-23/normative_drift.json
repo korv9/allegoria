@@ -1,0 +1,231 @@
+{
+  "source": "IETF RFCs (rfc-editor.org), committed under data/source/rfc/",
+  "method": "deterministic RFC 2119 reader; requirement strength MUST=binding, SHOULD=weak, MAY=absent; binding share per version is the posture; falling share = looser. No model.",
+  "note": "Only uppercase-RFC2119 revisions (1997+) are comparable; TLS 1.0 (RFC 2246) excluded.",
+  "protocols": [
+    {
+      "protocol": "TLS",
+      "versions": [
+        {
+          "rfc": "rfc-4346",
+          "year": 2006,
+          "title": "TLS 1.1",
+          "requirements": 104,
+          "counts": {
+            "binding": 67,
+            "weak": 23,
+            "absent": 14
+          },
+          "shares_pct": {
+            "binding": 64.4,
+            "weak": 22.1,
+            "absent": 13.5
+          }
+        },
+        {
+          "rfc": "rfc-5246",
+          "year": 2008,
+          "title": "TLS 1.2",
+          "requirements": 171,
+          "counts": {
+            "binding": 117,
+            "weak": 23,
+            "absent": 31
+          },
+          "shares_pct": {
+            "binding": 68.4,
+            "weak": 13.5,
+            "absent": 18.1
+          }
+        },
+        {
+          "rfc": "rfc-8446",
+          "year": 2018,
+          "title": "TLS 1.3",
+          "requirements": 281,
+          "counts": {
+            "binding": 190,
+            "weak": 62,
+            "absent": 29
+          },
+          "shares_pct": {
+            "binding": 67.6,
+            "weak": 22.1,
+            "absent": 10.3
+          }
+        }
+      ],
+      "deltas": [
+        {
+          "from": "rfc-4346",
+          "to": "rfc-5246",
+          "binding_share_delta_pp": 4.0,
+          "posture": "stricter"
+        },
+        {
+          "from": "rfc-5246",
+          "to": "rfc-8446",
+          "binding_share_delta_pp": -0.8,
+          "posture": "looser"
+        }
+      ]
+    },
+    {
+      "protocol": "HTTP",
+      "versions": [
+        {
+          "rfc": "rfc-2616",
+          "year": 1999,
+          "title": "HTTP/1.1",
+          "requirements": 634,
+          "counts": {
+            "binding": 267,
+            "weak": 222,
+            "absent": 145
+          },
+          "shares_pct": {
+            "binding": 42.1,
+            "weak": 35.0,
+            "absent": 22.9
+          }
+        },
+        {
+          "rfc": "rfc-7230",
+          "year": 2014,
+          "title": "HTTP/1.1 syntax/routing",
+          "requirements": 176,
+          "counts": {
+            "binding": 102,
+            "weak": 38,
+            "absent": 36
+          },
+          "shares_pct": {
+            "binding": 58.0,
+            "weak": 21.6,
+            "absent": 20.5
+          }
+        },
+        {
+          "rfc": "rfc-9110",
+          "year": 2022,
+          "title": "HTTP semantics",
+          "requirements": 378,
+          "counts": {
+            "binding": 178,
+            "weak": 107,
+            "absent": 93
+          },
+          "shares_pct": {
+            "binding": 47.1,
+            "weak": 28.3,
+            "absent": 24.6
+          }
+        }
+      ],
+      "deltas": [
+        {
+          "from": "rfc-2616",
+          "to": "rfc-7230",
+          "binding_share_delta_pp": 15.9,
+          "posture": "stricter"
+        },
+        {
+          "from": "rfc-7230",
+          "to": "rfc-9110",
+          "binding_share_delta_pp": -10.9,
+          "posture": "looser"
+        }
+      ]
+    },
+    {
+      "protocol": "SMTP",
+      "versions": [
+        {
+          "rfc": "rfc-2821",
+          "year": 2001,
+          "title": "SMTP",
+          "requirements": 267,
+          "counts": {
+            "binding": 133,
+            "weak": 94,
+            "absent": 40
+          },
+          "shares_pct": {
+            "binding": 49.8,
+            "weak": 35.2,
+            "absent": 15.0
+          }
+        },
+        {
+          "rfc": "rfc-5321",
+          "year": 2008,
+          "title": "SMTP",
+          "requirements": 306,
+          "counts": {
+            "binding": 146,
+            "weak": 112,
+            "absent": 48
+          },
+          "shares_pct": {
+            "binding": 47.7,
+            "weak": 36.6,
+            "absent": 15.7
+          }
+        }
+      ],
+      "deltas": [
+        {
+          "from": "rfc-2821",
+          "to": "rfc-5321",
+          "binding_share_delta_pp": -2.1,
+          "posture": "looser"
+        }
+      ]
+    },
+    {
+      "protocol": "Cookies",
+      "versions": [
+        {
+          "rfc": "rfc-2965",
+          "year": 2000,
+          "title": "Cookie2",
+          "requirements": 78,
+          "counts": {
+            "binding": 33,
+            "weak": 24,
+            "absent": 21
+          },
+          "shares_pct": {
+            "binding": 42.3,
+            "weak": 30.8,
+            "absent": 26.9
+          }
+        },
+        {
+          "rfc": "rfc-6265",
+          "year": 2011,
+          "title": "Cookies",
+          "requirements": 47,
+          "counts": {
+            "binding": 13,
+            "weak": 26,
+            "absent": 8
+          },
+          "shares_pct": {
+            "binding": 27.7,
+            "weak": 55.3,
+            "absent": 17.0
+          }
+        }
+      ],
+      "deltas": [
+        {
+          "from": "rfc-2965",
+          "to": "rfc-6265",
+          "binding_share_delta_pp": -14.6,
+          "posture": "looser"
+        }
+      ]
+    }
+  ]
+}
