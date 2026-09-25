@@ -104,6 +104,9 @@ annotations, and a reader sharp enough to see the middle of the ladder. See
 - [Normative drift over real version chains](scripts/investigations/normative_drift.py):
   the MUST-share of four IETF protocol families across two decades, LLM-free -- data in
   `review/2026-09-23/normative_drift.{json,csv}`.
+- [Meaning warp across recursive generations](scripts/report/warp_trajectory.py): turns a
+  recorded recursive run into the signed drift trajectory (gen0 -> genN, source-anchored).
+  Run one cheaply with `configs/warp-sv.yaml` (five generations, statutory, ~USD 1-3).
 - [Signed drift on real Swedish law](scripts/investigations/version_drift.py): LAS
   (SFS 1982:80) amendments signed by the engine -- the 2022 reform loosened the turordning
   exemption (22 §) yet tightened fixed-term employment (5 a §). Source text under

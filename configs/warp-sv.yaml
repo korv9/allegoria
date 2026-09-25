@@ -1,0 +1,18 @@
+experiment: warp-sv
+description: >-
+  The bounded warp demo: the three statutory passages carried through five
+  recursive generations and read blind each step, so the signed drift trajectory
+  (scripts/report/warp_trajectory.py) has several points to move along without the
+  cost of the full ten-generation founding run. Statutory only -- the duty /
+  exception / condition structure the direction metric is about. Exploratory.
+language: sv
+generations: 5
+corpora:
+  - path: corpus/law_probe_v1.yaml
+    styles: all
+models:
+  transformer: sonnet-5
+  extractor: haiku-4-5
+prompts: prompts/sv/transform.yaml
+reader_prompt: prompts/sv/read_slots.txt
+prediction: predictions/2026-09-11-recursive.md
